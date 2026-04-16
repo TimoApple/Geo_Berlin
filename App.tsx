@@ -92,6 +92,10 @@ export default function App() {
   const [closestCityIdx, setClosestCityIdx] = useState<number | null>(null);
   const [distances, setDistances] = useState<number[]>([]);
   const [winnerId, setWinnerId] = useState<number | null>(null);
+  const [challengerPickIdx, setChallengerPickIdx] = useState<number | null>(null);
+  const [svLoadStart, setSvLoadStart] = useState<number>(0);
+  const [svLoadingLong, setSvLoadingLong] = useState(false);
+  const [qrBlockedMsg, setQrBlockedMsg] = useState('');
 
   const timerPulse = useRef(new Animated.Value(1)).current;
   const resultScale = useRef(new Animated.Value(0)).current;
@@ -128,11 +132,19 @@ export default function App() {
     if (timer === 0 && phase === 'view') { playTimerWarning(); Vibration.vibrate(500); setPhase('pick'); }
   }, [timer, phase]);
 
+  // SV loading timeout — show LOAD NEW CARD after 5s
+  useEffect(() => {
+    if (phase !== 'view' || svLoaded || svError) { setSvLoadingLong(false); return; }
+    const t = setTimeout(() => setSvLoadingLong(true), 5000);
+    return () => clearTimeout(t);
+  }, [phase, svLoaded, svError, location]);
+
   // GAME LOGIC
   const getRandomLocation = useCallback(() => {
-    const available = panoramaLocations.filter(l => !usedLocations.includes(l.id));
+    const playerCities = players.map(p => p.city.toLowerCase());
+    const available = panoramaLocations.filter(l => !usedLocations.includes(l.id) && !playerCities.includes(l.city.toLowerCase()));
     return available.length > 0 ? available[Math.floor(Math.random() * available.length)] : panoramaLocations[Math.floor(Math.random() * panoramaLocations.length)];
-  }, [usedLocations]);
+  }, [usedLocations, players]);
 
   const addPlayer = () => {
     const count = players.length + 1;
@@ -196,10 +208,26 @@ export default function App() {
   }, [timerSetting]);
 
   const onQrScanned = useCallback((loc: PanoramaLocation) => {
+    // Block player start cities
+    const playerCity = players.find(p => p.city.toLowerCase() === loc.city.toLowerCase());
+    if (playerCity) {
+      setQrBlockedMsg('This city is already on the table!');
+      Vibration.vibrate(300);
+      setTimeout(() => setQrBlockedMsg(''), 2000);
+      return;
+    }
     setLocation(loc); setUsedLocations(prev => [...prev, loc.id]);
     setTimer(timerSetting); setTimerPaused(false); setPhase('view');
     setShowQrScanner(false); setScanned(false); Vibration.vibrate(100);
-  }, [timerSetting]);
+  }, [timerSetting, players]);
+
+  const loadNewCard = useCallback(() => {
+    const newLoc = getRandomLocation();
+    setLocation(newLoc);
+    setUsedLocations(prev => [...prev, newLoc.id]);
+    setSvLoaded(false); setSvError(false); setSvLoadingLong(false);
+    setTimer(timerSetting); setTimerPaused(false);
+  }, [getRandomLocation, timerSetting]);
 
   const pickCity = useCallback((idx: number) => {
     playClickSound(); setTimerPaused(true);
@@ -208,6 +236,7 @@ export default function App() {
     let minIdx = 0; for (let i = 1; i < dists.length; i++) if (dists[i] < dists[minIdx]) minIdx = i;
     setClosestCityIdx(minIdx);
     setActivePickIdx(idx);
+    setChallengerPickIdx(null);
     // Don't resolve yet — go to challenge phase
     setPhase('challenge');
     setChallengerId(null);
@@ -218,34 +247,42 @@ export default function App() {
     const minIdx = closestCityIdx;
     const pickedIdx = activePickIdx;
     if (minIdx === null || pickedIdx === null) return;
-    const originalCorrect = pickedIdx === minIdx;
+
+    const activePlayerId = players[activePlayerIdx]?.id;
 
     if (challengerId !== null) {
       // There was a challenge
-      if (originalCorrect) {
-        // Original player was right — challenge fails
-        playPerfectSound(); Vibration.vibrate([100, 50, 100]);
-        const actualWinner = tableCities[minIdx].ownerPlayerId;
-        if (actualWinner !== null) setPlayers(prev => prev.map(p => p.id === actualWinner ? { ...p, score: p.score + 1 } : p));
-        setWinnerId(actualWinner);
-      } else {
-        // Original player was wrong — challenger gets the point
+      const challengerCorrect = challengerPickIdx === minIdx;
+      if (challengerCorrect) {
+        // Challenger picked correctly → challenger gets +1
         playPerfectSound(); Vibration.vibrate([100, 50, 100]);
         setPlayers(prev => prev.map(p => p.id === challengerId ? { ...p, score: p.score + 1 } : p));
         setWinnerId(challengerId);
+      } else {
+        // Challenger picked wrong → active player gets +1
+        playPerfectSound(); Vibration.vibrate([100, 50, 100]);
+        if (activePlayerId != null) setPlayers(prev => prev.map(p => p.id === activePlayerId ? { ...p, score: p.score + 1 } : p));
+        setWinnerId(activePlayerId);
       }
     } else {
-      // No challenge — normal resolution
-      if (originalCorrect) { playPerfectSound(); Vibration.vibrate([100, 50, 100]); } else { playErrorSound(); Vibration.vibrate(500); }
-      const actualWinner = tableCities[minIdx].ownerPlayerId;
-      if (actualWinner !== null) setPlayers(prev => prev.map(p => p.id === actualWinner ? { ...p, score: p.score + 1 } : p));
-      setWinnerId(actualWinner);
+      // No challenge
+      const activeCorrect = pickedIdx === minIdx;
+      if (activeCorrect) {
+        // Active player picked correctly → +1
+        playPerfectSound(); Vibration.vibrate([100, 50, 100]);
+        if (activePlayerId != null) setPlayers(prev => prev.map(p => p.id === activePlayerId ? { ...p, score: p.score + 1 } : p));
+        setWinnerId(activePlayerId);
+      } else {
+        // Active player picked wrong → nobody scores
+        playErrorSound(); Vibration.vibrate(500);
+        setWinnerId(null);
+      }
     }
 
     setTableCities(prev => [...prev, { city: location.city, lat: location.lat, lng: location.lng, ownerPlayerId: null, isPlayerCity: false }]);
     Animated.spring(resultScale, { toValue: 1, friction: 6, useNativeDriver: true }).start();
     setPhase('result');
-  }, [closestCityIdx, activePickIdx, challengerId, tableCities, location]);
+  }, [closestCityIdx, activePickIdx, challengerId, challengerPickIdx, tableCities, location, players, activePlayerIdx]);
 
   const nextTurn = () => {
     playClickSound();
@@ -613,8 +650,13 @@ export default function App() {
         <View style={s.container}><StatusBar hidden />
           <View style={s.gameTopBar}>
             <Text style={{ color: C.primary, fontSize: 14, fontWeight: '700', letterSpacing: 1 }}>{activePlayer.name}</Text>
-            <Text style={{ color: C.onSurface, fontSize: 12, backgroundColor: C.surface, paddingHorizontal: 10, paddingVertical: 4 }}>R{round}/{maxRounds}</Text>
+            <Text style={{ color: C.onSurface, fontSize: 12, backgroundColor: C.surface, paddingHorizontal: 10, paddingVertical: 4 }}>R{Math.ceil(round / players.length)}/{roundsSetting}</Text>
           </View>
+          {qrBlockedMsg ? (
+            <View style={{ position: 'absolute', top: 100, left: 20, right: 20, backgroundColor: 'rgba(255,100,100,0.9)', borderRadius: 12, paddingVertical: 14, paddingHorizontal: 20, zIndex: 50, alignItems: 'center' }}>
+              <Text style={{ color: '#fff', fontSize: 16, fontWeight: '700' }}>{qrBlockedMsg}</Text>
+            </View>
+          ) : null}
           <ScrollView contentContainerStyle={{ flexGrow: 1, justifyContent: 'center', alignItems: 'center', paddingHorizontal: 32, paddingTop: 60, paddingBottom: 40 }}>
             <Text style={{ color: C.onSurface, fontSize: 22, fontWeight: '700', textAlign: 'center', marginBottom: 8 }}>{activePlayer.name}, draw a QR card!</Text>
             <Text style={{ color: 'rgba(225,224,251,0.5)', fontSize: 14, textAlign: 'center', marginBottom: 32 }}>Scan the QR card to reveal the location</Text>
@@ -642,7 +684,7 @@ export default function App() {
       <View style={s.container}><StatusBar hidden />
         <View style={s.gameTopBar}>
           <Text style={{ color: C.primary, fontSize: 14, fontWeight: '700', letterSpacing: 1 }}>{activePlayer.name}</Text>
-          <Text style={{ color: C.onSurface, fontSize: 12, backgroundColor: C.surface, paddingHorizontal: 10, paddingVertical: 4 }}>R{round}/{maxRounds}</Text>
+          <Text style={{ color: C.onSurface, fontSize: 12, backgroundColor: C.surface, paddingHorizontal: 10, paddingVertical: 4 }}>R{Math.ceil(round / players.length)}/{roundsSetting}</Text>
         </View>
 
         {phase === 'view' && (
@@ -653,8 +695,17 @@ export default function App() {
               onError={() => setSvError(true)}
               onMessage={(e) => { const msg = e.nativeEvent.data; if (msg === 'loaded') setSvLoaded(true); if (msg.startsWith('error')) setSvError(true); }}
               userAgent="Mozilla/5.0 (Linux; Android 13) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36" />
-            {!svLoaded && !svError && <View style={s.loadingOverlay}><Text style={{ color: 'rgba(225,224,251,0.5)' }}>Loading Street View...</Text></View>}
-            {svError && <View style={s.errorOverlay}><Text style={{ color: C.error, fontSize: 16, marginBottom: 20 }}>No Street View</Text><TouchableOpacity style={s.primaryBtn} onPress={nextTurn}><Text style={s.primaryBtnText}>SKIP</Text></TouchableOpacity></View>}
+            {!svLoaded && !svError && <View style={s.loadingOverlay}>
+              <Text style={{ color: 'rgba(225,224,251,0.5)', marginBottom: svLoadingLong ? 20 : 0 }}>Loading Street View...</Text>
+              {svLoadingLong && <TouchableOpacity style={[s.primaryBtn, { marginTop: 12 }]} onPress={loadNewCard}><Text style={s.primaryBtnText}>LOAD NEW CARD</Text></TouchableOpacity>}
+            </View>}
+            {svError && <View style={s.errorOverlay}>
+              <Text style={{ color: C.error, fontSize: 16, marginBottom: 20 }}>No Street View</Text>
+              <View style={{ gap: 12, width: '100%', alignItems: 'center' }}>
+                <TouchableOpacity style={[s.primaryBtn, { width: '80%' }]} onPress={loadNewCard}><Text style={s.primaryBtnText}>LOAD NEW CARD</Text></TouchableOpacity>
+                <TouchableOpacity style={[s.primaryBtn, { width: '80%', backgroundColor: C.surfaceHighest }]} onPress={nextTurn}><Text style={[s.primaryBtnText, { color: C.onSurface }]}>SKIP</Text></TouchableOpacity>
+              </View>
+            </View>}
             {svLoaded && <>
               <Animated.View style={[s.timer, { borderColor: timerColor, transform: [{ scale: timerPulse }] }]}><Text style={[s.timerText, { color: timerColor }]}>{timer}</Text></Animated.View>
               <TouchableOpacity style={s.pickBtn} onPress={() => { playClickSound(); setTimerPaused(true); setPhase('pick'); }}><Text style={s.pickBtnText}>I KNOW IT!</Text></TouchableOpacity>
@@ -674,12 +725,13 @@ export default function App() {
               {tableCities.map((tc, i) => (
                 <TouchableOpacity key={i} style={[s.pickOption, i % 2 === 0 ? { backgroundColor: C.surfaceLow } : { backgroundColor: C.surface }]} onPress={() => {
                   if (challengerId !== null) {
-                    // Challenger picked — check if correct, then resolve
+                    // Challenger picked — store pick and resolve
                     playClickSound(); setTimerPaused(true);
+                    setChallengerPickIdx(i);
                     const dists = tableCities.map(t => calculateDistance(location.lat, location.lng, t.lat, t.lng));
                     setDistances(dists);
-                    // Resolve with challenge
-                    resolveRound();
+                    // Resolve with challenge after state is set
+                    setTimeout(() => resolveRound(), 0);
                   } else {
                     pickCity(i);
                   }
@@ -729,20 +781,22 @@ export default function App() {
         {phase === 'result' && closestCityIdx !== null && (
           <View style={s.resultOverlay}>
             <Animated.View style={[s.resultCard, { transform: [{ scale: resultScale }] }]}>
-              <Text style={{ fontSize: 48, textAlign: 'center', marginBottom: 12 }}>{winnerId !== null && winnerId === activePlayer.id ? '🎯' : '📍'}</Text>
-              <Text style={{ color: C.primary, fontSize: 26, fontWeight: '700', textAlign: 'center', marginBottom: 4 }}>{location.city}</Text>
-              <Text style={{ color: 'rgba(225,224,251,0.5)', fontSize: 14, textAlign: 'center', marginBottom: 6 }}>({location.country})</Text>
-              <Text style={{ color: C.onSurface, fontSize: 17, fontWeight: '600', textAlign: 'center', marginBottom: 20 }}>lies closest to {tableCities[closestCityIdx].city}</Text>
-              {tableCities.map((tc, i) => (
-                <View key={i} style={{ flexDirection: 'row', justifyContent: 'space-between', paddingVertical: 10, paddingHorizontal: 12, backgroundColor: C.surfaceLow, marginBottom: 2 }}>
-                  <Text style={{ color: 'rgba(225,224,251,0.7)', fontSize: 14 }}>{tc.isPlayerCity ? '◉' : '◈'} {tc.city}</Text>
-                  <Text style={{ color: C.onSurface, fontSize: 14, fontWeight: '600' }}>{formatDistance(distances[i] ?? 0)}</Text>
-                </View>
-              ))}
-              {winnerId !== null && <Text style={{ color: C.primary, fontSize: 16, fontWeight: '700', textAlign: 'center', marginVertical: 16 }}>⭐ {players.find(pp => pp.id === winnerId)?.name} scores!</Text>}
               <TouchableOpacity style={s.primaryBtn} onPress={nextTurn}>
                 <Text style={s.primaryBtnText}>{round >= maxRounds ? 'FINAL RESULTS' : 'NEXT ROUND →'}</Text>
               </TouchableOpacity>
+              {winnerId !== null && <Text style={{ color: C.primary, fontSize: 16, fontWeight: '700', textAlign: 'center', marginTop: 16, marginBottom: 8 }}>⭐ {players.find(pp => pp.id === winnerId)?.name} scores!</Text>}
+              <Text style={{ fontSize: 40, textAlign: 'center', marginVertical: 8 }}>{winnerId !== null && winnerId === activePlayer.id ? '🎯' : '📍'}</Text>
+              <Text style={{ color: C.primary, fontSize: 26, fontWeight: '700', textAlign: 'center', marginBottom: 4 }}>{location.city}</Text>
+              <Text style={{ color: 'rgba(225,224,251,0.5)', fontSize: 14, textAlign: 'center', marginBottom: 6 }}>({location.country})</Text>
+              <Text style={{ color: C.onSurface, fontSize: 17, fontWeight: '600', textAlign: 'center', marginBottom: 12 }}>lies closest to {tableCities[closestCityIdx].city}</Text>
+              <ScrollView style={{ maxHeight: height * 0.35 }} nestedScrollEnabled>
+                {tableCities.map((tc, i) => (
+                  <View key={i} style={{ flexDirection: 'row', justifyContent: 'space-between', paddingVertical: 10, paddingHorizontal: 12, backgroundColor: C.surfaceLow, marginBottom: 2 }}>
+                    <Text style={{ color: 'rgba(225,224,251,0.7)', fontSize: 14 }}>{tc.isPlayerCity ? '◉' : '◈'} {tc.city}</Text>
+                    <Text style={{ color: C.onSurface, fontSize: 14, fontWeight: '600' }}>{formatDistance(distances[i] ?? 0)}</Text>
+                  </View>
+                ))}
+              </ScrollView>
             </Animated.View>
           </View>
         )}
