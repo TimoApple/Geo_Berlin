@@ -657,7 +657,7 @@ export default function App() {
               <Text style={{ color: '#fff', fontSize: 16, fontWeight: '700' }}>{qrBlockedMsg}</Text>
             </View>
           ) : null}
-          <ScrollView contentContainerStyle={{ flexGrow: 1, justifyContent: 'center', alignItems: 'center', paddingHorizontal: 32, paddingTop: 60, paddingBottom: 40 }}>
+          <ScrollView contentContainerStyle={{ flexGrow: 1, justifyContent: 'center', alignItems: 'center', paddingHorizontal: 32, paddingTop: 90, paddingBottom: 40 }}>
             <Text style={{ color: C.onSurface, fontSize: 22, fontWeight: '700', textAlign: 'center', marginBottom: 8 }}>{activePlayer.name}, draw a QR card!</Text>
             <Text style={{ color: 'rgba(225,224,251,0.5)', fontSize: 14, textAlign: 'center', marginBottom: 32 }}>Scan the QR card to reveal the location</Text>
             <View style={[s.tableList, { maxHeight: height * 0.35 }]}>
@@ -908,7 +908,7 @@ const s = StyleSheet.create({
   loadingOverlay: { ...StyleSheet.absoluteFillObject, justifyContent: 'center', alignItems: 'center', backgroundColor: C.bg, zIndex: 5 },
   errorOverlay: { ...StyleSheet.absoluteFillObject, justifyContent: 'center', alignItems: 'center', backgroundColor: C.bg, zIndex: 10, paddingHorizontal: 32 },
 
-  pickScreen: { flex: 1, backgroundColor: C.bg, paddingTop: 60, paddingHorizontal: 20 },
+  pickScreen: { flex: 1, backgroundColor: C.bg, paddingTop: 90, paddingHorizontal: 20 },
   pickOption: { flexDirection: 'row', alignItems: 'center', paddingVertical: 16, paddingHorizontal: 16, marginBottom: 4 },
 
   resultOverlay: { ...StyleSheet.absoluteFillObject, backgroundColor: 'rgba(17,18,37,0.95)', zIndex: 40, justifyContent: 'center', paddingHorizontal: 20 },
