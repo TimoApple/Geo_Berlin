@@ -1,0 +1,2162 @@
+[
+  {
+    "city": "Moscow",
+    "country": "Russia",
+    "lat": 55.75204,
+    "lng": 37.61781,
+    "local_name": "Moscow",
+    "continent": "Europe",
+    "id": 1
+  },
+  {
+    "city": "London",
+    "country": "UK",
+    "lat": 51.50853,
+    "lng": -0.12574,
+    "local_name": "London",
+    "continent": "Europe",
+    "id": 2
+  },
+  {
+    "city": "Saint Petersburg",
+    "country": "Russia",
+    "lat": 59.93863,
+    "lng": 30.31413,
+    "local_name": "Saint Petersburg",
+    "continent": "Europe",
+    "id": 3
+  },
+  {
+    "city": "Berlin",
+    "country": "Germany",
+    "lat": 52.52437,
+    "lng": 13.41053,
+    "local_name": "Berlin",
+    "continent": "Europe",
+    "id": 4
+  },
+  {
+    "city": "Madrid",
+    "country": "Spain",
+    "lat": 40.4165,
+    "lng": -3.70256,
+    "local_name": "Madrid",
+    "continent": "Europe",
+    "id": 5
+  },
+  {
+    "city": "Kyiv",
+    "country": "Ukraine",
+    "lat": 50.45466,
+    "lng": 30.5238,
+    "local_name": "Kyiv",
+    "continent": "Europe",
+    "id": 6
+  },
+  {
+    "city": "Rome",
+    "country": "Italy",
+    "lat": 41.89193,
+    "lng": 12.51133,
+    "local_name": "Rome",
+    "continent": "Europe",
+    "id": 7
+  },
+  {
+    "city": "Paris",
+    "country": "France",
+    "lat": 48.85341,
+    "lng": 2.3488,
+    "local_name": "Paris",
+    "continent": "Europe",
+    "id": 8
+  },
+  {
+    "city": "Bucharest",
+    "country": "Romania",
+    "lat": 44.43225,
+    "lng": 26.10626,
+    "local_name": "Bucharest",
+    "continent": "Europe",
+    "id": 9
+  },
+  {
+    "city": "Hamburg",
+    "country": "Germany",
+    "lat": 53.55073,
+    "lng": 9.99302,
+    "local_name": "Hamburg",
+    "continent": "Europe",
+    "id": 10
+  },
+  {
+    "city": "Minsk",
+    "country": "Belarus",
+    "lat": 53.90019,
+    "lng": 27.56653,
+    "local_name": "Minsk",
+    "continent": "Europe",
+    "id": 11
+  },
+  {
+    "city": "Budapest",
+    "country": "Hungary",
+    "lat": 47.49835,
+    "lng": 19.04045,
+    "local_name": "Budapest",
+    "continent": "Europe",
+    "id": 12
+  },
+  {
+    "city": "Warsaw",
+    "country": "Poland",
+    "lat": 52.22977,
+    "lng": 21.01178,
+    "local_name": "Warsaw",
+    "continent": "Europe",
+    "id": 13
+  },
+  {
+    "city": "Vienna",
+    "country": "Austria",
+    "lat": 48.20849,
+    "lng": 16.37208,
+    "local_name": "Vienna",
+    "continent": "Europe",
+    "id": 14
+  },
+  {
+    "city": "Barcelona",
+    "country": "Spain",
+    "lat": 41.38879,
+    "lng": 2.15899,
+    "local_name": "Barcelona",
+    "continent": "Europe",
+    "id": 15
+  },
+  {
+    "city": "Novosibirsk",
+    "country": "Russia",
+    "lat": 55.02259,
+    "lng": 82.93175,
+    "local_name": "Novosibirsk",
+    "continent": "Europe",
+    "id": 16
+  },
+  {
+    "city": "Stockholm",
+    "country": "Sweden",
+    "lat": 59.32938,
+    "lng": 18.06871,
+    "local_name": "Stockholm",
+    "continent": "Europe",
+    "id": 17
+  },
+  {
+    "city": "Yekaterinburg",
+    "country": "Russia",
+    "lat": 56.85733,
+    "lng": 60.61529,
+    "local_name": "Yekaterinburg",
+    "continent": "Europe",
+    "id": 18
+  },
+  {
+    "city": "Kharkiv",
+    "country": "Ukraine",
+    "lat": 49.98177,
+    "lng": 36.25475,
+    "local_name": "Kharkiv",
+    "continent": "Europe",
+    "id": 19
+  },
+  {
+    "city": "Milan",
+    "country": "Italy",
+    "lat": 45.46427,
+    "lng": 9.18951,
+    "local_name": "Milan",
+    "continent": "Europe",
+    "id": 20
+  },
+  {
+    "city": "Belgrade",
+    "country": "Serbia",
+    "lat": 44.80401,
+    "lng": 20.46513,
+    "local_name": "Belgrade",
+    "continent": "Europe",
+    "id": 21
+  },
+  {
+    "city": "Munich",
+    "country": "Germany",
+    "lat": 48.13743,
+    "lng": 11.57549,
+    "local_name": "Munich",
+    "continent": "Europe",
+    "id": 22
+  },
+  {
+    "city": "Nizhniy Novgorod",
+    "country": "Russia",
+    "lat": 56.32867,
+    "lng": 44.00205,
+    "local_name": "Nizhniy Novgorod",
+    "continent": "Europe",
+    "id": 23
+  },
+  {
+    "city": "Kazan",
+    "country": "Russia",
+    "lat": 55.78874,
+    "lng": 49.12214,
+    "local_name": "Kazan",
+    "continent": "Europe",
+    "id": 24
+  },
+  {
+    "city": "Chelyabinsk",
+    "country": "Russia",
+    "lat": 55.1611,
+    "lng": 61.42877,
+    "local_name": "Chelyabinsk",
+    "continent": "Europe",
+    "id": 25
+  },
+  {
+    "city": "Omsk",
+    "country": "Russia",
+    "lat": 54.99244,
+    "lng": 73.36859,
+    "local_name": "Omsk",
+    "continent": "Europe",
+    "id": 26
+  },
+  {
+    "city": "Prague",
+    "country": "Czech Republic",
+    "lat": 50.08804,
+    "lng": 14.42076,
+    "local_name": "Prague",
+    "continent": "Europe",
+    "id": 27
+  },
+  {
+    "city": "Samara",
+    "country": "Russia",
+    "lat": 53.20767,
+    "lng": 50.13553,
+    "local_name": "Samara",
+    "continent": "Europe",
+    "id": 28
+  },
+  {
+    "city": "Birmingham",
+    "country": "UK",
+    "lat": 52.48142,
+    "lng": -1.89983,
+    "local_name": "Birmingham",
+    "continent": "Europe",
+    "id": 29
+  },
+  {
+    "city": "Copenhagen",
+    "country": "Denmark",
+    "lat": 55.67594,
+    "lng": 12.56553,
+    "local_name": "Copenhagen",
+    "continent": "Europe",
+    "id": 30
+  },
+  {
+    "city": "Sofia",
+    "country": "Bulgaria",
+    "lat": 42.69751,
+    "lng": 23.32415,
+    "local_name": "Sofia",
+    "continent": "Europe",
+    "id": 31
+  },
+  {
+    "city": "Rostov-na-Donu",
+    "country": "Russia",
+    "lat": 47.21997,
+    "lng": 39.70769,
+    "local_name": "Rostov-na-Donu",
+    "continent": "Europe",
+    "id": 32
+  },
+  {
+    "city": "Ufa",
+    "country": "Russia",
+    "lat": 54.74306,
+    "lng": 55.96779,
+    "local_name": "Ufa",
+    "continent": "Europe",
+    "id": 33
+  },
+  {
+    "city": "Krasnoyarsk",
+    "country": "Russia",
+    "lat": 56.03742,
+    "lng": 92.93136,
+    "local_name": "Krasnoyarsk",
+    "continent": "Europe",
+    "id": 34
+  },
+  {
+    "city": "Oslo",
+    "country": "Norway",
+    "lat": 59.91273,
+    "lng": 10.74609,
+    "local_name": "Oslo",
+    "continent": "Europe",
+    "id": 35
+  },
+  {
+    "city": "Tbilisi",
+    "country": "Georgia",
+    "lat": 41.69143,
+    "lng": 44.83412,
+    "local_name": "Tbilisi",
+    "continent": "Europe",
+    "id": 36
+  },
+  {
+    "city": "Voronezh",
+    "country": "Russia",
+    "lat": 51.66833,
+    "lng": 39.19204,
+    "local_name": "Voronezh",
+    "continent": "Europe",
+    "id": 37
+  },
+  {
+    "city": "Dublin",
+    "country": "Ireland",
+    "lat": 53.33306,
+    "lng": -6.24889,
+    "local_name": "Dublin",
+    "continent": "Europe",
+    "id": 38
+  },
+  {
+    "city": "Brussels",
+    "country": "Belgium",
+    "lat": 50.85045,
+    "lng": 4.34878,
+    "local_name": "Brussels",
+    "continent": "Europe",
+    "id": 39
+  },
+  {
+    "city": "Odesa",
+    "country": "Ukraine",
+    "lat": 46.48572,
+    "lng": 30.74383,
+    "local_name": "Odesa",
+    "continent": "Europe",
+    "id": 40
+  },
+  {
+    "city": "Volgograd",
+    "country": "Russia",
+    "lat": 48.71378,
+    "lng": 44.4976,
+    "local_name": "Volgograd",
+    "continent": "Europe",
+    "id": 41
+  },
+  {
+    "city": "Pest",
+    "country": "Hungary",
+    "lat": 47.5,
+    "lng": 19.08333,
+    "local_name": "Pest",
+    "continent": "Europe",
+    "id": 42
+  },
+  {
+    "city": "Perm",
+    "country": "Russia",
+    "lat": 58.01046,
+    "lng": 56.25017,
+    "local_name": "Perm",
+    "continent": "Europe",
+    "id": 43
+  },
+  {
+    "city": "Dnipro",
+    "country": "Ukraine",
+    "lat": 48.46664,
+    "lng": 35.04066,
+    "local_name": "Dnipro",
+    "continent": "Europe",
+    "id": 44
+  },
+  {
+    "city": "Köln",
+    "country": "Germany",
+    "lat": 50.93333,
+    "lng": 6.95,
+    "local_name": "Köln",
+    "continent": "Europe",
+    "id": 45
+  },
+  {
+    "city": "Naples",
+    "country": "Italy",
+    "lat": 40.85216,
+    "lng": 14.26811,
+    "local_name": "Naples",
+    "continent": "Europe",
+    "id": 46
+  },
+  {
+    "city": "Donetsk",
+    "country": "Ukraine",
+    "lat": 48.023,
+    "lng": 37.80224,
+    "local_name": "Donetsk",
+    "continent": "Europe",
+    "id": 47
+  },
+  {
+    "city": "Krasnodar",
+    "country": "Russia",
+    "lat": 45.04534,
+    "lng": 38.98178,
+    "local_name": "Krasnodar",
+    "continent": "Europe",
+    "id": 48
+  },
+  {
+    "city": "Marseille",
+    "country": "France",
+    "lat": 43.29695,
+    "lng": 5.38107,
+    "local_name": "Marseille",
+    "continent": "Europe",
+    "id": 49
+  },
+  {
+    "city": "Rotterdam",
+    "country": "Netherlands",
+    "lat": 51.9225,
+    "lng": 4.47917,
+    "local_name": "Rotterdam",
+    "continent": "Europe",
+    "id": 50
+  },
+  {
+    "city": "Turin",
+    "country": "Italy",
+    "lat": 45.07049,
+    "lng": 7.68682,
+    "local_name": "Turin",
+    "continent": "Europe",
+    "id": 51
+  },
+  {
+    "city": "Saratov",
+    "country": "Russia",
+    "lat": 51.54048,
+    "lng": 45.9901,
+    "local_name": "Saratov",
+    "continent": "Europe",
+    "id": 52
+  },
+  {
+    "city": "Valencia",
+    "country": "Spain",
+    "lat": 39.47391,
+    "lng": -0.37966,
+    "local_name": "Valencia",
+    "continent": "Europe",
+    "id": 53
+  },
+  {
+    "city": "Kraków",
+    "country": "Poland",
+    "lat": 50.06143,
+    "lng": 19.93658,
+    "local_name": "Kraków",
+    "continent": "Europe",
+    "id": 54
+  },
+  {
+    "city": "Tyumen",
+    "country": "Russia",
+    "lat": 57.15222,
+    "lng": 65.52722,
+    "local_name": "Tyumen",
+    "continent": "Europe",
+    "id": 55
+  },
+  {
+    "city": "Riga",
+    "country": "Latvia",
+    "lat": 56.946,
+    "lng": 24.10589,
+    "local_name": "Riga",
+    "continent": "Europe",
+    "id": 56
+  },
+  {
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "lat": 52.37403,
+    "lng": 4.88969,
+    "local_name": "Amsterdam",
+    "continent": "Europe",
+    "id": 57
+  },
+  {
+    "city": "Lviv",
+    "country": "Ukraine",
+    "lat": 49.83826,
+    "lng": 24.02324,
+    "local_name": "Lviv",
+    "continent": "Europe",
+    "id": 58
+  },
+  {
+    "city": "Zaporizhzhya",
+    "country": "Ukraine",
+    "lat": 47.85167,
+    "lng": 35.11714,
+    "local_name": "Zaporizhzhya",
+    "continent": "Europe",
+    "id": 59
+  },
+  {
+    "city": "Tolyatti",
+    "country": "Russia",
+    "lat": 53.5303,
+    "lng": 49.3461,
+    "local_name": "Tolyatti",
+    "continent": "Europe",
+    "id": 60
+  },
+  {
+    "city": "Sarajevo",
+    "country": "Bosnia and Herzegovina",
+    "lat": 43.84864,
+    "lng": 18.35644,
+    "local_name": "Sarajevo",
+    "continent": "Europe",
+    "id": 61
+  },
+  {
+    "city": "Zaragoza",
+    "country": "Spain",
+    "lat": 41.65606,
+    "lng": -0.87734,
+    "local_name": "Zaragoza",
+    "continent": "Europe",
+    "id": 62
+  },
+  {
+    "city": "Sevilla",
+    "country": "Spain",
+    "lat": 37.38283,
+    "lng": -5.97317,
+    "local_name": "Sevilla",
+    "continent": "Europe",
+    "id": 63
+  },
+  {
+    "city": "Wrocław",
+    "country": "Poland",
+    "lat": 51.10286,
+    "lng": 17.03006,
+    "local_name": "Wrocław",
+    "continent": "Europe",
+    "id": 64
+  },
+  {
+    "city": "Athens",
+    "country": "Greece",
+    "lat": 37.98376,
+    "lng": 23.72784,
+    "local_name": "Athens",
+    "continent": "Europe",
+    "id": 65
+  },
+  {
+    "city": "Zagreb",
+    "country": "Croatia",
+    "lat": 45.81444,
+    "lng": 15.97798,
+    "local_name": "Zagreb",
+    "continent": "Europe",
+    "id": 66
+  },
+  {
+    "city": "Helsinki",
+    "country": "Finland",
+    "lat": 60.16952,
+    "lng": 24.93545,
+    "local_name": "Helsinki",
+    "continent": "Europe",
+    "id": 67
+  },
+  {
+    "city": "Frankfurt am Main",
+    "country": "Germany",
+    "lat": 50.11552,
+    "lng": 8.68417,
+    "local_name": "Frankfurt am Main",
+    "continent": "Europe",
+    "id": 68
+  },
+  {
+    "city": "Palermo",
+    "country": "Italy",
+    "lat": 38.1166,
+    "lng": 13.3636,
+    "local_name": "Palermo",
+    "continent": "Europe",
+    "id": 69
+  },
+  {
+    "city": "Izhevsk",
+    "country": "Russia",
+    "lat": 56.85225,
+    "lng": 53.19862,
+    "local_name": "Izhevsk",
+    "continent": "Europe",
+    "id": 70
+  },
+  {
+    "city": "Łódź",
+    "country": "Poland",
+    "lat": 51.77058,
+    "lng": 19.47395,
+    "local_name": "Łódź",
+    "continent": "Europe",
+    "id": 71
+  },
+  {
+    "city": "Chisinau",
+    "country": "Moldova",
+    "lat": 47.00902,
+    "lng": 28.85938,
+    "local_name": "Chisinau",
+    "continent": "Europe",
+    "id": 72
+  },
+  {
+    "city": "Barnaul",
+    "country": "Russia",
+    "lat": 53.36199,
+    "lng": 83.72786,
+    "local_name": "Barnaul",
+    "continent": "Europe",
+    "id": 73
+  },
+  {
+    "city": "Stuttgart",
+    "country": "Germany",
+    "lat": 48.78232,
+    "lng": 9.17702,
+    "local_name": "Stuttgart",
+    "continent": "Europe",
+    "id": 74
+  },
+  {
+    "city": "Ulyanovsk",
+    "country": "Russia",
+    "lat": 54.32824,
+    "lng": 48.38657,
+    "local_name": "Ulyanovsk",
+    "continent": "Europe",
+    "id": 75
+  },
+  {
+    "city": "Glasgow",
+    "country": "UK",
+    "lat": 55.86515,
+    "lng": -4.25763,
+    "local_name": "Glasgow",
+    "continent": "Europe",
+    "id": 76
+  },
+  {
+    "city": "Irkutsk",
+    "country": "Russia",
+    "lat": 52.29566,
+    "lng": 104.29076,
+    "local_name": "Irkutsk",
+    "continent": "Europe",
+    "id": 77
+  },
+  {
+    "city": "Düsseldorf",
+    "country": "Germany",
+    "lat": 51.22172,
+    "lng": 6.77616,
+    "local_name": "Düsseldorf",
+    "continent": "Europe",
+    "id": 78
+  },
+  {
+    "city": "Khabarovsk",
+    "country": "Russia",
+    "lat": 48.46204,
+    "lng": 135.0971,
+    "local_name": "Khabarovsk",
+    "continent": "Europe",
+    "id": 79
+  },
+  {
+    "city": "Yaroslavl",
+    "country": "Russia",
+    "lat": 57.62987,
+    "lng": 39.87368,
+    "local_name": "Yaroslavl",
+    "continent": "Europe",
+    "id": 80
+  },
+  {
+    "city": "Göteborg",
+    "country": "Sweden",
+    "lat": 57.70716,
+    "lng": 11.96679,
+    "local_name": "Göteborg",
+    "continent": "Europe",
+    "id": 81
+  },
+  {
+    "city": "Vladivostok",
+    "country": "Russia",
+    "lat": 43.10562,
+    "lng": 131.87353,
+    "local_name": "Vladivostok",
+    "continent": "Europe",
+    "id": 82
+  },
+  {
+    "city": "Kryvyy Rih",
+    "country": "Ukraine",
+    "lat": 47.90572,
+    "lng": 33.39404,
+    "local_name": "Kryvyy Rih",
+    "continent": "Europe",
+    "id": 83
+  },
+  {
+    "city": "Makhachkala",
+    "country": "Russia",
+    "lat": 42.97782,
+    "lng": 47.50027,
+    "local_name": "Makhachkala",
+    "continent": "Europe",
+    "id": 84
+  },
+  {
+    "city": "Essen",
+    "country": "Germany",
+    "lat": 51.45657,
+    "lng": 7.01228,
+    "local_name": "Essen",
+    "continent": "Europe",
+    "id": 85
+  },
+  {
+    "city": "Málaga",
+    "country": "Spain",
+    "lat": 36.72016,
+    "lng": -4.42034,
+    "local_name": "Málaga",
+    "continent": "Europe",
+    "id": 86
+  },
+  {
+    "city": "Dortmund",
+    "country": "Germany",
+    "lat": 51.51494,
+    "lng": 7.466,
+    "local_name": "Dortmund",
+    "continent": "Europe",
+    "id": 87
+  },
+  {
+    "city": "Genoa",
+    "country": "Italy",
+    "lat": 44.40478,
+    "lng": 8.94439,
+    "local_name": "Genoa",
+    "continent": "Europe",
+    "id": 88
+  },
+  {
+    "city": "Khabarovsk Vtoroy",
+    "country": "Russia",
+    "lat": 48.43787,
+    "lng": 135.12994,
+    "local_name": "Khabarovsk Vtoroy",
+    "continent": "Europe",
+    "id": 89
+  },
+  {
+    "city": "Tomsk",
+    "country": "Russia",
+    "lat": 56.50049,
+    "lng": 84.98216,
+    "local_name": "Tomsk",
+    "continent": "Europe",
+    "id": 90
+  },
+  {
+    "city": "Manchester",
+    "country": "UK",
+    "lat": 53.48095,
+    "lng": -2.23743,
+    "local_name": "Manchester",
+    "continent": "Europe",
+    "id": 91
+  },
+  {
+    "city": "Orenburg",
+    "country": "Russia",
+    "lat": 51.76712,
+    "lng": 55.09883,
+    "local_name": "Orenburg",
+    "continent": "Europe",
+    "id": 92
+  },
+  {
+    "city": "Kemerovo",
+    "country": "Russia",
+    "lat": 55.35417,
+    "lng": 86.10435,
+    "local_name": "Kemerovo",
+    "continent": "Europe",
+    "id": 93
+  },
+  {
+    "city": "Sheffield",
+    "country": "UK",
+    "lat": 53.38297,
+    "lng": -1.4659,
+    "local_name": "Sheffield",
+    "continent": "Europe",
+    "id": 94
+  },
+  {
+    "city": "Dresden",
+    "country": "Germany",
+    "lat": 51.05089,
+    "lng": 13.73832,
+    "local_name": "Dresden",
+    "continent": "Europe",
+    "id": 95
+  },
+  {
+    "city": "Pristina",
+    "country": "Kosovo",
+    "lat": 42.67272,
+    "lng": 21.16688,
+    "local_name": "Pristina",
+    "continent": "Europe",
+    "id": 96
+  },
+  {
+    "city": "Sevastopol",
+    "country": "Ukraine",
+    "lat": 44.60795,
+    "lng": 33.52134,
+    "local_name": "Sevastopol",
+    "continent": "Europe",
+    "id": 97
+  },
+  {
+    "city": "Bremen",
+    "country": "Germany",
+    "lat": 53.07582,
+    "lng": 8.80717,
+    "local_name": "Bremen",
+    "continent": "Europe",
+    "id": 98
+  },
+  {
+    "city": "Vilnius",
+    "country": "Lithuania",
+    "lat": 54.68916,
+    "lng": 25.2798,
+    "local_name": "Vilnius",
+    "continent": "Europe",
+    "id": 99
+  },
+  {
+    "city": "Novokuznetsk",
+    "country": "Russia",
+    "lat": 53.75752,
+    "lng": 87.13599,
+    "local_name": "Novokuznetsk",
+    "continent": "Europe",
+    "id": 100
+  },
+  {
+    "city": "Ryazan’",
+    "country": "Russia",
+    "lat": 54.62696,
+    "lng": 39.70415,
+    "local_name": "Ryazan’",
+    "continent": "Europe",
+    "id": 101
+  },
+  {
+    "city": "Leeds",
+    "country": "UK",
+    "lat": 53.79648,
+    "lng": -1.54785,
+    "local_name": "Leeds",
+    "continent": "Europe",
+    "id": 102
+  },
+  {
+    "city": "Poznań",
+    "country": "Poland",
+    "lat": 52.40692,
+    "lng": 16.92993,
+    "local_name": "Poznań",
+    "continent": "Europe",
+    "id": 103
+  },
+  {
+    "city": "Astrakhan",
+    "country": "Russia",
+    "lat": 46.34968,
+    "lng": 48.04076,
+    "local_name": "Astrakhan",
+    "continent": "Europe",
+    "id": 104
+  },
+  {
+    "city": "Antwerpen",
+    "country": "Belgium",
+    "lat": 51.22047,
+    "lng": 4.40026,
+    "local_name": "Antwerpen",
+    "continent": "Europe",
+    "id": 105
+  },
+  {
+    "city": "Penza",
+    "country": "Russia",
+    "lat": 53.19568,
+    "lng": 45.01075,
+    "local_name": "Penza",
+    "continent": "Europe",
+    "id": 106
+  },
+  {
+    "city": "Lyon",
+    "country": "France",
+    "lat": 45.74906,
+    "lng": 4.84789,
+    "local_name": "Lyon",
+    "continent": "Europe",
+    "id": 107
+  },
+  {
+    "city": "Lisbon",
+    "country": "Portugal",
+    "lat": 38.72509,
+    "lng": -9.1498,
+    "local_name": "Lisbon",
+    "continent": "Europe",
+    "id": 108
+  },
+  {
+    "city": "Nürnberg",
+    "country": "Germany",
+    "lat": 49.45421,
+    "lng": 11.07752,
+    "local_name": "Nürnberg",
+    "continent": "Europe",
+    "id": 109
+  },
+  {
+    "city": "Hannover",
+    "country": "Germany",
+    "lat": 52.37052,
+    "lng": 9.73322,
+    "local_name": "Hannover",
+    "continent": "Europe",
+    "id": 110
+  },
+  {
+    "city": "Edinburgh",
+    "country": "UK",
+    "lat": 55.95206,
+    "lng": -3.19648,
+    "local_name": "Edinburgh",
+    "continent": "Europe",
+    "id": 111
+  },
+  {
+    "city": "Toulouse",
+    "country": "France",
+    "lat": 43.60426,
+    "lng": 1.44367,
+    "local_name": "Toulouse",
+    "continent": "Europe",
+    "id": 112
+  },
+  {
+    "city": "Buda",
+    "country": "Hungary",
+    "lat": 47.5,
+    "lng": 19.03333,
+    "local_name": "Buda",
+    "continent": "Europe",
+    "id": 113
+  },
+  {
+    "city": "Naberezhnyye Chelny",
+    "country": "Russia",
+    "lat": 55.73718,
+    "lng": 52.41961,
+    "local_name": "Naberezhnyye Chelny",
+    "continent": "Europe",
+    "id": 114
+  },
+  {
+    "city": "Lipetsk",
+    "country": "Russia",
+    "lat": 52.5876,
+    "lng": 39.55151,
+    "local_name": "Lipetsk",
+    "continent": "Europe",
+    "id": 115
+  },
+  {
+    "city": "Kirov",
+    "country": "Russia",
+    "lat": 58.59809,
+    "lng": 49.65783,
+    "local_name": "Kirov",
+    "continent": "Europe",
+    "id": 116
+  },
+  {
+    "city": "Leipzig",
+    "country": "Germany",
+    "lat": 51.33962,
+    "lng": 12.37129,
+    "local_name": "Leipzig",
+    "continent": "Europe",
+    "id": 117
+  },
+  {
+    "city": "Kalininskiy",
+    "country": "Russia",
+    "lat": 59.99675,
+    "lng": 30.3899,
+    "local_name": "Kalininskiy",
+    "continent": "Europe",
+    "id": 118
+  },
+  {
+    "city": "Duisburg",
+    "country": "Germany",
+    "lat": 51.43247,
+    "lng": 6.76516,
+    "local_name": "Duisburg",
+    "continent": "Europe",
+    "id": 119
+  },
+  {
+    "city": "Homyel'",
+    "country": "Belarus",
+    "lat": 52.4345,
+    "lng": 30.9754,
+    "local_name": "Homyel'",
+    "continent": "Europe",
+    "id": 120
+  },
+  {
+    "city": "Liverpool",
+    "country": "UK",
+    "lat": 53.41058,
+    "lng": -2.97794,
+    "local_name": "Liverpool",
+    "continent": "Europe",
+    "id": 121
+  },
+  {
+    "city": "Cheboksary",
+    "country": "Russia",
+    "lat": 56.13218,
+    "lng": 47.246,
+    "local_name": "Cheboksary",
+    "continent": "Europe",
+    "id": 122
+  },
+  {
+    "city": "Gdańsk",
+    "country": "Poland",
+    "lat": 54.35227,
+    "lng": 18.64912,
+    "local_name": "Gdańsk",
+    "continent": "Europe",
+    "id": 123
+  },
+  {
+    "city": "Tula",
+    "country": "Russia",
+    "lat": 54.19609,
+    "lng": 37.61822,
+    "local_name": "Tula",
+    "continent": "Europe",
+    "id": 124
+  },
+  {
+    "city": "Bristol",
+    "country": "UK",
+    "lat": 51.45523,
+    "lng": -2.59665,
+    "local_name": "Bristol",
+    "continent": "Europe",
+    "id": 125
+  },
+  {
+    "city": "Kaliningrad",
+    "country": "Russia",
+    "lat": 54.70639,
+    "lng": 20.51102,
+    "local_name": "Kaliningrad",
+    "continent": "Europe",
+    "id": 126
+  },
+  {
+    "city": "Skopje",
+    "country": "North Macedonia",
+    "lat": 41.99646,
+    "lng": 21.43141,
+    "local_name": "Skopje",
+    "continent": "Europe",
+    "id": 127
+  },
+  {
+    "city": "The Hague",
+    "country": "Netherlands",
+    "lat": 52.07667,
+    "lng": 4.29861,
+    "local_name": "The Hague",
+    "continent": "Europe",
+    "id": 128
+  },
+  {
+    "city": "Murcia",
+    "country": "Spain",
+    "lat": 37.98704,
+    "lng": -1.13004,
+    "local_name": "Murcia",
+    "continent": "Europe",
+    "id": 129
+  },
+  {
+    "city": "Mykolayiv",
+    "country": "Ukraine",
+    "lat": 46.97625,
+    "lng": 31.99296,
+    "local_name": "Mykolayiv",
+    "continent": "Europe",
+    "id": 130
+  },
+  {
+    "city": "Kursk",
+    "country": "Russia",
+    "lat": 51.72689,
+    "lng": 36.18457,
+    "local_name": "Kursk",
+    "continent": "Europe",
+    "id": 131
+  },
+  {
+    "city": "Palma",
+    "country": "Spain",
+    "lat": 39.56939,
+    "lng": 2.65024,
+    "local_name": "Palma",
+    "continent": "Europe",
+    "id": 132
+  },
+  {
+    "city": "Stavropol’",
+    "country": "Russia",
+    "lat": 45.03442,
+    "lng": 41.9642,
+    "local_name": "Stavropol’",
+    "continent": "Europe",
+    "id": 133
+  },
+  {
+    "city": "Bryansk",
+    "country": "Russia",
+    "lat": 53.27096,
+    "lng": 34.32143,
+    "local_name": "Bryansk",
+    "continent": "Europe",
+    "id": 134
+  },
+  {
+    "city": "Bratislava",
+    "country": "Slovakia",
+    "lat": 48.14816,
+    "lng": 17.10674,
+    "local_name": "Bratislava",
+    "continent": "Europe",
+    "id": 135
+  },
+  {
+    "city": "Tver",
+    "country": "Russia",
+    "lat": 56.85836,
+    "lng": 35.90057,
+    "local_name": "Tver",
+    "continent": "Europe",
+    "id": 136
+  },
+  {
+    "city": "Tirana",
+    "country": "Albania",
+    "lat": 41.32744,
+    "lng": 19.81866,
+    "local_name": "Tirana",
+    "continent": "Europe",
+    "id": 137
+  },
+  {
+    "city": "Zürich",
+    "country": "Switzerland",
+    "lat": 47.36667,
+    "lng": 8.55,
+    "local_name": "Zürich",
+    "continent": "Europe",
+    "id": 138
+  },
+  {
+    "city": "Magnitogorsk",
+    "country": "Russia",
+    "lat": 53.39808,
+    "lng": 59.0066,
+    "local_name": "Magnitogorsk",
+    "continent": "Europe",
+    "id": 139
+  },
+  {
+    "city": "Wandsbek",
+    "country": "Germany",
+    "lat": 53.58334,
+    "lng": 10.08305,
+    "local_name": "Wandsbek",
+    "continent": "Europe",
+    "id": 140
+  },
+  {
+    "city": "Ivanovo",
+    "country": "Russia",
+    "lat": 56.99988,
+    "lng": 40.97257,
+    "local_name": "Ivanovo",
+    "continent": "Europe",
+    "id": 141
+  },
+  {
+    "city": "Saltivka",
+    "country": "Ukraine",
+    "lat": 50.02207,
+    "lng": 36.34901,
+    "local_name": "Saltivka",
+    "continent": "Europe",
+    "id": 142
+  },
+  {
+    "city": "Luhansk",
+    "country": "Ukraine",
+    "lat": 48.56814,
+    "lng": 39.30553,
+    "local_name": "Luhansk",
+    "continent": "Europe",
+    "id": 143
+  },
+  {
+    "city": "Szczecin",
+    "country": "Poland",
+    "lat": 53.42894,
+    "lng": 14.55302,
+    "local_name": "Szczecin",
+    "continent": "Europe",
+    "id": 144
+  },
+  {
+    "city": "Bologna",
+    "country": "Italy",
+    "lat": 44.49381,
+    "lng": 11.33875,
+    "local_name": "Bologna",
+    "continent": "Europe",
+    "id": 145
+  },
+  {
+    "city": "Tallinn",
+    "country": "Estonia",
+    "lat": 59.43696,
+    "lng": 24.75353,
+    "local_name": "Tallinn",
+    "continent": "Europe",
+    "id": 146
+  },
+  {
+    "city": "Bochum",
+    "country": "Germany",
+    "lat": 51.48165,
+    "lng": 7.21648,
+    "local_name": "Bochum",
+    "continent": "Europe",
+    "id": 147
+  },
+  {
+    "city": "Sector 3",
+    "country": "Romania",
+    "lat": 44.4234,
+    "lng": 26.16874,
+    "local_name": "Sector 3",
+    "continent": "Europe",
+    "id": 148
+  },
+  {
+    "city": "Las Palmas de Gran Canaria",
+    "country": "Spain",
+    "lat": 28.10178,
+    "lng": -15.41573,
+    "local_name": "Las Palmas de Gran Canaria",
+    "continent": "Europe",
+    "id": 149
+  },
+  {
+    "city": "Nizhny Tagil",
+    "country": "Russia",
+    "lat": 57.91944,
+    "lng": 59.965,
+    "local_name": "Nizhny Tagil",
+    "continent": "Europe",
+    "id": 150
+  },
+  {
+    "city": "Brno",
+    "country": "Czech Republic",
+    "lat": 49.19522,
+    "lng": 16.60796,
+    "local_name": "Brno",
+    "continent": "Europe",
+    "id": 151
+  },
+  {
+    "city": "Iaşi",
+    "country": "Romania",
+    "lat": 47.16667,
+    "lng": 27.6,
+    "local_name": "Iaşi",
+    "continent": "Europe",
+    "id": 152
+  },
+  {
+    "city": "Utrecht",
+    "country": "Netherlands",
+    "lat": 52.09083,
+    "lng": 5.12222,
+    "local_name": "Utrecht",
+    "continent": "Europe",
+    "id": 153
+  },
+  {
+    "city": "Cardiff",
+    "country": "UK",
+    "lat": 51.48,
+    "lng": -3.18,
+    "local_name": "Cardiff",
+    "continent": "Europe",
+    "id": 154
+  },
+  {
+    "city": "Vinnytsya",
+    "country": "Ukraine",
+    "lat": 49.2322,
+    "lng": 28.46871,
+    "local_name": "Vinnytsya",
+    "continent": "Europe",
+    "id": 155
+  },
+  {
+    "city": "Leicester",
+    "country": "UK",
+    "lat": 52.6386,
+    "lng": -1.13169,
+    "local_name": "Leicester",
+    "continent": "Europe",
+    "id": 156
+  },
+  {
+    "city": "Desna",
+    "country": "Ukraine",
+    "lat": 50.52207,
+    "lng": 30.68228,
+    "local_name": "Desna",
+    "continent": "Europe",
+    "id": 157
+  },
+  {
+    "city": "Sector 6",
+    "country": "Romania",
+    "lat": 44.43579,
+    "lng": 26.01649,
+    "local_name": "Sector 6",
+    "continent": "Europe",
+    "id": 158
+  },
+  {
+    "city": "Florence",
+    "country": "Italy",
+    "lat": 43.77925,
+    "lng": 11.24626,
+    "local_name": "Florence",
+    "continent": "Europe",
+    "id": 159
+  },
+  {
+    "city": "Bradford",
+    "country": "UK",
+    "lat": 53.79391,
+    "lng": -1.75206,
+    "local_name": "Bradford",
+    "continent": "Europe",
+    "id": 160
+  },
+  {
+    "city": "Malmö",
+    "country": "Sweden",
+    "lat": 55.60587,
+    "lng": 13.00073,
+    "local_name": "Malmö",
+    "continent": "Europe",
+    "id": 161
+  },
+  {
+    "city": "Hrodna",
+    "country": "Belarus",
+    "lat": 53.6758,
+    "lng": 23.82887,
+    "local_name": "Hrodna",
+    "continent": "Europe",
+    "id": 162
+  },
+  {
+    "city": "Wuppertal",
+    "country": "Germany",
+    "lat": 51.25627,
+    "lng": 7.14816,
+    "local_name": "Wuppertal",
+    "continent": "Europe",
+    "id": 163
+  },
+  {
+    "city": "Ulan-Ude",
+    "country": "Russia",
+    "lat": 51.82648,
+    "lng": 107.59979,
+    "local_name": "Ulan-Ude",
+    "continent": "Europe",
+    "id": 164
+  },
+  {
+    "city": "Vitebsk",
+    "country": "Belarus",
+    "lat": 55.1904,
+    "lng": 30.2049,
+    "local_name": "Vitebsk",
+    "continent": "Europe",
+    "id": 165
+  },
+  {
+    "city": "Dniprovskyi",
+    "country": "Ukraine",
+    "lat": 50.45366,
+    "lng": 30.60146,
+    "local_name": "Dniprovskyi",
+    "continent": "Europe",
+    "id": 166
+  },
+  {
+    "city": "Vladimir",
+    "country": "Russia",
+    "lat": 56.13854,
+    "lng": 40.39976,
+    "local_name": "Vladimir",
+    "continent": "Europe",
+    "id": 167
+  },
+  {
+    "city": "Mahilyow",
+    "country": "Belarus",
+    "lat": 53.90876,
+    "lng": 30.34044,
+    "local_name": "Mahilyow",
+    "continent": "Europe",
+    "id": 168
+  },
+  {
+    "city": "Arkhangel’sk",
+    "country": "Russia",
+    "lat": 64.5461,
+    "lng": 40.55183,
+    "local_name": "Arkhangel’sk",
+    "continent": "Europe",
+    "id": 169
+  },
+  {
+    "city": "Chita",
+    "country": "Russia",
+    "lat": 52.04311,
+    "lng": 113.49171,
+    "local_name": "Chita",
+    "continent": "Europe",
+    "id": 170
+  },
+  {
+    "city": "Alicante",
+    "country": "Spain",
+    "lat": 38.34517,
+    "lng": -0.48149,
+    "local_name": "Alicante",
+    "continent": "Europe",
+    "id": 171
+  },
+  {
+    "city": "Belfast",
+    "country": "UK",
+    "lat": 54.59682,
+    "lng": -5.92541,
+    "local_name": "Belfast",
+    "continent": "Europe",
+    "id": 172
+  },
+  {
+    "city": "Bilbao",
+    "country": "Spain",
+    "lat": 43.26271,
+    "lng": -2.92528,
+    "local_name": "Bilbao",
+    "continent": "Europe",
+    "id": 173
+  },
+  {
+    "city": "Coventry",
+    "country": "UK",
+    "lat": 52.40656,
+    "lng": -1.51217,
+    "local_name": "Coventry",
+    "continent": "Europe",
+    "id": 174
+  },
+  {
+    "city": "Belgorod",
+    "country": "Russia",
+    "lat": 50.60343,
+    "lng": 36.58091,
+    "local_name": "Belgorod",
+    "continent": "Europe",
+    "id": 175
+  },
+  {
+    "city": "Brest",
+    "country": "Belarus",
+    "lat": 52.10894,
+    "lng": 23.71749,
+    "local_name": "Brest",
+    "continent": "Europe",
+    "id": 176
+  },
+  {
+    "city": "Darnytsya",
+    "country": "Ukraine",
+    "lat": 50.41596,
+    "lng": 30.69534,
+    "local_name": "Darnytsya",
+    "continent": "Europe",
+    "id": 177
+  },
+  {
+    "city": "Nice",
+    "country": "France",
+    "lat": 43.70313,
+    "lng": 7.26608,
+    "local_name": "Nice",
+    "continent": "Europe",
+    "id": 178
+  },
+  {
+    "city": "Kaluga",
+    "country": "Russia",
+    "lat": 54.53063,
+    "lng": 36.27,
+    "local_name": "Kaluga",
+    "continent": "Europe",
+    "id": 179
+  },
+  {
+    "city": "Svyatoshyn",
+    "country": "Ukraine",
+    "lat": 50.46341,
+    "lng": 30.34612,
+    "local_name": "Svyatoshyn",
+    "continent": "Europe",
+    "id": 180
+  },
+  {
+    "city": "Makiyivka",
+    "country": "Ukraine",
+    "lat": 48.04782,
+    "lng": 37.92576,
+    "local_name": "Makiyivka",
+    "continent": "Europe",
+    "id": 181
+  },
+  {
+    "city": "Krasnogvargeisky",
+    "country": "Russia",
+    "lat": 59.97305,
+    "lng": 30.47607,
+    "local_name": "Krasnogvargeisky",
+    "continent": "Europe",
+    "id": 182
+  },
+  {
+    "city": "Simferopol",
+    "country": "Ukraine",
+    "lat": 44.95719,
+    "lng": 34.11079,
+    "local_name": "Simferopol",
+    "continent": "Europe",
+    "id": 183
+  },
+  {
+    "city": "Lublin",
+    "country": "Poland",
+    "lat": 51.25058,
+    "lng": 22.57009,
+    "local_name": "Lublin",
+    "continent": "Europe",
+    "id": 184
+  },
+  {
+    "city": "Bielefeld",
+    "country": "Germany",
+    "lat": 52.03333,
+    "lng": 8.53333,
+    "local_name": "Bielefeld",
+    "continent": "Europe",
+    "id": 185
+  },
+  {
+    "city": "Bonn",
+    "country": "Germany",
+    "lat": 50.73438,
+    "lng": 7.09549,
+    "local_name": "Bonn",
+    "continent": "Europe",
+    "id": 186
+  },
+  {
+    "city": "Bydgoszcz",
+    "country": "Poland",
+    "lat": 53.1235,
+    "lng": 18.00762,
+    "local_name": "Bydgoszcz",
+    "continent": "Europe",
+    "id": 187
+  },
+  {
+    "city": "Smolensk",
+    "country": "Russia",
+    "lat": 54.77826,
+    "lng": 32.05088,
+    "local_name": "Smolensk",
+    "continent": "Europe",
+    "id": 188
+  },
+  {
+    "city": "Plovdiv",
+    "country": "Bulgaria",
+    "lat": 42.15387,
+    "lng": 24.75001,
+    "local_name": "Plovdiv",
+    "continent": "Europe",
+    "id": 189
+  },
+  {
+    "city": "Brent",
+    "country": "UK",
+    "lat": 51.55306,
+    "lng": -0.3023,
+    "local_name": "Brent",
+    "continent": "Europe",
+    "id": 190
+  },
+  {
+    "city": "Sochi",
+    "country": "Russia",
+    "lat": 43.59699,
+    "lng": 39.72477,
+    "local_name": "Sochi",
+    "continent": "Europe",
+    "id": 191
+  },
+  {
+    "city": "Córdoba",
+    "country": "Spain",
+    "lat": 37.89155,
+    "lng": -4.77275,
+    "local_name": "Córdoba",
+    "continent": "Europe",
+    "id": 192
+  },
+  {
+    "city": "Birkenhead",
+    "country": "UK",
+    "lat": 53.39337,
+    "lng": -3.01479,
+    "local_name": "Birkenhead",
+    "continent": "Europe",
+    "id": 193
+  },
+  {
+    "city": "Nantes",
+    "country": "France",
+    "lat": 47.21725,
+    "lng": -1.55336,
+    "local_name": "Nantes",
+    "continent": "Europe",
+    "id": 194
+  },
+  {
+    "city": "Espoo",
+    "country": "Finland",
+    "lat": 60.2052,
+    "lng": 24.6522,
+    "local_name": "Espoo",
+    "continent": "Europe",
+    "id": 195
+  },
+  {
+    "city": "Nottingham",
+    "country": "UK",
+    "lat": 52.9536,
+    "lng": -1.15047,
+    "local_name": "Nottingham",
+    "continent": "Europe",
+    "id": 196
+  },
+  {
+    "city": "Volzhsky",
+    "country": "Russia",
+    "lat": 48.78583,
+    "lng": 44.77973,
+    "local_name": "Volzhsky",
+    "continent": "Europe",
+    "id": 197
+  },
+  {
+    "city": "Islington",
+    "country": "UK",
+    "lat": 51.53622,
+    "lng": -0.10304,
+    "local_name": "Islington",
+    "continent": "Europe",
+    "id": 198
+  },
+  {
+    "city": "Saransk",
+    "country": "Russia",
+    "lat": 54.18485,
+    "lng": 45.17166,
+    "local_name": "Saransk",
+    "continent": "Europe",
+    "id": 199
+  },
+  {
+    "city": "Varna",
+    "country": "Bulgaria",
+    "lat": 43.21912,
+    "lng": 27.91024,
+    "local_name": "Varna",
+    "continent": "Europe",
+    "id": 200
+  },
+  {
+    "city": "Marne La Vallée",
+    "country": "France",
+    "lat": 48.83584,
+    "lng": 2.64241,
+    "local_name": "Marne La Vallée",
+    "continent": "Europe",
+    "id": 201
+  },
+  {
+    "city": "Reading",
+    "country": "UK",
+    "lat": 51.45625,
+    "lng": -0.97113,
+    "local_name": "Reading",
+    "continent": "Europe",
+    "id": 202
+  },
+  {
+    "city": "Constanţa",
+    "country": "Romania",
+    "lat": 44.18073,
+    "lng": 28.63432,
+    "local_name": "Constanţa",
+    "continent": "Europe",
+    "id": 203
+  },
+  {
+    "city": "Thessaloníki",
+    "country": "Greece",
+    "lat": 40.64072,
+    "lng": 22.93493,
+    "local_name": "Thessaloníki",
+    "continent": "Europe",
+    "id": 204
+  },
+  {
+    "city": "Obolon",
+    "country": "Ukraine",
+    "lat": 50.5132,
+    "lng": 30.5055,
+    "local_name": "Obolon",
+    "continent": "Europe",
+    "id": 205
+  },
+  {
+    "city": "Bari",
+    "country": "Italy",
+    "lat": 41.12066,
+    "lng": 16.86982,
+    "local_name": "Bari",
+    "continent": "Europe",
+    "id": 206
+  },
+  {
+    "city": "Cherepovets",
+    "country": "Russia",
+    "lat": 59.13333,
+    "lng": 37.9,
+    "local_name": "Cherepovets",
+    "continent": "Europe",
+    "id": 207
+  },
+  {
+    "city": "Hamburg-Nord",
+    "country": "Germany",
+    "lat": 53.58935,
+    "lng": 9.984,
+    "local_name": "Hamburg-Nord",
+    "continent": "Europe",
+    "id": 208
+  },
+  {
+    "city": "Kingston upon Hull",
+    "country": "UK",
+    "lat": 53.7446,
+    "lng": -0.33525,
+    "local_name": "Kingston upon Hull",
+    "continent": "Europe",
+    "id": 209
+  },
+  {
+    "city": "Preston",
+    "country": "UK",
+    "lat": 53.76282,
+    "lng": -2.70452,
+    "local_name": "Preston",
+    "continent": "Europe",
+    "id": 210
+  },
+  {
+    "city": "Vologda",
+    "country": "Russia",
+    "lat": 59.2239,
+    "lng": 39.88398,
+    "local_name": "Vologda",
+    "continent": "Europe",
+    "id": 211
+  },
+  {
+    "city": "Catania",
+    "country": "Italy",
+    "lat": 37.49223,
+    "lng": 15.07041,
+    "local_name": "Catania",
+    "continent": "Europe",
+    "id": 212
+  },
+  {
+    "city": "Kurgan",
+    "country": "Russia",
+    "lat": 55.44905,
+    "lng": 65.34344,
+    "local_name": "Kurgan",
+    "continent": "Europe",
+    "id": 213
+  },
+  {
+    "city": "Mannheim",
+    "country": "Germany",
+    "lat": 49.4891,
+    "lng": 8.46694,
+    "local_name": "Mannheim",
+    "continent": "Europe",
+    "id": 214
+  },
+  {
+    "city": "Vladikavkaz",
+    "country": "Russia",
+    "lat": 43.04101,
+    "lng": 44.66986,
+    "local_name": "Vladikavkaz",
+    "continent": "Europe",
+    "id": 215
+  },
+  {
+    "city": "Orël",
+    "country": "Russia",
+    "lat": 52.96879,
+    "lng": 36.0791,
+    "local_name": "Orël",
+    "continent": "Europe",
+    "id": 216
+  },
+  {
+    "city": "Graz",
+    "country": "Austria",
+    "lat": 47.06733,
+    "lng": 15.44197,
+    "local_name": "Graz",
+    "continent": "Europe",
+    "id": 217
+  },
+  {
+    "city": "Hamburg-Mitte",
+    "country": "Germany",
+    "lat": 53.55,
+    "lng": 10.01667,
+    "local_name": "Hamburg-Mitte",
+    "continent": "Europe",
+    "id": 218
+  },
+  {
+    "city": "Valladolid",
+    "country": "Spain",
+    "lat": 41.65541,
+    "lng": -4.72353,
+    "local_name": "Valladolid",
+    "continent": "Europe",
+    "id": 219
+  },
+  {
+    "city": "Surgut",
+    "country": "Russia",
+    "lat": 61.25757,
+    "lng": 73.41775,
+    "local_name": "Surgut",
+    "continent": "Europe",
+    "id": 220
+  },
+  {
+    "city": "Swansea",
+    "country": "UK",
+    "lat": 51.62079,
+    "lng": -3.94323,
+    "local_name": "Swansea",
+    "continent": "Europe",
+    "id": 221
+  },
+  {
+    "city": "Newcastle upon Tyne",
+    "country": "UK",
+    "lat": 54.97328,
+    "lng": -1.61396,
+    "local_name": "Newcastle upon Tyne",
+    "continent": "Europe",
+    "id": 222
+  },
+  {
+    "city": "Grozny",
+    "country": "Russia",
+    "lat": 43.31195,
+    "lng": 45.68895,
+    "local_name": "Grozny",
+    "continent": "Europe",
+    "id": 223
+  },
+  {
+    "city": "Białystok",
+    "country": "Poland",
+    "lat": 53.13333,
+    "lng": 23.16433,
+    "local_name": "Białystok",
+    "continent": "Europe",
+    "id": 224
+  },
+  {
+    "city": "Murmansk",
+    "country": "Russia",
+    "lat": 68.96778,
+    "lng": 33.09922,
+    "local_name": "Murmansk",
+    "continent": "Europe",
+    "id": 225
+  },
+  {
+    "city": "Southend-on-Sea",
+    "country": "UK",
+    "lat": 51.53782,
+    "lng": 0.71433,
+    "local_name": "Southend-on-Sea",
+    "continent": "Europe",
+    "id": 226
+  },
+  {
+    "city": "Bergen",
+    "country": "Norway",
+    "lat": 60.39299,
+    "lng": 5.32415,
+    "local_name": "Bergen",
+    "continent": "Europe",
+    "id": 227
+  },
+  {
+    "city": "Tambov",
+    "country": "Russia",
+    "lat": 52.73632,
+    "lng": 41.44102,
+    "local_name": "Tambov",
+    "continent": "Europe",
+    "id": 228
+  },
+  {
+    "city": "Vigo",
+    "country": "Spain",
+    "lat": 42.23282,
+    "lng": -8.72264,
+    "local_name": "Vigo",
+    "continent": "Europe",
+    "id": 229
+  },
+  {
+    "city": "Sector 2",
+    "country": "Romania",
+    "lat": 44.4528,
+    "lng": 26.13321,
+    "local_name": "Sector 2",
+    "continent": "Europe",
+    "id": 230
+  },
+  {
+    "city": "Kaunas",
+    "country": "Lithuania",
+    "lat": 54.90156,
+    "lng": 23.90909,
+    "local_name": "Kaunas",
+    "continent": "Europe",
+    "id": 231
+  },
+  {
+    "city": "Sector 4",
+    "country": "Romania",
+    "lat": 44.37571,
+    "lng": 26.12085,
+    "local_name": "Sector 4",
+    "continent": "Europe",
+    "id": 232
+  },
+  {
+    "city": "Marienthal",
+    "country": "Germany",
+    "lat": 53.56667,
+    "lng": 10.08333,
+    "local_name": "Marienthal",
+    "continent": "Europe",
+    "id": 233
+  },
+  {
+    "city": "Katowice",
+    "country": "Poland",
+    "lat": 50.2597,
+    "lng": 19.02173,
+    "local_name": "Katowice",
+    "continent": "Europe",
+    "id": 234
+  },
+  {
+    "city": "Cluj-Napoca",
+    "country": "Romania",
+    "lat": 46.76667,
+    "lng": 23.6,
+    "local_name": "Cluj-Napoca",
+    "continent": "Europe",
+    "id": 235
+  },
+  {
+    "city": "Århus",
+    "country": "Denmark",
+    "lat": 56.15674,
+    "lng": 10.21076,
+    "local_name": "Århus",
+    "continent": "Europe",
+    "id": 236
+  },
+  {
+    "city": "Chernihiv",
+    "country": "Ukraine",
+    "lat": 51.50541,
+    "lng": 31.28656,
+    "local_name": "Chernihiv",
+    "continent": "Europe",
+    "id": 237
+  },
+  {
+    "city": "Karlsruhe",
+    "country": "Germany",
+    "lat": 49.00937,
+    "lng": 8.40444,
+    "local_name": "Karlsruhe",
+    "continent": "Europe",
+    "id": 238
+  },
+  {
+    "city": "Kherson",
+    "country": "Ukraine",
+    "lat": 46.63695,
+    "lng": 32.61458,
+    "local_name": "Kherson",
+    "continent": "Europe",
+    "id": 239
+  },
+  {
+    "city": "Poltava",
+    "country": "Ukraine",
+    "lat": 49.58925,
+    "lng": 34.55367,
+    "local_name": "Poltava",
+    "continent": "Europe",
+    "id": 240
+  }
+]

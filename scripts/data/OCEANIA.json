@@ -1,0 +1,2162 @@
+[
+  {
+    "city": "Sydney",
+    "country": "Australia",
+    "lat": -33.86785,
+    "lng": 151.20732,
+    "local_name": "Sydney",
+    "continent": "Oceania",
+    "id": 1
+  },
+  {
+    "city": "Melbourne",
+    "country": "Australia",
+    "lat": -37.814,
+    "lng": 144.96332,
+    "local_name": "Melbourne",
+    "continent": "Oceania",
+    "id": 2
+  },
+  {
+    "city": "Brisbane",
+    "country": "Australia",
+    "lat": -27.46794,
+    "lng": 153.02809,
+    "local_name": "Brisbane",
+    "continent": "Oceania",
+    "id": 3
+  },
+  {
+    "city": "Perth",
+    "country": "Australia",
+    "lat": -31.95224,
+    "lng": 115.8614,
+    "local_name": "Perth",
+    "continent": "Oceania",
+    "id": 4
+  },
+  {
+    "city": "Auckland",
+    "country": "New Zealand",
+    "lat": -36.84853,
+    "lng": 174.76349,
+    "local_name": "Auckland",
+    "continent": "Oceania",
+    "id": 5
+  },
+  {
+    "city": "Adelaide",
+    "country": "Australia",
+    "lat": -34.92866,
+    "lng": 138.59863,
+    "local_name": "Adelaide",
+    "continent": "Oceania",
+    "id": 6
+  },
+  {
+    "city": "Gold Coast",
+    "country": "Australia",
+    "lat": -28.00029,
+    "lng": 153.43088,
+    "local_name": "Gold Coast",
+    "continent": "Oceania",
+    "id": 7
+  },
+  {
+    "city": "Newcastle",
+    "country": "Australia",
+    "lat": -32.92953,
+    "lng": 151.7801,
+    "local_name": "Newcastle",
+    "continent": "Oceania",
+    "id": 8
+  },
+  {
+    "city": "Christchurch",
+    "country": "New Zealand",
+    "lat": -43.53333,
+    "lng": 172.63333,
+    "local_name": "Christchurch",
+    "continent": "Oceania",
+    "id": 9
+  },
+  {
+    "city": "Wellington",
+    "country": "New Zealand",
+    "lat": -41.28664,
+    "lng": 174.77557,
+    "local_name": "Wellington",
+    "continent": "Oceania",
+    "id": 10
+  },
+  {
+    "city": "Canberra",
+    "country": "Australia",
+    "lat": -35.28346,
+    "lng": 149.12807,
+    "local_name": "Canberra",
+    "continent": "Oceania",
+    "id": 11
+  },
+  {
+    "city": "Manukau City",
+    "country": "New Zealand",
+    "lat": -36.99282,
+    "lng": 174.87986,
+    "local_name": "Manukau City",
+    "continent": "Oceania",
+    "id": 12
+  },
+  {
+    "city": "Central Coast",
+    "country": "Australia",
+    "lat": -33.42979,
+    "lng": 151.37144,
+    "local_name": "Central Coast",
+    "continent": "Oceania",
+    "id": 13
+  },
+  {
+    "city": "Sunshine Coast",
+    "country": "Australia",
+    "lat": -26.65682,
+    "lng": 153.07955,
+    "local_name": "Sunshine Coast",
+    "continent": "Oceania",
+    "id": 14
+  },
+  {
+    "city": "Logan City",
+    "country": "Australia",
+    "lat": -27.63917,
+    "lng": 153.10944,
+    "local_name": "Logan City",
+    "continent": "Oceania",
+    "id": 15
+  },
+  {
+    "city": "Port Moresby",
+    "country": "Papua New Guinea",
+    "lat": -9.47723,
+    "lng": 147.15089,
+    "local_name": "Port Moresby",
+    "continent": "Oceania",
+    "id": 16
+  },
+  {
+    "city": "Geelong",
+    "country": "Australia",
+    "lat": -38.14711,
+    "lng": 144.36069,
+    "local_name": "Geelong",
+    "continent": "Oceania",
+    "id": 17
+  },
+  {
+    "city": "Wollongong",
+    "country": "Australia",
+    "lat": -34.424,
+    "lng": 150.89345,
+    "local_name": "Wollongong",
+    "continent": "Oceania",
+    "id": 18
+  },
+  {
+    "city": "North Shore",
+    "country": "New Zealand",
+    "lat": -36.8,
+    "lng": 174.75,
+    "local_name": "North Shore",
+    "continent": "Oceania",
+    "id": 19
+  },
+  {
+    "city": "Hobart",
+    "country": "Australia",
+    "lat": -42.87936,
+    "lng": 147.32941,
+    "local_name": "Hobart",
+    "continent": "Oceania",
+    "id": 20
+  },
+  {
+    "city": "Townsville",
+    "country": "Australia",
+    "lat": -19.26639,
+    "lng": 146.80569,
+    "local_name": "Townsville",
+    "continent": "Oceania",
+    "id": 21
+  },
+  {
+    "city": "Hamilton",
+    "country": "New Zealand",
+    "lat": -37.78333,
+    "lng": 175.28333,
+    "local_name": "Hamilton",
+    "continent": "Oceania",
+    "id": 22
+  },
+  {
+    "city": "Tauranga",
+    "country": "New Zealand",
+    "lat": -37.68611,
+    "lng": 176.16667,
+    "local_name": "Tauranga",
+    "continent": "Oceania",
+    "id": 23
+  },
+  {
+    "city": "Cairns",
+    "country": "Australia",
+    "lat": -16.92366,
+    "lng": 145.76613,
+    "local_name": "Cairns",
+    "continent": "Oceania",
+    "id": 24
+  },
+  {
+    "city": "Toowoomba",
+    "country": "Australia",
+    "lat": -27.56056,
+    "lng": 151.95386,
+    "local_name": "Toowoomba",
+    "continent": "Oceania",
+    "id": 25
+  },
+  {
+    "city": "Darwin",
+    "country": "Australia",
+    "lat": -12.46113,
+    "lng": 130.84185,
+    "local_name": "Darwin",
+    "continent": "Oceania",
+    "id": 26
+  },
+  {
+    "city": "Dunedin",
+    "country": "New Zealand",
+    "lat": -45.87416,
+    "lng": 170.50361,
+    "local_name": "Dunedin",
+    "continent": "Oceania",
+    "id": 27
+  },
+  {
+    "city": "Mackay",
+    "country": "Australia",
+    "lat": -21.15345,
+    "lng": 149.16554,
+    "local_name": "Mackay",
+    "continent": "Oceania",
+    "id": 28
+  },
+  {
+    "city": "Lower Hutt",
+    "country": "New Zealand",
+    "lat": -41.21667,
+    "lng": 174.91667,
+    "local_name": "Lower Hutt",
+    "continent": "Oceania",
+    "id": 29
+  },
+  {
+    "city": "City of Port Phillip",
+    "country": "Australia",
+    "lat": -37.83382,
+    "lng": 144.93834,
+    "local_name": "City of Port Phillip",
+    "continent": "Oceania",
+    "id": 30
+  },
+  {
+    "city": "Ballarat",
+    "country": "Australia",
+    "lat": -37.56622,
+    "lng": 143.84957,
+    "local_name": "Ballarat",
+    "continent": "Oceania",
+    "id": 31
+  },
+  {
+    "city": "Bendigo",
+    "country": "Australia",
+    "lat": -36.75818,
+    "lng": 144.28024,
+    "local_name": "Bendigo",
+    "continent": "Oceania",
+    "id": 32
+  },
+  {
+    "city": "Caloundra",
+    "country": "Australia",
+    "lat": -26.80346,
+    "lng": 153.12195,
+    "local_name": "Caloundra",
+    "continent": "Oceania",
+    "id": 33
+  },
+  {
+    "city": "Nouméa",
+    "country": "New Caledonia",
+    "lat": -22.27407,
+    "lng": 166.44884,
+    "local_name": "Nouméa",
+    "continent": "Oceania",
+    "id": 34
+  },
+  {
+    "city": "Nasinu",
+    "country": "Fiji",
+    "lat": -18.07051,
+    "lng": 178.51313,
+    "local_name": "Nasinu",
+    "continent": "Oceania",
+    "id": 35
+  },
+  {
+    "city": "Palmerston North",
+    "country": "New Zealand",
+    "lat": -40.35636,
+    "lng": 175.61113,
+    "local_name": "Palmerston North",
+    "continent": "Oceania",
+    "id": 36
+  },
+  {
+    "city": "Launceston",
+    "country": "Australia",
+    "lat": -41.43876,
+    "lng": 147.13467,
+    "local_name": "Launceston",
+    "continent": "Oceania",
+    "id": 37
+  },
+  {
+    "city": "Mandurah",
+    "country": "Australia",
+    "lat": -32.5269,
+    "lng": 115.7217,
+    "local_name": "Mandurah",
+    "continent": "Oceania",
+    "id": 38
+  },
+  {
+    "city": "New Plymouth",
+    "country": "New Zealand",
+    "lat": -39.06667,
+    "lng": 174.08333,
+    "local_name": "New Plymouth",
+    "continent": "Oceania",
+    "id": 39
+  },
+  {
+    "city": "Maitland",
+    "country": "Australia",
+    "lat": -32.73308,
+    "lng": 151.5574,
+    "local_name": "Maitland",
+    "continent": "Oceania",
+    "id": 40
+  },
+  {
+    "city": "Tuggeranong Administrative District",
+    "country": "Australia",
+    "lat": -35.41647,
+    "lng": 149.06954,
+    "local_name": "Tuggeranong Administrative District",
+    "continent": "Oceania",
+    "id": 41
+  },
+  {
+    "city": "Hastings",
+    "country": "New Zealand",
+    "lat": -39.6381,
+    "lng": 176.84918,
+    "local_name": "Hastings",
+    "continent": "Oceania",
+    "id": 42
+  },
+  {
+    "city": "Rockhampton",
+    "country": "Australia",
+    "lat": -23.38032,
+    "lng": 150.50595,
+    "local_name": "Rockhampton",
+    "continent": "Oceania",
+    "id": 43
+  },
+  {
+    "city": "Coffs Harbour",
+    "country": "Australia",
+    "lat": -30.29626,
+    "lng": 153.11351,
+    "local_name": "Coffs Harbour",
+    "continent": "Oceania",
+    "id": 44
+  },
+  {
+    "city": "Suva",
+    "country": "Fiji",
+    "lat": -18.13683,
+    "lng": 178.42531,
+    "local_name": "Suva",
+    "continent": "Oceania",
+    "id": 45
+  },
+  {
+    "city": "Bunbury",
+    "country": "Australia",
+    "lat": -33.32711,
+    "lng": 115.64137,
+    "local_name": "Bunbury",
+    "continent": "Oceania",
+    "id": 46
+  },
+  {
+    "city": "Lae",
+    "country": "Papua New Guinea",
+    "lat": -6.72333,
+    "lng": 146.99611,
+    "local_name": "Lae",
+    "continent": "Oceania",
+    "id": 47
+  },
+  {
+    "city": "Bundaberg",
+    "country": "Australia",
+    "lat": -24.86621,
+    "lng": 152.3479,
+    "local_name": "Bundaberg",
+    "continent": "Oceania",
+    "id": 48
+  },
+  {
+    "city": "Adelaide Hills",
+    "country": "Australia",
+    "lat": -34.91119,
+    "lng": 138.70735,
+    "local_name": "Adelaide Hills",
+    "continent": "Oceania",
+    "id": 49
+  },
+  {
+    "city": "Napier",
+    "country": "New Zealand",
+    "lat": -39.4926,
+    "lng": 176.91233,
+    "local_name": "Napier",
+    "continent": "Oceania",
+    "id": 50
+  },
+  {
+    "city": "Point Cook",
+    "country": "Australia",
+    "lat": -37.91482,
+    "lng": 144.75088,
+    "local_name": "Point Cook",
+    "continent": "Oceania",
+    "id": 51
+  },
+  {
+    "city": "Rotorua",
+    "country": "New Zealand",
+    "lat": -38.13874,
+    "lng": 176.24516,
+    "local_name": "Rotorua",
+    "continent": "Oceania",
+    "id": 52
+  },
+  {
+    "city": "Craigieburn",
+    "country": "Australia",
+    "lat": -37.6,
+    "lng": 144.95,
+    "local_name": "Craigieburn",
+    "continent": "Oceania",
+    "id": 53
+  },
+  {
+    "city": "Porirua",
+    "country": "New Zealand",
+    "lat": -41.13333,
+    "lng": 174.85,
+    "local_name": "Porirua",
+    "continent": "Oceania",
+    "id": 54
+  },
+  {
+    "city": "Melbourne City Centre",
+    "country": "Australia",
+    "lat": -37.81501,
+    "lng": 144.96657,
+    "local_name": "Melbourne City Centre",
+    "continent": "Oceania",
+    "id": 55
+  },
+  {
+    "city": "Invercargill",
+    "country": "New Zealand",
+    "lat": -46.4,
+    "lng": 168.35,
+    "local_name": "Invercargill",
+    "continent": "Oceania",
+    "id": 56
+  },
+  {
+    "city": "Tarneit",
+    "country": "Australia",
+    "lat": -37.83634,
+    "lng": 144.65952,
+    "local_name": "Tarneit",
+    "continent": "Oceania",
+    "id": 57
+  },
+  {
+    "city": "Honiara",
+    "country": "Solomon Islands",
+    "lat": -9.43333,
+    "lng": 159.95,
+    "local_name": "Honiara",
+    "continent": "Oceania",
+    "id": 58
+  },
+  {
+    "city": "Papatoetoe",
+    "country": "New Zealand",
+    "lat": -36.9682,
+    "lng": 174.84019,
+    "local_name": "Papatoetoe",
+    "continent": "Oceania",
+    "id": 59
+  },
+  {
+    "city": "Nelson",
+    "country": "New Zealand",
+    "lat": -41.27078,
+    "lng": 173.28404,
+    "local_name": "Nelson",
+    "continent": "Oceania",
+    "id": 60
+  },
+  {
+    "city": "Pakenham",
+    "country": "Australia",
+    "lat": -38.07018,
+    "lng": 145.47411,
+    "local_name": "Pakenham",
+    "continent": "Oceania",
+    "id": 61
+  },
+  {
+    "city": "Lautoka",
+    "country": "Fiji",
+    "lat": -17.61686,
+    "lng": 177.45049,
+    "local_name": "Lautoka",
+    "continent": "Oceania",
+    "id": 62
+  },
+  {
+    "city": "Hervey Bay",
+    "country": "Australia",
+    "lat": -25.28762,
+    "lng": 152.76936,
+    "local_name": "Hervey Bay",
+    "continent": "Oceania",
+    "id": 63
+  },
+  {
+    "city": "Port Macquarie",
+    "country": "Australia",
+    "lat": -31.43084,
+    "lng": 152.90894,
+    "local_name": "Port Macquarie",
+    "continent": "Oceania",
+    "id": 64
+  },
+  {
+    "city": "Reservoir",
+    "country": "Australia",
+    "lat": -37.71667,
+    "lng": 145.0,
+    "local_name": "Reservoir",
+    "continent": "Oceania",
+    "id": 65
+  },
+  {
+    "city": "Whangarei",
+    "country": "New Zealand",
+    "lat": -35.73167,
+    "lng": 174.32391,
+    "local_name": "Whangarei",
+    "continent": "Oceania",
+    "id": 66
+  },
+  {
+    "city": "Berwick",
+    "country": "Australia",
+    "lat": -38.03333,
+    "lng": 145.35,
+    "local_name": "Berwick",
+    "continent": "Oceania",
+    "id": 67
+  },
+  {
+    "city": "Werribee",
+    "country": "Australia",
+    "lat": -37.9,
+    "lng": 144.66667,
+    "local_name": "Werribee",
+    "continent": "Oceania",
+    "id": 68
+  },
+  {
+    "city": "Whanganui",
+    "country": "New Zealand",
+    "lat": -39.93333,
+    "lng": 175.05,
+    "local_name": "Whanganui",
+    "continent": "Oceania",
+    "id": 69
+  },
+  {
+    "city": "Saipan",
+    "country": "MP",
+    "lat": 15.21233,
+    "lng": 145.7545,
+    "local_name": "Saipan",
+    "continent": "Oceania",
+    "id": 70
+  },
+  {
+    "city": "Upper Hutt",
+    "country": "New Zealand",
+    "lat": -41.13827,
+    "lng": 175.0502,
+    "local_name": "Upper Hutt",
+    "continent": "Oceania",
+    "id": 71
+  },
+  {
+    "city": "Blacktown",
+    "country": "Australia",
+    "lat": -33.76667,
+    "lng": 150.91667,
+    "local_name": "Blacktown",
+    "continent": "Oceania",
+    "id": 72
+  },
+  {
+    "city": "Gladstone",
+    "country": "Australia",
+    "lat": -23.84852,
+    "lng": 151.25775,
+    "local_name": "Gladstone",
+    "continent": "Oceania",
+    "id": 73
+  },
+  {
+    "city": "Dededo Village",
+    "country": "GU",
+    "lat": 13.51777,
+    "lng": 144.8391,
+    "local_name": "Dededo Village",
+    "continent": "Oceania",
+    "id": 74
+  },
+  {
+    "city": "Tamworth",
+    "country": "Australia",
+    "lat": -31.09048,
+    "lng": 150.92905,
+    "local_name": "Tamworth",
+    "continent": "Oceania",
+    "id": 75
+  },
+  {
+    "city": "Dubbo",
+    "country": "Australia",
+    "lat": -32.24295,
+    "lng": 148.60484,
+    "local_name": "Dubbo",
+    "continent": "Oceania",
+    "id": 76
+  },
+  {
+    "city": "Glen Waverley",
+    "country": "Australia",
+    "lat": -37.87811,
+    "lng": 145.16476,
+    "local_name": "Glen Waverley",
+    "continent": "Oceania",
+    "id": 77
+  },
+  {
+    "city": "Nadi",
+    "country": "Fiji",
+    "lat": -17.80309,
+    "lng": 177.41617,
+    "local_name": "Nadi",
+    "continent": "Oceania",
+    "id": 78
+  },
+  {
+    "city": "Orange",
+    "country": "Australia",
+    "lat": -33.28397,
+    "lng": 149.10018,
+    "local_name": "Orange",
+    "continent": "Oceania",
+    "id": 79
+  },
+  {
+    "city": "Manurewa",
+    "country": "New Zealand",
+    "lat": -37.0182,
+    "lng": 174.88019,
+    "local_name": "Manurewa",
+    "continent": "Oceania",
+    "id": 80
+  },
+  {
+    "city": "Apia",
+    "country": "Samoa",
+    "lat": -13.83333,
+    "lng": -171.76666,
+    "local_name": "Apia",
+    "continent": "Oceania",
+    "id": 81
+  },
+  {
+    "city": "Tarawa",
+    "country": "Kiribati",
+    "lat": 1.3278,
+    "lng": 172.97696,
+    "local_name": "Tarawa",
+    "continent": "Oceania",
+    "id": 82
+  },
+  {
+    "city": "Arawa",
+    "country": "Papua New Guinea",
+    "lat": -6.22977,
+    "lng": 155.56598,
+    "local_name": "Arawa",
+    "continent": "Oceania",
+    "id": 83
+  },
+  {
+    "city": "Castle Hill",
+    "country": "Australia",
+    "lat": -33.73333,
+    "lng": 151.0,
+    "local_name": "Castle Hill",
+    "continent": "Oceania",
+    "id": 84
+  },
+  {
+    "city": "Wodonga",
+    "country": "Australia",
+    "lat": -36.12179,
+    "lng": 146.88809,
+    "local_name": "Wodonga",
+    "continent": "Oceania",
+    "id": 85
+  },
+  {
+    "city": "Sunbury",
+    "country": "Australia",
+    "lat": -37.57742,
+    "lng": 144.72607,
+    "local_name": "Sunbury",
+    "continent": "Oceania",
+    "id": 86
+  },
+  {
+    "city": "Geraldton",
+    "country": "Australia",
+    "lat": -28.77897,
+    "lng": 114.61459,
+    "local_name": "Geraldton",
+    "continent": "Oceania",
+    "id": 87
+  },
+  {
+    "city": "Gisborne",
+    "country": "New Zealand",
+    "lat": -38.65333,
+    "lng": 178.00417,
+    "local_name": "Gisborne",
+    "continent": "Oceania",
+    "id": 88
+  },
+  {
+    "city": "Baldivis",
+    "country": "Australia",
+    "lat": -32.32889,
+    "lng": 115.83047,
+    "local_name": "Baldivis",
+    "continent": "Oceania",
+    "id": 89
+  },
+  {
+    "city": "St Albans",
+    "country": "Australia",
+    "lat": -37.74496,
+    "lng": 144.80049,
+    "local_name": "St Albans",
+    "continent": "Oceania",
+    "id": 90
+  },
+  {
+    "city": "Frankston",
+    "country": "Australia",
+    "lat": -38.14458,
+    "lng": 145.12291,
+    "local_name": "Frankston",
+    "continent": "Oceania",
+    "id": 91
+  },
+  {
+    "city": "Auburn",
+    "country": "Australia",
+    "lat": -33.85,
+    "lng": 151.03333,
+    "local_name": "Auburn",
+    "continent": "Oceania",
+    "id": 92
+  },
+  {
+    "city": "Hoppers Crossing",
+    "country": "Australia",
+    "lat": -37.88264,
+    "lng": 144.7003,
+    "local_name": "Hoppers Crossing",
+    "continent": "Oceania",
+    "id": 93
+  },
+  {
+    "city": "Baulkham Hills",
+    "country": "Australia",
+    "lat": -33.75881,
+    "lng": 150.99292,
+    "local_name": "Baulkham Hills",
+    "continent": "Oceania",
+    "id": 94
+  },
+  {
+    "city": "Truganina",
+    "country": "Australia",
+    "lat": -37.81667,
+    "lng": 144.75,
+    "local_name": "Truganina",
+    "continent": "Oceania",
+    "id": 95
+  },
+  {
+    "city": "Bathurst",
+    "country": "Australia",
+    "lat": -33.41665,
+    "lng": 149.5806,
+    "local_name": "Bathurst",
+    "continent": "Oceania",
+    "id": 96
+  },
+  {
+    "city": "Port-Vila",
+    "country": "Vanuatu",
+    "lat": -17.73648,
+    "lng": 168.31366,
+    "local_name": "Port-Vila",
+    "continent": "Oceania",
+    "id": 97
+  },
+  {
+    "city": "Papakura",
+    "country": "New Zealand",
+    "lat": -37.0646,
+    "lng": 174.94212,
+    "local_name": "Papakura",
+    "continent": "Oceania",
+    "id": 98
+  },
+  {
+    "city": "Mount Waverley",
+    "country": "Australia",
+    "lat": -37.87709,
+    "lng": 145.12939,
+    "local_name": "Mount Waverley",
+    "continent": "Oceania",
+    "id": 99
+  },
+  {
+    "city": "Saint Albans",
+    "country": "Australia",
+    "lat": -37.73333,
+    "lng": 144.8,
+    "local_name": "Saint Albans",
+    "continent": "Oceania",
+    "id": 100
+  },
+  {
+    "city": "Albany",
+    "country": "Australia",
+    "lat": -35.02692,
+    "lng": 117.88369,
+    "local_name": "Albany",
+    "continent": "Oceania",
+    "id": 101
+  },
+  {
+    "city": "Bankstown",
+    "country": "Australia",
+    "lat": -33.91667,
+    "lng": 151.03333,
+    "local_name": "Bankstown",
+    "continent": "Oceania",
+    "id": 102
+  },
+  {
+    "city": "Mildura",
+    "country": "Australia",
+    "lat": -34.18551,
+    "lng": 142.16251,
+    "local_name": "Mildura",
+    "continent": "Oceania",
+    "id": 103
+  },
+  {
+    "city": "Canning Vale",
+    "country": "Australia",
+    "lat": -32.05799,
+    "lng": 115.91814,
+    "local_name": "Canning Vale",
+    "continent": "Oceania",
+    "id": 104
+  },
+  {
+    "city": "Frankston East",
+    "country": "Australia",
+    "lat": -38.13333,
+    "lng": 145.13333,
+    "local_name": "Frankston East",
+    "continent": "Oceania",
+    "id": 105
+  },
+  {
+    "city": "Preston",
+    "country": "Australia",
+    "lat": -37.75,
+    "lng": 145.01667,
+    "local_name": "Preston",
+    "continent": "Oceania",
+    "id": 106
+  },
+  {
+    "city": "Palmerston",
+    "country": "Australia",
+    "lat": -12.48602,
+    "lng": 130.9833,
+    "local_name": "Palmerston",
+    "continent": "Oceania",
+    "id": 107
+  },
+  {
+    "city": "Mount Hagen",
+    "country": "Papua New Guinea",
+    "lat": -5.85746,
+    "lng": 144.23058,
+    "local_name": "Mount Hagen",
+    "continent": "Oceania",
+    "id": 108
+  },
+  {
+    "city": "Rowville",
+    "country": "Australia",
+    "lat": -37.93333,
+    "lng": 145.23333,
+    "local_name": "Rowville",
+    "continent": "Oceania",
+    "id": 109
+  },
+  {
+    "city": "Epping",
+    "country": "Australia",
+    "lat": -37.65,
+    "lng": 145.03333,
+    "local_name": "Epping",
+    "continent": "Oceania",
+    "id": 110
+  },
+  {
+    "city": "Rolleston",
+    "country": "New Zealand",
+    "lat": -43.58333,
+    "lng": 172.38333,
+    "local_name": "Rolleston",
+    "continent": "Oceania",
+    "id": 111
+  },
+  {
+    "city": "Southport",
+    "country": "Australia",
+    "lat": -27.96724,
+    "lng": 153.39796,
+    "local_name": "Southport",
+    "continent": "Oceania",
+    "id": 112
+  },
+  {
+    "city": "Warrnambool",
+    "country": "Australia",
+    "lat": -38.38176,
+    "lng": 142.48799,
+    "local_name": "Warrnambool",
+    "continent": "Oceania",
+    "id": 113
+  },
+  {
+    "city": "Panatina",
+    "country": "Solomon Islands",
+    "lat": -9.43215,
+    "lng": 160.00607,
+    "local_name": "Panatina",
+    "continent": "Oceania",
+    "id": 114
+  },
+  {
+    "city": "Shepparton",
+    "country": "Australia",
+    "lat": -36.38047,
+    "lng": 145.39867,
+    "local_name": "Shepparton",
+    "continent": "Oceania",
+    "id": 115
+  },
+  {
+    "city": "Surfers Paradise",
+    "country": "Australia",
+    "lat": -28.00274,
+    "lng": 153.42999,
+    "local_name": "Surfers Paradise",
+    "continent": "Oceania",
+    "id": 116
+  },
+  {
+    "city": "Doncaster East",
+    "country": "Australia",
+    "lat": -37.78761,
+    "lng": 145.14888,
+    "local_name": "Doncaster East",
+    "continent": "Oceania",
+    "id": 117
+  },
+  {
+    "city": "Noble Park",
+    "country": "Australia",
+    "lat": -37.96667,
+    "lng": 145.16667,
+    "local_name": "Noble Park",
+    "continent": "Oceania",
+    "id": 118
+  },
+  {
+    "city": "Narre Warren South",
+    "country": "Australia",
+    "lat": -38.04369,
+    "lng": 145.2923,
+    "local_name": "Narre Warren South",
+    "continent": "Oceania",
+    "id": 119
+  },
+  {
+    "city": "Kwinana",
+    "country": "Australia",
+    "lat": -32.23013,
+    "lng": 115.78128,
+    "local_name": "Kwinana",
+    "continent": "Oceania",
+    "id": 120
+  },
+  {
+    "city": "Blenheim",
+    "country": "New Zealand",
+    "lat": -41.51603,
+    "lng": 173.9528,
+    "local_name": "Blenheim",
+    "continent": "Oceania",
+    "id": 121
+  },
+  {
+    "city": "Maroubra",
+    "country": "Australia",
+    "lat": -33.95,
+    "lng": 151.23333,
+    "local_name": "Maroubra",
+    "continent": "Oceania",
+    "id": 122
+  },
+  {
+    "city": "Bentleigh East",
+    "country": "Australia",
+    "lat": -37.91928,
+    "lng": 145.05301,
+    "local_name": "Bentleigh East",
+    "continent": "Oceania",
+    "id": 123
+  },
+  {
+    "city": "Dandenong",
+    "country": "Australia",
+    "lat": -37.98333,
+    "lng": 145.2,
+    "local_name": "Dandenong",
+    "continent": "Oceania",
+    "id": 124
+  },
+  {
+    "city": "Keysborough",
+    "country": "Australia",
+    "lat": -37.99116,
+    "lng": 145.17385,
+    "local_name": "Keysborough",
+    "continent": "Oceania",
+    "id": 125
+  },
+  {
+    "city": "Paraparaumu",
+    "country": "New Zealand",
+    "lat": -40.91667,
+    "lng": 175.01667,
+    "local_name": "Paraparaumu",
+    "continent": "Oceania",
+    "id": 126
+  },
+  {
+    "city": "Faaa",
+    "country": "PF",
+    "lat": -17.55933,
+    "lng": -149.60352,
+    "local_name": "Faaa",
+    "continent": "Oceania",
+    "id": 127
+  },
+  {
+    "city": "Wangaratta",
+    "country": "Australia",
+    "lat": -36.35846,
+    "lng": 146.32056,
+    "local_name": "Wangaratta",
+    "continent": "Oceania",
+    "id": 128
+  },
+  {
+    "city": "Hurstville",
+    "country": "Australia",
+    "lat": -33.9677,
+    "lng": 151.10149,
+    "local_name": "Hurstville",
+    "continent": "Oceania",
+    "id": 129
+  },
+  {
+    "city": "Merrylands",
+    "country": "Australia",
+    "lat": -33.83333,
+    "lng": 150.98333,
+    "local_name": "Merrylands",
+    "continent": "Oceania",
+    "id": 130
+  },
+  {
+    "city": "Timaru",
+    "country": "New Zealand",
+    "lat": -44.39672,
+    "lng": 171.25364,
+    "local_name": "Timaru",
+    "continent": "Oceania",
+    "id": 131
+  },
+  {
+    "city": "Kalgoorlie",
+    "country": "Australia",
+    "lat": -30.74614,
+    "lng": 121.4742,
+    "local_name": "Kalgoorlie",
+    "continent": "Oceania",
+    "id": 132
+  },
+  {
+    "city": "Randwick",
+    "country": "Australia",
+    "lat": -33.91439,
+    "lng": 151.24895,
+    "local_name": "Randwick",
+    "continent": "Oceania",
+    "id": 133
+  },
+  {
+    "city": "Buderim",
+    "country": "Australia",
+    "lat": -26.68443,
+    "lng": 153.05705,
+    "local_name": "Buderim",
+    "continent": "Oceania",
+    "id": 134
+  },
+  {
+    "city": "Mill Park",
+    "country": "Australia",
+    "lat": -37.66667,
+    "lng": 145.06667,
+    "local_name": "Mill Park",
+    "continent": "Oceania",
+    "id": 135
+  },
+  {
+    "city": "Masterton",
+    "country": "New Zealand",
+    "lat": -40.95972,
+    "lng": 175.6575,
+    "local_name": "Masterton",
+    "continent": "Oceania",
+    "id": 136
+  },
+  {
+    "city": "Richmond",
+    "country": "Australia",
+    "lat": -37.81819,
+    "lng": 145.00176,
+    "local_name": "Richmond",
+    "continent": "Oceania",
+    "id": 137
+  },
+  {
+    "city": "Mangere East",
+    "country": "New Zealand",
+    "lat": -36.96587,
+    "lng": 174.82389,
+    "local_name": "Mangere East",
+    "continent": "Oceania",
+    "id": 138
+  },
+  {
+    "city": "Popondetta",
+    "country": "Papua New Guinea",
+    "lat": -8.76536,
+    "lng": 148.23252,
+    "local_name": "Popondetta",
+    "continent": "Oceania",
+    "id": 139
+  },
+  {
+    "city": "Bundoora",
+    "country": "Australia",
+    "lat": -37.69825,
+    "lng": 145.05967,
+    "local_name": "Bundoora",
+    "continent": "Oceania",
+    "id": 140
+  },
+  {
+    "city": "Labasa",
+    "country": "Fiji",
+    "lat": -16.4332,
+    "lng": 179.36451,
+    "local_name": "Labasa",
+    "continent": "Oceania",
+    "id": 141
+  },
+  {
+    "city": "Mosman",
+    "country": "Australia",
+    "lat": -33.83902,
+    "lng": 151.23956,
+    "local_name": "Mosman",
+    "continent": "Oceania",
+    "id": 142
+  },
+  {
+    "city": "Narre Warren",
+    "country": "Australia",
+    "lat": -38.03333,
+    "lng": 145.3,
+    "local_name": "Narre Warren",
+    "continent": "Oceania",
+    "id": 143
+  },
+  {
+    "city": "Kellyville",
+    "country": "Australia",
+    "lat": -33.71028,
+    "lng": 150.95095,
+    "local_name": "Kellyville",
+    "continent": "Oceania",
+    "id": 144
+  },
+  {
+    "city": "Remuera",
+    "country": "New Zealand",
+    "lat": -36.88041,
+    "lng": 174.79819,
+    "local_name": "Remuera",
+    "continent": "Oceania",
+    "id": 145
+  },
+  {
+    "city": "Liverpool",
+    "country": "Australia",
+    "lat": -33.91938,
+    "lng": 150.92588,
+    "local_name": "Liverpool",
+    "continent": "Oceania",
+    "id": 146
+  },
+  {
+    "city": "Maryborough",
+    "country": "Australia",
+    "lat": -25.54073,
+    "lng": 152.70493,
+    "local_name": "Maryborough",
+    "continent": "Oceania",
+    "id": 147
+  },
+  {
+    "city": "Madang",
+    "country": "Papua New Guinea",
+    "lat": -5.22152,
+    "lng": 145.78695,
+    "local_name": "Madang",
+    "continent": "Oceania",
+    "id": 148
+  },
+  {
+    "city": "Ferntree Gully",
+    "country": "Australia",
+    "lat": -37.88461,
+    "lng": 145.29539,
+    "local_name": "Ferntree Gully",
+    "continent": "Oceania",
+    "id": 149
+  },
+  {
+    "city": "Doreen",
+    "country": "Australia",
+    "lat": -37.6,
+    "lng": 145.15,
+    "local_name": "Doreen",
+    "continent": "Oceania",
+    "id": 150
+  },
+  {
+    "city": "Avondale",
+    "country": "New Zealand",
+    "lat": -36.88333,
+    "lng": 174.7,
+    "local_name": "Avondale",
+    "continent": "Oceania",
+    "id": 151
+  },
+  {
+    "city": "Traralgon",
+    "country": "Australia",
+    "lat": -38.19528,
+    "lng": 146.5415,
+    "local_name": "Traralgon",
+    "continent": "Oceania",
+    "id": 152
+  },
+  {
+    "city": "Quakers Hill",
+    "country": "Australia",
+    "lat": -33.73333,
+    "lng": 150.88333,
+    "local_name": "Quakers Hill",
+    "continent": "Oceania",
+    "id": 153
+  },
+  {
+    "city": "Parramatta",
+    "country": "Australia",
+    "lat": -33.8178,
+    "lng": 151.00348,
+    "local_name": "Parramatta",
+    "continent": "Oceania",
+    "id": 154
+  },
+  {
+    "city": "Taupo",
+    "country": "New Zealand",
+    "lat": -38.68333,
+    "lng": 176.08333,
+    "local_name": "Taupo",
+    "continent": "Oceania",
+    "id": 155
+  },
+  {
+    "city": "Coburg",
+    "country": "Australia",
+    "lat": -37.75,
+    "lng": 144.96667,
+    "local_name": "Coburg",
+    "continent": "Oceania",
+    "id": 156
+  },
+  {
+    "city": "Croydon",
+    "country": "Australia",
+    "lat": -37.8,
+    "lng": 145.28333,
+    "local_name": "Croydon",
+    "continent": "Oceania",
+    "id": 157
+  },
+  {
+    "city": "Ryde",
+    "country": "Australia",
+    "lat": -33.8188,
+    "lng": 151.1062,
+    "local_name": "Ryde",
+    "continent": "Oceania",
+    "id": 158
+  },
+  {
+    "city": "Papeete",
+    "country": "PF",
+    "lat": -17.5347,
+    "lng": -149.56843,
+    "local_name": "Papeete",
+    "continent": "Oceania",
+    "id": 159
+  },
+  {
+    "city": "Caboolture",
+    "country": "Australia",
+    "lat": -27.08465,
+    "lng": 152.9511,
+    "local_name": "Caboolture",
+    "continent": "Oceania",
+    "id": 160
+  },
+  {
+    "city": "Kokopo",
+    "country": "Papua New Guinea",
+    "lat": -4.3432,
+    "lng": 152.26867,
+    "local_name": "Kokopo",
+    "continent": "Oceania",
+    "id": 161
+  },
+  {
+    "city": "Mendi",
+    "country": "Papua New Guinea",
+    "lat": -6.14755,
+    "lng": 143.65633,
+    "local_name": "Mendi",
+    "continent": "Oceania",
+    "id": 162
+  },
+  {
+    "city": "Devonport",
+    "country": "Australia",
+    "lat": -41.17695,
+    "lng": 146.35152,
+    "local_name": "Devonport",
+    "continent": "Oceania",
+    "id": 163
+  },
+  {
+    "city": "Marrickville",
+    "country": "Australia",
+    "lat": -33.90741,
+    "lng": 151.15546,
+    "local_name": "Marrickville",
+    "continent": "Oceania",
+    "id": 164
+  },
+  {
+    "city": "Glen Iris",
+    "country": "Australia",
+    "lat": -37.86667,
+    "lng": 145.06667,
+    "local_name": "Glen Iris",
+    "continent": "Oceania",
+    "id": 165
+  },
+  {
+    "city": "Hampton Park",
+    "country": "Australia",
+    "lat": -38.03333,
+    "lng": 145.25,
+    "local_name": "Hampton Park",
+    "continent": "Oceania",
+    "id": 166
+  },
+  {
+    "city": "Nggosi",
+    "country": "Solomon Islands",
+    "lat": -9.43056,
+    "lng": 159.92103,
+    "local_name": "Nggosi",
+    "continent": "Oceania",
+    "id": 167
+  },
+  {
+    "city": "Strathfield",
+    "country": "Australia",
+    "lat": -33.88096,
+    "lng": 151.07986,
+    "local_name": "Strathfield",
+    "continent": "Oceania",
+    "id": 168
+  },
+  {
+    "city": "Mornington",
+    "country": "Australia",
+    "lat": -38.21792,
+    "lng": 145.03876,
+    "local_name": "Mornington",
+    "continent": "Oceania",
+    "id": 169
+  },
+  {
+    "city": "Punaauia",
+    "country": "PF",
+    "lat": -17.63333,
+    "lng": -149.6,
+    "local_name": "Punaauia",
+    "continent": "Oceania",
+    "id": 170
+  },
+  {
+    "city": "Sydney Central Business District",
+    "country": "Australia",
+    "lat": -33.86482,
+    "lng": 151.20773,
+    "local_name": "Sydney Central Business District",
+    "continent": "Oceania",
+    "id": 171
+  },
+  {
+    "city": "Mount Gambier",
+    "country": "Australia",
+    "lat": -37.8318,
+    "lng": 140.77919,
+    "local_name": "Mount Gambier",
+    "continent": "Oceania",
+    "id": 172
+  },
+  {
+    "city": "Majuro",
+    "country": "Marshall Islands",
+    "lat": 7.08971,
+    "lng": 171.38027,
+    "local_name": "Majuro",
+    "continent": "Oceania",
+    "id": 173
+  },
+  {
+    "city": "Northcote",
+    "country": "Australia",
+    "lat": -37.76667,
+    "lng": 145.0,
+    "local_name": "Northcote",
+    "continent": "Oceania",
+    "id": 174
+  },
+  {
+    "city": "South Yarra",
+    "country": "Australia",
+    "lat": -37.83834,
+    "lng": 144.99149,
+    "local_name": "South Yarra",
+    "continent": "Oceania",
+    "id": 175
+  },
+  {
+    "city": "Alice Springs",
+    "country": "Australia",
+    "lat": -23.69748,
+    "lng": 133.88362,
+    "local_name": "Alice Springs",
+    "continent": "Oceania",
+    "id": 176
+  },
+  {
+    "city": "Chatswood",
+    "country": "Australia",
+    "lat": -33.8,
+    "lng": 151.18333,
+    "local_name": "Chatswood",
+    "continent": "Oceania",
+    "id": 177
+  },
+  {
+    "city": "Doncaster",
+    "country": "Australia",
+    "lat": -37.78828,
+    "lng": 145.12373,
+    "local_name": "Doncaster",
+    "continent": "Oceania",
+    "id": 178
+  },
+  {
+    "city": "South Morang",
+    "country": "Australia",
+    "lat": -37.65,
+    "lng": 145.1,
+    "local_name": "South Morang",
+    "continent": "Oceania",
+    "id": 179
+  },
+  {
+    "city": "Upper Coomera",
+    "country": "Australia",
+    "lat": -27.87683,
+    "lng": 153.28572,
+    "local_name": "Upper Coomera",
+    "continent": "Oceania",
+    "id": 180
+  },
+  {
+    "city": "Brunswick",
+    "country": "Australia",
+    "lat": -37.76667,
+    "lng": 144.96667,
+    "local_name": "Brunswick",
+    "continent": "Oceania",
+    "id": 181
+  },
+  {
+    "city": "Bacchus Marsh",
+    "country": "Australia",
+    "lat": -37.67268,
+    "lng": 144.43829,
+    "local_name": "Bacchus Marsh",
+    "continent": "Oceania",
+    "id": 182
+  },
+  {
+    "city": "Cranbourne North",
+    "country": "Australia",
+    "lat": -38.07758,
+    "lng": 145.29871,
+    "local_name": "Cranbourne North",
+    "continent": "Oceania",
+    "id": 183
+  },
+  {
+    "city": "Mont-Dore",
+    "country": "New Caledonia",
+    "lat": -22.26257,
+    "lng": 166.56621,
+    "local_name": "Mont-Dore",
+    "continent": "Oceania",
+    "id": 184
+  },
+  {
+    "city": "Cranbourne East",
+    "country": "Australia",
+    "lat": -38.11531,
+    "lng": 145.29814,
+    "local_name": "Cranbourne East",
+    "continent": "Oceania",
+    "id": 185
+  },
+  {
+    "city": "Ellenbrook",
+    "country": "Australia",
+    "lat": -31.76737,
+    "lng": 115.96936,
+    "local_name": "Ellenbrook",
+    "continent": "Oceania",
+    "id": 186
+  },
+  {
+    "city": "Lami",
+    "country": "Fiji",
+    "lat": -18.11094,
+    "lng": 178.40943,
+    "local_name": "Lami",
+    "continent": "Oceania",
+    "id": 187
+  },
+  {
+    "city": "Tandai",
+    "country": "Solomon Islands",
+    "lat": -9.44666,
+    "lng": 159.94549,
+    "local_name": "Tandai",
+    "continent": "Oceania",
+    "id": 188
+  },
+  {
+    "city": "Goulburn",
+    "country": "Australia",
+    "lat": -34.75155,
+    "lng": 149.72086,
+    "local_name": "Goulburn",
+    "continent": "Oceania",
+    "id": 189
+  },
+  {
+    "city": "Kew",
+    "country": "Australia",
+    "lat": -37.80639,
+    "lng": 145.03086,
+    "local_name": "Kew",
+    "continent": "Oceania",
+    "id": 190
+  },
+  {
+    "city": "Caroline Springs",
+    "country": "Australia",
+    "lat": -37.74124,
+    "lng": 144.73631,
+    "local_name": "Caroline Springs",
+    "continent": "Oceania",
+    "id": 191
+  },
+  {
+    "city": "Campsie",
+    "country": "Australia",
+    "lat": -33.9125,
+    "lng": 151.10279,
+    "local_name": "Campsie",
+    "continent": "Oceania",
+    "id": 192
+  },
+  {
+    "city": "Endeavour Hills",
+    "country": "Australia",
+    "lat": -37.97695,
+    "lng": 145.25866,
+    "local_name": "Endeavour Hills",
+    "continent": "Oceania",
+    "id": 193
+  },
+  {
+    "city": "Otara",
+    "country": "New Zealand",
+    "lat": -36.9482,
+    "lng": 174.87019,
+    "local_name": "Otara",
+    "continent": "Oceania",
+    "id": 194
+  },
+  {
+    "city": "Wollert",
+    "country": "Australia",
+    "lat": -37.58333,
+    "lng": 145.03333,
+    "local_name": "Wollert",
+    "continent": "Oceania",
+    "id": 195
+  },
+  {
+    "city": "Greenacre",
+    "country": "Australia",
+    "lat": -33.90034,
+    "lng": 151.05563,
+    "local_name": "Greenacre",
+    "continent": "Oceania",
+    "id": 196
+  },
+  {
+    "city": "Dianella",
+    "country": "Australia",
+    "lat": -31.88822,
+    "lng": 115.87186,
+    "local_name": "Dianella",
+    "continent": "Oceania",
+    "id": 197
+  },
+  {
+    "city": "Carlingford",
+    "country": "Australia",
+    "lat": -33.78269,
+    "lng": 151.04888,
+    "local_name": "Carlingford",
+    "continent": "Oceania",
+    "id": 198
+  },
+  {
+    "city": "Roxburgh Park",
+    "country": "Australia",
+    "lat": -37.62581,
+    "lng": 144.92555,
+    "local_name": "Roxburgh Park",
+    "continent": "Oceania",
+    "id": 199
+  },
+  {
+    "city": "Morphett Vale",
+    "country": "Australia",
+    "lat": -35.13333,
+    "lng": 138.51667,
+    "local_name": "Morphett Vale",
+    "continent": "Oceania",
+    "id": 200
+  },
+  {
+    "city": "Cheltenham",
+    "country": "Australia",
+    "lat": -37.96944,
+    "lng": 145.04806,
+    "local_name": "Cheltenham",
+    "continent": "Oceania",
+    "id": 201
+  },
+  {
+    "city": "New Lynn",
+    "country": "New Zealand",
+    "lat": -36.90694,
+    "lng": 174.68704,
+    "local_name": "New Lynn",
+    "continent": "Oceania",
+    "id": 202
+  },
+  {
+    "city": "Glenroy",
+    "country": "Australia",
+    "lat": -37.7,
+    "lng": 144.93333,
+    "local_name": "Glenroy",
+    "continent": "Oceania",
+    "id": 203
+  },
+  {
+    "city": "Mangere",
+    "country": "New Zealand",
+    "lat": -36.96807,
+    "lng": 174.79875,
+    "local_name": "Mangere",
+    "continent": "Oceania",
+    "id": 204
+  },
+  {
+    "city": "Ashfield",
+    "country": "Australia",
+    "lat": -33.88834,
+    "lng": 151.12274,
+    "local_name": "Ashfield",
+    "continent": "Oceania",
+    "id": 205
+  },
+  {
+    "city": "Thornlie",
+    "country": "Australia",
+    "lat": -32.06003,
+    "lng": 115.955,
+    "local_name": "Thornlie",
+    "continent": "Oceania",
+    "id": 206
+  },
+  {
+    "city": "Boronia",
+    "country": "Australia",
+    "lat": -37.86667,
+    "lng": 145.28333,
+    "local_name": "Boronia",
+    "continent": "Oceania",
+    "id": 207
+  },
+  {
+    "city": "Greystanes",
+    "country": "Australia",
+    "lat": -33.82346,
+    "lng": 150.94607,
+    "local_name": "Greystanes",
+    "continent": "Oceania",
+    "id": 208
+  },
+  {
+    "city": "Epping",
+    "country": "Australia",
+    "lat": -33.77271,
+    "lng": 151.08184,
+    "local_name": "Epping",
+    "continent": "Oceania",
+    "id": 209
+  },
+  {
+    "city": "Mernda",
+    "country": "Australia",
+    "lat": -37.60075,
+    "lng": 145.09555,
+    "local_name": "Mernda",
+    "continent": "Oceania",
+    "id": 210
+  },
+  {
+    "city": "Brighton",
+    "country": "Australia",
+    "lat": -37.90561,
+    "lng": 145.00279,
+    "local_name": "Brighton",
+    "continent": "Oceania",
+    "id": 211
+  },
+  {
+    "city": "Lalor",
+    "country": "Australia",
+    "lat": -37.66667,
+    "lng": 145.01667,
+    "local_name": "Lalor",
+    "continent": "Oceania",
+    "id": 212
+  },
+  {
+    "city": "Cessnock",
+    "country": "Australia",
+    "lat": -32.83211,
+    "lng": 151.35623,
+    "local_name": "Cessnock",
+    "continent": "Oceania",
+    "id": 213
+  },
+  {
+    "city": "Robina",
+    "country": "Australia",
+    "lat": -28.07071,
+    "lng": 153.39329,
+    "local_name": "Robina",
+    "continent": "Oceania",
+    "id": 214
+  },
+  {
+    "city": "Mooroolbark",
+    "country": "Australia",
+    "lat": -37.78247,
+    "lng": 145.31682,
+    "local_name": "Mooroolbark",
+    "continent": "Oceania",
+    "id": 215
+  },
+  {
+    "city": "Glenmore Park",
+    "country": "Australia",
+    "lat": -33.79068,
+    "lng": 150.6693,
+    "local_name": "Glenmore Park",
+    "continent": "Oceania",
+    "id": 216
+  },
+  {
+    "city": "Southbank",
+    "country": "Australia",
+    "lat": -37.8228,
+    "lng": 144.96434,
+    "local_name": "Southbank",
+    "continent": "Oceania",
+    "id": 217
+  },
+  {
+    "city": "Forest Lake",
+    "country": "Australia",
+    "lat": -27.62563,
+    "lng": 152.96883,
+    "local_name": "Forest Lake",
+    "continent": "Oceania",
+    "id": 218
+  },
+  {
+    "city": "Dandenong North",
+    "country": "Australia",
+    "lat": -37.96649,
+    "lng": 145.2081,
+    "local_name": "Dandenong North",
+    "continent": "Oceania",
+    "id": 219
+  },
+  {
+    "city": "Morley",
+    "country": "Australia",
+    "lat": -31.88775,
+    "lng": 115.9099,
+    "local_name": "Morley",
+    "continent": "Oceania",
+    "id": 220
+  },
+  {
+    "city": "Hornsby",
+    "country": "Australia",
+    "lat": -33.70244,
+    "lng": 151.09931,
+    "local_name": "Hornsby",
+    "continent": "Oceania",
+    "id": 221
+  },
+  {
+    "city": "Gympie",
+    "country": "Australia",
+    "lat": -26.18979,
+    "lng": 152.66499,
+    "local_name": "Gympie",
+    "continent": "Oceania",
+    "id": 222
+  },
+  {
+    "city": "Nuku‘alofa",
+    "country": "Tonga",
+    "lat": -21.13683,
+    "lng": -175.20114,
+    "local_name": "Nuku‘alofa",
+    "continent": "Oceania",
+    "id": 223
+  },
+  {
+    "city": "Hawthorn",
+    "country": "Australia",
+    "lat": -37.81992,
+    "lng": 145.0358,
+    "local_name": "Hawthorn",
+    "continent": "Oceania",
+    "id": 224
+  },
+  {
+    "city": "Malvern East",
+    "country": "Australia",
+    "lat": -37.87397,
+    "lng": 145.04253,
+    "local_name": "Malvern East",
+    "continent": "Oceania",
+    "id": 225
+  },
+  {
+    "city": "Massey East",
+    "country": "New Zealand",
+    "lat": -36.8282,
+    "lng": 174.62019,
+    "local_name": "Massey East",
+    "continent": "Oceania",
+    "id": 226
+  },
+  {
+    "city": "Massey",
+    "country": "New Zealand",
+    "lat": -36.8382,
+    "lng": 174.61019,
+    "local_name": "Massey",
+    "continent": "Oceania",
+    "id": 227
+  },
+  {
+    "city": "Springvale",
+    "country": "Australia",
+    "lat": -37.94853,
+    "lng": 145.15274,
+    "local_name": "Springvale",
+    "continent": "Oceania",
+    "id": 228
+  },
+  {
+    "city": "Langwarrin",
+    "country": "Australia",
+    "lat": -38.16667,
+    "lng": 145.16667,
+    "local_name": "Langwarrin",
+    "continent": "Oceania",
+    "id": 229
+  },
+  {
+    "city": "Carrum Downs",
+    "country": "Australia",
+    "lat": -38.09968,
+    "lng": 145.17248,
+    "local_name": "Carrum Downs",
+    "continent": "Oceania",
+    "id": 230
+  },
+  {
+    "city": "Camberwell",
+    "country": "Australia",
+    "lat": -37.84205,
+    "lng": 145.0694,
+    "local_name": "Camberwell",
+    "continent": "Oceania",
+    "id": 231
+  },
+  {
+    "city": "Busselton",
+    "country": "Australia",
+    "lat": -33.65249,
+    "lng": 115.3455,
+    "local_name": "Busselton",
+    "continent": "Oceania",
+    "id": 232
+  },
+  {
+    "city": "Cabramatta",
+    "country": "Australia",
+    "lat": -33.89743,
+    "lng": 150.93446,
+    "local_name": "Cabramatta",
+    "continent": "Oceania",
+    "id": 233
+  },
+  {
+    "city": "Mount Barker",
+    "country": "Australia",
+    "lat": -35.06667,
+    "lng": 138.86667,
+    "local_name": "Mount Barker",
+    "continent": "Oceania",
+    "id": 234
+  },
+  {
+    "city": "Pukekohe East",
+    "country": "New Zealand",
+    "lat": -37.2,
+    "lng": 174.95,
+    "local_name": "Pukekohe East",
+    "continent": "Oceania",
+    "id": 235
+  },
+  {
+    "city": "Armidale",
+    "country": "Australia",
+    "lat": -30.50123,
+    "lng": 151.66553,
+    "local_name": "Armidale",
+    "continent": "Oceania",
+    "id": 236
+  },
+  {
+    "city": "Balwyn North",
+    "country": "Australia",
+    "lat": -37.79086,
+    "lng": 145.09386,
+    "local_name": "Balwyn North",
+    "continent": "Oceania",
+    "id": 237
+  },
+  {
+    "city": "Ashburton",
+    "country": "New Zealand",
+    "lat": -43.89834,
+    "lng": 171.73011,
+    "local_name": "Ashburton",
+    "continent": "Oceania",
+    "id": 238
+  },
+  {
+    "city": "Cranbourne",
+    "country": "Australia",
+    "lat": -38.11342,
+    "lng": 145.28326,
+    "local_name": "Cranbourne",
+    "continent": "Oceania",
+    "id": 239
+  },
+  {
+    "city": "Greenvale",
+    "country": "Australia",
+    "lat": -37.63333,
+    "lng": 144.86667,
+    "local_name": "Greenvale",
+    "continent": "Oceania",
+    "id": 240
+  }
+]

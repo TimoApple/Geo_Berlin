@@ -1,0 +1,2162 @@
+[
+  {
+    "city": "São Paulo",
+    "country": "Brazil",
+    "lat": -23.5475,
+    "lng": -46.63611,
+    "local_name": "São Paulo",
+    "continent": "South America",
+    "id": 1
+  },
+  {
+    "city": "Lima",
+    "country": "Peru",
+    "lat": -12.04318,
+    "lng": -77.02824,
+    "local_name": "Lima",
+    "continent": "South America",
+    "id": 2
+  },
+  {
+    "city": "Bogotá",
+    "country": "Colombia",
+    "lat": 4.60971,
+    "lng": -74.08175,
+    "local_name": "Bogotá",
+    "continent": "South America",
+    "id": 3
+  },
+  {
+    "city": "Rio de Janeiro",
+    "country": "Brazil",
+    "lat": -22.90642,
+    "lng": -43.18223,
+    "local_name": "Rio de Janeiro",
+    "continent": "South America",
+    "id": 4
+  },
+  {
+    "city": "Santiago",
+    "country": "Chile",
+    "lat": -33.45694,
+    "lng": -70.64827,
+    "local_name": "Santiago",
+    "continent": "South America",
+    "id": 5
+  },
+  {
+    "city": "Caracas",
+    "country": "Venezuela",
+    "lat": 10.48801,
+    "lng": -66.87919,
+    "local_name": "Caracas",
+    "continent": "South America",
+    "id": 6
+  },
+  {
+    "city": "Buenos Aires",
+    "country": "Argentina",
+    "lat": -34.61315,
+    "lng": -58.37723,
+    "local_name": "Buenos Aires",
+    "continent": "South America",
+    "id": 7
+  },
+  {
+    "city": "Quito",
+    "country": "Ecuador",
+    "lat": -0.22985,
+    "lng": -78.52495,
+    "local_name": "Quito",
+    "continent": "South America",
+    "id": 8
+  },
+  {
+    "city": "Guayaquil",
+    "country": "Ecuador",
+    "lat": -2.19616,
+    "lng": -79.88621,
+    "local_name": "Guayaquil",
+    "continent": "South America",
+    "id": 9
+  },
+  {
+    "city": "Belo Horizonte",
+    "country": "Brazil",
+    "lat": -19.92083,
+    "lng": -43.93778,
+    "local_name": "Belo Horizonte",
+    "continent": "South America",
+    "id": 10
+  },
+  {
+    "city": "Salvador",
+    "country": "Brazil",
+    "lat": -12.97563,
+    "lng": -38.49096,
+    "local_name": "Salvador",
+    "continent": "South America",
+    "id": 11
+  },
+  {
+    "city": "Fortaleza",
+    "country": "Brazil",
+    "lat": -3.71722,
+    "lng": -38.54306,
+    "local_name": "Fortaleza",
+    "continent": "South America",
+    "id": 12
+  },
+  {
+    "city": "Cali",
+    "country": "Colombia",
+    "lat": 3.43054,
+    "lng": -76.5199,
+    "local_name": "Cali",
+    "continent": "South America",
+    "id": 13
+  },
+  {
+    "city": "Manaus",
+    "country": "Brazil",
+    "lat": -3.10194,
+    "lng": -60.025,
+    "local_name": "Manaus",
+    "continent": "South America",
+    "id": 14
+  },
+  {
+    "city": "Brasília",
+    "country": "Brazil",
+    "lat": -15.77972,
+    "lng": -47.92972,
+    "local_name": "Brasília",
+    "continent": "South America",
+    "id": 15
+  },
+  {
+    "city": "Córdoba",
+    "country": "Argentina",
+    "lat": -31.40648,
+    "lng": -64.18853,
+    "local_name": "Córdoba",
+    "continent": "South America",
+    "id": 16
+  },
+  {
+    "city": "La Paz",
+    "country": "Bolivia",
+    "lat": -16.5,
+    "lng": -68.15,
+    "local_name": "La Paz",
+    "continent": "South America",
+    "id": 17
+  },
+  {
+    "city": "Medellín",
+    "country": "Colombia",
+    "lat": 6.245,
+    "lng": -75.57151,
+    "local_name": "Medellín",
+    "continent": "South America",
+    "id": 18
+  },
+  {
+    "city": "Curitiba",
+    "country": "Brazil",
+    "lat": -25.42778,
+    "lng": -49.27306,
+    "local_name": "Curitiba",
+    "continent": "South America",
+    "id": 19
+  },
+  {
+    "city": "Santa Cruz de la Sierra",
+    "country": "Bolivia",
+    "lat": -17.78629,
+    "lng": -63.18117,
+    "local_name": "Santa Cruz de la Sierra",
+    "continent": "South America",
+    "id": 20
+  },
+  {
+    "city": "Maracaibo",
+    "country": "Venezuela",
+    "lat": 10.64232,
+    "lng": -71.61089,
+    "local_name": "Maracaibo",
+    "continent": "South America",
+    "id": 21
+  },
+  {
+    "city": "Recife",
+    "country": "Brazil",
+    "lat": -8.05389,
+    "lng": -34.88111,
+    "local_name": "Recife",
+    "continent": "South America",
+    "id": 22
+  },
+  {
+    "city": "Valencia",
+    "country": "Venezuela",
+    "lat": 10.16153,
+    "lng": -68.00044,
+    "local_name": "Valencia",
+    "continent": "South America",
+    "id": 23
+  },
+  {
+    "city": "Goiânia",
+    "country": "Brazil",
+    "lat": -16.67861,
+    "lng": -49.25389,
+    "local_name": "Goiânia",
+    "continent": "South America",
+    "id": 24
+  },
+  {
+    "city": "Belém",
+    "country": "Brazil",
+    "lat": -1.45583,
+    "lng": -48.50444,
+    "local_name": "Belém",
+    "continent": "South America",
+    "id": 25
+  },
+  {
+    "city": "Porto Alegre",
+    "country": "Brazil",
+    "lat": -30.03283,
+    "lng": -51.23019,
+    "local_name": "Porto Alegre",
+    "continent": "South America",
+    "id": 26
+  },
+  {
+    "city": "Asunción",
+    "country": "Paraguay",
+    "lat": -25.28646,
+    "lng": -57.647,
+    "local_name": "Asunción",
+    "continent": "South America",
+    "id": 27
+  },
+  {
+    "city": "Callao",
+    "country": "Peru",
+    "lat": -12.05162,
+    "lng": -77.13452,
+    "local_name": "Callao",
+    "continent": "South America",
+    "id": 28
+  },
+  {
+    "city": "Montevideo",
+    "country": "Uruguay",
+    "lat": -34.90328,
+    "lng": -56.18816,
+    "local_name": "Montevideo",
+    "continent": "South America",
+    "id": 29
+  },
+  {
+    "city": "Barquisimeto",
+    "country": "Venezuela",
+    "lat": 10.0647,
+    "lng": -69.35703,
+    "local_name": "Barquisimeto",
+    "continent": "South America",
+    "id": 30
+  },
+  {
+    "city": "Barranquilla",
+    "country": "Colombia",
+    "lat": 10.96854,
+    "lng": -74.78132,
+    "local_name": "Barranquilla",
+    "continent": "South America",
+    "id": 31
+  },
+  {
+    "city": "Guarulhos",
+    "country": "Brazil",
+    "lat": -23.46278,
+    "lng": -46.53333,
+    "local_name": "Guarulhos",
+    "continent": "South America",
+    "id": 32
+  },
+  {
+    "city": "Maceió",
+    "country": "Brazil",
+    "lat": -9.66583,
+    "lng": -35.73528,
+    "local_name": "Maceió",
+    "continent": "South America",
+    "id": 33
+  },
+  {
+    "city": "Campinas",
+    "country": "Brazil",
+    "lat": -22.90556,
+    "lng": -47.06083,
+    "local_name": "Campinas",
+    "continent": "South America",
+    "id": 34
+  },
+  {
+    "city": "Arequipa",
+    "country": "Peru",
+    "lat": -16.39899,
+    "lng": -71.53747,
+    "local_name": "Arequipa",
+    "continent": "South America",
+    "id": 35
+  },
+  {
+    "city": "Ciudad Guayana",
+    "country": "Venezuela",
+    "lat": 8.35122,
+    "lng": -62.64102,
+    "local_name": "Ciudad Guayana",
+    "continent": "South America",
+    "id": 36
+  },
+  {
+    "city": "Rosario",
+    "country": "Argentina",
+    "lat": -32.94682,
+    "lng": -60.63932,
+    "local_name": "Rosario",
+    "continent": "South America",
+    "id": 37
+  },
+  {
+    "city": "Trujillo",
+    "country": "Peru",
+    "lat": -8.11599,
+    "lng": -79.02998,
+    "local_name": "Trujillo",
+    "continent": "South America",
+    "id": 38
+  },
+  {
+    "city": "São Luís",
+    "country": "Brazil",
+    "lat": -2.52972,
+    "lng": -44.30278,
+    "local_name": "São Luís",
+    "continent": "South America",
+    "id": 39
+  },
+  {
+    "city": "Cartagena",
+    "country": "Colombia",
+    "lat": 10.39817,
+    "lng": -75.49328,
+    "local_name": "Cartagena",
+    "continent": "South America",
+    "id": 40
+  },
+  {
+    "city": "Campo Grande",
+    "country": "Brazil",
+    "lat": -20.44278,
+    "lng": -54.64639,
+    "local_name": "Campo Grande",
+    "continent": "South America",
+    "id": 41
+  },
+  {
+    "city": "Natal",
+    "country": "Brazil",
+    "lat": -5.795,
+    "lng": -35.20944,
+    "local_name": "Natal",
+    "continent": "South America",
+    "id": 42
+  },
+  {
+    "city": "Teresina",
+    "country": "Brazil",
+    "lat": -5.08917,
+    "lng": -42.80194,
+    "local_name": "Teresina",
+    "continent": "South America",
+    "id": 43
+  },
+  {
+    "city": "Cochabamba",
+    "country": "Bolivia",
+    "lat": -17.38195,
+    "lng": -66.15995,
+    "local_name": "Cochabamba",
+    "continent": "South America",
+    "id": 44
+  },
+  {
+    "city": "Nova Iguaçu",
+    "country": "Brazil",
+    "lat": -22.75917,
+    "lng": -43.45111,
+    "local_name": "Nova Iguaçu",
+    "continent": "South America",
+    "id": 45
+  },
+  {
+    "city": "Duque de Caxias",
+    "country": "Brazil",
+    "lat": -22.78556,
+    "lng": -43.31167,
+    "local_name": "Duque de Caxias",
+    "continent": "South America",
+    "id": 46
+  },
+  {
+    "city": "João Pessoa",
+    "country": "Brazil",
+    "lat": -7.115,
+    "lng": -34.86306,
+    "local_name": "João Pessoa",
+    "continent": "South America",
+    "id": 47
+  },
+  {
+    "city": "Barcelona",
+    "country": "Venezuela",
+    "lat": 10.1384,
+    "lng": -64.68769,
+    "local_name": "Barcelona",
+    "continent": "South America",
+    "id": 48
+  },
+  {
+    "city": "Cúcuta",
+    "country": "Colombia",
+    "lat": 7.90745,
+    "lng": -72.5049,
+    "local_name": "Cúcuta",
+    "continent": "South America",
+    "id": 49
+  },
+  {
+    "city": "São Bernardo do Campo",
+    "country": "Brazil",
+    "lat": -23.69389,
+    "lng": -46.565,
+    "local_name": "São Bernardo do Campo",
+    "continent": "South America",
+    "id": 50
+  },
+  {
+    "city": "São José dos Campos",
+    "country": "Brazil",
+    "lat": -23.17944,
+    "lng": -45.88694,
+    "local_name": "São José dos Campos",
+    "continent": "South America",
+    "id": 51
+  },
+  {
+    "city": "Osasco",
+    "country": "Brazil",
+    "lat": -23.5325,
+    "lng": -46.79167,
+    "local_name": "Osasco",
+    "continent": "South America",
+    "id": 52
+  },
+  {
+    "city": "Ribeirão Preto",
+    "country": "Brazil",
+    "lat": -21.1775,
+    "lng": -47.81028,
+    "local_name": "Ribeirão Preto",
+    "continent": "South America",
+    "id": 53
+  },
+  {
+    "city": "Jaboatão",
+    "country": "Brazil",
+    "lat": -8.18028,
+    "lng": -35.00139,
+    "local_name": "Jaboatão",
+    "continent": "South America",
+    "id": 54
+  },
+  {
+    "city": "Sorocaba",
+    "country": "Brazil",
+    "lat": -23.50167,
+    "lng": -47.45806,
+    "local_name": "Sorocaba",
+    "continent": "South America",
+    "id": 55
+  },
+  {
+    "city": "Aracaju",
+    "country": "Brazil",
+    "lat": -10.91111,
+    "lng": -37.07167,
+    "local_name": "Aracaju",
+    "continent": "South America",
+    "id": 56
+  },
+  {
+    "city": "Santo André",
+    "country": "Brazil",
+    "lat": -23.66389,
+    "lng": -46.53833,
+    "local_name": "Santo André",
+    "continent": "South America",
+    "id": 57
+  },
+  {
+    "city": "Soacha",
+    "country": "Colombia",
+    "lat": 4.57937,
+    "lng": -74.21682,
+    "local_name": "Soacha",
+    "continent": "South America",
+    "id": 58
+  },
+  {
+    "city": "Maturín",
+    "country": "Venezuela",
+    "lat": 9.74569,
+    "lng": -63.18323,
+    "local_name": "Maturín",
+    "continent": "South America",
+    "id": 59
+  },
+  {
+    "city": "Jaboatão dos Guararapes",
+    "country": "Brazil",
+    "lat": -8.11278,
+    "lng": -35.01472,
+    "local_name": "Jaboatão dos Guararapes",
+    "continent": "South America",
+    "id": 60
+  },
+  {
+    "city": "Cuenca",
+    "country": "Ecuador",
+    "lat": -2.8953,
+    "lng": -78.9963,
+    "local_name": "Cuenca",
+    "continent": "South America",
+    "id": 61
+  },
+  {
+    "city": "Contagem",
+    "country": "Brazil",
+    "lat": -19.93167,
+    "lng": -44.05361,
+    "local_name": "Contagem",
+    "continent": "South America",
+    "id": 62
+  },
+  {
+    "city": "Feira de Santana",
+    "country": "Brazil",
+    "lat": -12.26667,
+    "lng": -38.96667,
+    "local_name": "Feira de Santana",
+    "continent": "South America",
+    "id": 63
+  },
+  {
+    "city": "Cuiabá",
+    "country": "Brazil",
+    "lat": -15.59611,
+    "lng": -56.09667,
+    "local_name": "Cuiabá",
+    "continent": "South America",
+    "id": 64
+  },
+  {
+    "city": "Mar del Plata",
+    "country": "Argentina",
+    "lat": -38.00042,
+    "lng": -57.5562,
+    "local_name": "Mar del Plata",
+    "continent": "South America",
+    "id": 65
+  },
+  {
+    "city": "Londrina",
+    "country": "Brazil",
+    "lat": -23.31028,
+    "lng": -51.16278,
+    "local_name": "Londrina",
+    "continent": "South America",
+    "id": 66
+  },
+  {
+    "city": "Bucaramanga",
+    "country": "Colombia",
+    "lat": 7.125,
+    "lng": -73.11895,
+    "local_name": "Bucaramanga",
+    "continent": "South America",
+    "id": 67
+  },
+  {
+    "city": "Juiz de Fora",
+    "country": "Brazil",
+    "lat": -21.76417,
+    "lng": -43.35028,
+    "local_name": "Juiz de Fora",
+    "continent": "South America",
+    "id": 68
+  },
+  {
+    "city": "Puente Alto",
+    "country": "Chile",
+    "lat": -33.61169,
+    "lng": -70.57577,
+    "local_name": "Puente Alto",
+    "continent": "South America",
+    "id": 69
+  },
+  {
+    "city": "Uberlândia",
+    "country": "Brazil",
+    "lat": -18.91861,
+    "lng": -48.27722,
+    "local_name": "Uberlândia",
+    "continent": "South America",
+    "id": 70
+  },
+  {
+    "city": "Chiclayo",
+    "country": "Peru",
+    "lat": -6.77008,
+    "lng": -79.85495,
+    "local_name": "Chiclayo",
+    "continent": "South America",
+    "id": 71
+  },
+  {
+    "city": "Porto Velho",
+    "country": "Brazil",
+    "lat": -8.76194,
+    "lng": -63.90389,
+    "local_name": "Porto Velho",
+    "continent": "South America",
+    "id": 72
+  },
+  {
+    "city": "San Miguel de Tucumán",
+    "country": "Argentina",
+    "lat": -26.81601,
+    "lng": -65.21051,
+    "local_name": "San Miguel de Tucumán",
+    "continent": "South America",
+    "id": 73
+  },
+  {
+    "city": "Ibagué",
+    "country": "Colombia",
+    "lat": 4.43573,
+    "lng": -75.20289,
+    "local_name": "Ibagué",
+    "continent": "South America",
+    "id": 74
+  },
+  {
+    "city": "Salta",
+    "country": "Argentina",
+    "lat": -24.80645,
+    "lng": -65.41999,
+    "local_name": "Salta",
+    "continent": "South America",
+    "id": 75
+  },
+  {
+    "city": "Serra",
+    "country": "Brazil",
+    "lat": -20.12861,
+    "lng": -40.30778,
+    "local_name": "Serra",
+    "continent": "South America",
+    "id": 76
+  },
+  {
+    "city": "Macapá",
+    "country": "Brazil",
+    "lat": 0.03889,
+    "lng": -51.06639,
+    "local_name": "Macapá",
+    "continent": "South America",
+    "id": 77
+  },
+  {
+    "city": "Campos dos Goytacazes",
+    "country": "Brazil",
+    "lat": -21.75227,
+    "lng": -41.33044,
+    "local_name": "Campos dos Goytacazes",
+    "continent": "South America",
+    "id": 78
+  },
+  {
+    "city": "Aparecida de Goiânia",
+    "country": "Brazil",
+    "lat": -16.82333,
+    "lng": -49.24389,
+    "local_name": "Aparecida de Goiânia",
+    "continent": "South America",
+    "id": 79
+  },
+  {
+    "city": "Florianópolis",
+    "country": "Brazil",
+    "lat": -27.59667,
+    "lng": -48.54917,
+    "local_name": "Florianópolis",
+    "continent": "South America",
+    "id": 80
+  },
+  {
+    "city": "Maipú",
+    "country": "Chile",
+    "lat": -33.51421,
+    "lng": -70.7651,
+    "local_name": "Maipú",
+    "continent": "South America",
+    "id": 81
+  },
+  {
+    "city": "Santa Marta",
+    "country": "Colombia",
+    "lat": 11.23855,
+    "lng": -74.19427,
+    "local_name": "Santa Marta",
+    "continent": "South America",
+    "id": 82
+  },
+  {
+    "city": "Montería",
+    "country": "Colombia",
+    "lat": 8.75081,
+    "lng": -75.87823,
+    "local_name": "Montería",
+    "continent": "South America",
+    "id": 83
+  },
+  {
+    "city": "Valledupar",
+    "country": "Colombia",
+    "lat": 10.46538,
+    "lng": -73.2531,
+    "local_name": "Valledupar",
+    "continent": "South America",
+    "id": 84
+  },
+  {
+    "city": "Piura",
+    "country": "Peru",
+    "lat": -5.18192,
+    "lng": -80.65715,
+    "local_name": "Piura",
+    "continent": "South America",
+    "id": 85
+  },
+  {
+    "city": "São José do Rio Preto",
+    "country": "Brazil",
+    "lat": -20.81972,
+    "lng": -49.37944,
+    "local_name": "São José do Rio Preto",
+    "continent": "South America",
+    "id": 86
+  },
+  {
+    "city": "Mauá",
+    "country": "Brazil",
+    "lat": -23.66778,
+    "lng": -46.46139,
+    "local_name": "Mauá",
+    "continent": "South America",
+    "id": 87
+  },
+  {
+    "city": "Pereira",
+    "country": "Colombia",
+    "lat": 4.81428,
+    "lng": -75.69488,
+    "local_name": "Pereira",
+    "continent": "South America",
+    "id": 88
+  },
+  {
+    "city": "São João de Meriti",
+    "country": "Brazil",
+    "lat": -22.80389,
+    "lng": -43.37222,
+    "local_name": "São João de Meriti",
+    "continent": "South America",
+    "id": 89
+  },
+  {
+    "city": "Belford Roxo",
+    "country": "Brazil",
+    "lat": -22.76417,
+    "lng": -43.39944,
+    "local_name": "Belford Roxo",
+    "continent": "South America",
+    "id": 90
+  },
+  {
+    "city": "Maracay",
+    "country": "Venezuela",
+    "lat": 10.24972,
+    "lng": -67.59475,
+    "local_name": "Maracay",
+    "continent": "South America",
+    "id": 91
+  },
+  {
+    "city": "Joinville",
+    "country": "Brazil",
+    "lat": -26.30444,
+    "lng": -48.84556,
+    "local_name": "Joinville",
+    "continent": "South America",
+    "id": 92
+  },
+  {
+    "city": "Santo Domingo de los Colorados",
+    "country": "Ecuador",
+    "lat": -0.25368,
+    "lng": -79.17628,
+    "local_name": "Santo Domingo de los Colorados",
+    "continent": "South America",
+    "id": 93
+  },
+  {
+    "city": "Niterói",
+    "country": "Brazil",
+    "lat": -22.88333,
+    "lng": -43.10361,
+    "local_name": "Niterói",
+    "continent": "South America",
+    "id": 94
+  },
+  {
+    "city": "Huancayo",
+    "country": "Peru",
+    "lat": -12.06866,
+    "lng": -75.21027,
+    "local_name": "Huancayo",
+    "continent": "South America",
+    "id": 95
+  },
+  {
+    "city": "Jundiaí",
+    "country": "Brazil",
+    "lat": -23.18639,
+    "lng": -46.88417,
+    "local_name": "Jundiaí",
+    "continent": "South America",
+    "id": 96
+  },
+  {
+    "city": "Manizales",
+    "country": "Colombia",
+    "lat": 5.0668,
+    "lng": -75.50684,
+    "local_name": "Manizales",
+    "continent": "South America",
+    "id": 97
+  },
+  {
+    "city": "Ananindeua",
+    "country": "Brazil",
+    "lat": -1.36556,
+    "lng": -48.37222,
+    "local_name": "Ananindeua",
+    "continent": "South America",
+    "id": 98
+  },
+  {
+    "city": "Santos",
+    "country": "Brazil",
+    "lat": -23.96083,
+    "lng": -46.33361,
+    "local_name": "Santos",
+    "continent": "South America",
+    "id": 99
+  },
+  {
+    "city": "Buenaventura",
+    "country": "Colombia",
+    "lat": 3.58333,
+    "lng": -77.0,
+    "local_name": "Buenaventura",
+    "continent": "South America",
+    "id": 100
+  },
+  {
+    "city": "Cusco",
+    "country": "Peru",
+    "lat": -13.53188,
+    "lng": -71.96701,
+    "local_name": "Cusco",
+    "continent": "South America",
+    "id": 101
+  },
+  {
+    "city": "Boa Vista",
+    "country": "Brazil",
+    "lat": 2.81972,
+    "lng": -60.67333,
+    "local_name": "Boa Vista",
+    "continent": "South America",
+    "id": 102
+  },
+  {
+    "city": "Rio Branco",
+    "country": "Brazil",
+    "lat": -9.97472,
+    "lng": -67.81,
+    "local_name": "Rio Branco",
+    "continent": "South America",
+    "id": 103
+  },
+  {
+    "city": "Montes Claros",
+    "country": "Brazil",
+    "lat": -16.735,
+    "lng": -43.86167,
+    "local_name": "Montes Claros",
+    "continent": "South America",
+    "id": 104
+  },
+  {
+    "city": "Ciudad Bolívar",
+    "country": "Venezuela",
+    "lat": 8.12366,
+    "lng": -63.54694,
+    "local_name": "Ciudad Bolívar",
+    "continent": "South America",
+    "id": 105
+  },
+  {
+    "city": "Piracicaba",
+    "country": "Brazil",
+    "lat": -22.72528,
+    "lng": -47.64917,
+    "local_name": "Piracicaba",
+    "continent": "South America",
+    "id": 106
+  },
+  {
+    "city": "Cumaná",
+    "country": "Venezuela",
+    "lat": 10.4639,
+    "lng": -64.17859,
+    "local_name": "Cumaná",
+    "continent": "South America",
+    "id": 107
+  },
+  {
+    "city": "Caruaru",
+    "country": "Brazil",
+    "lat": -8.28333,
+    "lng": -35.97611,
+    "local_name": "Caruaru",
+    "continent": "South America",
+    "id": 108
+  },
+  {
+    "city": "Antofagasta",
+    "country": "Chile",
+    "lat": -23.65094,
+    "lng": -70.39752,
+    "local_name": "Antofagasta",
+    "continent": "South America",
+    "id": 109
+  },
+  {
+    "city": "Barinas",
+    "country": "Venezuela",
+    "lat": 8.62064,
+    "lng": -70.23105,
+    "local_name": "Barinas",
+    "continent": "South America",
+    "id": 110
+  },
+  {
+    "city": "Vila Velha",
+    "country": "Brazil",
+    "lat": -20.32972,
+    "lng": -40.2925,
+    "local_name": "Vila Velha",
+    "continent": "South America",
+    "id": 111
+  },
+  {
+    "city": "Diadema",
+    "country": "Brazil",
+    "lat": -23.68611,
+    "lng": -46.62278,
+    "local_name": "Diadema",
+    "continent": "South America",
+    "id": 112
+  },
+  {
+    "city": "Bello",
+    "country": "Colombia",
+    "lat": 6.33732,
+    "lng": -75.55795,
+    "local_name": "Bello",
+    "continent": "South America",
+    "id": 113
+  },
+  {
+    "city": "Pasto",
+    "country": "Colombia",
+    "lat": 1.21456,
+    "lng": -77.27846,
+    "local_name": "Pasto",
+    "continent": "South America",
+    "id": 114
+  },
+  {
+    "city": "Santa Fe",
+    "country": "Argentina",
+    "lat": -31.64881,
+    "lng": -60.70868,
+    "local_name": "Santa Fe",
+    "continent": "South America",
+    "id": 115
+  },
+  {
+    "city": "Ambato",
+    "country": "Ecuador",
+    "lat": -1.24908,
+    "lng": -78.61675,
+    "local_name": "Ambato",
+    "continent": "South America",
+    "id": 116
+  },
+  {
+    "city": "Carapicuíba",
+    "country": "Brazil",
+    "lat": -23.52272,
+    "lng": -46.835,
+    "local_name": "Carapicuíba",
+    "continent": "South America",
+    "id": 117
+  },
+  {
+    "city": "Petrolina",
+    "country": "Brazil",
+    "lat": -9.39861,
+    "lng": -40.50083,
+    "local_name": "Petrolina",
+    "continent": "South America",
+    "id": 118
+  },
+  {
+    "city": "Grajaú",
+    "country": "Brazil",
+    "lat": -23.76979,
+    "lng": -46.67112,
+    "local_name": "Grajaú",
+    "continent": "South America",
+    "id": 119
+  },
+  {
+    "city": "Betim",
+    "country": "Brazil",
+    "lat": -19.96778,
+    "lng": -44.19833,
+    "local_name": "Betim",
+    "continent": "South America",
+    "id": 120
+  },
+  {
+    "city": "Caxias do Sul",
+    "country": "Brazil",
+    "lat": -29.16806,
+    "lng": -51.17944,
+    "local_name": "Caxias do Sul",
+    "continent": "South America",
+    "id": 121
+  },
+  {
+    "city": "Bauru",
+    "country": "Brazil",
+    "lat": -22.31472,
+    "lng": -49.06056,
+    "local_name": "Bauru",
+    "continent": "South America",
+    "id": 122
+  },
+  {
+    "city": "Iquitos",
+    "country": "Peru",
+    "lat": -3.74814,
+    "lng": -73.2529,
+    "local_name": "Iquitos",
+    "continent": "South America",
+    "id": 123
+  },
+  {
+    "city": "Puerto La Cruz",
+    "country": "Venezuela",
+    "lat": 10.21382,
+    "lng": -64.6328,
+    "local_name": "Puerto La Cruz",
+    "continent": "South America",
+    "id": 124
+  },
+  {
+    "city": "Itaquaquecetuba",
+    "country": "Brazil",
+    "lat": -23.48611,
+    "lng": -46.34833,
+    "local_name": "Itaquaquecetuba",
+    "continent": "South America",
+    "id": 125
+  },
+  {
+    "city": "Olinda",
+    "country": "Brazil",
+    "lat": -8.00889,
+    "lng": -34.85528,
+    "local_name": "Olinda",
+    "continent": "South America",
+    "id": 126
+  },
+  {
+    "city": "Petare",
+    "country": "Venezuela",
+    "lat": 10.47679,
+    "lng": -66.80786,
+    "local_name": "Petare",
+    "continent": "South America",
+    "id": 127
+  },
+  {
+    "city": "Blumenau",
+    "country": "Brazil",
+    "lat": -26.91944,
+    "lng": -49.06611,
+    "local_name": "Blumenau",
+    "continent": "South America",
+    "id": 128
+  },
+  {
+    "city": "Franca",
+    "country": "Brazil",
+    "lat": -20.53861,
+    "lng": -47.40083,
+    "local_name": "Franca",
+    "continent": "South America",
+    "id": 129
+  },
+  {
+    "city": "Neiva",
+    "country": "Colombia",
+    "lat": 2.93001,
+    "lng": -75.27973,
+    "local_name": "Neiva",
+    "continent": "South America",
+    "id": 130
+  },
+  {
+    "city": "Caucaia",
+    "country": "Brazil",
+    "lat": -3.73611,
+    "lng": -38.65306,
+    "local_name": "Caucaia",
+    "continent": "South America",
+    "id": 131
+  },
+  {
+    "city": "Cariacica",
+    "country": "Brazil",
+    "lat": -20.26389,
+    "lng": -40.42,
+    "local_name": "Cariacica",
+    "continent": "South America",
+    "id": 132
+  },
+  {
+    "city": "Cabimas",
+    "country": "Venezuela",
+    "lat": 10.39907,
+    "lng": -71.45206,
+    "local_name": "Cabimas",
+    "continent": "South America",
+    "id": 133
+  },
+  {
+    "city": "Praia Grande",
+    "country": "Brazil",
+    "lat": -24.00583,
+    "lng": -46.40278,
+    "local_name": "Praia Grande",
+    "continent": "South America",
+    "id": 134
+  },
+  {
+    "city": "Campina Grande",
+    "country": "Brazil",
+    "lat": -7.23056,
+    "lng": -35.88111,
+    "local_name": "Campina Grande",
+    "continent": "South America",
+    "id": 135
+  },
+  {
+    "city": "Corrientes",
+    "country": "Argentina",
+    "lat": -27.46784,
+    "lng": -58.8344,
+    "local_name": "Corrientes",
+    "continent": "South America",
+    "id": 136
+  },
+  {
+    "city": "Turmero",
+    "country": "Venezuela",
+    "lat": 10.22856,
+    "lng": -67.47421,
+    "local_name": "Turmero",
+    "continent": "South America",
+    "id": 137
+  },
+  {
+    "city": "Soledad",
+    "country": "Colombia",
+    "lat": 10.91843,
+    "lng": -74.76459,
+    "local_name": "Soledad",
+    "continent": "South America",
+    "id": 138
+  },
+  {
+    "city": "Paulista",
+    "country": "Brazil",
+    "lat": -7.94083,
+    "lng": -34.87306,
+    "local_name": "Paulista",
+    "continent": "South America",
+    "id": 139
+  },
+  {
+    "city": "Uberaba",
+    "country": "Brazil",
+    "lat": -19.74833,
+    "lng": -47.93194,
+    "local_name": "Uberaba",
+    "continent": "South America",
+    "id": 140
+  },
+  {
+    "city": "Viña del Mar",
+    "country": "Chile",
+    "lat": -33.02457,
+    "lng": -71.55183,
+    "local_name": "Viña del Mar",
+    "continent": "South America",
+    "id": 141
+  },
+  {
+    "city": "São Vicente",
+    "country": "Brazil",
+    "lat": -23.96306,
+    "lng": -46.39194,
+    "local_name": "São Vicente",
+    "continent": "South America",
+    "id": 142
+  },
+  {
+    "city": "Ribeirão das Neves",
+    "country": "Brazil",
+    "lat": -19.76694,
+    "lng": -44.08667,
+    "local_name": "Ribeirão das Neves",
+    "continent": "South America",
+    "id": 143
+  },
+  {
+    "city": "São José dos Pinhais",
+    "country": "Brazil",
+    "lat": -25.5302,
+    "lng": -49.20836,
+    "local_name": "São José dos Pinhais",
+    "continent": "South America",
+    "id": 144
+  },
+  {
+    "city": "Canoas",
+    "country": "Brazil",
+    "lat": -29.91778,
+    "lng": -51.18361,
+    "local_name": "Canoas",
+    "continent": "South America",
+    "id": 145
+  },
+  {
+    "city": "Pucallpa",
+    "country": "Peru",
+    "lat": -8.37915,
+    "lng": -74.55387,
+    "local_name": "Pucallpa",
+    "continent": "South America",
+    "id": 146
+  },
+  {
+    "city": "Mogi das Cruzes",
+    "country": "Brazil",
+    "lat": -23.52278,
+    "lng": -46.18833,
+    "local_name": "Mogi das Cruzes",
+    "continent": "South America",
+    "id": 147
+  },
+  {
+    "city": "Guarujá",
+    "country": "Brazil",
+    "lat": -23.99306,
+    "lng": -46.25639,
+    "local_name": "Guarujá",
+    "continent": "South America",
+    "id": 148
+  },
+  {
+    "city": "Portoviejo",
+    "country": "Ecuador",
+    "lat": -1.05764,
+    "lng": -80.45145,
+    "local_name": "Portoviejo",
+    "continent": "South America",
+    "id": 149
+  },
+  {
+    "city": "Villavicencio",
+    "country": "Colombia",
+    "lat": 4.13238,
+    "lng": -73.62564,
+    "local_name": "Villavicencio",
+    "continent": "South America",
+    "id": 150
+  },
+  {
+    "city": "Pelotas",
+    "country": "Brazil",
+    "lat": -31.76997,
+    "lng": -52.34101,
+    "local_name": "Pelotas",
+    "continent": "South America",
+    "id": 151
+  },
+  {
+    "city": "Anápolis",
+    "country": "Brazil",
+    "lat": -16.32667,
+    "lng": -48.95278,
+    "local_name": "Anápolis",
+    "continent": "South America",
+    "id": 152
+  },
+  {
+    "city": "Popayán",
+    "country": "Colombia",
+    "lat": 2.43823,
+    "lng": -76.61316,
+    "local_name": "Popayán",
+    "continent": "South America",
+    "id": 153
+  },
+  {
+    "city": "Taubaté",
+    "country": "Brazil",
+    "lat": -23.02639,
+    "lng": -45.55528,
+    "local_name": "Taubaté",
+    "continent": "South America",
+    "id": 154
+  },
+  {
+    "city": "Chimbote",
+    "country": "Peru",
+    "lat": -9.07508,
+    "lng": -78.59373,
+    "local_name": "Chimbote",
+    "continent": "South America",
+    "id": 155
+  },
+  {
+    "city": "Barueri",
+    "country": "Brazil",
+    "lat": -23.51056,
+    "lng": -46.87611,
+    "local_name": "Barueri",
+    "continent": "South America",
+    "id": 156
+  },
+  {
+    "city": "Eloy Alfaro",
+    "country": "Ecuador",
+    "lat": -2.16919,
+    "lng": -79.83987,
+    "local_name": "Eloy Alfaro",
+    "continent": "South America",
+    "id": 157
+  },
+  {
+    "city": "Várzea Grande",
+    "country": "Brazil",
+    "lat": -15.64667,
+    "lng": -56.1325,
+    "local_name": "Várzea Grande",
+    "continent": "South America",
+    "id": 158
+  },
+  {
+    "city": "Vitória",
+    "country": "Brazil",
+    "lat": -20.31944,
+    "lng": -40.33778,
+    "local_name": "Vitória",
+    "continent": "South America",
+    "id": 159
+  },
+  {
+    "city": "Palmira",
+    "country": "Colombia",
+    "lat": 3.53944,
+    "lng": -76.30361,
+    "local_name": "Palmira",
+    "continent": "South America",
+    "id": 160
+  },
+  {
+    "city": "Maringá",
+    "country": "Brazil",
+    "lat": -23.42528,
+    "lng": -51.93861,
+    "local_name": "Maringá",
+    "continent": "South America",
+    "id": 161
+  },
+  {
+    "city": "Jardim Angela",
+    "country": "Brazil",
+    "lat": -23.71636,
+    "lng": -46.76872,
+    "local_name": "Jardim Angela",
+    "continent": "South America",
+    "id": 162
+  },
+  {
+    "city": "Suzano",
+    "country": "Brazil",
+    "lat": -23.5425,
+    "lng": -46.31083,
+    "local_name": "Suzano",
+    "continent": "South America",
+    "id": 163
+  },
+  {
+    "city": "Palmas",
+    "country": "Brazil",
+    "lat": -10.16745,
+    "lng": -48.32766,
+    "local_name": "Palmas",
+    "continent": "South America",
+    "id": 164
+  },
+  {
+    "city": "Posadas",
+    "country": "Argentina",
+    "lat": -27.39184,
+    "lng": -55.92379,
+    "local_name": "Posadas",
+    "continent": "South America",
+    "id": 165
+  },
+  {
+    "city": "Armenia",
+    "country": "Colombia",
+    "lat": 4.53656,
+    "lng": -75.67263,
+    "local_name": "Armenia",
+    "continent": "South America",
+    "id": 166
+  },
+  {
+    "city": "Ciudad del Este",
+    "country": "Paraguay",
+    "lat": -25.5036,
+    "lng": -54.65067,
+    "local_name": "Ciudad del Este",
+    "continent": "South America",
+    "id": 167
+  },
+  {
+    "city": "Mérida",
+    "country": "Venezuela",
+    "lat": 8.57899,
+    "lng": -71.16922,
+    "local_name": "Mérida",
+    "continent": "South America",
+    "id": 168
+  },
+  {
+    "city": "Bahía Blanca",
+    "country": "Argentina",
+    "lat": -38.7176,
+    "lng": -62.26545,
+    "local_name": "Bahía Blanca",
+    "continent": "South America",
+    "id": 169
+  },
+  {
+    "city": "Ponta Grossa",
+    "country": "Brazil",
+    "lat": -25.095,
+    "lng": -50.16194,
+    "local_name": "Ponta Grossa",
+    "continent": "South America",
+    "id": 170
+  },
+  {
+    "city": "Limeira",
+    "country": "Brazil",
+    "lat": -22.56472,
+    "lng": -47.40167,
+    "local_name": "Limeira",
+    "continent": "South America",
+    "id": 171
+  },
+  {
+    "city": "Resistencia",
+    "country": "Argentina",
+    "lat": -27.46363,
+    "lng": -58.98665,
+    "local_name": "Resistencia",
+    "continent": "South America",
+    "id": 172
+  },
+  {
+    "city": "San Cristóbal",
+    "country": "Venezuela",
+    "lat": 7.76593,
+    "lng": -72.23576,
+    "local_name": "San Cristóbal",
+    "continent": "South America",
+    "id": 173
+  },
+  {
+    "city": "Machala",
+    "country": "Ecuador",
+    "lat": -3.25886,
+    "lng": -79.95876,
+    "local_name": "Machala",
+    "continent": "South America",
+    "id": 174
+  },
+  {
+    "city": "Ceilândia",
+    "country": "Brazil",
+    "lat": -15.8091,
+    "lng": -48.13096,
+    "local_name": "Ceilândia",
+    "continent": "South America",
+    "id": 175
+  },
+  {
+    "city": "Tacna",
+    "country": "Peru",
+    "lat": -18.01465,
+    "lng": -70.25362,
+    "local_name": "Tacna",
+    "continent": "South America",
+    "id": 176
+  },
+  {
+    "city": "Sumaré",
+    "country": "Brazil",
+    "lat": -22.82194,
+    "lng": -47.26694,
+    "local_name": "Sumaré",
+    "continent": "South America",
+    "id": 177
+  },
+  {
+    "city": "Viamão",
+    "country": "Brazil",
+    "lat": -30.08111,
+    "lng": -51.02333,
+    "local_name": "Viamão",
+    "continent": "South America",
+    "id": 178
+  },
+  {
+    "city": "Alto Barinas",
+    "country": "Venezuela",
+    "lat": 8.5931,
+    "lng": -70.2261,
+    "local_name": "Alto Barinas",
+    "continent": "South America",
+    "id": 179
+  },
+  {
+    "city": "Santa Maria",
+    "country": "Brazil",
+    "lat": -29.68417,
+    "lng": -53.80694,
+    "local_name": "Santa Maria",
+    "continent": "South America",
+    "id": 180
+  },
+  {
+    "city": "Valparaíso",
+    "country": "Chile",
+    "lat": -33.036,
+    "lng": -71.62963,
+    "local_name": "Valparaíso",
+    "continent": "South America",
+    "id": 181
+  },
+  {
+    "city": "Ica",
+    "country": "Peru",
+    "lat": -14.07538,
+    "lng": -75.73422,
+    "local_name": "Ica",
+    "continent": "South America",
+    "id": 182
+  },
+  {
+    "city": "Itagüí",
+    "country": "Colombia",
+    "lat": 6.18461,
+    "lng": -75.59913,
+    "local_name": "Itagüí",
+    "continent": "South America",
+    "id": 183
+  },
+  {
+    "city": "Volta Redonda",
+    "country": "Brazil",
+    "lat": -22.52306,
+    "lng": -44.10417,
+    "local_name": "Volta Redonda",
+    "continent": "South America",
+    "id": 184
+  },
+  {
+    "city": "Santa Teresa del Tuy",
+    "country": "Venezuela",
+    "lat": 10.23291,
+    "lng": -66.66474,
+    "local_name": "Santa Teresa del Tuy",
+    "continent": "South America",
+    "id": 185
+  },
+  {
+    "city": "Sincelejo",
+    "country": "Colombia",
+    "lat": 9.3045,
+    "lng": -75.3905,
+    "local_name": "Sincelejo",
+    "continent": "South America",
+    "id": 186
+  },
+  {
+    "city": "Loja",
+    "country": "Ecuador",
+    "lat": -3.99313,
+    "lng": -79.20422,
+    "local_name": "Loja",
+    "continent": "South America",
+    "id": 187
+  },
+  {
+    "city": "Taboão da Serra",
+    "country": "Brazil",
+    "lat": -23.62611,
+    "lng": -46.79167,
+    "local_name": "Taboão da Serra",
+    "continent": "South America",
+    "id": 188
+  },
+  {
+    "city": "Petrópolis",
+    "country": "Brazil",
+    "lat": -22.505,
+    "lng": -43.17861,
+    "local_name": "Petrópolis",
+    "continent": "South America",
+    "id": 189
+  },
+  {
+    "city": "Capao Redondo",
+    "country": "Brazil",
+    "lat": -23.66877,
+    "lng": -46.78051,
+    "local_name": "Capao Redondo",
+    "continent": "South America",
+    "id": 190
+  },
+  {
+    "city": "São José",
+    "country": "Brazil",
+    "lat": -27.61528,
+    "lng": -48.6275,
+    "local_name": "São José",
+    "continent": "South America",
+    "id": 191
+  },
+  {
+    "city": "Merlo",
+    "country": "Argentina",
+    "lat": -34.66536,
+    "lng": -58.72744,
+    "local_name": "Merlo",
+    "continent": "South America",
+    "id": 192
+  },
+  {
+    "city": "Parauapebas",
+    "country": "Brazil",
+    "lat": -6.0675,
+    "lng": -49.90222,
+    "local_name": "Parauapebas",
+    "continent": "South America",
+    "id": 193
+  },
+  {
+    "city": "Floridablanca",
+    "country": "Colombia",
+    "lat": 7.06222,
+    "lng": -73.08644,
+    "local_name": "Floridablanca",
+    "continent": "South America",
+    "id": 194
+  },
+  {
+    "city": "Parnamirim",
+    "country": "Brazil",
+    "lat": -5.91556,
+    "lng": -35.26278,
+    "local_name": "Parnamirim",
+    "continent": "South America",
+    "id": 195
+  },
+  {
+    "city": "Sapopemba",
+    "country": "Brazil",
+    "lat": -23.59556,
+    "lng": -46.52472,
+    "local_name": "Sapopemba",
+    "continent": "South America",
+    "id": 196
+  },
+  {
+    "city": "Gravataí",
+    "country": "Brazil",
+    "lat": -29.94218,
+    "lng": -50.99278,
+    "local_name": "Gravataí",
+    "continent": "South America",
+    "id": 197
+  },
+  {
+    "city": "Mossoró",
+    "country": "Brazil",
+    "lat": -5.1875,
+    "lng": -37.34417,
+    "local_name": "Mossoró",
+    "continent": "South America",
+    "id": 198
+  },
+  {
+    "city": "Manta",
+    "country": "Ecuador",
+    "lat": -0.94937,
+    "lng": -80.73137,
+    "local_name": "Manta",
+    "continent": "South America",
+    "id": 199
+  },
+  {
+    "city": "Riobamba",
+    "country": "Ecuador",
+    "lat": -1.66506,
+    "lng": -78.65887,
+    "local_name": "Riobamba",
+    "continent": "South America",
+    "id": 200
+  },
+  {
+    "city": "Quilmes",
+    "country": "Argentina",
+    "lat": -34.72065,
+    "lng": -58.25454,
+    "local_name": "Quilmes",
+    "continent": "South America",
+    "id": 201
+  },
+  {
+    "city": "Sacomã",
+    "country": "Brazil",
+    "lat": -23.63083,
+    "lng": -46.59817,
+    "local_name": "Sacomã",
+    "continent": "South America",
+    "id": 202
+  },
+  {
+    "city": "Jardim Sao Luis",
+    "country": "Brazil",
+    "lat": -23.68073,
+    "lng": -46.7394,
+    "local_name": "Jardim Sao Luis",
+    "continent": "South America",
+    "id": 203
+  },
+  {
+    "city": "Rondonópolis",
+    "country": "Brazil",
+    "lat": -16.47083,
+    "lng": -54.63556,
+    "local_name": "Rondonópolis",
+    "continent": "South America",
+    "id": 204
+  },
+  {
+    "city": "Foz do Iguaçu",
+    "country": "Brazil",
+    "lat": -25.54778,
+    "lng": -54.58806,
+    "local_name": "Foz do Iguaçu",
+    "continent": "South America",
+    "id": 205
+  },
+  {
+    "city": "San Salvador de Jujuy",
+    "country": "Argentina",
+    "lat": -24.1928,
+    "lng": -65.29342,
+    "local_name": "San Salvador de Jujuy",
+    "continent": "South America",
+    "id": 206
+  },
+  {
+    "city": "Cascavel",
+    "country": "Brazil",
+    "lat": -24.95583,
+    "lng": -53.45528,
+    "local_name": "Cascavel",
+    "continent": "South America",
+    "id": 207
+  },
+  {
+    "city": "Indaiatuba",
+    "country": "Brazil",
+    "lat": -23.08842,
+    "lng": -47.2119,
+    "local_name": "Indaiatuba",
+    "continent": "South America",
+    "id": 208
+  },
+  {
+    "city": "Ñuñoa",
+    "country": "Chile",
+    "lat": -33.44735,
+    "lng": -70.58279,
+    "local_name": "Ñuñoa",
+    "continent": "South America",
+    "id": 209
+  },
+  {
+    "city": "Novo Hamburgo",
+    "country": "Brazil",
+    "lat": -29.67833,
+    "lng": -51.13056,
+    "local_name": "Novo Hamburgo",
+    "continent": "South America",
+    "id": 210
+  },
+  {
+    "city": "Cotia",
+    "country": "Brazil",
+    "lat": -23.60389,
+    "lng": -46.91917,
+    "local_name": "Cotia",
+    "continent": "South America",
+    "id": 211
+  },
+  {
+    "city": "Vitória da Conquista",
+    "country": "Brazil",
+    "lat": -14.86611,
+    "lng": -40.83944,
+    "local_name": "Vitória da Conquista",
+    "continent": "South America",
+    "id": 212
+  },
+  {
+    "city": "Los Teques",
+    "country": "Venezuela",
+    "lat": 10.34954,
+    "lng": -67.04266,
+    "local_name": "Los Teques",
+    "continent": "South America",
+    "id": 213
+  },
+  {
+    "city": "Santiago del Estero",
+    "country": "Argentina",
+    "lat": -27.80047,
+    "lng": -64.26285,
+    "local_name": "Santiago del Estero",
+    "continent": "South America",
+    "id": 214
+  },
+  {
+    "city": "Santiago de Surco",
+    "country": "Peru",
+    "lat": -12.13588,
+    "lng": -77.00742,
+    "local_name": "Santiago de Surco",
+    "continent": "South America",
+    "id": 215
+  },
+  {
+    "city": "Governador Valadares",
+    "country": "Brazil",
+    "lat": -18.85111,
+    "lng": -41.94944,
+    "local_name": "Governador Valadares",
+    "continent": "South America",
+    "id": 216
+  },
+  {
+    "city": "Embu das Artes",
+    "country": "Brazil",
+    "lat": -23.64889,
+    "lng": -46.85222,
+    "local_name": "Embu das Artes",
+    "continent": "South America",
+    "id": 217
+  },
+  {
+    "city": "San Bernardo",
+    "country": "Chile",
+    "lat": -33.59217,
+    "lng": -70.6996,
+    "local_name": "San Bernardo",
+    "continent": "South America",
+    "id": 218
+  },
+  {
+    "city": "Cidade Ademar",
+    "country": "Brazil",
+    "lat": -23.67379,
+    "lng": -46.65681,
+    "local_name": "Cidade Ademar",
+    "continent": "South America",
+    "id": 219
+  },
+  {
+    "city": "Guarenas",
+    "country": "Venezuela",
+    "lat": 10.47027,
+    "lng": -66.61934,
+    "local_name": "Guarenas",
+    "continent": "South America",
+    "id": 220
+  },
+  {
+    "city": "Paraná",
+    "country": "Argentina",
+    "lat": -31.73271,
+    "lng": -60.52897,
+    "local_name": "Paraná",
+    "continent": "South America",
+    "id": 221
+  },
+  {
+    "city": "Coro",
+    "country": "Venezuela",
+    "lat": 11.40769,
+    "lng": -69.67822,
+    "local_name": "Coro",
+    "continent": "South America",
+    "id": 222
+  },
+  {
+    "city": "Americana",
+    "country": "Brazil",
+    "lat": -22.73917,
+    "lng": -47.33139,
+    "local_name": "Americana",
+    "continent": "South America",
+    "id": 223
+  },
+  {
+    "city": "Colombo",
+    "country": "Brazil",
+    "lat": -25.29167,
+    "lng": -49.22417,
+    "local_name": "Colombo",
+    "continent": "South America",
+    "id": 224
+  },
+  {
+    "city": "Puerto Montt",
+    "country": "Chile",
+    "lat": -41.4693,
+    "lng": -72.94237,
+    "local_name": "Puerto Montt",
+    "continent": "South America",
+    "id": 225
+  },
+  {
+    "city": "Juliaca",
+    "country": "Peru",
+    "lat": -15.5,
+    "lng": -70.13333,
+    "local_name": "Juliaca",
+    "continent": "South America",
+    "id": 226
+  },
+  {
+    "city": "Valera",
+    "country": "Venezuela",
+    "lat": 9.31778,
+    "lng": -70.60361,
+    "local_name": "Valera",
+    "continent": "South America",
+    "id": 227
+  },
+  {
+    "city": "São José de Ribamar",
+    "country": "Brazil",
+    "lat": -2.55572,
+    "lng": -44.05992,
+    "local_name": "São José de Ribamar",
+    "continent": "South America",
+    "id": 228
+  },
+  {
+    "city": "Baruta",
+    "country": "Venezuela",
+    "lat": 10.43424,
+    "lng": -66.87558,
+    "local_name": "Baruta",
+    "continent": "South America",
+    "id": 229
+  },
+  {
+    "city": "Magé",
+    "country": "Brazil",
+    "lat": -22.65278,
+    "lng": -43.04056,
+    "local_name": "Magé",
+    "continent": "South America",
+    "id": 230
+  },
+  {
+    "city": "Arapiraca",
+    "country": "Brazil",
+    "lat": -9.7525,
+    "lng": -36.66111,
+    "local_name": "Arapiraca",
+    "continent": "South America",
+    "id": 231
+  },
+  {
+    "city": "Brasilandia",
+    "country": "Brazil",
+    "lat": -23.44859,
+    "lng": -46.68839,
+    "local_name": "Brasilandia",
+    "continent": "South America",
+    "id": 232
+  },
+  {
+    "city": "Arica",
+    "country": "Chile",
+    "lat": -18.47552,
+    "lng": -70.30058,
+    "local_name": "Arica",
+    "continent": "South America",
+    "id": 233
+  },
+  {
+    "city": "Peñalolén",
+    "country": "Chile",
+    "lat": -33.46836,
+    "lng": -70.53411,
+    "local_name": "Peñalolén",
+    "continent": "South America",
+    "id": 234
+  },
+  {
+    "city": "Itapevi",
+    "country": "Brazil",
+    "lat": -23.54889,
+    "lng": -46.93417,
+    "local_name": "Itapevi",
+    "continent": "South America",
+    "id": 235
+  },
+  {
+    "city": "Marília",
+    "country": "Brazil",
+    "lat": -22.21389,
+    "lng": -49.94583,
+    "local_name": "Marília",
+    "continent": "South America",
+    "id": 236
+  },
+  {
+    "city": "Buenaventura",
+    "country": "Colombia",
+    "lat": 3.8801,
+    "lng": -77.03116,
+    "local_name": "Buenaventura",
+    "continent": "South America",
+    "id": 237
+  },
+  {
+    "city": "Ciudad Ojeda",
+    "country": "Venezuela",
+    "lat": 10.20161,
+    "lng": -71.3148,
+    "local_name": "Ciudad Ojeda",
+    "continent": "South America",
+    "id": 238
+  },
+  {
+    "city": "Itaboraí",
+    "country": "Brazil",
+    "lat": -22.74444,
+    "lng": -42.85944,
+    "local_name": "Itaboraí",
+    "continent": "South America",
+    "id": 239
+  },
+  {
+    "city": "Cabo Frio",
+    "country": "Brazil",
+    "lat": -22.88717,
+    "lng": -42.02622,
+    "local_name": "Cabo Frio",
+    "continent": "South America",
+    "id": 240
+  }
+]

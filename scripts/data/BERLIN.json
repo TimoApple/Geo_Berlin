@@ -1,0 +1,1802 @@
+[
+  {
+    "id": 1,
+    "city": "Mitte",
+    "country": "Germany",
+    "lat": 52.52,
+    "lng": 13.405,
+    "local_name": "Mitte",
+    "continent": "Europe"
+  },
+  {
+    "id": 2,
+    "city": "Moabit",
+    "country": "Germany",
+    "lat": 52.5234,
+    "lng": 13.3417,
+    "local_name": "Moabit",
+    "continent": "Europe"
+  },
+  {
+    "id": 3,
+    "city": "Hansaviertel",
+    "country": "Germany",
+    "lat": 52.5167,
+    "lng": 13.3417,
+    "local_name": "Hansaviertel",
+    "continent": "Europe"
+  },
+  {
+    "id": 4,
+    "city": "Tiergarten",
+    "country": "Germany",
+    "lat": 52.5167,
+    "lng": 13.3667,
+    "local_name": "Tiergarten",
+    "continent": "Europe"
+  },
+  {
+    "id": 5,
+    "city": "Wedding",
+    "country": "Germany",
+    "lat": 52.5483,
+    "lng": 13.3617,
+    "local_name": "Wedding",
+    "continent": "Europe"
+  },
+  {
+    "id": 6,
+    "city": "Gesundbrunnen",
+    "country": "Germany",
+    "lat": 52.5483,
+    "lng": 13.3917,
+    "local_name": "Gesundbrunnen",
+    "continent": "Europe"
+  },
+  {
+    "id": 7,
+    "city": "Friedrichshain",
+    "country": "Germany",
+    "lat": 52.5167,
+    "lng": 13.45,
+    "local_name": "Friedrichshain",
+    "continent": "Europe"
+  },
+  {
+    "id": 8,
+    "city": "Kreuzberg",
+    "country": "Germany",
+    "lat": 52.4917,
+    "lng": 13.4083,
+    "local_name": "Kreuzberg",
+    "continent": "Europe"
+  },
+  {
+    "id": 9,
+    "city": "Prenzlauer Berg",
+    "country": "Germany",
+    "lat": 52.5417,
+    "lng": 13.425,
+    "local_name": "Prenzlauer Berg",
+    "continent": "Europe"
+  },
+  {
+    "id": 10,
+    "city": "Weissensee",
+    "country": "Germany",
+    "lat": 52.55,
+    "lng": 13.4667,
+    "local_name": "Weissensee",
+    "continent": "Europe"
+  },
+  {
+    "id": 11,
+    "city": "Blankenburg",
+    "country": "Germany",
+    "lat": 52.5833,
+    "lng": 13.45,
+    "local_name": "Blankenburg",
+    "continent": "Europe"
+  },
+  {
+    "id": 12,
+    "city": "Heinersdorf",
+    "country": "Germany",
+    "lat": 52.5667,
+    "lng": 13.4333,
+    "local_name": "Heinersdorf",
+    "continent": "Europe"
+  },
+  {
+    "id": 13,
+    "city": "Karow",
+    "country": "Germany",
+    "lat": 52.6083,
+    "lng": 13.4667,
+    "local_name": "Karow",
+    "continent": "Europe"
+  },
+  {
+    "id": 14,
+    "city": "Malchow",
+    "country": "Germany",
+    "lat": 52.5667,
+    "lng": 13.4833,
+    "local_name": "Malchow",
+    "continent": "Europe"
+  },
+  {
+    "id": 15,
+    "city": "Wartenberg",
+    "country": "Germany",
+    "lat": 52.5833,
+    "lng": 13.5,
+    "local_name": "Wartenberg",
+    "continent": "Europe"
+  },
+  {
+    "id": 16,
+    "city": "Falkenberg",
+    "country": "Germany",
+    "lat": 52.5833,
+    "lng": 13.5167,
+    "local_name": "Falkenberg",
+    "continent": "Europe"
+  },
+  {
+    "id": 17,
+    "city": "Alt-Hohenschonhausen",
+    "country": "Germany",
+    "lat": 52.5583,
+    "lng": 13.5,
+    "local_name": "Alt-Hohenschonhausen",
+    "continent": "Europe"
+  },
+  {
+    "id": 18,
+    "city": "Neu-Hohenschonhausen",
+    "country": "Germany",
+    "lat": 52.5667,
+    "lng": 13.5167,
+    "local_name": "Neu-Hohenschonhausen",
+    "continent": "Europe"
+  },
+  {
+    "id": 19,
+    "city": "Waidmannslust",
+    "country": "Germany",
+    "lat": 52.6083,
+    "lng": 13.3167,
+    "local_name": "Waidmannslust",
+    "continent": "Europe"
+  },
+  {
+    "id": 20,
+    "city": "Lübars",
+    "country": "Germany",
+    "lat": 52.6167,
+    "lng": 13.3333,
+    "local_name": "Lübars",
+    "continent": "Europe"
+  },
+  {
+    "id": 21,
+    "city": "Blankenfelde",
+    "country": "Germany",
+    "lat": 52.6167,
+    "lng": 13.3833,
+    "local_name": "Blankenfelde",
+    "continent": "Europe"
+  },
+  {
+    "id": 22,
+    "city": "Rosenthal",
+    "country": "Germany",
+    "lat": 52.5917,
+    "lng": 13.3833,
+    "local_name": "Rosenthal",
+    "continent": "Europe"
+  },
+  {
+    "id": 23,
+    "city": "Wilhelmsruh",
+    "country": "Germany",
+    "lat": 52.5833,
+    "lng": 13.3667,
+    "local_name": "Wilhelmsruh",
+    "continent": "Europe"
+  },
+  {
+    "id": 24,
+    "city": "Niederschönhausen",
+    "country": "Germany",
+    "lat": 52.5833,
+    "lng": 13.4,
+    "local_name": "Niederschönhausen",
+    "continent": "Europe"
+  },
+  {
+    "id": 25,
+    "city": "Buch",
+    "country": "Germany",
+    "lat": 52.6333,
+    "lng": 13.5,
+    "local_name": "Buch",
+    "continent": "Europe"
+  },
+  {
+    "id": 26,
+    "city": "Französisch Buchholz",
+    "country": "Germany",
+    "lat": 52.6,
+    "lng": 13.4333,
+    "local_name": "Französisch Buchholz",
+    "continent": "Europe"
+  },
+  {
+    "id": 27,
+    "city": "Pankow",
+    "country": "Germany",
+    "lat": 52.5667,
+    "lng": 13.4,
+    "local_name": "Pankow",
+    "continent": "Europe"
+  },
+  {
+    "id": 28,
+    "city": "Charlottenburg",
+    "country": "Germany",
+    "lat": 52.5167,
+    "lng": 13.3,
+    "local_name": "Charlottenburg",
+    "continent": "Europe"
+  },
+  {
+    "id": 29,
+    "city": "Grunewald",
+    "country": "Germany",
+    "lat": 52.4833,
+    "lng": 13.2667,
+    "local_name": "Grunewald",
+    "continent": "Europe"
+  },
+  {
+    "id": 30,
+    "city": "Halensee",
+    "country": "Germany",
+    "lat": 52.4917,
+    "lng": 13.2917,
+    "local_name": "Halensee",
+    "continent": "Europe"
+  },
+  {
+    "id": 31,
+    "city": "Schmargendorf",
+    "country": "Germany",
+    "lat": 52.4833,
+    "lng": 13.2833,
+    "local_name": "Schmargendorf",
+    "continent": "Europe"
+  },
+  {
+    "id": 32,
+    "city": "Westend",
+    "country": "Germany",
+    "lat": 52.5083,
+    "lng": 13.2833,
+    "local_name": "Westend",
+    "continent": "Europe"
+  },
+  {
+    "id": 33,
+    "city": "Wilmersdorf",
+    "country": "Germany",
+    "lat": 52.4833,
+    "lng": 13.3167,
+    "local_name": "Wilmersdorf",
+    "continent": "Europe"
+  },
+  {
+    "id": 34,
+    "city": "Gatow",
+    "country": "Germany",
+    "lat": 52.4833,
+    "lng": 13.1833,
+    "local_name": "Gatow",
+    "continent": "Europe"
+  },
+  {
+    "id": 35,
+    "city": "Kladow",
+    "country": "Germany",
+    "lat": 52.45,
+    "lng": 13.1333,
+    "local_name": "Kladow",
+    "continent": "Europe"
+  },
+  {
+    "id": 36,
+    "city": "Staaken",
+    "country": "Germany",
+    "lat": 52.5333,
+    "lng": 13.15,
+    "local_name": "Staaken",
+    "continent": "Europe"
+  },
+  {
+    "id": 37,
+    "city": "Spandau",
+    "country": "Germany",
+    "lat": 52.5333,
+    "lng": 13.2,
+    "local_name": "Spandau",
+    "continent": "Europe"
+  },
+  {
+    "id": 38,
+    "city": "Haselhorst",
+    "country": "Germany",
+    "lat": 52.5333,
+    "lng": 13.2333,
+    "local_name": "Haselhorst",
+    "continent": "Europe"
+  },
+  {
+    "id": 39,
+    "city": "Siemensstadt",
+    "country": "Germany",
+    "lat": 52.5417,
+    "lng": 13.2667,
+    "local_name": "Siemensstadt",
+    "continent": "Europe"
+  },
+  {
+    "id": 40,
+    "city": "Falkenhagener Feld",
+    "country": "Germany",
+    "lat": 52.55,
+    "lng": 13.1833,
+    "local_name": "Falkenhagener Feld",
+    "continent": "Europe"
+  },
+  {
+    "id": 41,
+    "city": "Hakenfelde",
+    "country": "Germany",
+    "lat": 52.5583,
+    "lng": 13.2,
+    "local_name": "Hakenfelde",
+    "continent": "Europe"
+  },
+  {
+    "id": 42,
+    "city": "Wilhelmstadt",
+    "country": "Germany",
+    "lat": 52.5167,
+    "lng": 13.2,
+    "local_name": "Wilhelmstadt",
+    "continent": "Europe"
+  },
+  {
+    "id": 43,
+    "city": "Tegel",
+    "country": "Germany",
+    "lat": 52.5833,
+    "lng": 13.2833,
+    "local_name": "Tegel",
+    "continent": "Europe"
+  },
+  {
+    "id": 44,
+    "city": "Heiligensee",
+    "country": "Germany",
+    "lat": 52.6167,
+    "lng": 13.2333,
+    "local_name": "Heiligensee",
+    "continent": "Europe"
+  },
+  {
+    "id": 45,
+    "city": "Frohnau",
+    "country": "Germany",
+    "lat": 52.6333,
+    "lng": 13.2833,
+    "local_name": "Frohnau",
+    "continent": "Europe"
+  },
+  {
+    "id": 46,
+    "city": "Hermsdorf",
+    "country": "Germany",
+    "lat": 52.6167,
+    "lng": 13.3167,
+    "local_name": "Hermsdorf",
+    "continent": "Europe"
+  },
+  {
+    "id": 47,
+    "city": "Wittenau",
+    "country": "Germany",
+    "lat": 52.5917,
+    "lng": 13.3333,
+    "local_name": "Wittenau",
+    "continent": "Europe"
+  },
+  {
+    "id": 48,
+    "city": "Märkisches Viertel",
+    "country": "Germany",
+    "lat": 52.5917,
+    "lng": 13.3583,
+    "local_name": "Märkisches Viertel",
+    "continent": "Europe"
+  },
+  {
+    "id": 49,
+    "city": "Reinickendorf",
+    "country": "Germany",
+    "lat": 52.5667,
+    "lng": 13.3333,
+    "local_name": "Reinickendorf",
+    "continent": "Europe"
+  },
+  {
+    "id": 50,
+    "city": "Borsigwalde",
+    "country": "Germany",
+    "lat": 52.5833,
+    "lng": 13.3,
+    "local_name": "Borsigwalde",
+    "continent": "Europe"
+  },
+  {
+    "id": 51,
+    "city": "Schöneberg",
+    "country": "Germany",
+    "lat": 52.4833,
+    "lng": 13.35,
+    "local_name": "Schöneberg",
+    "continent": "Europe"
+  },
+  {
+    "id": 52,
+    "city": "Friedenau",
+    "country": "Germany",
+    "lat": 52.4667,
+    "lng": 13.3333,
+    "local_name": "Friedenau",
+    "continent": "Europe"
+  },
+  {
+    "id": 53,
+    "city": "Tempelhof",
+    "country": "Germany",
+    "lat": 52.4667,
+    "lng": 13.4,
+    "local_name": "Tempelhof",
+    "continent": "Europe"
+  },
+  {
+    "id": 54,
+    "city": "Mariendorf",
+    "country": "Germany",
+    "lat": 52.4333,
+    "lng": 13.3833,
+    "local_name": "Mariendorf",
+    "continent": "Europe"
+  },
+  {
+    "id": 55,
+    "city": "Marienfelde",
+    "country": "Germany",
+    "lat": 52.4167,
+    "lng": 13.3667,
+    "local_name": "Marienfelde",
+    "continent": "Europe"
+  },
+  {
+    "id": 56,
+    "city": "Lichtenrade",
+    "country": "Germany",
+    "lat": 52.4,
+    "lng": 13.4,
+    "local_name": "Lichtenrade",
+    "continent": "Europe"
+  },
+  {
+    "id": 57,
+    "city": "Buckow",
+    "country": "Germany",
+    "lat": 52.4167,
+    "lng": 13.4333,
+    "local_name": "Buckow",
+    "continent": "Europe"
+  },
+  {
+    "id": 58,
+    "city": "Britz",
+    "country": "Germany",
+    "lat": 52.45,
+    "lng": 13.4333,
+    "local_name": "Britz",
+    "continent": "Europe"
+  },
+  {
+    "id": 59,
+    "city": "Rudow",
+    "country": "Germany",
+    "lat": 52.4167,
+    "lng": 13.4833,
+    "local_name": "Rudow",
+    "continent": "Europe"
+  },
+  {
+    "id": 60,
+    "city": "Gropiusstadt",
+    "country": "Germany",
+    "lat": 52.4333,
+    "lng": 13.4667,
+    "local_name": "Gropiusstadt",
+    "continent": "Europe"
+  },
+  {
+    "id": 61,
+    "city": "Neukölln",
+    "country": "Germany",
+    "lat": 52.4833,
+    "lng": 13.4333,
+    "local_name": "Neukölln",
+    "continent": "Europe"
+  },
+  {
+    "id": 62,
+    "city": "Adlershof",
+    "country": "Germany",
+    "lat": 52.4333,
+    "lng": 13.5333,
+    "local_name": "Adlershof",
+    "continent": "Europe"
+  },
+  {
+    "id": 63,
+    "city": "Altglienicke",
+    "country": "Germany",
+    "lat": 52.4167,
+    "lng": 13.55,
+    "local_name": "Altglienicke",
+    "continent": "Europe"
+  },
+  {
+    "id": 64,
+    "city": "Alt-Treptow",
+    "country": "Germany",
+    "lat": 52.4917,
+    "lng": 13.4583,
+    "local_name": "Alt-Treptow",
+    "continent": "Europe"
+  },
+  {
+    "id": 65,
+    "city": "Plänterwald",
+    "country": "Germany",
+    "lat": 52.4833,
+    "lng": 13.4667,
+    "local_name": "Plänterwald",
+    "continent": "Europe"
+  },
+  {
+    "id": 66,
+    "city": "Baumschulenweg",
+    "country": "Germany",
+    "lat": 52.4667,
+    "lng": 13.4833,
+    "local_name": "Baumschulenweg",
+    "continent": "Europe"
+  },
+  {
+    "id": 67,
+    "city": "Köpenick",
+    "country": "Germany",
+    "lat": 52.45,
+    "lng": 13.5667,
+    "local_name": "Köpenick",
+    "continent": "Europe"
+  },
+  {
+    "id": 68,
+    "city": "Friedrichshagen",
+    "country": "Germany",
+    "lat": 52.45,
+    "lng": 13.6167,
+    "local_name": "Friedrichshagen",
+    "continent": "Europe"
+  },
+  {
+    "id": 69,
+    "city": "Rahnsdorf",
+    "country": "Germany",
+    "lat": 52.4333,
+    "lng": 13.6833,
+    "local_name": "Rahnsdorf",
+    "continent": "Europe"
+  },
+  {
+    "id": 70,
+    "city": "Müggelheim",
+    "country": "Germany",
+    "lat": 52.4167,
+    "lng": 13.7167,
+    "local_name": "Müggelheim",
+    "continent": "Europe"
+  },
+  {
+    "id": 71,
+    "city": "Schmöckwitz",
+    "country": "Germany",
+    "lat": 52.4,
+    "lng": 13.6833,
+    "local_name": "Schmöckwitz",
+    "continent": "Europe"
+  },
+  {
+    "id": 72,
+    "city": "Grünau",
+    "country": "Germany",
+    "lat": 52.4167,
+    "lng": 13.5833,
+    "local_name": "Grünau",
+    "continent": "Europe"
+  },
+  {
+    "id": 73,
+    "city": "Bohnsdorf",
+    "country": "Germany",
+    "lat": 52.4,
+    "lng": 13.5333,
+    "local_name": "Bohnsdorf",
+    "continent": "Europe"
+  },
+  {
+    "id": 74,
+    "city": "Johannisthal",
+    "country": "Germany",
+    "lat": 52.45,
+    "lng": 13.5,
+    "local_name": "Johannisthal",
+    "continent": "Europe"
+  },
+  {
+    "id": 75,
+    "city": "Lichtenberg",
+    "country": "Germany",
+    "lat": 52.5167,
+    "lng": 13.4667,
+    "local_name": "Lichtenberg",
+    "continent": "Europe"
+  },
+  {
+    "id": 76,
+    "city": "Rummelsburg",
+    "country": "Germany",
+    "lat": 52.5,
+    "lng": 13.4833,
+    "local_name": "Rummelsburg",
+    "continent": "Europe"
+  },
+  {
+    "id": 77,
+    "city": "Karlshorst",
+    "country": "Germany",
+    "lat": 52.4833,
+    "lng": 13.5333,
+    "local_name": "Karlshorst",
+    "continent": "Europe"
+  },
+  {
+    "id": 78,
+    "city": "Marzahn",
+    "country": "Germany",
+    "lat": 52.55,
+    "lng": 13.55,
+    "local_name": "Marzahn",
+    "continent": "Europe"
+  },
+  {
+    "id": 79,
+    "city": "Biesdorf",
+    "country": "Germany",
+    "lat": 52.5167,
+    "lng": 13.5667,
+    "local_name": "Biesdorf",
+    "continent": "Europe"
+  },
+  {
+    "id": 80,
+    "city": "Kaulsdorf",
+    "country": "Germany",
+    "lat": 52.5,
+    "lng": 13.5833,
+    "local_name": "Kaulsdorf",
+    "continent": "Europe"
+  },
+  {
+    "id": 81,
+    "city": "Mahlsdorf",
+    "country": "Germany",
+    "lat": 52.5,
+    "lng": 13.6167,
+    "local_name": "Mahlsdorf",
+    "continent": "Europe"
+  },
+  {
+    "id": 82,
+    "city": "Hellersdorf",
+    "country": "Germany",
+    "lat": 52.5333,
+    "lng": 13.6,
+    "local_name": "Hellersdorf",
+    "continent": "Europe"
+  },
+  {
+    "id": 83,
+    "city": "Dahlem",
+    "country": "Germany",
+    "lat": 52.4583,
+    "lng": 13.2833,
+    "local_name": "Dahlem",
+    "continent": "Europe"
+  },
+  {
+    "id": 84,
+    "city": "Schlachtensee",
+    "country": "Germany",
+    "lat": 52.4417,
+    "lng": 13.2167,
+    "local_name": "Schlachtensee",
+    "continent": "Europe"
+  },
+  {
+    "id": 85,
+    "city": "Nikolassee",
+    "country": "Germany",
+    "lat": 52.4333,
+    "lng": 13.2,
+    "local_name": "Nikolassee",
+    "continent": "Europe"
+  },
+  {
+    "id": 86,
+    "city": "Wannsee",
+    "country": "Germany",
+    "lat": 52.4167,
+    "lng": 13.15,
+    "local_name": "Wannsee",
+    "continent": "Europe"
+  },
+  {
+    "id": 87,
+    "city": "Steglitz",
+    "country": "Germany",
+    "lat": 52.4583,
+    "lng": 13.3333,
+    "local_name": "Steglitz",
+    "continent": "Europe"
+  },
+  {
+    "id": 88,
+    "city": "Lankwitz",
+    "country": "Germany",
+    "lat": 52.4333,
+    "lng": 13.35,
+    "local_name": "Lankwitz",
+    "continent": "Europe"
+  },
+  {
+    "id": 89,
+    "city": "Lichterfelde",
+    "country": "Germany",
+    "lat": 52.4333,
+    "lng": 13.3167,
+    "local_name": "Lichterfelde",
+    "continent": "Europe"
+  },
+  {
+    "id": 90,
+    "city": "Zehlendorf",
+    "country": "Germany",
+    "lat": 52.4333,
+    "lng": 13.25,
+    "local_name": "Zehlendorf",
+    "continent": "Europe"
+  },
+  {
+    "id": 91,
+    "city": "Potsdam",
+    "country": "Germany",
+    "lat": 52.3906,
+    "lng": 13.0644,
+    "local_name": "Potsdam",
+    "continent": "Europe"
+  },
+  {
+    "id": 92,
+    "city": "Brandenburg an der Havel",
+    "country": "Germany",
+    "lat": 52.4117,
+    "lng": 12.5561,
+    "local_name": "Brandenburg an der Havel",
+    "continent": "Europe"
+  },
+  {
+    "id": 93,
+    "city": "Oranienburg",
+    "country": "Germany",
+    "lat": 52.7533,
+    "lng": 13.2367,
+    "local_name": "Oranienburg",
+    "continent": "Europe"
+  },
+  {
+    "id": 94,
+    "city": "Bernau bei Berlin",
+    "country": "Germany",
+    "lat": 52.6781,
+    "lng": 13.5881,
+    "local_name": "Bernau bei Berlin",
+    "continent": "Europe"
+  },
+  {
+    "id": 95,
+    "city": "Strausberg",
+    "country": "Germany",
+    "lat": 52.5786,
+    "lng": 13.8819,
+    "local_name": "Strausberg",
+    "continent": "Europe"
+  },
+  {
+    "id": 96,
+    "city": "Erkner",
+    "country": "Germany",
+    "lat": 52.4233,
+    "lng": 13.7478,
+    "local_name": "Erkner",
+    "continent": "Europe"
+  },
+  {
+    "id": 97,
+    "city": "Königs Wusterhausen",
+    "country": "Germany",
+    "lat": 52.2917,
+    "lng": 13.625,
+    "local_name": "Königs Wusterhausen",
+    "continent": "Europe"
+  },
+  {
+    "id": 98,
+    "city": "Zossen",
+    "country": "Germany",
+    "lat": 52.2167,
+    "lng": 13.4492,
+    "local_name": "Zossen",
+    "continent": "Europe"
+  },
+  {
+    "id": 99,
+    "city": "Ludwigsfelde",
+    "country": "Germany",
+    "lat": 52.2997,
+    "lng": 13.2711,
+    "local_name": "Ludwigsfelde",
+    "continent": "Europe"
+  },
+  {
+    "id": 100,
+    "city": "Falkensee",
+    "country": "Germany",
+    "lat": 52.5583,
+    "lng": 13.0917,
+    "local_name": "Falkensee",
+    "continent": "Europe"
+  },
+  {
+    "id": 101,
+    "city": "Hennigsdorf",
+    "country": "Germany",
+    "lat": 52.6333,
+    "lng": 13.2,
+    "local_name": "Hennigsdorf",
+    "continent": "Europe"
+  },
+  {
+    "id": 102,
+    "city": "Hohen Neuendorf",
+    "country": "Germany",
+    "lat": 52.6667,
+    "lng": 13.2833,
+    "local_name": "Hohen Neuendorf",
+    "continent": "Europe"
+  },
+  {
+    "id": 103,
+    "city": "Birkenwerder",
+    "country": "Germany",
+    "lat": 52.6833,
+    "lng": 13.2833,
+    "local_name": "Birkenwerder",
+    "continent": "Europe"
+  },
+  {
+    "id": 104,
+    "city": "Wandlitz",
+    "country": "Germany",
+    "lat": 52.75,
+    "lng": 13.45,
+    "local_name": "Wandlitz",
+    "continent": "Europe"
+  },
+  {
+    "id": 105,
+    "city": "Werder (Havel)",
+    "country": "Germany",
+    "lat": 52.3786,
+    "lng": 12.9281,
+    "local_name": "Werder (Havel)",
+    "continent": "Europe"
+  },
+  {
+    "id": 106,
+    "city": "Eberswalde",
+    "country": "Germany",
+    "lat": 52.8333,
+    "lng": 13.8167,
+    "local_name": "Eberswalde",
+    "continent": "Europe"
+  },
+  {
+    "id": 107,
+    "city": "Fürstenwalde",
+    "country": "Germany",
+    "lat": 52.35,
+    "lng": 14.0667,
+    "local_name": "Fürstenwalde",
+    "continent": "Europe"
+  },
+  {
+    "id": 108,
+    "city": "Frankfurt (Oder)",
+    "country": "Germany",
+    "lat": 52.3417,
+    "lng": 14.55,
+    "local_name": "Frankfurt (Oder)",
+    "continent": "Europe"
+  },
+  {
+    "id": 109,
+    "city": "Cottbus",
+    "country": "Germany",
+    "lat": 51.7561,
+    "lng": 14.3328,
+    "local_name": "Cottbus",
+    "continent": "Europe"
+  },
+  {
+    "id": 110,
+    "city": "Luckenwalde",
+    "country": "Germany",
+    "lat": 52.0833,
+    "lng": 13.1667,
+    "local_name": "Luckenwalde",
+    "continent": "Europe"
+  },
+  {
+    "id": 111,
+    "city": "Jüterbog",
+    "country": "Germany",
+    "lat": 51.9833,
+    "lng": 13.0833,
+    "local_name": "Jüterbog",
+    "continent": "Europe"
+  },
+  {
+    "id": 112,
+    "city": "Teltow",
+    "country": "Germany",
+    "lat": 52.4,
+    "lng": 13.2667,
+    "local_name": "Teltow",
+    "continent": "Europe"
+  },
+  {
+    "id": 113,
+    "city": "Kleinmachnow",
+    "country": "Germany",
+    "lat": 52.4,
+    "lng": 13.2167,
+    "local_name": "Kleinmachnow",
+    "continent": "Europe"
+  },
+  {
+    "id": 114,
+    "city": "Stahnsdorf",
+    "country": "Germany",
+    "lat": 52.3833,
+    "lng": 13.2167,
+    "local_name": "Stahnsdorf",
+    "continent": "Europe"
+  },
+  {
+    "id": 115,
+    "city": "Schönefeld",
+    "country": "Germany",
+    "lat": 52.3833,
+    "lng": 13.5,
+    "local_name": "Schönefeld",
+    "continent": "Europe"
+  },
+  {
+    "id": 116,
+    "city": "Rangsdorf",
+    "country": "Germany",
+    "lat": 52.2917,
+    "lng": 13.4333,
+    "local_name": "Rangsdorf",
+    "continent": "Europe"
+  },
+  {
+    "id": 117,
+    "city": "Alexanderplatz",
+    "country": "Germany",
+    "lat": 52.5219,
+    "lng": 13.4132,
+    "local_name": "Alexanderplatz",
+    "continent": "Europe"
+  },
+  {
+    "id": 118,
+    "city": "Potsdamer Platz",
+    "country": "Germany",
+    "lat": 52.5096,
+    "lng": 13.376,
+    "local_name": "Potsdamer Platz",
+    "continent": "Europe"
+  },
+  {
+    "id": 119,
+    "city": "Kurfürstendamm",
+    "country": "Germany",
+    "lat": 52.5021,
+    "lng": 13.3324,
+    "local_name": "Kurfürstendamm",
+    "continent": "Europe"
+  },
+  {
+    "id": 120,
+    "city": "Unter den Linden",
+    "country": "Germany",
+    "lat": 52.5163,
+    "lng": 13.3777,
+    "local_name": "Unter den Linden",
+    "continent": "Europe"
+  },
+  {
+    "id": 121,
+    "city": "Brandenburger Tor",
+    "country": "Germany",
+    "lat": 52.5163,
+    "lng": 13.3777,
+    "local_name": "Brandenburger Tor",
+    "continent": "Europe"
+  },
+  {
+    "id": 122,
+    "city": "Reichstag",
+    "country": "Germany",
+    "lat": 52.5186,
+    "lng": 13.3761,
+    "local_name": "Reichstag",
+    "continent": "Europe"
+  },
+  {
+    "id": 123,
+    "city": "Checkpoint Charlie",
+    "country": "Germany",
+    "lat": 52.5075,
+    "lng": 13.3903,
+    "local_name": "Checkpoint Charlie",
+    "continent": "Europe"
+  },
+  {
+    "id": 124,
+    "city": "East Side Gallery",
+    "country": "Germany",
+    "lat": 52.505,
+    "lng": 13.4392,
+    "local_name": "East Side Gallery",
+    "continent": "Europe"
+  },
+  {
+    "id": 125,
+    "city": "Fernsehturm",
+    "country": "Germany",
+    "lat": 52.5208,
+    "lng": 13.4094,
+    "local_name": "Fernsehturm",
+    "continent": "Europe"
+  },
+  {
+    "id": 126,
+    "city": "Museumsinsel",
+    "country": "Germany",
+    "lat": 52.5208,
+    "lng": 13.3972,
+    "local_name": "Museumsinsel",
+    "continent": "Europe"
+  },
+  {
+    "id": 127,
+    "city": "Gendarmenmarkt",
+    "country": "Germany",
+    "lat": 52.5139,
+    "lng": 13.3928,
+    "local_name": "Gendarmenmarkt",
+    "continent": "Europe"
+  },
+  {
+    "id": 128,
+    "city": "Hackescher Markt",
+    "country": "Germany",
+    "lat": 52.5231,
+    "lng": 13.4019,
+    "local_name": "Hackescher Markt",
+    "continent": "Europe"
+  },
+  {
+    "id": 129,
+    "city": "Boxhagener Platz",
+    "country": "Germany",
+    "lat": 52.5092,
+    "lng": 13.4531,
+    "local_name": "Boxhagener Platz",
+    "continent": "Europe"
+  },
+  {
+    "id": 130,
+    "city": "Mauerpark",
+    "country": "Germany",
+    "lat": 52.5458,
+    "lng": 13.4019,
+    "local_name": "Mauerpark",
+    "continent": "Europe"
+  },
+  {
+    "id": 131,
+    "city": "Görlitzer Park",
+    "country": "Germany",
+    "lat": 52.4953,
+    "lng": 13.4319,
+    "local_name": "Görlitzer Park",
+    "continent": "Europe"
+  },
+  {
+    "id": 132,
+    "city": "Tempelhofer Feld",
+    "country": "Germany",
+    "lat": 52.4731,
+    "lng": 13.4031,
+    "local_name": "Tempelhofer Feld",
+    "continent": "Europe"
+  },
+  {
+    "id": 133,
+    "city": "Karl-Marx-Allee",
+    "country": "Germany",
+    "lat": 52.5167,
+    "lng": 13.4333,
+    "local_name": "Karl-Marx-Allee",
+    "continent": "Europe"
+  },
+  {
+    "id": 134,
+    "city": "Warschauer Strasse",
+    "country": "Germany",
+    "lat": 52.5,
+    "lng": 13.45,
+    "local_name": "Warschauer Strasse",
+    "continent": "Europe"
+  },
+  {
+    "id": 135,
+    "city": "Schloss Charlottenburg",
+    "country": "Germany",
+    "lat": 52.5206,
+    "lng": 13.2956,
+    "local_name": "Schloss Charlottenburg",
+    "continent": "Europe"
+  },
+  {
+    "id": 136,
+    "city": "Olympiastadion",
+    "country": "Germany",
+    "lat": 52.5147,
+    "lng": 13.2394,
+    "local_name": "Olympiastadion",
+    "continent": "Europe"
+  },
+  {
+    "id": 137,
+    "city": "Tiergarten Park",
+    "country": "Germany",
+    "lat": 52.51,
+    "lng": 13.35,
+    "local_name": "Tiergarten Park",
+    "continent": "Europe"
+  },
+  {
+    "id": 138,
+    "city": "Volkspark Friedrichshain",
+    "country": "Germany",
+    "lat": 52.525,
+    "lng": 13.4333,
+    "local_name": "Volkspark Friedrichshain",
+    "continent": "Europe"
+  },
+  {
+    "id": 139,
+    "city": "Treptower Park",
+    "country": "Germany",
+    "lat": 52.4917,
+    "lng": 13.4667,
+    "local_name": "Treptower Park",
+    "continent": "Europe"
+  },
+  {
+    "id": 140,
+    "city": "Britzer Garten",
+    "country": "Germany",
+    "lat": 52.4333,
+    "lng": 13.4167,
+    "local_name": "Britzer Garten",
+    "continent": "Europe"
+  },
+  {
+    "id": 141,
+    "city": "Schlossplatz",
+    "country": "Germany",
+    "lat": 52.5163,
+    "lng": 13.4017,
+    "local_name": "Schlossplatz",
+    "continent": "Europe"
+  },
+  {
+    "id": 143,
+    "city": "Bebelplatz",
+    "country": "Germany",
+    "lat": 52.5169,
+    "lng": 13.3931,
+    "local_name": "Bebelplatz",
+    "continent": "Europe"
+  },
+  {
+    "id": 145,
+    "city": "Pariser Platz",
+    "country": "Germany",
+    "lat": 52.5163,
+    "lng": 13.3792,
+    "local_name": "Pariser Platz",
+    "continent": "Europe"
+  },
+  {
+    "id": 147,
+    "city": "Leipziger Platz",
+    "country": "Germany",
+    "lat": 52.5097,
+    "lng": 13.3756,
+    "local_name": "Leipziger Platz",
+    "continent": "Europe"
+  },
+  {
+    "id": 149,
+    "city": "Rosa-Luxemburg-Platz",
+    "country": "Germany",
+    "lat": 52.5264,
+    "lng": 13.4075,
+    "local_name": "Rosa-Luxemburg-Platz",
+    "continent": "Europe"
+  },
+  {
+    "id": 151,
+    "city": "Savignyplatz",
+    "country": "Germany",
+    "lat": 52.5053,
+    "lng": 13.3208,
+    "local_name": "Savignyplatz",
+    "continent": "Europe"
+  },
+  {
+    "id": 153,
+    "city": "Ernst-Reuter-Platz",
+    "country": "Germany",
+    "lat": 52.5131,
+    "lng": 13.3267,
+    "local_name": "Ernst-Reuter-Platz",
+    "continent": "Europe"
+  },
+  {
+    "id": 155,
+    "city": "Theodor-Heuss-Platz",
+    "country": "Germany",
+    "lat": 52.5083,
+    "lng": 13.2708,
+    "local_name": "Theodor-Heuss-Platz",
+    "continent": "Europe"
+  },
+  {
+    "id": 157,
+    "city": "Hermannplatz",
+    "country": "Germany",
+    "lat": 52.4833,
+    "lng": 13.425,
+    "local_name": "Hermannplatz",
+    "continent": "Europe"
+  },
+  {
+    "id": 159,
+    "city": "Kottbusser Tor",
+    "country": "Germany",
+    "lat": 52.4986,
+    "lng": 13.4192,
+    "local_name": "Kottbusser Tor",
+    "continent": "Europe"
+  },
+  {
+    "id": 161,
+    "city": "Schlesisches Tor",
+    "country": "Germany",
+    "lat": 52.4997,
+    "lng": 13.4431,
+    "local_name": "Schlesisches Tor",
+    "continent": "Europe"
+  },
+  {
+    "id": 163,
+    "city": "Hallesches Tor",
+    "country": "Germany",
+    "lat": 52.4975,
+    "lng": 13.3867,
+    "local_name": "Hallesches Tor",
+    "continent": "Europe"
+  },
+  {
+    "id": 165,
+    "city": "Mehringdamm",
+    "country": "Germany",
+    "lat": 52.4928,
+    "lng": 13.3894,
+    "local_name": "Mehringdamm",
+    "continent": "Europe"
+  },
+  {
+    "id": 167,
+    "city": "Yorckstrasse",
+    "country": "Germany",
+    "lat": 52.4856,
+    "lng": 13.3725,
+    "local_name": "Yorckstrasse",
+    "continent": "Europe"
+  },
+  {
+    "id": 169,
+    "city": "Südstern",
+    "country": "Germany",
+    "lat": 52.4881,
+    "lng": 13.405,
+    "local_name": "Südstern",
+    "continent": "Europe"
+  },
+  {
+    "id": 171,
+    "city": "Hermannstrasse",
+    "country": "Germany",
+    "lat": 52.4667,
+    "lng": 13.4333,
+    "local_name": "Hermannstrasse",
+    "continent": "Europe"
+  },
+  {
+    "id": 173,
+    "city": "Neukölln Arcaden",
+    "country": "Germany",
+    "lat": 52.4667,
+    "lng": 13.4333,
+    "local_name": "Neukölln Arcaden",
+    "continent": "Europe"
+  },
+  {
+    "id": 175,
+    "city": "Wittenbergplatz",
+    "country": "Germany",
+    "lat": 52.5008,
+    "lng": 13.3411,
+    "local_name": "Wittenbergplatz",
+    "continent": "Europe"
+  },
+  {
+    "id": 177,
+    "city": "Nollendorfplatz",
+    "country": "Germany",
+    "lat": 52.4992,
+    "lng": 13.3531,
+    "local_name": "Nollendorfplatz",
+    "continent": "Europe"
+  },
+  {
+    "id": 179,
+    "city": "Bülowstrasse",
+    "country": "Germany",
+    "lat": 52.4958,
+    "lng": 13.3608,
+    "local_name": "Bülowstrasse",
+    "continent": "Europe"
+  },
+  {
+    "id": 181,
+    "city": "Zoologischer Garten",
+    "country": "Germany",
+    "lat": 52.5069,
+    "lng": 13.3322,
+    "local_name": "Zoologischer Garten",
+    "continent": "Europe"
+  },
+  {
+    "id": 183,
+    "city": "Tierpark",
+    "country": "Germany",
+    "lat": 52.5,
+    "lng": 13.5333,
+    "local_name": "Tierpark",
+    "continent": "Europe"
+  },
+  {
+    "id": 185,
+    "city": "Botanischer Garten",
+    "country": "Germany",
+    "lat": 52.45,
+    "lng": 13.3083,
+    "local_name": "Botanischer Garten",
+    "continent": "Europe"
+  },
+  {
+    "id": 187,
+    "city": "Viktoriapark",
+    "country": "Germany",
+    "lat": 52.4883,
+    "lng": 13.3806,
+    "local_name": "Viktoriapark",
+    "continent": "Europe"
+  },
+  {
+    "id": 189,
+    "city": "Hasenheide",
+    "country": "Germany",
+    "lat": 52.4833,
+    "lng": 13.4083,
+    "local_name": "Hasenheide",
+    "continent": "Europe"
+  },
+  {
+    "id": 191,
+    "city": "Tempelhofer Park",
+    "country": "Germany",
+    "lat": 52.4667,
+    "lng": 13.4,
+    "local_name": "Tempelhofer Park",
+    "continent": "Europe"
+  },
+  {
+    "id": 193,
+    "city": "Wuhlheide",
+    "country": "Germany",
+    "lat": 52.4583,
+    "lng": 13.5167,
+    "local_name": "Wuhlheide",
+    "continent": "Europe"
+  },
+  {
+    "id": 195,
+    "city": "Karlshorst Trabrennbahn",
+    "country": "Germany",
+    "lat": 52.475,
+    "lng": 13.5333,
+    "local_name": "Karlshorst Trabrennbahn",
+    "continent": "Europe"
+  },
+  {
+    "id": 197,
+    "city": "Friedrichstrasse",
+    "country": "Germany",
+    "lat": 52.52,
+    "lng": 13.3875,
+    "local_name": "Friedrichstrasse",
+    "continent": "Europe"
+  },
+  {
+    "id": 199,
+    "city": "Unter den Linden Allee",
+    "country": "Germany",
+    "lat": 52.5175,
+    "lng": 13.38,
+    "local_name": "Unter den Linden Allee",
+    "continent": "Europe"
+  },
+  {
+    "id": 201,
+    "city": "Kantstrasse",
+    "country": "Germany",
+    "lat": 52.5067,
+    "lng": 13.3167,
+    "local_name": "Kantstrasse",
+    "continent": "Europe"
+  },
+  {
+    "id": 203,
+    "city": "Schlossstrasse",
+    "country": "Germany",
+    "lat": 52.4583,
+    "lng": 13.325,
+    "local_name": "Schlossstrasse",
+    "continent": "Europe"
+  },
+  {
+    "id": 205,
+    "city": "Berliner Allee",
+    "country": "Germany",
+    "lat": 52.5333,
+    "lng": 13.4167,
+    "local_name": "Berliner Allee",
+    "continent": "Europe"
+  },
+  {
+    "id": 207,
+    "city": "Frankfurter Allee",
+    "country": "Germany",
+    "lat": 52.5167,
+    "lng": 13.4833,
+    "local_name": "Frankfurter Allee",
+    "continent": "Europe"
+  },
+  {
+    "id": 209,
+    "city": "Sonnenallee",
+    "country": "Germany",
+    "lat": 52.475,
+    "lng": 13.4333,
+    "local_name": "Sonnenallee",
+    "continent": "Europe"
+  },
+  {
+    "id": 211,
+    "city": "Tempelhofer Damm",
+    "country": "Germany",
+    "lat": 52.4667,
+    "lng": 13.3833,
+    "local_name": "Tempelhofer Damm",
+    "continent": "Europe"
+  },
+  {
+    "id": 213,
+    "city": "Kaiserdamm",
+    "country": "Germany",
+    "lat": 52.5083,
+    "lng": 13.2833,
+    "local_name": "Kaiserdamm",
+    "continent": "Europe"
+  },
+  {
+    "id": 215,
+    "city": "Heerstrasse",
+    "country": "Germany",
+    "lat": 52.5167,
+    "lng": 13.2333,
+    "local_name": "Heerstrasse",
+    "continent": "Europe"
+  },
+  {
+    "id": 217,
+    "city": "Avus",
+    "country": "Germany",
+    "lat": 52.4833,
+    "lng": 13.25,
+    "local_name": "Avus",
+    "continent": "Europe"
+  },
+  {
+    "id": 219,
+    "city": "Messedamm",
+    "country": "Germany",
+    "lat": 52.5,
+    "lng": 13.2667,
+    "local_name": "Messedamm",
+    "continent": "Europe"
+  },
+  {
+    "id": 221,
+    "city": "ICC Berlin",
+    "country": "Germany",
+    "lat": 52.5,
+    "lng": 13.2667,
+    "local_name": "ICC Berlin",
+    "continent": "Europe"
+  },
+  {
+    "id": 223,
+    "city": "Messe Berlin",
+    "country": "Germany",
+    "lat": 52.5,
+    "lng": 13.2667,
+    "local_name": "Messe Berlin",
+    "continent": "Europe"
+  },
+  {
+    "id": 225,
+    "city": "Hauptbahnhof",
+    "country": "Germany",
+    "lat": 52.525,
+    "lng": 13.3692,
+    "local_name": "Hauptbahnhof",
+    "continent": "Europe"
+  },
+  {
+    "id": 227,
+    "city": "Ostbahnhof",
+    "country": "Germany",
+    "lat": 52.51,
+    "lng": 13.4333,
+    "local_name": "Ostbahnhof",
+    "continent": "Europe"
+  },
+  {
+    "id": 229,
+    "city": "Südkreuz",
+    "country": "Germany",
+    "lat": 52.4753,
+    "lng": 13.365,
+    "local_name": "Südkreuz",
+    "continent": "Europe"
+  },
+  {
+    "id": 231,
+    "city": "Gesundbrunnen Bf",
+    "country": "Germany",
+    "lat": 52.5483,
+    "lng": 13.3917,
+    "local_name": "Gesundbrunnen Bf",
+    "continent": "Europe"
+  },
+  {
+    "id": 233,
+    "city": "Zoo Bf",
+    "country": "Germany",
+    "lat": 52.5069,
+    "lng": 13.3322,
+    "local_name": "Zoo Bf",
+    "continent": "Europe"
+  },
+  {
+    "id": 235,
+    "city": "Lichtenberg Bf",
+    "country": "Germany",
+    "lat": 52.5083,
+    "lng": 13.4667,
+    "local_name": "Lichtenberg Bf",
+    "continent": "Europe"
+  },
+  {
+    "id": 237,
+    "city": "Spandau Bf",
+    "country": "Germany",
+    "lat": 52.5333,
+    "lng": 13.2,
+    "local_name": "Spandau Bf",
+    "continent": "Europe"
+  },
+  {
+    "id": 239,
+    "city": "Schönefeld Flughafen",
+    "country": "Germany",
+    "lat": 52.3833,
+    "lng": 13.5167,
+    "local_name": "Schönefeld Flughafen",
+    "continent": "Europe"
+  },
+  {
+    "id": 241,
+    "city": "BER Terminal 1",
+    "country": "Germany",
+    "lat": 52.3533,
+    "lng": 13.5067,
+    "local_name": "BER Terminal 1",
+    "continent": "Europe"
+  },
+  {
+    "id": 243,
+    "city": "Tegel Flughafen",
+    "country": "Germany",
+    "lat": 52.5533,
+    "lng": 13.29,
+    "local_name": "Tegel Flughafen",
+    "continent": "Europe"
+  },
+  {
+    "id": 245,
+    "city": "Charité",
+    "country": "Germany",
+    "lat": 52.525,
+    "lng": 13.375,
+    "local_name": "Charité",
+    "continent": "Europe"
+  },
+  {
+    "id": 247,
+    "city": "Virchow Klinikum",
+    "country": "Germany",
+    "lat": 52.5417,
+    "lng": 13.3417,
+    "local_name": "Virchow Klinikum",
+    "continent": "Europe"
+  },
+  {
+    "id": 249,
+    "city": "UKBF Steglitz",
+    "country": "Germany",
+    "lat": 52.4333,
+    "lng": 13.3333,
+    "local_name": "UKBF Steglitz",
+    "continent": "Europe"
+  },
+  {
+    "id": 251,
+    "city": "Deutsche Oper",
+    "country": "Germany",
+    "lat": 52.5167,
+    "lng": 13.3083,
+    "local_name": "Deutsche Oper",
+    "continent": "Europe"
+  },
+  {
+    "id": 253,
+    "city": "Staatsoper",
+    "country": "Germany",
+    "lat": 52.5167,
+    "lng": 13.3917,
+    "local_name": "Staatsoper",
+    "continent": "Europe"
+  },
+  {
+    "id": 255,
+    "city": "Philharmonie",
+    "country": "Germany",
+    "lat": 52.5097,
+    "lng": 13.3686,
+    "local_name": "Philharmonie",
+    "continent": "Europe"
+  },
+  {
+    "id": 257,
+    "city": "Berliner Dom",
+    "country": "Germany",
+    "lat": 52.5194,
+    "lng": 13.4017,
+    "local_name": "Berliner Dom",
+    "continent": "Europe"
+  },
+  {
+    "id": 259,
+    "city": "Kaiser-Wilhelm-Gedächtniskirche",
+    "country": "Germany",
+    "lat": 52.5008,
+    "lng": 13.3342,
+    "local_name": "Kaiser-Wilhelm-Gedächtniskirche",
+    "continent": "Europe"
+  }
+]

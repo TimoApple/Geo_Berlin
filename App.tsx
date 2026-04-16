@@ -896,7 +896,7 @@ const s = StyleSheet.create({
   scanCloseText: { color: C.onSurface, fontSize: 14, fontWeight: '700', fontFamily: FF.bold, letterSpacing: 2 },
 
   // Game
-  gameTopBar: { position: 'absolute', top: 0, left: 0, right: 0, flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 16, paddingTop: 44, paddingBottom: 8, backgroundColor: 'rgba(17,18,37,0.85)', zIndex: 20 },
+  gameTopBar: { position: 'absolute', top: 0, left: 0, right: 0, flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 16, paddingTop: 44, paddingBottom: 12, backgroundColor: 'rgba(17,18,37,0.9)', zIndex: 20 },
   tableList: { width: '100%', backgroundColor: C.surface, padding: 16, marginBottom: 32 },
   tableRow: { flexDirection: 'row', alignItems: 'center', paddingVertical: 10, paddingHorizontal: 12 },
 

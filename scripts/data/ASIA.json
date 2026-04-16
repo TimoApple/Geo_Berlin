@@ -1,0 +1,2162 @@
+[
+  {
+    "city": "Shanghai",
+    "country": "China",
+    "lat": 31.22222,
+    "lng": 121.45806,
+    "local_name": "Shanghai",
+    "continent": "Asia",
+    "id": 1
+  },
+  {
+    "city": "Beijing",
+    "country": "China",
+    "lat": 39.9075,
+    "lng": 116.39723,
+    "local_name": "Beijing",
+    "continent": "Asia",
+    "id": 2
+  },
+  {
+    "city": "Shenzhen",
+    "country": "China",
+    "lat": 22.54554,
+    "lng": 114.0683,
+    "local_name": "Shenzhen",
+    "continent": "Asia",
+    "id": 3
+  },
+  {
+    "city": "Guangzhou",
+    "country": "China",
+    "lat": 23.11667,
+    "lng": 113.25,
+    "local_name": "Guangzhou",
+    "continent": "Asia",
+    "id": 4
+  },
+  {
+    "city": "Ho Chi Minh City",
+    "country": "Vietnam",
+    "lat": 10.82302,
+    "lng": 106.62965,
+    "local_name": "Ho Chi Minh City",
+    "continent": "Asia",
+    "id": 5
+  },
+  {
+    "city": "Chengdu",
+    "country": "China",
+    "lat": 30.66667,
+    "lng": 104.06667,
+    "local_name": "Chengdu",
+    "continent": "Asia",
+    "id": 6
+  },
+  {
+    "city": "Lahore",
+    "country": "Pakistan",
+    "lat": 31.558,
+    "lng": 74.35071,
+    "local_name": "Lahore",
+    "continent": "Asia",
+    "id": 7
+  },
+  {
+    "city": "Mumbai",
+    "country": "India",
+    "lat": 19.07283,
+    "lng": 72.88261,
+    "local_name": "Mumbai",
+    "continent": "Asia",
+    "id": 8
+  },
+  {
+    "city": "Karachi",
+    "country": "Pakistan",
+    "lat": 24.8608,
+    "lng": 67.0104,
+    "local_name": "Karachi",
+    "continent": "Asia",
+    "id": 9
+  },
+  {
+    "city": "Tianjin",
+    "country": "China",
+    "lat": 39.14222,
+    "lng": 117.17667,
+    "local_name": "Tianjin",
+    "continent": "Asia",
+    "id": 10
+  },
+  {
+    "city": "Delhi",
+    "country": "India",
+    "lat": 28.65195,
+    "lng": 77.23149,
+    "local_name": "Delhi",
+    "continent": "Asia",
+    "id": 11
+  },
+  {
+    "city": "Wuhan",
+    "country": "China",
+    "lat": 30.58333,
+    "lng": 114.26667,
+    "local_name": "Wuhan",
+    "continent": "Asia",
+    "id": 12
+  },
+  {
+    "city": "Dhaka",
+    "country": "Bangladesh",
+    "lat": 23.7104,
+    "lng": 90.40744,
+    "local_name": "Dhaka",
+    "continent": "Asia",
+    "id": 13
+  },
+  {
+    "city": "Seoul",
+    "country": "South Korea",
+    "lat": 37.566,
+    "lng": 126.9784,
+    "local_name": "Seoul",
+    "continent": "Asia",
+    "id": 14
+  },
+  {
+    "city": "Tokyo",
+    "country": "Japan",
+    "lat": 35.6895,
+    "lng": 139.69171,
+    "local_name": "Tokyo",
+    "continent": "Asia",
+    "id": 15
+  },
+  {
+    "city": "Dongguan",
+    "country": "China",
+    "lat": 23.01797,
+    "lng": 113.74866,
+    "local_name": "Dongguan",
+    "continent": "Asia",
+    "id": 16
+  },
+  {
+    "city": "Xi’an",
+    "country": "China",
+    "lat": 34.25833,
+    "lng": 108.92861,
+    "local_name": "Xi’an",
+    "continent": "Asia",
+    "id": 17
+  },
+  {
+    "city": "Nanjing",
+    "country": "China",
+    "lat": 32.06167,
+    "lng": 118.77778,
+    "local_name": "Nanjing",
+    "continent": "Asia",
+    "id": 18
+  },
+  {
+    "city": "Hangzhou",
+    "country": "China",
+    "lat": 30.29365,
+    "lng": 120.16142,
+    "local_name": "Hangzhou",
+    "continent": "Asia",
+    "id": 19
+  },
+  {
+    "city": "Foshan",
+    "country": "China",
+    "lat": 23.02677,
+    "lng": 113.13148,
+    "local_name": "Foshan",
+    "continent": "Asia",
+    "id": 20
+  },
+  {
+    "city": "Jakarta",
+    "country": "Indonesia",
+    "lat": -6.21462,
+    "lng": 106.84513,
+    "local_name": "Jakarta",
+    "continent": "Asia",
+    "id": 21
+  },
+  {
+    "city": "Bengaluru",
+    "country": "India",
+    "lat": 12.97194,
+    "lng": 77.59369,
+    "local_name": "Bengaluru",
+    "continent": "Asia",
+    "id": 22
+  },
+  {
+    "city": "Hanoi",
+    "country": "Vietnam",
+    "lat": 21.0245,
+    "lng": 105.84117,
+    "local_name": "Hanoi",
+    "continent": "Asia",
+    "id": 23
+  },
+  {
+    "city": "Taipei",
+    "country": "Taiwan",
+    "lat": 25.05306,
+    "lng": 121.52639,
+    "local_name": "Taipei",
+    "continent": "Asia",
+    "id": 24
+  },
+  {
+    "city": "Chongqing",
+    "country": "China",
+    "lat": 29.56026,
+    "lng": 106.55771,
+    "local_name": "Chongqing",
+    "continent": "Asia",
+    "id": 25
+  },
+  {
+    "city": "Hong Kong",
+    "country": "HK",
+    "lat": 22.27832,
+    "lng": 114.17469,
+    "local_name": "Hong Kong",
+    "continent": "Asia",
+    "id": 26
+  },
+  {
+    "city": "Baghdad",
+    "country": "Iraq",
+    "lat": 33.34058,
+    "lng": 44.40088,
+    "local_name": "Baghdad",
+    "continent": "Asia",
+    "id": 27
+  },
+  {
+    "city": "Wuzhong",
+    "country": "China",
+    "lat": 37.9867,
+    "lng": 106.201,
+    "local_name": "Wuzhong",
+    "continent": "Asia",
+    "id": 28
+  },
+  {
+    "city": "Qingdao",
+    "country": "China",
+    "lat": 36.06488,
+    "lng": 120.38042,
+    "local_name": "Qingdao",
+    "continent": "Asia",
+    "id": 29
+  },
+  {
+    "city": "Tehran",
+    "country": "Iran",
+    "lat": 35.69439,
+    "lng": 51.42151,
+    "local_name": "Tehran",
+    "continent": "Asia",
+    "id": 30
+  },
+  {
+    "city": "Shenyang",
+    "country": "China",
+    "lat": 41.79222,
+    "lng": 123.43278,
+    "local_name": "Shenyang",
+    "continent": "Asia",
+    "id": 31
+  },
+  {
+    "city": "Hyderabad",
+    "country": "India",
+    "lat": 17.38405,
+    "lng": 78.45636,
+    "local_name": "Hyderabad",
+    "continent": "Asia",
+    "id": 32
+  },
+  {
+    "city": "Suzhou",
+    "country": "China",
+    "lat": 31.30408,
+    "lng": 120.59538,
+    "local_name": "Suzhou",
+    "continent": "Asia",
+    "id": 33
+  },
+  {
+    "city": "Ahmedabad",
+    "country": "India",
+    "lat": 23.02579,
+    "lng": 72.58727,
+    "local_name": "Ahmedabad",
+    "continent": "Asia",
+    "id": 34
+  },
+  {
+    "city": "Singapore",
+    "country": "Singapore",
+    "lat": 1.28967,
+    "lng": 103.85007,
+    "local_name": "Singapore",
+    "continent": "Asia",
+    "id": 35
+  },
+  {
+    "city": "Harbin",
+    "country": "China",
+    "lat": 45.75,
+    "lng": 126.65,
+    "local_name": "Harbin",
+    "continent": "Asia",
+    "id": 36
+  },
+  {
+    "city": "Bangkok",
+    "country": "Thailand",
+    "lat": 13.75398,
+    "lng": 100.50144,
+    "local_name": "Bangkok",
+    "continent": "Asia",
+    "id": 37
+  },
+  {
+    "city": "Hefei",
+    "country": "China",
+    "lat": 31.86389,
+    "lng": 117.28083,
+    "local_name": "Hefei",
+    "continent": "Asia",
+    "id": 38
+  },
+  {
+    "city": "Dalian",
+    "country": "China",
+    "lat": 38.91222,
+    "lng": 121.60222,
+    "local_name": "Dalian",
+    "continent": "Asia",
+    "id": 39
+  },
+  {
+    "city": "Peshawar",
+    "country": "Pakistan",
+    "lat": 34.008,
+    "lng": 71.57849,
+    "local_name": "Peshawar",
+    "continent": "Asia",
+    "id": 40
+  },
+  {
+    "city": "Changchun",
+    "country": "China",
+    "lat": 43.88,
+    "lng": 125.32278,
+    "local_name": "Changchun",
+    "continent": "Asia",
+    "id": 41
+  },
+  {
+    "city": "Jeddah",
+    "country": "Saudi Arabia",
+    "lat": 21.49012,
+    "lng": 39.18624,
+    "local_name": "Jeddah",
+    "continent": "Asia",
+    "id": 42
+  },
+  {
+    "city": "Chennai",
+    "country": "India",
+    "lat": 13.08784,
+    "lng": 80.27847,
+    "local_name": "Chennai",
+    "continent": "Asia",
+    "id": 43
+  },
+  {
+    "city": "Kolkata",
+    "country": "India",
+    "lat": 22.56263,
+    "lng": 88.36304,
+    "local_name": "Kolkata",
+    "continent": "Asia",
+    "id": 44
+  },
+  {
+    "city": "Xiamen",
+    "country": "China",
+    "lat": 24.47979,
+    "lng": 118.08187,
+    "local_name": "Xiamen",
+    "continent": "Asia",
+    "id": 45
+  },
+  {
+    "city": "Surat",
+    "country": "India",
+    "lat": 21.19594,
+    "lng": 72.83023,
+    "local_name": "Surat",
+    "continent": "Asia",
+    "id": 46
+  },
+  {
+    "city": "Yangon",
+    "country": "Myanmar",
+    "lat": 16.80528,
+    "lng": 96.15611,
+    "local_name": "Yangon",
+    "continent": "Asia",
+    "id": 47
+  },
+  {
+    "city": "Bao'an",
+    "country": "China",
+    "lat": 22.55213,
+    "lng": 113.88288,
+    "local_name": "Bao'an",
+    "continent": "Asia",
+    "id": 48
+  },
+  {
+    "city": "Kabul",
+    "country": "Afghanistan",
+    "lat": 34.52813,
+    "lng": 69.17233,
+    "local_name": "Kabul",
+    "continent": "Asia",
+    "id": 49
+  },
+  {
+    "city": "Wuxi",
+    "country": "China",
+    "lat": 31.56887,
+    "lng": 120.28857,
+    "local_name": "Wuxi",
+    "continent": "Asia",
+    "id": 50
+  },
+  {
+    "city": "Jinan",
+    "country": "China",
+    "lat": 36.66833,
+    "lng": 116.99722,
+    "local_name": "Jinan",
+    "continent": "Asia",
+    "id": 51
+  },
+  {
+    "city": "Taiyuan",
+    "country": "China",
+    "lat": 37.86944,
+    "lng": 112.56028,
+    "local_name": "Taiyuan",
+    "continent": "Asia",
+    "id": 52
+  },
+  {
+    "city": "Zhengzhou",
+    "country": "China",
+    "lat": 34.75778,
+    "lng": 113.64861,
+    "local_name": "Zhengzhou",
+    "continent": "Asia",
+    "id": 53
+  },
+  {
+    "city": "Riyadh",
+    "country": "Saudi Arabia",
+    "lat": 24.68773,
+    "lng": 46.72185,
+    "local_name": "Riyadh",
+    "continent": "Asia",
+    "id": 54
+  },
+  {
+    "city": "New Taipei City",
+    "country": "Taiwan",
+    "lat": 25.06199,
+    "lng": 121.45703,
+    "local_name": "New Taipei City",
+    "continent": "Asia",
+    "id": 55
+  },
+  {
+    "city": "New Territories",
+    "country": "HK",
+    "lat": 22.42441,
+    "lng": 114.11095,
+    "local_name": "New Territories",
+    "continent": "Asia",
+    "id": 56
+  },
+  {
+    "city": "Shijiazhuang",
+    "country": "China",
+    "lat": 38.04139,
+    "lng": 114.47861,
+    "local_name": "Shijiazhuang",
+    "continent": "Asia",
+    "id": 57
+  },
+  {
+    "city": "Chattogram",
+    "country": "Bangladesh",
+    "lat": 22.3384,
+    "lng": 91.83168,
+    "local_name": "Chattogram",
+    "continent": "Asia",
+    "id": 58
+  },
+  {
+    "city": "Kunming",
+    "country": "China",
+    "lat": 25.03889,
+    "lng": 102.71833,
+    "local_name": "Kunming",
+    "continent": "Asia",
+    "id": 59
+  },
+  {
+    "city": "Zhongshan",
+    "country": "China",
+    "lat": 22.52306,
+    "lng": 113.37912,
+    "local_name": "Zhongshan",
+    "continent": "Asia",
+    "id": 60
+  },
+  {
+    "city": "Nanning",
+    "country": "China",
+    "lat": 22.81667,
+    "lng": 108.31667,
+    "local_name": "Nanning",
+    "continent": "Asia",
+    "id": 61
+  },
+  {
+    "city": "Shantou",
+    "country": "China",
+    "lat": 23.35489,
+    "lng": 116.67876,
+    "local_name": "Shantou",
+    "continent": "Asia",
+    "id": 62
+  },
+  {
+    "city": "Faisalabad",
+    "country": "Pakistan",
+    "lat": 31.41554,
+    "lng": 73.08969,
+    "local_name": "Faisalabad",
+    "continent": "Asia",
+    "id": 63
+  },
+  {
+    "city": "Dubai",
+    "country": "UAE",
+    "lat": 25.07725,
+    "lng": 55.30927,
+    "local_name": "Dubai",
+    "continent": "Asia",
+    "id": 64
+  },
+  {
+    "city": "Yokohama",
+    "country": "Japan",
+    "lat": 35.43333,
+    "lng": 139.65,
+    "local_name": "Yokohama",
+    "continent": "Asia",
+    "id": 65
+  },
+  {
+    "city": "Fuzhou",
+    "country": "China",
+    "lat": 26.06139,
+    "lng": 119.30611,
+    "local_name": "Fuzhou",
+    "continent": "Asia",
+    "id": 66
+  },
+  {
+    "city": "Ningbo",
+    "country": "China",
+    "lat": 29.87819,
+    "lng": 121.54945,
+    "local_name": "Ningbo",
+    "continent": "Asia",
+    "id": 67
+  },
+  {
+    "city": "Puyang",
+    "country": "China",
+    "lat": 29.45679,
+    "lng": 119.88872,
+    "local_name": "Puyang",
+    "continent": "Asia",
+    "id": 68
+  },
+  {
+    "city": "Shiyan",
+    "country": "China",
+    "lat": 32.6475,
+    "lng": 110.77806,
+    "local_name": "Shiyan",
+    "continent": "Asia",
+    "id": 69
+  },
+  {
+    "city": "Tangshan",
+    "country": "China",
+    "lat": 39.64381,
+    "lng": 118.18319,
+    "local_name": "Tangshan",
+    "continent": "Asia",
+    "id": 70
+  },
+  {
+    "city": "Rawalpindi",
+    "country": "Pakistan",
+    "lat": 33.59733,
+    "lng": 73.0479,
+    "local_name": "Rawalpindi",
+    "continent": "Asia",
+    "id": 71
+  },
+  {
+    "city": "Lüliang",
+    "country": "China",
+    "lat": 37.5192,
+    "lng": 111.14436,
+    "local_name": "Lüliang",
+    "continent": "Asia",
+    "id": 72
+  },
+  {
+    "city": "Busan",
+    "country": "South Korea",
+    "lat": 35.10168,
+    "lng": 129.03004,
+    "local_name": "Busan",
+    "continent": "Asia",
+    "id": 73
+  },
+  {
+    "city": "Changzhou",
+    "country": "China",
+    "lat": 31.77359,
+    "lng": 119.95401,
+    "local_name": "Changzhou",
+    "continent": "Asia",
+    "id": 74
+  },
+  {
+    "city": "Zibo",
+    "country": "China",
+    "lat": 36.79056,
+    "lng": 118.06333,
+    "local_name": "Zibo",
+    "continent": "Asia",
+    "id": 75
+  },
+  {
+    "city": "Pune",
+    "country": "India",
+    "lat": 18.51957,
+    "lng": 73.85535,
+    "local_name": "Pune",
+    "continent": "Asia",
+    "id": 76
+  },
+  {
+    "city": "Changsha",
+    "country": "China",
+    "lat": 28.19874,
+    "lng": 112.97087,
+    "local_name": "Changsha",
+    "continent": "Asia",
+    "id": 77
+  },
+  {
+    "city": "Quezon City",
+    "country": "Philippines",
+    "lat": 14.6488,
+    "lng": 121.0509,
+    "local_name": "Quezon City",
+    "continent": "Asia",
+    "id": 78
+  },
+  {
+    "city": "Jaipur",
+    "country": "India",
+    "lat": 26.91962,
+    "lng": 75.78781,
+    "local_name": "Jaipur",
+    "continent": "Asia",
+    "id": 79
+  },
+  {
+    "city": "Incheon",
+    "country": "South Korea",
+    "lat": 37.45646,
+    "lng": 126.70515,
+    "local_name": "Incheon",
+    "continent": "Asia",
+    "id": 80
+  },
+  {
+    "city": "Guiyang",
+    "country": "China",
+    "lat": 26.58333,
+    "lng": 106.71667,
+    "local_name": "Guiyang",
+    "continent": "Asia",
+    "id": 81
+  },
+  {
+    "city": "Ürümqi",
+    "country": "China",
+    "lat": 43.80096,
+    "lng": 87.60046,
+    "local_name": "Ürümqi",
+    "continent": "Asia",
+    "id": 82
+  },
+  {
+    "city": "Lanzhou",
+    "country": "China",
+    "lat": 36.05701,
+    "lng": 103.83987,
+    "local_name": "Lanzhou",
+    "continent": "Asia",
+    "id": 83
+  },
+  {
+    "city": "Huizhou",
+    "country": "China",
+    "lat": 23.11147,
+    "lng": 114.41523,
+    "local_name": "Huizhou",
+    "continent": "Asia",
+    "id": 84
+  },
+  {
+    "city": "Surabaya",
+    "country": "Indonesia",
+    "lat": -7.24917,
+    "lng": 112.75083,
+    "local_name": "Surabaya",
+    "continent": "Asia",
+    "id": 85
+  },
+  {
+    "city": "Haikou",
+    "country": "China",
+    "lat": 20.03421,
+    "lng": 110.34651,
+    "local_name": "Haikou",
+    "continent": "Asia",
+    "id": 86
+  },
+  {
+    "city": "Taichung",
+    "country": "Taiwan",
+    "lat": 24.1469,
+    "lng": 120.6839,
+    "local_name": "Taichung",
+    "continent": "Asia",
+    "id": 87
+  },
+  {
+    "city": "Kanpur",
+    "country": "India",
+    "lat": 26.46523,
+    "lng": 80.34975,
+    "local_name": "Kanpur",
+    "continent": "Asia",
+    "id": 88
+  },
+  {
+    "city": "Osaka",
+    "country": "Japan",
+    "lat": 34.69379,
+    "lng": 135.50107,
+    "local_name": "Osaka",
+    "continent": "Asia",
+    "id": 89
+  },
+  {
+    "city": "Linyi",
+    "country": "China",
+    "lat": 35.06306,
+    "lng": 118.34278,
+    "local_name": "Linyi",
+    "continent": "Asia",
+    "id": 90
+  },
+  {
+    "city": "Baoding",
+    "country": "China",
+    "lat": 38.87288,
+    "lng": 115.46246,
+    "local_name": "Baoding",
+    "continent": "Asia",
+    "id": 91
+  },
+  {
+    "city": "Kaohsiung",
+    "country": "Taiwan",
+    "lat": 22.61626,
+    "lng": 120.31333,
+    "local_name": "Kaohsiung",
+    "continent": "Asia",
+    "id": 92
+  },
+  {
+    "city": "Gazipur",
+    "country": "Bangladesh",
+    "lat": 23.99844,
+    "lng": 90.42234,
+    "local_name": "Gazipur",
+    "continent": "Asia",
+    "id": 93
+  },
+  {
+    "city": "Wenzhou",
+    "country": "China",
+    "lat": 27.99942,
+    "lng": 120.66682,
+    "local_name": "Wenzhou",
+    "continent": "Asia",
+    "id": 94
+  },
+  {
+    "city": "Haiphong",
+    "country": "Vietnam",
+    "lat": 20.86481,
+    "lng": 106.68345,
+    "local_name": "Haiphong",
+    "continent": "Asia",
+    "id": 95
+  },
+  {
+    "city": "Yunfu",
+    "country": "China",
+    "lat": 22.92787,
+    "lng": 112.03809,
+    "local_name": "Yunfu",
+    "continent": "Asia",
+    "id": 96
+  },
+  {
+    "city": "Navi Mumbai",
+    "country": "India",
+    "lat": 19.03681,
+    "lng": 73.01582,
+    "local_name": "Navi Mumbai",
+    "continent": "Asia",
+    "id": 97
+  },
+  {
+    "city": "Bekasi",
+    "country": "Indonesia",
+    "lat": -6.2349,
+    "lng": 106.9896,
+    "local_name": "Bekasi",
+    "continent": "Asia",
+    "id": 98
+  },
+  {
+    "city": "Gujranwala",
+    "country": "Pakistan",
+    "lat": 32.15567,
+    "lng": 74.18705,
+    "local_name": "Gujranwala",
+    "continent": "Asia",
+    "id": 99
+  },
+  {
+    "city": "Huai'an",
+    "country": "China",
+    "lat": 33.58861,
+    "lng": 119.01917,
+    "local_name": "Huai'an",
+    "continent": "Asia",
+    "id": 100
+  },
+  {
+    "city": "Lucknow",
+    "country": "India",
+    "lat": 26.83928,
+    "lng": 80.92313,
+    "local_name": "Lucknow",
+    "continent": "Asia",
+    "id": 101
+  },
+  {
+    "city": "Bandung",
+    "country": "Indonesia",
+    "lat": -6.92222,
+    "lng": 107.60694,
+    "local_name": "Bandung",
+    "continent": "Asia",
+    "id": 102
+  },
+  {
+    "city": "Medan",
+    "country": "Indonesia",
+    "lat": 3.58333,
+    "lng": 98.66667,
+    "local_name": "Medan",
+    "continent": "Asia",
+    "id": 103
+  },
+  {
+    "city": "Nagpur",
+    "country": "India",
+    "lat": 21.14631,
+    "lng": 79.08491,
+    "local_name": "Nagpur",
+    "continent": "Asia",
+    "id": 104
+  },
+  {
+    "city": "Daegu",
+    "country": "South Korea",
+    "lat": 35.87028,
+    "lng": 128.59111,
+    "local_name": "Daegu",
+    "continent": "Asia",
+    "id": 105
+  },
+  {
+    "city": "Nanchang",
+    "country": "China",
+    "lat": 28.68396,
+    "lng": 115.85306,
+    "local_name": "Nanchang",
+    "continent": "Asia",
+    "id": 106
+  },
+  {
+    "city": "Baku",
+    "country": "Azerbaijan",
+    "lat": 40.37767,
+    "lng": 49.89201,
+    "local_name": "Baku",
+    "continent": "Asia",
+    "id": 107
+  },
+  {
+    "city": "Hohhot",
+    "country": "China",
+    "lat": 40.81056,
+    "lng": 111.65222,
+    "local_name": "Hohhot",
+    "continent": "Asia",
+    "id": 108
+  },
+  {
+    "city": "Nagoya",
+    "country": "Japan",
+    "lat": 35.18147,
+    "lng": 136.90641,
+    "local_name": "Nagoya",
+    "continent": "Asia",
+    "id": 109
+  },
+  {
+    "city": "Mashhad",
+    "country": "Iran",
+    "lat": 36.29807,
+    "lng": 59.60567,
+    "local_name": "Mashhad",
+    "continent": "Asia",
+    "id": 110
+  },
+  {
+    "city": "Shaoxing",
+    "country": "China",
+    "lat": 30.00237,
+    "lng": 120.57864,
+    "local_name": "Shaoxing",
+    "continent": "Asia",
+    "id": 111
+  },
+  {
+    "city": "Nantong",
+    "country": "China",
+    "lat": 32.03028,
+    "lng": 120.87472,
+    "local_name": "Nantong",
+    "continent": "Asia",
+    "id": 112
+  },
+  {
+    "city": "Kowloon",
+    "country": "HK",
+    "lat": 22.31667,
+    "lng": 114.18333,
+    "local_name": "Kowloon",
+    "continent": "Asia",
+    "id": 113
+  },
+  {
+    "city": "Yantai",
+    "country": "China",
+    "lat": 37.47649,
+    "lng": 121.44081,
+    "local_name": "Yantai",
+    "continent": "Asia",
+    "id": 114
+  },
+  {
+    "city": "Zhuhai",
+    "country": "China",
+    "lat": 22.27694,
+    "lng": 113.56778,
+    "local_name": "Zhuhai",
+    "continent": "Asia",
+    "id": 115
+  },
+  {
+    "city": "Multan",
+    "country": "Pakistan",
+    "lat": 30.19679,
+    "lng": 71.47824,
+    "local_name": "Multan",
+    "continent": "Asia",
+    "id": 116
+  },
+  {
+    "city": "Baotou",
+    "country": "China",
+    "lat": 40.6516,
+    "lng": 109.84389,
+    "local_name": "Baotou",
+    "continent": "Asia",
+    "id": 117
+  },
+  {
+    "city": "Depok",
+    "country": "Indonesia",
+    "lat": -6.4,
+    "lng": 106.81861,
+    "local_name": "Depok",
+    "continent": "Asia",
+    "id": 118
+  },
+  {
+    "city": "Coimbatore",
+    "country": "India",
+    "lat": 11.00555,
+    "lng": 76.96612,
+    "local_name": "Coimbatore",
+    "continent": "Asia",
+    "id": 119
+  },
+  {
+    "city": "Qingyang",
+    "country": "China",
+    "lat": 35.70976,
+    "lng": 107.64455,
+    "local_name": "Qingyang",
+    "continent": "Asia",
+    "id": 120
+  },
+  {
+    "city": "Aleppo",
+    "country": "Syria",
+    "lat": 36.20124,
+    "lng": 37.16117,
+    "local_name": "Aleppo",
+    "continent": "Asia",
+    "id": 121
+  },
+  {
+    "city": "Kunshan",
+    "country": "China",
+    "lat": 31.37762,
+    "lng": 120.95431,
+    "local_name": "Kunshan",
+    "continent": "Asia",
+    "id": 122
+  },
+  {
+    "city": "Al Mawşil al Jadīdah",
+    "country": "Iraq",
+    "lat": 36.33271,
+    "lng": 43.10555,
+    "local_name": "Al Mawşil al Jadīdah",
+    "continent": "Asia",
+    "id": 123
+  },
+  {
+    "city": "Weifang",
+    "country": "China",
+    "lat": 36.71,
+    "lng": 119.10194,
+    "local_name": "Weifang",
+    "continent": "Asia",
+    "id": 124
+  },
+  {
+    "city": "Zunyi",
+    "country": "China",
+    "lat": 27.68667,
+    "lng": 106.90722,
+    "local_name": "Zunyi",
+    "continent": "Asia",
+    "id": 125
+  },
+  {
+    "city": "Al Başrah al Qadīmah",
+    "country": "Iraq",
+    "lat": 30.50316,
+    "lng": 47.81507,
+    "local_name": "Al Başrah al Qadīmah",
+    "continent": "Asia",
+    "id": 126
+  },
+  {
+    "city": "Lianyungang",
+    "country": "China",
+    "lat": 34.59845,
+    "lng": 119.21556,
+    "local_name": "Lianyungang",
+    "continent": "Asia",
+    "id": 127
+  },
+  {
+    "city": "Indore",
+    "country": "India",
+    "lat": 22.71792,
+    "lng": 75.8333,
+    "local_name": "Indore",
+    "continent": "Asia",
+    "id": 128
+  },
+  {
+    "city": "Tashkent",
+    "country": "Uzbekistan",
+    "lat": 41.26465,
+    "lng": 69.21627,
+    "local_name": "Tashkent",
+    "continent": "Asia",
+    "id": 129
+  },
+  {
+    "city": "Ganzhou",
+    "country": "China",
+    "lat": 25.84664,
+    "lng": 114.9326,
+    "local_name": "Ganzhou",
+    "continent": "Asia",
+    "id": 130
+  },
+  {
+    "city": "Almaty",
+    "country": "Kazakhstan",
+    "lat": 43.25249,
+    "lng": 76.9115,
+    "local_name": "Almaty",
+    "continent": "Asia",
+    "id": 131
+  },
+  {
+    "city": "Sapporo",
+    "country": "Japan",
+    "lat": 43.06667,
+    "lng": 141.35,
+    "local_name": "Sapporo",
+    "continent": "Asia",
+    "id": 132
+  },
+  {
+    "city": "Ordos",
+    "country": "China",
+    "lat": 39.6086,
+    "lng": 109.78157,
+    "local_name": "Ordos",
+    "continent": "Asia",
+    "id": 133
+  },
+  {
+    "city": "Sanaa",
+    "country": "Yemen",
+    "lat": 15.35452,
+    "lng": 44.20646,
+    "local_name": "Sanaa",
+    "continent": "Asia",
+    "id": 134
+  },
+  {
+    "city": "Hyderabad",
+    "country": "Pakistan",
+    "lat": 25.39689,
+    "lng": 68.37718,
+    "local_name": "Hyderabad",
+    "continent": "Asia",
+    "id": 135
+  },
+  {
+    "city": "Tangerang",
+    "country": "Indonesia",
+    "lat": -6.17806,
+    "lng": 106.63,
+    "local_name": "Tangerang",
+    "continent": "Asia",
+    "id": 136
+  },
+  {
+    "city": "Jieyang",
+    "country": "China",
+    "lat": 23.5418,
+    "lng": 116.36581,
+    "local_name": "Jieyang",
+    "continent": "Asia",
+    "id": 137
+  },
+  {
+    "city": "Jilin",
+    "country": "China",
+    "lat": 43.84652,
+    "lng": 126.5608,
+    "local_name": "Jilin",
+    "continent": "Asia",
+    "id": 138
+  },
+  {
+    "city": "Nanchong",
+    "country": "China",
+    "lat": 30.79508,
+    "lng": 106.08473,
+    "local_name": "Nanchong",
+    "continent": "Asia",
+    "id": 139
+  },
+  {
+    "city": "Tainan",
+    "country": "Taiwan",
+    "lat": 22.99083,
+    "lng": 120.21333,
+    "local_name": "Tainan",
+    "continent": "Asia",
+    "id": 140
+  },
+  {
+    "city": "Datong",
+    "country": "China",
+    "lat": 40.09361,
+    "lng": 113.29139,
+    "local_name": "Datong",
+    "continent": "Asia",
+    "id": 141
+  },
+  {
+    "city": "Davao",
+    "country": "Philippines",
+    "lat": 7.07306,
+    "lng": 125.61278,
+    "local_name": "Davao",
+    "continent": "Asia",
+    "id": 142
+  },
+  {
+    "city": "Thāne",
+    "country": "India",
+    "lat": 19.19704,
+    "lng": 72.96355,
+    "local_name": "Thāne",
+    "continent": "Asia",
+    "id": 143
+  },
+  {
+    "city": "Vadodara",
+    "country": "India",
+    "lat": 22.29941,
+    "lng": 73.20812,
+    "local_name": "Vadodara",
+    "continent": "Asia",
+    "id": 144
+  },
+  {
+    "city": "Nanyang",
+    "country": "China",
+    "lat": 33.00524,
+    "lng": 112.54659,
+    "local_name": "Nanyang",
+    "continent": "Asia",
+    "id": 145
+  },
+  {
+    "city": "Abu Dhabi",
+    "country": "UAE",
+    "lat": 24.45118,
+    "lng": 54.39696,
+    "local_name": "Abu Dhabi",
+    "continent": "Asia",
+    "id": 146
+  },
+  {
+    "city": "Sharjah",
+    "country": "UAE",
+    "lat": 25.3342,
+    "lng": 55.41221,
+    "local_name": "Sharjah",
+    "continent": "Asia",
+    "id": 147
+  },
+  {
+    "city": "Bhopal",
+    "country": "India",
+    "lat": 23.25469,
+    "lng": 77.40289,
+    "local_name": "Bhopal",
+    "continent": "Asia",
+    "id": 148
+  },
+  {
+    "city": "Jiangmen",
+    "country": "China",
+    "lat": 22.58333,
+    "lng": 113.08333,
+    "local_name": "Jiangmen",
+    "continent": "Asia",
+    "id": 149
+  },
+  {
+    "city": "Jiangyin",
+    "country": "China",
+    "lat": 31.91102,
+    "lng": 120.26302,
+    "local_name": "Jiangyin",
+    "continent": "Asia",
+    "id": 150
+  },
+  {
+    "city": "Fuyang",
+    "country": "China",
+    "lat": 32.9,
+    "lng": 115.81667,
+    "local_name": "Fuyang",
+    "continent": "Asia",
+    "id": 151
+  },
+  {
+    "city": "Bayan Nur",
+    "country": "China",
+    "lat": 40.74143,
+    "lng": 107.38599,
+    "local_name": "Bayan Nur",
+    "continent": "Asia",
+    "id": 152
+  },
+  {
+    "city": "Chaozhou",
+    "country": "China",
+    "lat": 23.65396,
+    "lng": 116.62262,
+    "local_name": "Chaozhou",
+    "continent": "Asia",
+    "id": 153
+  },
+  {
+    "city": "Qingyuan",
+    "country": "China",
+    "lat": 23.7,
+    "lng": 113.03333,
+    "local_name": "Qingyuan",
+    "continent": "Asia",
+    "id": 154
+  },
+  {
+    "city": "Tai’an",
+    "country": "China",
+    "lat": 36.18528,
+    "lng": 117.12,
+    "local_name": "Tai’an",
+    "continent": "Asia",
+    "id": 155
+  },
+  {
+    "city": "Rasapūdipalem",
+    "country": "India",
+    "lat": 17.73308,
+    "lng": 83.31622,
+    "local_name": "Rasapūdipalem",
+    "continent": "Asia",
+    "id": 156
+  },
+  {
+    "city": "Pimpri-Chinchwad",
+    "country": "India",
+    "lat": 18.61867,
+    "lng": 73.80375,
+    "local_name": "Pimpri-Chinchwad",
+    "continent": "Asia",
+    "id": 157
+  },
+  {
+    "city": "Caloocan",
+    "country": "Philippines",
+    "lat": 14.64953,
+    "lng": 120.96788,
+    "local_name": "Caloocan",
+    "continent": "Asia",
+    "id": 158
+  },
+  {
+    "city": "Patna",
+    "country": "India",
+    "lat": 25.59408,
+    "lng": 85.13563,
+    "local_name": "Patna",
+    "continent": "Asia",
+    "id": 159
+  },
+  {
+    "city": "Mosul",
+    "country": "Iraq",
+    "lat": 36.335,
+    "lng": 43.11889,
+    "local_name": "Mosul",
+    "continent": "Asia",
+    "id": 160
+  },
+  {
+    "city": "Kallakurichi",
+    "country": "India",
+    "lat": 11.73379,
+    "lng": 78.95925,
+    "local_name": "Kallakurichi",
+    "continent": "Asia",
+    "id": 161
+  },
+  {
+    "city": "Xining",
+    "country": "China",
+    "lat": 36.62554,
+    "lng": 101.75739,
+    "local_name": "Xining",
+    "continent": "Asia",
+    "id": 162
+  },
+  {
+    "city": "Changshu",
+    "country": "China",
+    "lat": 31.64615,
+    "lng": 120.74221,
+    "local_name": "Changshu",
+    "continent": "Asia",
+    "id": 163
+  },
+  {
+    "city": "Palembang",
+    "country": "Indonesia",
+    "lat": -2.91673,
+    "lng": 104.7458,
+    "local_name": "Palembang",
+    "continent": "Asia",
+    "id": 164
+  },
+  {
+    "city": "Huainan",
+    "country": "China",
+    "lat": 32.62639,
+    "lng": 116.99694,
+    "local_name": "Huainan",
+    "continent": "Asia",
+    "id": 165
+  },
+  {
+    "city": "Semarang",
+    "country": "Indonesia",
+    "lat": -6.99306,
+    "lng": 110.42083,
+    "local_name": "Semarang",
+    "continent": "Asia",
+    "id": 166
+  },
+  {
+    "city": "Suzhou",
+    "country": "China",
+    "lat": 33.63611,
+    "lng": 116.97889,
+    "local_name": "Suzhou",
+    "continent": "Asia",
+    "id": 167
+  },
+  {
+    "city": "Lu’an",
+    "country": "China",
+    "lat": 31.73561,
+    "lng": 116.51688,
+    "local_name": "Lu’an",
+    "continent": "Asia",
+    "id": 168
+  },
+  {
+    "city": "Ludhiana",
+    "country": "India",
+    "lat": 30.91204,
+    "lng": 75.85379,
+    "local_name": "Ludhiana",
+    "continent": "Asia",
+    "id": 169
+  },
+  {
+    "city": "Yancheng",
+    "country": "China",
+    "lat": 33.3575,
+    "lng": 120.1573,
+    "local_name": "Yancheng",
+    "continent": "Asia",
+    "id": 170
+  },
+  {
+    "city": "Erbil",
+    "country": "Iraq",
+    "lat": 36.19117,
+    "lng": 44.00943,
+    "local_name": "Erbil",
+    "continent": "Asia",
+    "id": 171
+  },
+  {
+    "city": "Fukuoka",
+    "country": "Japan",
+    "lat": 33.6,
+    "lng": 130.41667,
+    "local_name": "Fukuoka",
+    "continent": "Asia",
+    "id": 172
+  },
+  {
+    "city": "Taizhou",
+    "country": "China",
+    "lat": 32.49069,
+    "lng": 119.90812,
+    "local_name": "Taizhou",
+    "continent": "Asia",
+    "id": 173
+  },
+  {
+    "city": "Daqing",
+    "country": "China",
+    "lat": 46.58333,
+    "lng": 125.0,
+    "local_name": "Daqing",
+    "continent": "Asia",
+    "id": 174
+  },
+  {
+    "city": "Manila",
+    "country": "Philippines",
+    "lat": 14.6042,
+    "lng": 120.9822,
+    "local_name": "Manila",
+    "continent": "Asia",
+    "id": 175
+  },
+  {
+    "city": "Wuhu",
+    "country": "China",
+    "lat": 31.35259,
+    "lng": 118.42947,
+    "local_name": "Wuhu",
+    "continent": "Asia",
+    "id": 176
+  },
+  {
+    "city": "Dazhou",
+    "country": "China",
+    "lat": 31.2106,
+    "lng": 107.46308,
+    "local_name": "Dazhou",
+    "continent": "Asia",
+    "id": 177
+  },
+  {
+    "city": "Yangzhou",
+    "country": "China",
+    "lat": 32.39722,
+    "lng": 119.43583,
+    "local_name": "Yangzhou",
+    "continent": "Asia",
+    "id": 178
+  },
+  {
+    "city": "Makkah",
+    "country": "Saudi Arabia",
+    "lat": 21.42664,
+    "lng": 39.82563,
+    "local_name": "Makkah",
+    "continent": "Asia",
+    "id": 179
+  },
+  {
+    "city": "Phnom Penh",
+    "country": "Cambodia",
+    "lat": 11.56245,
+    "lng": 104.91601,
+    "local_name": "Phnom Penh",
+    "continent": "Asia",
+    "id": 180
+  },
+  {
+    "city": "Guilin",
+    "country": "China",
+    "lat": 25.28022,
+    "lng": 110.29639,
+    "local_name": "Guilin",
+    "continent": "Asia",
+    "id": 181
+  },
+  {
+    "city": "Damascus",
+    "country": "Syria",
+    "lat": 33.5102,
+    "lng": 36.29128,
+    "local_name": "Damascus",
+    "continent": "Asia",
+    "id": 182
+  },
+  {
+    "city": "Quetta",
+    "country": "Pakistan",
+    "lat": 30.18414,
+    "lng": 67.00141,
+    "local_name": "Quetta",
+    "continent": "Asia",
+    "id": 183
+  },
+  {
+    "city": "Zhaoqing",
+    "country": "China",
+    "lat": 23.04893,
+    "lng": 112.46091,
+    "local_name": "Zhaoqing",
+    "continent": "Asia",
+    "id": 184
+  },
+  {
+    "city": "Mianyang",
+    "country": "China",
+    "lat": 31.46784,
+    "lng": 104.68168,
+    "local_name": "Mianyang",
+    "continent": "Asia",
+    "id": 185
+  },
+  {
+    "city": "Isfahan",
+    "country": "Iran",
+    "lat": 32.65246,
+    "lng": 51.67462,
+    "local_name": "Isfahan",
+    "continent": "Asia",
+    "id": 186
+  },
+  {
+    "city": "Wanzhou",
+    "country": "China",
+    "lat": 30.76451,
+    "lng": 108.39586,
+    "local_name": "Wanzhou",
+    "continent": "Asia",
+    "id": 187
+  },
+  {
+    "city": "Putian",
+    "country": "China",
+    "lat": 25.43944,
+    "lng": 119.01028,
+    "local_name": "Putian",
+    "continent": "Asia",
+    "id": 188
+  },
+  {
+    "city": "Kawasaki",
+    "country": "Japan",
+    "lat": 35.52056,
+    "lng": 139.71722,
+    "local_name": "Kawasaki",
+    "continent": "Asia",
+    "id": 189
+  },
+  {
+    "city": "Shangqiu",
+    "country": "China",
+    "lat": 34.45,
+    "lng": 115.65,
+    "local_name": "Shangqiu",
+    "continent": "Asia",
+    "id": 190
+  },
+  {
+    "city": "Kobe",
+    "country": "Japan",
+    "lat": 34.6913,
+    "lng": 135.183,
+    "local_name": "Kobe",
+    "continent": "Asia",
+    "id": 191
+  },
+  {
+    "city": "Cần Thơ",
+    "country": "Vietnam",
+    "lat": 10.03711,
+    "lng": 105.78825,
+    "local_name": "Cần Thơ",
+    "continent": "Asia",
+    "id": 192
+  },
+  {
+    "city": "Khulna",
+    "country": "Bangladesh",
+    "lat": 22.80979,
+    "lng": 89.56439,
+    "local_name": "Khulna",
+    "continent": "Asia",
+    "id": 193
+  },
+  {
+    "city": "Yinchuan",
+    "country": "China",
+    "lat": 38.46806,
+    "lng": 106.27306,
+    "local_name": "Yinchuan",
+    "continent": "Asia",
+    "id": 194
+  },
+  {
+    "city": "Nashik",
+    "country": "India",
+    "lat": 19.99727,
+    "lng": 73.79096,
+    "local_name": "Nashik",
+    "continent": "Asia",
+    "id": 195
+  },
+  {
+    "city": "Taizhou",
+    "country": "China",
+    "lat": 28.66266,
+    "lng": 121.43312,
+    "local_name": "Taizhou",
+    "continent": "Asia",
+    "id": 196
+  },
+  {
+    "city": "Yiwu",
+    "country": "China",
+    "lat": 29.31506,
+    "lng": 120.07676,
+    "local_name": "Yiwu",
+    "continent": "Asia",
+    "id": 197
+  },
+  {
+    "city": "Daejeon",
+    "country": "South Korea",
+    "lat": 36.34913,
+    "lng": 127.38493,
+    "local_name": "Daejeon",
+    "continent": "Asia",
+    "id": 198
+  },
+  {
+    "city": "Quanzhou",
+    "country": "China",
+    "lat": 24.91389,
+    "lng": 118.58583,
+    "local_name": "Quanzhou",
+    "continent": "Asia",
+    "id": 199
+  },
+  {
+    "city": "Madurai",
+    "country": "India",
+    "lat": 9.919,
+    "lng": 78.11953,
+    "local_name": "Madurai",
+    "continent": "Asia",
+    "id": 200
+  },
+  {
+    "city": "Jinhua",
+    "country": "China",
+    "lat": 29.10678,
+    "lng": 119.64421,
+    "local_name": "Jinhua",
+    "continent": "Asia",
+    "id": 201
+  },
+  {
+    "city": "Kyoto",
+    "country": "Japan",
+    "lat": 35.02107,
+    "lng": 135.75385,
+    "local_name": "Kyoto",
+    "continent": "Asia",
+    "id": 202
+  },
+  {
+    "city": "Cixi",
+    "country": "China",
+    "lat": 30.1764,
+    "lng": 121.2457,
+    "local_name": "Cixi",
+    "continent": "Asia",
+    "id": 203
+  },
+  {
+    "city": "Changde",
+    "country": "China",
+    "lat": 29.03205,
+    "lng": 111.69844,
+    "local_name": "Changde",
+    "continent": "Asia",
+    "id": 204
+  },
+  {
+    "city": "Kuala Lumpur",
+    "country": "Malaysia",
+    "lat": 3.1412,
+    "lng": 101.68653,
+    "local_name": "Kuala Lumpur",
+    "continent": "Asia",
+    "id": 205
+  },
+  {
+    "city": "Kaifeng",
+    "country": "China",
+    "lat": 34.7986,
+    "lng": 114.30742,
+    "local_name": "Kaifeng",
+    "continent": "Asia",
+    "id": 206
+  },
+  {
+    "city": "Anshan",
+    "country": "China",
+    "lat": 41.12361,
+    "lng": 122.99,
+    "local_name": "Anshan",
+    "continent": "Asia",
+    "id": 207
+  },
+  {
+    "city": "Karaj",
+    "country": "Iran",
+    "lat": 35.83266,
+    "lng": 50.99155,
+    "local_name": "Karaj",
+    "continent": "Asia",
+    "id": 208
+  },
+  {
+    "city": "Kathmandu",
+    "country": "Nepal",
+    "lat": 27.70169,
+    "lng": 85.3206,
+    "local_name": "Kathmandu",
+    "continent": "Asia",
+    "id": 209
+  },
+  {
+    "city": "Baoji",
+    "country": "China",
+    "lat": 34.36775,
+    "lng": 107.23705,
+    "local_name": "Baoji",
+    "continent": "Asia",
+    "id": 210
+  },
+  {
+    "city": "Suqian",
+    "country": "China",
+    "lat": 33.94917,
+    "lng": 118.29583,
+    "local_name": "Suqian",
+    "continent": "Asia",
+    "id": 211
+  },
+  {
+    "city": "Liuzhou",
+    "country": "China",
+    "lat": 24.32405,
+    "lng": 109.40698,
+    "local_name": "Liuzhou",
+    "continent": "Asia",
+    "id": 212
+  },
+  {
+    "city": "Tirunelveli",
+    "country": "India",
+    "lat": 8.72742,
+    "lng": 77.6838,
+    "local_name": "Tirunelveli",
+    "continent": "Asia",
+    "id": 213
+  },
+  {
+    "city": "Zhangjiagang",
+    "country": "China",
+    "lat": 31.865,
+    "lng": 120.53889,
+    "local_name": "Zhangjiagang",
+    "continent": "Asia",
+    "id": 214
+  },
+  {
+    "city": "Agra",
+    "country": "India",
+    "lat": 27.18333,
+    "lng": 78.01667,
+    "local_name": "Agra",
+    "continent": "Asia",
+    "id": 215
+  },
+  {
+    "city": "Tabriz",
+    "country": "Iran",
+    "lat": 38.08,
+    "lng": 46.2919,
+    "local_name": "Tabriz",
+    "continent": "Asia",
+    "id": 216
+  },
+  {
+    "city": "Makassar",
+    "country": "Indonesia",
+    "lat": -5.14861,
+    "lng": 119.43194,
+    "local_name": "Makassar",
+    "continent": "Asia",
+    "id": 217
+  },
+  {
+    "city": "Jinjiang",
+    "country": "China",
+    "lat": 24.81978,
+    "lng": 118.57415,
+    "local_name": "Jinjiang",
+    "continent": "Asia",
+    "id": 218
+  },
+  {
+    "city": "Faridabad",
+    "country": "India",
+    "lat": 28.41124,
+    "lng": 77.31316,
+    "local_name": "Faridabad",
+    "continent": "Asia",
+    "id": 219
+  },
+  {
+    "city": "Bozhou",
+    "country": "China",
+    "lat": 33.87722,
+    "lng": 115.77028,
+    "local_name": "Bozhou",
+    "continent": "Asia",
+    "id": 220
+  },
+  {
+    "city": "Qujing",
+    "country": "China",
+    "lat": 25.48333,
+    "lng": 103.78333,
+    "local_name": "Qujing",
+    "continent": "Asia",
+    "id": 221
+  },
+  {
+    "city": "South Tangerang",
+    "country": "Indonesia",
+    "lat": -6.28862,
+    "lng": 106.71789,
+    "local_name": "South Tangerang",
+    "continent": "Asia",
+    "id": 222
+  },
+  {
+    "city": "Zhanjiang",
+    "country": "China",
+    "lat": 21.23391,
+    "lng": 110.38749,
+    "local_name": "Zhanjiang",
+    "continent": "Asia",
+    "id": 223
+  },
+  {
+    "city": "Fushun",
+    "country": "China",
+    "lat": 41.88669,
+    "lng": 123.94363,
+    "local_name": "Fushun",
+    "continent": "Asia",
+    "id": 224
+  },
+  {
+    "city": "Gwangju",
+    "country": "South Korea",
+    "lat": 35.15472,
+    "lng": 126.91556,
+    "local_name": "Gwangju",
+    "continent": "Asia",
+    "id": 225
+  },
+  {
+    "city": "Rājkot",
+    "country": "India",
+    "lat": 22.29161,
+    "lng": 70.79322,
+    "local_name": "Rājkot",
+    "continent": "Asia",
+    "id": 226
+  },
+  {
+    "city": "Luoyang",
+    "country": "China",
+    "lat": 34.67345,
+    "lng": 112.43684,
+    "local_name": "Luoyang",
+    "continent": "Asia",
+    "id": 227
+  },
+  {
+    "city": "Guankou",
+    "country": "China",
+    "lat": 28.15861,
+    "lng": 113.62709,
+    "local_name": "Guankou",
+    "continent": "Asia",
+    "id": 228
+  },
+  {
+    "city": "Huế",
+    "country": "Vietnam",
+    "lat": 16.4619,
+    "lng": 107.59546,
+    "local_name": "Huế",
+    "continent": "Asia",
+    "id": 229
+  },
+  {
+    "city": "Najafgarh",
+    "country": "India",
+    "lat": 28.60922,
+    "lng": 76.97982,
+    "local_name": "Najafgarh",
+    "continent": "Asia",
+    "id": 230
+  },
+  {
+    "city": "Handan",
+    "country": "China",
+    "lat": 36.60999,
+    "lng": 114.48764,
+    "local_name": "Handan",
+    "continent": "Asia",
+    "id": 231
+  },
+  {
+    "city": "Bannu",
+    "country": "Pakistan",
+    "lat": 32.98527,
+    "lng": 70.60403,
+    "local_name": "Bannu",
+    "continent": "Asia",
+    "id": 232
+  },
+  {
+    "city": "Yichang",
+    "country": "China",
+    "lat": 30.71444,
+    "lng": 111.28472,
+    "local_name": "Yichang",
+    "continent": "Asia",
+    "id": 233
+  },
+  {
+    "city": "Heze",
+    "country": "China",
+    "lat": 35.23929,
+    "lng": 115.47358,
+    "local_name": "Heze",
+    "continent": "Asia",
+    "id": 234
+  },
+  {
+    "city": "Jamshedpur",
+    "country": "India",
+    "lat": 22.80278,
+    "lng": 86.18545,
+    "local_name": "Jamshedpur",
+    "continent": "Asia",
+    "id": 235
+  },
+  {
+    "city": "Basrah",
+    "country": "Iraq",
+    "lat": 30.50852,
+    "lng": 47.7804,
+    "local_name": "Basrah",
+    "continent": "Asia",
+    "id": 236
+  },
+  {
+    "city": "Saitama",
+    "country": "Japan",
+    "lat": 35.90807,
+    "lng": 139.65657,
+    "local_name": "Saitama",
+    "continent": "Asia",
+    "id": 237
+  },
+  {
+    "city": "Gorakhpur",
+    "country": "India",
+    "lat": 29.44768,
+    "lng": 75.67206,
+    "local_name": "Gorakhpur",
+    "continent": "Asia",
+    "id": 238
+  },
+  {
+    "city": "Liupanshui",
+    "country": "China",
+    "lat": 26.59444,
+    "lng": 104.83333,
+    "local_name": "Liupanshui",
+    "continent": "Asia",
+    "id": 239
+  },
+  {
+    "city": "Taguig",
+    "country": "Philippines",
+    "lat": 14.5243,
+    "lng": 121.0792,
+    "local_name": "Taguig",
+    "continent": "Asia",
+    "id": 240
+  }
+]

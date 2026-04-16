@@ -1,0 +1,2162 @@
+[
+  {
+    "city": "Mexico City",
+    "country": "Mexico",
+    "lat": 19.42847,
+    "lng": -99.12766,
+    "local_name": "Mexico City",
+    "continent": "North America",
+    "id": 1
+  },
+  {
+    "city": "New York City",
+    "country": "USA",
+    "lat": 40.71427,
+    "lng": -74.00597,
+    "local_name": "New York City",
+    "continent": "North America",
+    "id": 2
+  },
+  {
+    "city": "Los Angeles",
+    "country": "USA",
+    "lat": 34.05223,
+    "lng": -118.24368,
+    "local_name": "Los Angeles",
+    "continent": "North America",
+    "id": 3
+  },
+  {
+    "city": "Toronto",
+    "country": "Canada",
+    "lat": 43.70643,
+    "lng": -79.39864,
+    "local_name": "Toronto",
+    "continent": "North America",
+    "id": 4
+  },
+  {
+    "city": "Brooklyn",
+    "country": "USA",
+    "lat": 40.6501,
+    "lng": -73.94958,
+    "local_name": "Brooklyn",
+    "continent": "North America",
+    "id": 5
+  },
+  {
+    "city": "Chicago",
+    "country": "USA",
+    "lat": 41.85003,
+    "lng": -87.65005,
+    "local_name": "Chicago",
+    "continent": "North America",
+    "id": 6
+  },
+  {
+    "city": "Queens",
+    "country": "USA",
+    "lat": 40.68149,
+    "lng": -73.83652,
+    "local_name": "Queens",
+    "continent": "North America",
+    "id": 7
+  },
+  {
+    "city": "Houston",
+    "country": "USA",
+    "lat": 29.76328,
+    "lng": -95.36327,
+    "local_name": "Houston",
+    "continent": "North America",
+    "id": 8
+  },
+  {
+    "city": "Santo Domingo",
+    "country": "Dominican Republic",
+    "lat": 18.47186,
+    "lng": -69.89232,
+    "local_name": "Santo Domingo",
+    "continent": "North America",
+    "id": 9
+  },
+  {
+    "city": "Havana",
+    "country": "Cuba",
+    "lat": 23.13302,
+    "lng": -82.38304,
+    "local_name": "Havana",
+    "continent": "North America",
+    "id": 10
+  },
+  {
+    "city": "Tijuana",
+    "country": "Mexico",
+    "lat": 32.5027,
+    "lng": -117.00371,
+    "local_name": "Tijuana",
+    "continent": "North America",
+    "id": 11
+  },
+  {
+    "city": "Iztapalapa",
+    "country": "Mexico",
+    "lat": 19.35529,
+    "lng": -99.06224,
+    "local_name": "Iztapalapa",
+    "continent": "North America",
+    "id": 12
+  },
+  {
+    "city": "Montréal",
+    "country": "Canada",
+    "lat": 45.50884,
+    "lng": -73.58781,
+    "local_name": "Montréal",
+    "continent": "North America",
+    "id": 13
+  },
+  {
+    "city": "Puebla",
+    "country": "Mexico",
+    "lat": 19.04778,
+    "lng": -98.20723,
+    "local_name": "Puebla",
+    "continent": "North America",
+    "id": 14
+  },
+  {
+    "city": "Phoenix",
+    "country": "USA",
+    "lat": 33.44838,
+    "lng": -112.07404,
+    "local_name": "Phoenix",
+    "continent": "North America",
+    "id": 15
+  },
+  {
+    "city": "Ecatepec de Morelos",
+    "country": "Mexico",
+    "lat": 19.60492,
+    "lng": -99.06064,
+    "local_name": "Ecatepec de Morelos",
+    "continent": "North America",
+    "id": 16
+  },
+  {
+    "city": "Santiago de Querétaro",
+    "country": "Mexico",
+    "lat": 20.58806,
+    "lng": -100.38806,
+    "local_name": "Santiago de Querétaro",
+    "continent": "North America",
+    "id": 17
+  },
+  {
+    "city": "León de los Aldama",
+    "country": "Mexico",
+    "lat": 21.12908,
+    "lng": -101.67374,
+    "local_name": "León de los Aldama",
+    "continent": "North America",
+    "id": 18
+  },
+  {
+    "city": "Philadelphia",
+    "country": "USA",
+    "lat": 39.95238,
+    "lng": -75.16362,
+    "local_name": "Philadelphia",
+    "continent": "North America",
+    "id": 19
+  },
+  {
+    "city": "San Antonio",
+    "country": "USA",
+    "lat": 29.42412,
+    "lng": -98.49363,
+    "local_name": "San Antonio",
+    "continent": "North America",
+    "id": 20
+  },
+  {
+    "city": "Ciudad Juárez",
+    "country": "Mexico",
+    "lat": 31.72024,
+    "lng": -106.46084,
+    "local_name": "Ciudad Juárez",
+    "continent": "North America",
+    "id": 21
+  },
+  {
+    "city": "Manhattan",
+    "country": "USA",
+    "lat": 40.78343,
+    "lng": -73.96625,
+    "local_name": "Manhattan",
+    "continent": "North America",
+    "id": 22
+  },
+  {
+    "city": "Zapopan",
+    "country": "Mexico",
+    "lat": 20.72111,
+    "lng": -103.38742,
+    "local_name": "Zapopan",
+    "continent": "North America",
+    "id": 23
+  },
+  {
+    "city": "San Diego",
+    "country": "USA",
+    "lat": 32.71571,
+    "lng": -117.16472,
+    "local_name": "San Diego",
+    "continent": "North America",
+    "id": 24
+  },
+  {
+    "city": "Guadalajara",
+    "country": "Mexico",
+    "lat": 20.67738,
+    "lng": -103.34749,
+    "local_name": "Guadalajara",
+    "continent": "North America",
+    "id": 25
+  },
+  {
+    "city": "The Bronx",
+    "country": "USA",
+    "lat": 40.84985,
+    "lng": -73.86641,
+    "local_name": "The Bronx",
+    "continent": "North America",
+    "id": 26
+  },
+  {
+    "city": "Dallas",
+    "country": "USA",
+    "lat": 32.78306,
+    "lng": -96.80667,
+    "local_name": "Dallas",
+    "continent": "North America",
+    "id": 27
+  },
+  {
+    "city": "Calgary",
+    "country": "Canada",
+    "lat": 51.05011,
+    "lng": -114.08529,
+    "local_name": "Calgary",
+    "continent": "North America",
+    "id": 28
+  },
+  {
+    "city": "Port-au-Prince",
+    "country": "Haiti",
+    "lat": 18.54349,
+    "lng": -72.33881,
+    "local_name": "Port-au-Prince",
+    "continent": "North America",
+    "id": 29
+  },
+  {
+    "city": "Mérida",
+    "country": "Mexico",
+    "lat": 20.967,
+    "lng": -89.62318,
+    "local_name": "Mérida",
+    "continent": "North America",
+    "id": 30
+  },
+  {
+    "city": "Santiago de los Caballeros",
+    "country": "Dominican Republic",
+    "lat": 19.45036,
+    "lng": -70.69085,
+    "local_name": "Santiago de los Caballeros",
+    "continent": "North America",
+    "id": 31
+  },
+  {
+    "city": "Gustavo Adolfo Madero",
+    "country": "Mexico",
+    "lat": 19.49392,
+    "lng": -99.11075,
+    "local_name": "Gustavo Adolfo Madero",
+    "continent": "North America",
+    "id": 32
+  },
+  {
+    "city": "Monterrey",
+    "country": "Mexico",
+    "lat": 25.68435,
+    "lng": -100.31721,
+    "local_name": "Monterrey",
+    "continent": "North America",
+    "id": 33
+  },
+  {
+    "city": "Ciudad Nezahualcoyotl",
+    "country": "Mexico",
+    "lat": 19.40061,
+    "lng": -99.01483,
+    "local_name": "Ciudad Nezahualcoyotl",
+    "continent": "North America",
+    "id": 34
+  },
+  {
+    "city": "Mexicali",
+    "country": "Mexico",
+    "lat": 32.62781,
+    "lng": -115.45446,
+    "local_name": "Mexicali",
+    "continent": "North America",
+    "id": 35
+  },
+  {
+    "city": "Ottawa",
+    "country": "Canada",
+    "lat": 45.41117,
+    "lng": -75.69812,
+    "local_name": "Ottawa",
+    "continent": "North America",
+    "id": 36
+  },
+  {
+    "city": "Edmonton",
+    "country": "Canada",
+    "lat": 53.55014,
+    "lng": -113.46871,
+    "local_name": "Edmonton",
+    "continent": "North America",
+    "id": 37
+  },
+  {
+    "city": "Jacksonville",
+    "country": "USA",
+    "lat": 30.33218,
+    "lng": -81.65565,
+    "local_name": "Jacksonville",
+    "continent": "North America",
+    "id": 38
+  },
+  {
+    "city": "Fort Worth",
+    "country": "USA",
+    "lat": 32.72541,
+    "lng": -97.32085,
+    "local_name": "Fort Worth",
+    "continent": "North America",
+    "id": 39
+  },
+  {
+    "city": "San Jose",
+    "country": "USA",
+    "lat": 37.33939,
+    "lng": -121.89496,
+    "local_name": "San Jose",
+    "continent": "North America",
+    "id": 40
+  },
+  {
+    "city": "Guatemala City",
+    "country": "Guatemala",
+    "lat": 14.64072,
+    "lng": -90.51327,
+    "local_name": "Guatemala City",
+    "continent": "North America",
+    "id": 41
+  },
+  {
+    "city": "Austin",
+    "country": "USA",
+    "lat": 30.26715,
+    "lng": -97.74306,
+    "local_name": "Austin",
+    "continent": "North America",
+    "id": 42
+  },
+  {
+    "city": "Managua",
+    "country": "Nicaragua",
+    "lat": 12.13282,
+    "lng": -86.2504,
+    "local_name": "Managua",
+    "continent": "North America",
+    "id": 43
+  },
+  {
+    "city": "Kingston",
+    "country": "Jamaica",
+    "lat": 17.99702,
+    "lng": -76.79358,
+    "local_name": "Kingston",
+    "continent": "North America",
+    "id": 44
+  },
+  {
+    "city": "Chihuahua",
+    "country": "Mexico",
+    "lat": 28.63528,
+    "lng": -106.08889,
+    "local_name": "Chihuahua",
+    "continent": "North America",
+    "id": 45
+  },
+  {
+    "city": "Columbus",
+    "country": "USA",
+    "lat": 39.96118,
+    "lng": -82.99879,
+    "local_name": "Columbus",
+    "continent": "North America",
+    "id": 46
+  },
+  {
+    "city": "Charlotte",
+    "country": "USA",
+    "lat": 35.22709,
+    "lng": -80.84313,
+    "local_name": "Charlotte",
+    "continent": "North America",
+    "id": 47
+  },
+  {
+    "city": "Cancún",
+    "country": "Mexico",
+    "lat": 21.17429,
+    "lng": -86.84656,
+    "local_name": "Cancún",
+    "continent": "North America",
+    "id": 48
+  },
+  {
+    "city": "Indianapolis",
+    "country": "USA",
+    "lat": 39.76838,
+    "lng": -86.15804,
+    "local_name": "Indianapolis",
+    "continent": "North America",
+    "id": 49
+  },
+  {
+    "city": "Tegucigalpa",
+    "country": "Honduras",
+    "lat": 14.0818,
+    "lng": -87.20681,
+    "local_name": "Tegucigalpa",
+    "continent": "North America",
+    "id": 50
+  },
+  {
+    "city": "Naucalpan de Juárez",
+    "country": "Mexico",
+    "lat": 19.47851,
+    "lng": -99.23963,
+    "local_name": "Naucalpan de Juárez",
+    "continent": "North America",
+    "id": 51
+  },
+  {
+    "city": "San Francisco",
+    "country": "USA",
+    "lat": 37.77493,
+    "lng": -122.41942,
+    "local_name": "San Francisco",
+    "continent": "North America",
+    "id": 52
+  },
+  {
+    "city": "Hermosillo",
+    "country": "Mexico",
+    "lat": 29.08874,
+    "lng": -110.96677,
+    "local_name": "Hermosillo",
+    "continent": "North America",
+    "id": 53
+  },
+  {
+    "city": "Culiacán",
+    "country": "Mexico",
+    "lat": 24.80209,
+    "lng": -107.39421,
+    "local_name": "Culiacán",
+    "continent": "North America",
+    "id": 54
+  },
+  {
+    "city": "San Pedro Sula",
+    "country": "Honduras",
+    "lat": 15.50585,
+    "lng": -88.02588,
+    "local_name": "San Pedro Sula",
+    "continent": "North America",
+    "id": 55
+  },
+  {
+    "city": "Seattle",
+    "country": "USA",
+    "lat": 47.60621,
+    "lng": -122.33207,
+    "local_name": "Seattle",
+    "continent": "North America",
+    "id": 56
+  },
+  {
+    "city": "Winnipeg",
+    "country": "Canada",
+    "lat": 49.8844,
+    "lng": -97.14704,
+    "local_name": "Winnipeg",
+    "continent": "North America",
+    "id": 57
+  },
+  {
+    "city": "Morelia",
+    "country": "Mexico",
+    "lat": 19.70078,
+    "lng": -101.18443,
+    "local_name": "Morelia",
+    "continent": "North America",
+    "id": 58
+  },
+  {
+    "city": "Torreón",
+    "country": "Mexico",
+    "lat": 25.54389,
+    "lng": -103.41898,
+    "local_name": "Torreón",
+    "continent": "North America",
+    "id": 59
+  },
+  {
+    "city": "Denver",
+    "country": "USA",
+    "lat": 39.73915,
+    "lng": -104.9847,
+    "local_name": "Denver",
+    "continent": "North America",
+    "id": 60
+  },
+  {
+    "city": "Álvaro Obregón",
+    "country": "Mexico",
+    "lat": 19.35867,
+    "lng": -99.20329,
+    "local_name": "Álvaro Obregón",
+    "continent": "North America",
+    "id": 61
+  },
+  {
+    "city": "San Luis Potosí",
+    "country": "Mexico",
+    "lat": 22.15234,
+    "lng": -100.97135,
+    "local_name": "San Luis Potosí",
+    "continent": "North America",
+    "id": 62
+  },
+  {
+    "city": "Aguascalientes",
+    "country": "Mexico",
+    "lat": 21.88262,
+    "lng": -102.2843,
+    "local_name": "Aguascalientes",
+    "continent": "North America",
+    "id": 63
+  },
+  {
+    "city": "Mississauga",
+    "country": "Canada",
+    "lat": 43.5789,
+    "lng": -79.6583,
+    "local_name": "Mississauga",
+    "continent": "North America",
+    "id": 64
+  },
+  {
+    "city": "Saltillo",
+    "country": "Mexico",
+    "lat": 25.42595,
+    "lng": -100.97963,
+    "local_name": "Saltillo",
+    "continent": "North America",
+    "id": 65
+  },
+  {
+    "city": "Santo Domingo Oeste",
+    "country": "Dominican Republic",
+    "lat": 18.5,
+    "lng": -70.0,
+    "local_name": "Santo Domingo Oeste",
+    "continent": "North America",
+    "id": 66
+  },
+  {
+    "city": "Santo Domingo Este",
+    "country": "Dominican Republic",
+    "lat": 18.48511,
+    "lng": -69.84757,
+    "local_name": "Santo Domingo Este",
+    "continent": "North America",
+    "id": 67
+  },
+  {
+    "city": "Washington",
+    "country": "USA",
+    "lat": 38.89511,
+    "lng": -77.03637,
+    "local_name": "Washington",
+    "continent": "North America",
+    "id": 68
+  },
+  {
+    "city": "Nashville",
+    "country": "USA",
+    "lat": 36.16589,
+    "lng": -86.78444,
+    "local_name": "Nashville",
+    "continent": "North America",
+    "id": 69
+  },
+  {
+    "city": "Oklahoma City",
+    "country": "USA",
+    "lat": 35.46756,
+    "lng": -97.51643,
+    "local_name": "Oklahoma City",
+    "continent": "North America",
+    "id": 70
+  },
+  {
+    "city": "El Paso",
+    "country": "USA",
+    "lat": 31.75872,
+    "lng": -106.48693,
+    "local_name": "El Paso",
+    "continent": "North America",
+    "id": 71
+  },
+  {
+    "city": "Guadalupe",
+    "country": "Mexico",
+    "lat": 25.67678,
+    "lng": -100.25646,
+    "local_name": "Guadalupe",
+    "continent": "North America",
+    "id": 72
+  },
+  {
+    "city": "Vancouver",
+    "country": "Canada",
+    "lat": 49.24966,
+    "lng": -123.11934,
+    "local_name": "Vancouver",
+    "continent": "North America",
+    "id": 73
+  },
+  {
+    "city": "Acapulco de Juárez",
+    "country": "Mexico",
+    "lat": 16.84942,
+    "lng": -99.90891,
+    "local_name": "Acapulco de Juárez",
+    "continent": "North America",
+    "id": 74
+  },
+  {
+    "city": "Brampton",
+    "country": "Canada",
+    "lat": 43.68341,
+    "lng": -79.76633,
+    "local_name": "Brampton",
+    "continent": "North America",
+    "id": 75
+  },
+  {
+    "city": "Boston",
+    "country": "USA",
+    "lat": 42.35843,
+    "lng": -71.05977,
+    "local_name": "Boston",
+    "continent": "North America",
+    "id": 76
+  },
+  {
+    "city": "Tlalnepantla",
+    "country": "Mexico",
+    "lat": 19.54005,
+    "lng": -99.19538,
+    "local_name": "Tlalnepantla",
+    "continent": "North America",
+    "id": 77
+  },
+  {
+    "city": "Portland",
+    "country": "USA",
+    "lat": 45.52345,
+    "lng": -122.67621,
+    "local_name": "Portland",
+    "continent": "North America",
+    "id": 78
+  },
+  {
+    "city": "Tlaquepaque",
+    "country": "Mexico",
+    "lat": 20.64121,
+    "lng": -103.29342,
+    "local_name": "Tlaquepaque",
+    "continent": "North America",
+    "id": 79
+  },
+  {
+    "city": "Detroit",
+    "country": "USA",
+    "lat": 42.33143,
+    "lng": -83.04575,
+    "local_name": "Detroit",
+    "continent": "North America",
+    "id": 80
+  },
+  {
+    "city": "Las Vegas",
+    "country": "USA",
+    "lat": 36.17497,
+    "lng": -115.13722,
+    "local_name": "Las Vegas",
+    "continent": "North America",
+    "id": 81
+  },
+  {
+    "city": "New South Memphis",
+    "country": "USA",
+    "lat": 35.08676,
+    "lng": -90.05676,
+    "local_name": "New South Memphis",
+    "continent": "North America",
+    "id": 82
+  },
+  {
+    "city": "Memphis",
+    "country": "USA",
+    "lat": 35.14953,
+    "lng": -90.04898,
+    "local_name": "Memphis",
+    "continent": "North America",
+    "id": 83
+  },
+  {
+    "city": "Louisville",
+    "country": "USA",
+    "lat": 38.25424,
+    "lng": -85.75941,
+    "local_name": "Louisville",
+    "continent": "North America",
+    "id": 84
+  },
+  {
+    "city": "Villa Nueva",
+    "country": "Guatemala",
+    "lat": 14.52512,
+    "lng": -90.58544,
+    "local_name": "Villa Nueva",
+    "continent": "North America",
+    "id": 85
+  },
+  {
+    "city": "Coyoacán",
+    "country": "Mexico",
+    "lat": 19.3467,
+    "lng": -99.16174,
+    "local_name": "Coyoacán",
+    "continent": "North America",
+    "id": 86
+  },
+  {
+    "city": "Tuxtla",
+    "country": "Mexico",
+    "lat": 16.75357,
+    "lng": -93.11578,
+    "local_name": "Tuxtla",
+    "continent": "North America",
+    "id": 87
+  },
+  {
+    "city": "Reynosa",
+    "country": "Mexico",
+    "lat": 26.08005,
+    "lng": -98.28456,
+    "local_name": "Reynosa",
+    "continent": "North America",
+    "id": 88
+  },
+  {
+    "city": "Baltimore",
+    "country": "USA",
+    "lat": 39.29038,
+    "lng": -76.61219,
+    "local_name": "Baltimore",
+    "continent": "North America",
+    "id": 89
+  },
+  {
+    "city": "New Kingston",
+    "country": "Jamaica",
+    "lat": 18.00747,
+    "lng": -76.78319,
+    "local_name": "New Kingston",
+    "continent": "North America",
+    "id": 90
+  },
+  {
+    "city": "Tlalpan",
+    "country": "Mexico",
+    "lat": 19.29513,
+    "lng": -99.16206,
+    "local_name": "Tlalpan",
+    "continent": "North America",
+    "id": 91
+  },
+  {
+    "city": "South Boston",
+    "country": "USA",
+    "lat": 42.33343,
+    "lng": -71.04949,
+    "local_name": "South Boston",
+    "continent": "North America",
+    "id": 92
+  },
+  {
+    "city": "Hamilton",
+    "country": "Canada",
+    "lat": 43.25011,
+    "lng": -79.84963,
+    "local_name": "Hamilton",
+    "continent": "North America",
+    "id": 93
+  },
+  {
+    "city": "Surrey",
+    "country": "Canada",
+    "lat": 49.10635,
+    "lng": -122.82509,
+    "local_name": "Surrey",
+    "continent": "North America",
+    "id": 94
+  },
+  {
+    "city": "Albuquerque",
+    "country": "USA",
+    "lat": 35.08449,
+    "lng": -106.65114,
+    "local_name": "Albuquerque",
+    "continent": "North America",
+    "id": 95
+  },
+  {
+    "city": "Milwaukee",
+    "country": "USA",
+    "lat": 43.0389,
+    "lng": -87.90647,
+    "local_name": "Milwaukee",
+    "continent": "North America",
+    "id": 96
+  },
+  {
+    "city": "Santiago de Cuba",
+    "country": "Cuba",
+    "lat": 20.02287,
+    "lng": -75.82171,
+    "local_name": "Santiago de Cuba",
+    "continent": "North America",
+    "id": 97
+  },
+  {
+    "city": "Cuautitlán Izcalli",
+    "country": "Mexico",
+    "lat": 19.64388,
+    "lng": -99.21598,
+    "local_name": "Cuautitlán Izcalli",
+    "continent": "North America",
+    "id": 98
+  },
+  {
+    "city": "Tucson",
+    "country": "USA",
+    "lat": 32.22174,
+    "lng": -110.92648,
+    "local_name": "Tucson",
+    "continent": "North America",
+    "id": 99
+  },
+  {
+    "city": "Fresno",
+    "country": "USA",
+    "lat": 36.74773,
+    "lng": -119.77237,
+    "local_name": "Fresno",
+    "continent": "North America",
+    "id": 100
+  },
+  {
+    "city": "Québec",
+    "country": "Canada",
+    "lat": 46.81228,
+    "lng": -71.21454,
+    "local_name": "Québec",
+    "continent": "North America",
+    "id": 101
+  },
+  {
+    "city": "Cuauhtémoc",
+    "country": "Mexico",
+    "lat": 19.44506,
+    "lng": -99.14612,
+    "local_name": "Cuauhtémoc",
+    "continent": "North America",
+    "id": 102
+  },
+  {
+    "city": "San Salvador",
+    "country": "El Salvador",
+    "lat": 13.68935,
+    "lng": -89.18718,
+    "local_name": "San Salvador",
+    "continent": "North America",
+    "id": 103
+  },
+  {
+    "city": "Sacramento",
+    "country": "USA",
+    "lat": 38.58157,
+    "lng": -121.4944,
+    "local_name": "Sacramento",
+    "continent": "North America",
+    "id": 104
+  },
+  {
+    "city": "Victoria de Durango",
+    "country": "Mexico",
+    "lat": 24.02032,
+    "lng": -104.65756,
+    "local_name": "Victoria de Durango",
+    "continent": "North America",
+    "id": 105
+  },
+  {
+    "city": "Atlanta",
+    "country": "USA",
+    "lat": 33.749,
+    "lng": -84.38798,
+    "local_name": "Atlanta",
+    "continent": "North America",
+    "id": 106
+  },
+  {
+    "city": "Heroica Matamoros",
+    "country": "Mexico",
+    "lat": 25.87972,
+    "lng": -97.50417,
+    "local_name": "Heroica Matamoros",
+    "continent": "North America",
+    "id": 107
+  },
+  {
+    "city": "Toluca",
+    "country": "Mexico",
+    "lat": 19.28786,
+    "lng": -99.65324,
+    "local_name": "Toluca",
+    "continent": "North America",
+    "id": 108
+  },
+  {
+    "city": "Ciudad López Mateos",
+    "country": "Mexico",
+    "lat": 19.55793,
+    "lng": -99.25675,
+    "local_name": "Ciudad López Mateos",
+    "continent": "North America",
+    "id": 109
+  },
+  {
+    "city": "Miami",
+    "country": "USA",
+    "lat": 25.77427,
+    "lng": -80.19366,
+    "local_name": "Miami",
+    "continent": "North America",
+    "id": 110
+  },
+  {
+    "city": "Omaha",
+    "country": "USA",
+    "lat": 41.25626,
+    "lng": -95.94043,
+    "local_name": "Omaha",
+    "continent": "North America",
+    "id": 111
+  },
+  {
+    "city": "Raleigh",
+    "country": "USA",
+    "lat": 35.7721,
+    "lng": -78.63861,
+    "local_name": "Raleigh",
+    "continent": "North America",
+    "id": 112
+  },
+  {
+    "city": "Kansas City",
+    "country": "USA",
+    "lat": 39.09973,
+    "lng": -94.57857,
+    "local_name": "Kansas City",
+    "continent": "North America",
+    "id": 113
+  },
+  {
+    "city": "Long Beach",
+    "country": "USA",
+    "lat": 33.76696,
+    "lng": -118.18923,
+    "local_name": "Long Beach",
+    "continent": "North America",
+    "id": 114
+  },
+  {
+    "city": "Mesa",
+    "country": "USA",
+    "lat": 33.42227,
+    "lng": -111.82264,
+    "local_name": "Mesa",
+    "continent": "North America",
+    "id": 115
+  },
+  {
+    "city": "Halifax",
+    "country": "Canada",
+    "lat": 44.64269,
+    "lng": -63.57688,
+    "local_name": "Halifax",
+    "continent": "North America",
+    "id": 116
+  },
+  {
+    "city": "Staten Island",
+    "country": "USA",
+    "lat": 40.56233,
+    "lng": -74.13986,
+    "local_name": "Staten Island",
+    "continent": "North America",
+    "id": 117
+  },
+  {
+    "city": "Ciudad Apodaca",
+    "country": "Mexico",
+    "lat": 25.78195,
+    "lng": -100.18839,
+    "local_name": "Ciudad Apodaca",
+    "continent": "North America",
+    "id": 118
+  },
+  {
+    "city": "Mixco",
+    "country": "Guatemala",
+    "lat": 14.63077,
+    "lng": -90.60711,
+    "local_name": "Mixco",
+    "continent": "North America",
+    "id": 119
+  },
+  {
+    "city": "Colorado Springs",
+    "country": "USA",
+    "lat": 38.83388,
+    "lng": -104.82136,
+    "local_name": "Colorado Springs",
+    "continent": "North America",
+    "id": 120
+  },
+  {
+    "city": "Ciudad General Escobedo",
+    "country": "Mexico",
+    "lat": 25.79698,
+    "lng": -100.31791,
+    "local_name": "Ciudad General Escobedo",
+    "continent": "North America",
+    "id": 121
+  },
+  {
+    "city": "Virginia Beach",
+    "country": "USA",
+    "lat": 36.85293,
+    "lng": -75.97799,
+    "local_name": "Virginia Beach",
+    "continent": "North America",
+    "id": 122
+  },
+  {
+    "city": "Ensenada",
+    "country": "Mexico",
+    "lat": 31.87149,
+    "lng": -116.60071,
+    "local_name": "Ensenada",
+    "continent": "North America",
+    "id": 123
+  },
+  {
+    "city": "Xochimilco",
+    "country": "Mexico",
+    "lat": 19.25465,
+    "lng": -99.10356,
+    "local_name": "Xochimilco",
+    "continent": "North America",
+    "id": 124
+  },
+  {
+    "city": "Carrefour",
+    "country": "Haiti",
+    "lat": 18.54114,
+    "lng": -72.39922,
+    "local_name": "Carrefour",
+    "continent": "North America",
+    "id": 125
+  },
+  {
+    "city": "Laval",
+    "country": "Canada",
+    "lat": 45.56995,
+    "lng": -73.692,
+    "local_name": "Laval",
+    "continent": "North America",
+    "id": 126
+  },
+  {
+    "city": "Venustiano Carranza",
+    "country": "Mexico",
+    "lat": 19.44361,
+    "lng": -99.10499,
+    "local_name": "Venustiano Carranza",
+    "continent": "North America",
+    "id": 127
+  },
+  {
+    "city": "Veracruz",
+    "country": "Mexico",
+    "lat": 19.18095,
+    "lng": -96.1429,
+    "local_name": "Veracruz",
+    "continent": "North America",
+    "id": 128
+  },
+  {
+    "city": "Xalapa de Enríquez",
+    "country": "Mexico",
+    "lat": 19.53124,
+    "lng": -96.91589,
+    "local_name": "Xalapa de Enríquez",
+    "continent": "North America",
+    "id": 129
+  },
+  {
+    "city": "London",
+    "country": "Canada",
+    "lat": 42.98339,
+    "lng": -81.23304,
+    "local_name": "London",
+    "continent": "North America",
+    "id": 130
+  },
+  {
+    "city": "Oakland",
+    "country": "USA",
+    "lat": 37.80437,
+    "lng": -122.2708,
+    "local_name": "Oakland",
+    "continent": "North America",
+    "id": 131
+  },
+  {
+    "city": "San Juan",
+    "country": "Puerto Rico",
+    "lat": 18.46633,
+    "lng": -66.10572,
+    "local_name": "San Juan",
+    "continent": "North America",
+    "id": 132
+  },
+  {
+    "city": "Nuevo Laredo",
+    "country": "Mexico",
+    "lat": 27.47629,
+    "lng": -99.51639,
+    "local_name": "Nuevo Laredo",
+    "continent": "North America",
+    "id": 133
+  },
+  {
+    "city": "Azcapotzalco",
+    "country": "Mexico",
+    "lat": 19.48698,
+    "lng": -99.18594,
+    "local_name": "Azcapotzalco",
+    "continent": "North America",
+    "id": 134
+  },
+  {
+    "city": "Tampa",
+    "country": "USA",
+    "lat": 27.94752,
+    "lng": -82.45843,
+    "local_name": "Tampa",
+    "continent": "North America",
+    "id": 135
+  },
+  {
+    "city": "Tulsa",
+    "country": "USA",
+    "lat": 36.15398,
+    "lng": -95.99277,
+    "local_name": "Tulsa",
+    "continent": "North America",
+    "id": 136
+  },
+  {
+    "city": "San Nicolás de los Garza",
+    "country": "Mexico",
+    "lat": 25.74167,
+    "lng": -100.30222,
+    "local_name": "San Nicolás de los Garza",
+    "continent": "North America",
+    "id": 137
+  },
+  {
+    "city": "Minneapolis",
+    "country": "USA",
+    "lat": 44.97997,
+    "lng": -93.26384,
+    "local_name": "Minneapolis",
+    "continent": "North America",
+    "id": 138
+  },
+  {
+    "city": "Tonalá",
+    "country": "Mexico",
+    "lat": 20.62263,
+    "lng": -103.24168,
+    "local_name": "Tonalá",
+    "continent": "North America",
+    "id": 139
+  },
+  {
+    "city": "Panamá",
+    "country": "Panama",
+    "lat": 8.9936,
+    "lng": -79.51973,
+    "local_name": "Panamá",
+    "continent": "North America",
+    "id": 140
+  },
+  {
+    "city": "Wichita",
+    "country": "USA",
+    "lat": 37.69224,
+    "lng": -97.33754,
+    "local_name": "Wichita",
+    "continent": "North America",
+    "id": 141
+  },
+  {
+    "city": "Arlington",
+    "country": "USA",
+    "lat": 32.73569,
+    "lng": -97.10807,
+    "local_name": "Arlington",
+    "continent": "North America",
+    "id": 142
+  },
+  {
+    "city": "Ojo de Agua",
+    "country": "Mexico",
+    "lat": 19.68028,
+    "lng": -99.01,
+    "local_name": "Ojo de Agua",
+    "continent": "North America",
+    "id": 143
+  },
+  {
+    "city": "Benito Juárez",
+    "country": "Mexico",
+    "lat": 19.3727,
+    "lng": -99.1564,
+    "local_name": "Benito Juárez",
+    "continent": "North America",
+    "id": 144
+  },
+  {
+    "city": "Xico",
+    "country": "Mexico",
+    "lat": 19.27032,
+    "lng": -98.95088,
+    "local_name": "Xico",
+    "continent": "North America",
+    "id": 145
+  },
+  {
+    "city": "Iztacalco",
+    "country": "Mexico",
+    "lat": 19.39528,
+    "lng": -99.09778,
+    "local_name": "Iztacalco",
+    "continent": "North America",
+    "id": 146
+  },
+  {
+    "city": "Delmas",
+    "country": "Haiti",
+    "lat": 18.54478,
+    "lng": -72.30036,
+    "local_name": "Delmas",
+    "continent": "North America",
+    "id": 147
+  },
+  {
+    "city": "Mazatlán",
+    "country": "Mexico",
+    "lat": 23.22163,
+    "lng": -106.41885,
+    "local_name": "Mazatlán",
+    "continent": "North America",
+    "id": 148
+  },
+  {
+    "city": "Irapuato",
+    "country": "Mexico",
+    "lat": 20.67675,
+    "lng": -101.35628,
+    "local_name": "Irapuato",
+    "continent": "North America",
+    "id": 149
+  },
+  {
+    "city": "Bakersfield",
+    "country": "USA",
+    "lat": 35.37329,
+    "lng": -119.01871,
+    "local_name": "Bakersfield",
+    "continent": "North America",
+    "id": 150
+  },
+  {
+    "city": "Miguel Hidalgo",
+    "country": "Mexico",
+    "lat": 19.43411,
+    "lng": -99.20024,
+    "local_name": "Miguel Hidalgo",
+    "continent": "North America",
+    "id": 151
+  },
+  {
+    "city": "Cleveland",
+    "country": "USA",
+    "lat": 41.4995,
+    "lng": -81.69541,
+    "local_name": "Cleveland",
+    "continent": "North America",
+    "id": 152
+  },
+  {
+    "city": "Etobicoke",
+    "country": "Canada",
+    "lat": 43.64415,
+    "lng": -79.56985,
+    "local_name": "Etobicoke",
+    "continent": "North America",
+    "id": 153
+  },
+  {
+    "city": "New Orleans",
+    "country": "USA",
+    "lat": 29.95465,
+    "lng": -90.07507,
+    "local_name": "New Orleans",
+    "continent": "North America",
+    "id": 154
+  },
+  {
+    "city": "Aurora",
+    "country": "USA",
+    "lat": 39.72943,
+    "lng": -104.83192,
+    "local_name": "Aurora",
+    "continent": "North America",
+    "id": 155
+  },
+  {
+    "city": "Benito Juarez",
+    "country": "Mexico",
+    "lat": 19.3984,
+    "lng": -99.15766,
+    "local_name": "Benito Juarez",
+    "continent": "North America",
+    "id": 156
+  },
+  {
+    "city": "Tapachula",
+    "country": "Mexico",
+    "lat": 14.90541,
+    "lng": -92.25891,
+    "local_name": "Tapachula",
+    "continent": "North America",
+    "id": 157
+  },
+  {
+    "city": "Villahermosa",
+    "country": "Mexico",
+    "lat": 17.98625,
+    "lng": -92.93928,
+    "local_name": "Villahermosa",
+    "continent": "North America",
+    "id": 158
+  },
+  {
+    "city": "Honolulu",
+    "country": "USA",
+    "lat": 21.30694,
+    "lng": -157.85833,
+    "local_name": "Honolulu",
+    "continent": "North America",
+    "id": 159
+  },
+  {
+    "city": "Anaheim",
+    "country": "USA",
+    "lat": 33.83529,
+    "lng": -117.9145,
+    "local_name": "Anaheim",
+    "continent": "North America",
+    "id": 160
+  },
+  {
+    "city": "Camagüey",
+    "country": "Cuba",
+    "lat": 21.38083,
+    "lng": -77.91694,
+    "local_name": "Camagüey",
+    "continent": "North America",
+    "id": 161
+  },
+  {
+    "city": "Celaya",
+    "country": "Mexico",
+    "lat": 20.52353,
+    "lng": -100.8157,
+    "local_name": "Celaya",
+    "continent": "North America",
+    "id": 162
+  },
+  {
+    "city": "West Raleigh",
+    "country": "USA",
+    "lat": 35.78682,
+    "lng": -78.66389,
+    "local_name": "West Raleigh",
+    "continent": "North America",
+    "id": 163
+  },
+  {
+    "city": "Cuernavaca",
+    "country": "Mexico",
+    "lat": 18.9261,
+    "lng": -99.23075,
+    "local_name": "Cuernavaca",
+    "continent": "North America",
+    "id": 164
+  },
+  {
+    "city": "Markham",
+    "country": "Canada",
+    "lat": 43.86682,
+    "lng": -79.2663,
+    "local_name": "Markham",
+    "continent": "North America",
+    "id": 165
+  },
+  {
+    "city": "San José",
+    "country": "Costa Rica",
+    "lat": 9.93388,
+    "lng": -84.08489,
+    "local_name": "San José",
+    "continent": "North America",
+    "id": 166
+  },
+  {
+    "city": "Orlando",
+    "country": "USA",
+    "lat": 28.53834,
+    "lng": -81.37924,
+    "local_name": "Orlando",
+    "continent": "North America",
+    "id": 167
+  },
+  {
+    "city": "Tepic",
+    "country": "Mexico",
+    "lat": 21.50733,
+    "lng": -104.89332,
+    "local_name": "Tepic",
+    "continent": "North America",
+    "id": 168
+  },
+  {
+    "city": "Ciudad Victoria",
+    "country": "Mexico",
+    "lat": 23.74061,
+    "lng": -99.14364,
+    "local_name": "Ciudad Victoria",
+    "continent": "North America",
+    "id": 169
+  },
+  {
+    "city": "Soledad de Graciano Sánchez",
+    "country": "Mexico",
+    "lat": 22.18912,
+    "lng": -100.93792,
+    "local_name": "Soledad de Graciano Sánchez",
+    "continent": "North America",
+    "id": 170
+  },
+  {
+    "city": "Soyapango",
+    "country": "El Salvador",
+    "lat": 13.71024,
+    "lng": -89.13989,
+    "local_name": "Soyapango",
+    "continent": "North America",
+    "id": 171
+  },
+  {
+    "city": "Ciudad Obregón",
+    "country": "Mexico",
+    "lat": 27.48642,
+    "lng": -109.94079,
+    "local_name": "Ciudad Obregón",
+    "continent": "North America",
+    "id": 172
+  },
+  {
+    "city": "Vaughan",
+    "country": "Canada",
+    "lat": 43.8361,
+    "lng": -79.49827,
+    "local_name": "Vaughan",
+    "continent": "North America",
+    "id": 173
+  },
+  {
+    "city": "Ixtapaluca",
+    "country": "Mexico",
+    "lat": 19.31556,
+    "lng": -98.88284,
+    "local_name": "Ixtapaluca",
+    "continent": "North America",
+    "id": 174
+  },
+  {
+    "city": "San Miguelito",
+    "country": "Panama",
+    "lat": 9.05032,
+    "lng": -79.47068,
+    "local_name": "San Miguelito",
+    "continent": "North America",
+    "id": 175
+  },
+  {
+    "city": "Lexington",
+    "country": "USA",
+    "lat": 37.98869,
+    "lng": -84.47772,
+    "local_name": "Lexington",
+    "continent": "North America",
+    "id": 176
+  },
+  {
+    "city": "Holguín",
+    "country": "Cuba",
+    "lat": 20.88722,
+    "lng": -76.26306,
+    "local_name": "Holguín",
+    "continent": "North America",
+    "id": 177
+  },
+  {
+    "city": "Riverside",
+    "country": "USA",
+    "lat": 33.95335,
+    "lng": -117.39616,
+    "local_name": "Riverside",
+    "continent": "North America",
+    "id": 178
+  },
+  {
+    "city": "Corpus Christi",
+    "country": "USA",
+    "lat": 27.80058,
+    "lng": -97.39638,
+    "local_name": "Corpus Christi",
+    "continent": "North America",
+    "id": 179
+  },
+  {
+    "city": "Lexington-Fayette",
+    "country": "USA",
+    "lat": 38.0498,
+    "lng": -84.45855,
+    "local_name": "Lexington-Fayette",
+    "continent": "North America",
+    "id": 180
+  },
+  {
+    "city": "Cincinnati",
+    "country": "USA",
+    "lat": 39.12711,
+    "lng": -84.51439,
+    "local_name": "Cincinnati",
+    "continent": "North America",
+    "id": 181
+  },
+  {
+    "city": "Coatzacoalcos",
+    "country": "Mexico",
+    "lat": 18.14905,
+    "lng": -94.4447,
+    "local_name": "Coatzacoalcos",
+    "continent": "North America",
+    "id": 182
+  },
+  {
+    "city": "Santa Ana",
+    "country": "USA",
+    "lat": 33.74557,
+    "lng": -117.86783,
+    "local_name": "Santa Ana",
+    "continent": "North America",
+    "id": 183
+  },
+  {
+    "city": "Tampico",
+    "country": "Mexico",
+    "lat": 22.28519,
+    "lng": -97.87777,
+    "local_name": "Tampico",
+    "continent": "North America",
+    "id": 184
+  },
+  {
+    "city": "Ciudad Benito Juárez",
+    "country": "Mexico",
+    "lat": 25.64724,
+    "lng": -100.09582,
+    "local_name": "Ciudad Benito Juárez",
+    "continent": "North America",
+    "id": 185
+  },
+  {
+    "city": "Port-de-Paix",
+    "country": "Haiti",
+    "lat": 19.93984,
+    "lng": -72.83037,
+    "local_name": "Port-de-Paix",
+    "continent": "North America",
+    "id": 186
+  },
+  {
+    "city": "Stockton",
+    "country": "USA",
+    "lat": 37.9577,
+    "lng": -121.29078,
+    "local_name": "Stockton",
+    "continent": "North America",
+    "id": 187
+  },
+  {
+    "city": "Tláhuac",
+    "country": "Mexico",
+    "lat": 19.28689,
+    "lng": -99.00507,
+    "local_name": "Tláhuac",
+    "continent": "North America",
+    "id": 188
+  },
+  {
+    "city": "Pittsburgh",
+    "country": "USA",
+    "lat": 40.44062,
+    "lng": -79.99589,
+    "local_name": "Pittsburgh",
+    "continent": "North America",
+    "id": 189
+  },
+  {
+    "city": "Santa Catarina",
+    "country": "Mexico",
+    "lat": 25.67325,
+    "lng": -100.45813,
+    "local_name": "Santa Catarina",
+    "continent": "North America",
+    "id": 190
+  },
+  {
+    "city": "Saint Paul",
+    "country": "USA",
+    "lat": 44.94441,
+    "lng": -93.09327,
+    "local_name": "Saint Paul",
+    "continent": "North America",
+    "id": 191
+  },
+  {
+    "city": "Gatineau",
+    "country": "Canada",
+    "lat": 45.47723,
+    "lng": -75.70164,
+    "local_name": "Gatineau",
+    "continent": "North America",
+    "id": 192
+  },
+  {
+    "city": "Uruapan",
+    "country": "Mexico",
+    "lat": 19.41677,
+    "lng": -102.05842,
+    "local_name": "Uruapan",
+    "continent": "North America",
+    "id": 193
+  },
+  {
+    "city": "Lincoln",
+    "country": "USA",
+    "lat": 40.8,
+    "lng": -96.66696,
+    "local_name": "Lincoln",
+    "continent": "North America",
+    "id": 194
+  },
+  {
+    "city": "Cholula",
+    "country": "Mexico",
+    "lat": 19.06406,
+    "lng": -98.30352,
+    "local_name": "Cholula",
+    "continent": "North America",
+    "id": 195
+  },
+  {
+    "city": "Victoria",
+    "country": "Canada",
+    "lat": 48.4359,
+    "lng": -123.35155,
+    "local_name": "Victoria",
+    "continent": "North America",
+    "id": 196
+  },
+  {
+    "city": "Anchorage",
+    "country": "USA",
+    "lat": 61.21806,
+    "lng": -149.90028,
+    "local_name": "Anchorage",
+    "continent": "North America",
+    "id": 197
+  },
+  {
+    "city": "Meads",
+    "country": "USA",
+    "lat": 38.41258,
+    "lng": -82.70905,
+    "local_name": "Meads",
+    "continent": "North America",
+    "id": 198
+  },
+  {
+    "city": "Henderson",
+    "country": "USA",
+    "lat": 36.0397,
+    "lng": -114.98194,
+    "local_name": "Henderson",
+    "continent": "North America",
+    "id": 199
+  },
+  {
+    "city": "Greensboro",
+    "country": "USA",
+    "lat": 36.07264,
+    "lng": -79.79198,
+    "local_name": "Greensboro",
+    "continent": "North America",
+    "id": 200
+  },
+  {
+    "city": "Plano",
+    "country": "USA",
+    "lat": 33.01984,
+    "lng": -96.69889,
+    "local_name": "Plano",
+    "continent": "North America",
+    "id": 201
+  },
+  {
+    "city": "Pétionville",
+    "country": "Haiti",
+    "lat": 18.5125,
+    "lng": -72.28528,
+    "local_name": "Pétionville",
+    "continent": "North America",
+    "id": 202
+  },
+  {
+    "city": "Newark",
+    "country": "USA",
+    "lat": 40.73566,
+    "lng": -74.17237,
+    "local_name": "Newark",
+    "continent": "North America",
+    "id": 203
+  },
+  {
+    "city": "Nicolás Romero",
+    "country": "Mexico",
+    "lat": 19.64177,
+    "lng": -99.3068,
+    "local_name": "Nicolás Romero",
+    "continent": "North America",
+    "id": 204
+  },
+  {
+    "city": "Zumpango",
+    "country": "Mexico",
+    "lat": 19.7967,
+    "lng": -99.09946,
+    "local_name": "Zumpango",
+    "continent": "North America",
+    "id": 205
+  },
+  {
+    "city": "Madison",
+    "country": "USA",
+    "lat": 43.07305,
+    "lng": -89.40123,
+    "local_name": "Madison",
+    "continent": "North America",
+    "id": 206
+  },
+  {
+    "city": "St. Louis",
+    "country": "USA",
+    "lat": 38.62727,
+    "lng": -90.19789,
+    "local_name": "St. Louis",
+    "continent": "North America",
+    "id": 207
+  },
+  {
+    "city": "Coacalco",
+    "country": "Mexico",
+    "lat": 19.62923,
+    "lng": -99.10689,
+    "local_name": "Coacalco",
+    "continent": "North America",
+    "id": 208
+  },
+  {
+    "city": "Guantánamo",
+    "country": "Cuba",
+    "lat": 20.14444,
+    "lng": -75.20917,
+    "local_name": "Guantánamo",
+    "continent": "North America",
+    "id": 209
+  },
+  {
+    "city": "Saskatoon",
+    "country": "Canada",
+    "lat": 52.13238,
+    "lng": -106.66892,
+    "local_name": "Saskatoon",
+    "continent": "North America",
+    "id": 210
+  },
+  {
+    "city": "Chula Vista",
+    "country": "USA",
+    "lat": 32.64005,
+    "lng": -117.0842,
+    "local_name": "Chula Vista",
+    "continent": "North America",
+    "id": 211
+  },
+  {
+    "city": "Toledo",
+    "country": "USA",
+    "lat": 41.66394,
+    "lng": -83.55521,
+    "local_name": "Toledo",
+    "continent": "North America",
+    "id": 212
+  },
+  {
+    "city": "Nogales",
+    "country": "Mexico",
+    "lat": 31.30862,
+    "lng": -110.94217,
+    "local_name": "Nogales",
+    "continent": "North America",
+    "id": 213
+  },
+  {
+    "city": "Jersey City",
+    "country": "USA",
+    "lat": 40.72816,
+    "lng": -74.07764,
+    "local_name": "Jersey City",
+    "continent": "North America",
+    "id": 214
+  },
+  {
+    "city": "Reno",
+    "country": "USA",
+    "lat": 39.52963,
+    "lng": -119.8138,
+    "local_name": "Reno",
+    "continent": "North America",
+    "id": 215
+  },
+  {
+    "city": "Chandler",
+    "country": "USA",
+    "lat": 33.30616,
+    "lng": -111.84125,
+    "local_name": "Chandler",
+    "continent": "North America",
+    "id": 216
+  },
+  {
+    "city": "Fort Wayne",
+    "country": "USA",
+    "lat": 41.1306,
+    "lng": -85.12886,
+    "local_name": "Fort Wayne",
+    "continent": "North America",
+    "id": 217
+  },
+  {
+    "city": "Buffalo",
+    "country": "USA",
+    "lat": 42.88645,
+    "lng": -78.87837,
+    "local_name": "Buffalo",
+    "continent": "North America",
+    "id": 218
+  },
+  {
+    "city": "Durham",
+    "country": "USA",
+    "lat": 35.99403,
+    "lng": -78.89862,
+    "local_name": "Durham",
+    "continent": "North America",
+    "id": 219
+  },
+  {
+    "city": "Gómez Palacio",
+    "country": "Mexico",
+    "lat": 25.56871,
+    "lng": -103.4996,
+    "local_name": "Gómez Palacio",
+    "continent": "North America",
+    "id": 220
+  },
+  {
+    "city": "St. Petersburg",
+    "country": "USA",
+    "lat": 27.77086,
+    "lng": -82.67927,
+    "local_name": "St. Petersburg",
+    "continent": "North America",
+    "id": 221
+  },
+  {
+    "city": "Irvine",
+    "country": "USA",
+    "lat": 33.66946,
+    "lng": -117.82311,
+    "local_name": "Irvine",
+    "continent": "North America",
+    "id": 222
+  },
+  {
+    "city": "Kitchener",
+    "country": "Canada",
+    "lat": 43.42537,
+    "lng": -80.5112,
+    "local_name": "Kitchener",
+    "continent": "North America",
+    "id": 223
+  },
+  {
+    "city": "Los Mochis",
+    "country": "Mexico",
+    "lat": 25.79097,
+    "lng": -108.99825,
+    "local_name": "Los Mochis",
+    "continent": "North America",
+    "id": 224
+  },
+  {
+    "city": "Pachuca de Soto",
+    "country": "Mexico",
+    "lat": 20.11697,
+    "lng": -98.73329,
+    "local_name": "Pachuca de Soto",
+    "continent": "North America",
+    "id": 225
+  },
+  {
+    "city": "Laredo",
+    "country": "USA",
+    "lat": 27.50641,
+    "lng": -99.50754,
+    "local_name": "Laredo",
+    "continent": "North America",
+    "id": 226
+  },
+  {
+    "city": "Oaxaca",
+    "country": "Mexico",
+    "lat": 17.06025,
+    "lng": -96.72544,
+    "local_name": "Oaxaca",
+    "continent": "North America",
+    "id": 227
+  },
+  {
+    "city": "Santa Clara",
+    "country": "Cuba",
+    "lat": 22.40711,
+    "lng": -79.96581,
+    "local_name": "Santa Clara",
+    "continent": "North America",
+    "id": 228
+  },
+  {
+    "city": "La Paz",
+    "country": "Mexico",
+    "lat": 24.14231,
+    "lng": -110.31316,
+    "local_name": "La Paz",
+    "continent": "North America",
+    "id": 229
+  },
+  {
+    "city": "Colonia del Valle",
+    "country": "Mexico",
+    "lat": 19.38611,
+    "lng": -99.16204,
+    "local_name": "Colonia del Valle",
+    "continent": "North America",
+    "id": 230
+  },
+  {
+    "city": "Burnaby",
+    "country": "Canada",
+    "lat": 49.26636,
+    "lng": -122.95263,
+    "local_name": "Burnaby",
+    "continent": "North America",
+    "id": 231
+  },
+  {
+    "city": "Lubbock",
+    "country": "USA",
+    "lat": 33.57786,
+    "lng": -101.85517,
+    "local_name": "Lubbock",
+    "continent": "North America",
+    "id": 232
+  },
+  {
+    "city": "Tehuacán",
+    "country": "Mexico",
+    "lat": 18.46422,
+    "lng": -97.39735,
+    "local_name": "Tehuacán",
+    "continent": "North America",
+    "id": 233
+  },
+  {
+    "city": "Gilbert",
+    "country": "USA",
+    "lat": 33.35283,
+    "lng": -111.78903,
+    "local_name": "Gilbert",
+    "continent": "North America",
+    "id": 234
+  },
+  {
+    "city": "San Miguel",
+    "country": "El Salvador",
+    "lat": 13.48261,
+    "lng": -88.18211,
+    "local_name": "San Miguel",
+    "continent": "North America",
+    "id": 235
+  },
+  {
+    "city": "Tri-Cities",
+    "country": "USA",
+    "lat": 46.2454,
+    "lng": -119.19617,
+    "local_name": "Tri-Cities",
+    "continent": "North America",
+    "id": 236
+  },
+  {
+    "city": "Winston-Salem",
+    "country": "USA",
+    "lat": 36.09986,
+    "lng": -80.24422,
+    "local_name": "Winston-Salem",
+    "continent": "North America",
+    "id": 237
+  },
+  {
+    "city": "Glendale",
+    "country": "USA",
+    "lat": 33.53865,
+    "lng": -112.18599,
+    "local_name": "Glendale",
+    "continent": "North America",
+    "id": 238
+  },
+  {
+    "city": "Almendares",
+    "country": "Cuba",
+    "lat": 23.11012,
+    "lng": -82.42322,
+    "local_name": "Almendares",
+    "continent": "North America",
+    "id": 239
+  },
+  {
+    "city": "Magdalena Contreras",
+    "country": "Mexico",
+    "lat": 19.33212,
+    "lng": -99.21118,
+    "local_name": "Magdalena Contreras",
+    "continent": "North America",
+    "id": 240
+  }
+]

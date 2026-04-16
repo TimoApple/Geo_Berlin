@@ -1,0 +1,2252 @@
+[
+  {
+    "city": "New York City",
+    "country": "USA",
+    "lat": 40.71427,
+    "lng": -74.00597,
+    "local_name": "New York City",
+    "continent": "North America",
+    "id": 1
+  },
+  {
+    "city": "Los Angeles",
+    "country": "USA",
+    "lat": 34.05223,
+    "lng": -118.24368,
+    "local_name": "Los Angeles",
+    "continent": "North America",
+    "id": 2
+  },
+  {
+    "city": "Brooklyn",
+    "country": "USA",
+    "lat": 40.6501,
+    "lng": -73.94958,
+    "local_name": "Brooklyn",
+    "continent": "North America",
+    "id": 3
+  },
+  {
+    "city": "Chicago",
+    "country": "USA",
+    "lat": 41.85003,
+    "lng": -87.65005,
+    "local_name": "Chicago",
+    "continent": "North America",
+    "id": 4
+  },
+  {
+    "city": "Queens",
+    "country": "USA",
+    "lat": 40.68149,
+    "lng": -73.83652,
+    "local_name": "Queens",
+    "continent": "North America",
+    "id": 5
+  },
+  {
+    "city": "Houston",
+    "country": "USA",
+    "lat": 29.76328,
+    "lng": -95.36327,
+    "local_name": "Houston",
+    "continent": "North America",
+    "id": 6
+  },
+  {
+    "city": "Phoenix",
+    "country": "USA",
+    "lat": 33.44838,
+    "lng": -112.07404,
+    "local_name": "Phoenix",
+    "continent": "North America",
+    "id": 7
+  },
+  {
+    "city": "Philadelphia",
+    "country": "USA",
+    "lat": 39.95238,
+    "lng": -75.16362,
+    "local_name": "Philadelphia",
+    "continent": "North America",
+    "id": 8
+  },
+  {
+    "city": "San Antonio",
+    "country": "USA",
+    "lat": 29.42412,
+    "lng": -98.49363,
+    "local_name": "San Antonio",
+    "continent": "North America",
+    "id": 9
+  },
+  {
+    "city": "Manhattan",
+    "country": "USA",
+    "lat": 40.78343,
+    "lng": -73.96625,
+    "local_name": "Manhattan",
+    "continent": "North America",
+    "id": 10
+  },
+  {
+    "city": "San Diego",
+    "country": "USA",
+    "lat": 32.71571,
+    "lng": -117.16472,
+    "local_name": "San Diego",
+    "continent": "North America",
+    "id": 11
+  },
+  {
+    "city": "The Bronx",
+    "country": "USA",
+    "lat": 40.84985,
+    "lng": -73.86641,
+    "local_name": "The Bronx",
+    "continent": "North America",
+    "id": 12
+  },
+  {
+    "city": "Dallas",
+    "country": "USA",
+    "lat": 32.78306,
+    "lng": -96.80667,
+    "local_name": "Dallas",
+    "continent": "North America",
+    "id": 13
+  },
+  {
+    "city": "Jacksonville",
+    "country": "USA",
+    "lat": 30.33218,
+    "lng": -81.65565,
+    "local_name": "Jacksonville",
+    "continent": "North America",
+    "id": 14
+  },
+  {
+    "city": "Fort Worth",
+    "country": "USA",
+    "lat": 32.72541,
+    "lng": -97.32085,
+    "local_name": "Fort Worth",
+    "continent": "North America",
+    "id": 15
+  },
+  {
+    "city": "San Jose",
+    "country": "USA",
+    "lat": 37.33939,
+    "lng": -121.89496,
+    "local_name": "San Jose",
+    "continent": "North America",
+    "id": 16
+  },
+  {
+    "city": "Austin",
+    "country": "USA",
+    "lat": 30.26715,
+    "lng": -97.74306,
+    "local_name": "Austin",
+    "continent": "North America",
+    "id": 17
+  },
+  {
+    "city": "Columbus",
+    "country": "USA",
+    "lat": 39.96118,
+    "lng": -82.99879,
+    "local_name": "Columbus",
+    "continent": "North America",
+    "id": 18
+  },
+  {
+    "city": "Charlotte",
+    "country": "USA",
+    "lat": 35.22709,
+    "lng": -80.84313,
+    "local_name": "Charlotte",
+    "continent": "North America",
+    "id": 19
+  },
+  {
+    "city": "Indianapolis",
+    "country": "USA",
+    "lat": 39.76838,
+    "lng": -86.15804,
+    "local_name": "Indianapolis",
+    "continent": "North America",
+    "id": 20
+  },
+  {
+    "city": "San Francisco",
+    "country": "USA",
+    "lat": 37.77493,
+    "lng": -122.41942,
+    "local_name": "San Francisco",
+    "continent": "North America",
+    "id": 21
+  },
+  {
+    "city": "Seattle",
+    "country": "USA",
+    "lat": 47.60621,
+    "lng": -122.33207,
+    "local_name": "Seattle",
+    "continent": "North America",
+    "id": 22
+  },
+  {
+    "city": "Denver",
+    "country": "USA",
+    "lat": 39.73915,
+    "lng": -104.9847,
+    "local_name": "Denver",
+    "continent": "North America",
+    "id": 23
+  },
+  {
+    "city": "Washington",
+    "country": "USA",
+    "lat": 38.89511,
+    "lng": -77.03637,
+    "local_name": "Washington",
+    "continent": "North America",
+    "id": 24
+  },
+  {
+    "city": "Nashville",
+    "country": "USA",
+    "lat": 36.16589,
+    "lng": -86.78444,
+    "local_name": "Nashville",
+    "continent": "North America",
+    "id": 25
+  },
+  {
+    "city": "Oklahoma City",
+    "country": "USA",
+    "lat": 35.46756,
+    "lng": -97.51643,
+    "local_name": "Oklahoma City",
+    "continent": "North America",
+    "id": 26
+  },
+  {
+    "city": "El Paso",
+    "country": "USA",
+    "lat": 31.75872,
+    "lng": -106.48693,
+    "local_name": "El Paso",
+    "continent": "North America",
+    "id": 27
+  },
+  {
+    "city": "Boston",
+    "country": "USA",
+    "lat": 42.35843,
+    "lng": -71.05977,
+    "local_name": "Boston",
+    "continent": "North America",
+    "id": 28
+  },
+  {
+    "city": "Portland",
+    "country": "USA",
+    "lat": 45.52345,
+    "lng": -122.67621,
+    "local_name": "Portland",
+    "continent": "North America",
+    "id": 29
+  },
+  {
+    "city": "Detroit",
+    "country": "USA",
+    "lat": 42.33143,
+    "lng": -83.04575,
+    "local_name": "Detroit",
+    "continent": "North America",
+    "id": 30
+  },
+  {
+    "city": "Las Vegas",
+    "country": "USA",
+    "lat": 36.17497,
+    "lng": -115.13722,
+    "local_name": "Las Vegas",
+    "continent": "North America",
+    "id": 31
+  },
+  {
+    "city": "New South Memphis",
+    "country": "USA",
+    "lat": 35.08676,
+    "lng": -90.05676,
+    "local_name": "New South Memphis",
+    "continent": "North America",
+    "id": 32
+  },
+  {
+    "city": "Memphis",
+    "country": "USA",
+    "lat": 35.14953,
+    "lng": -90.04898,
+    "local_name": "Memphis",
+    "continent": "North America",
+    "id": 33
+  },
+  {
+    "city": "Louisville",
+    "country": "USA",
+    "lat": 38.25424,
+    "lng": -85.75941,
+    "local_name": "Louisville",
+    "continent": "North America",
+    "id": 34
+  },
+  {
+    "city": "Baltimore",
+    "country": "USA",
+    "lat": 39.29038,
+    "lng": -76.61219,
+    "local_name": "Baltimore",
+    "continent": "North America",
+    "id": 35
+  },
+  {
+    "city": "South Boston",
+    "country": "USA",
+    "lat": 42.33343,
+    "lng": -71.04949,
+    "local_name": "South Boston",
+    "continent": "North America",
+    "id": 36
+  },
+  {
+    "city": "Albuquerque",
+    "country": "USA",
+    "lat": 35.08449,
+    "lng": -106.65114,
+    "local_name": "Albuquerque",
+    "continent": "North America",
+    "id": 37
+  },
+  {
+    "city": "Milwaukee",
+    "country": "USA",
+    "lat": 43.0389,
+    "lng": -87.90647,
+    "local_name": "Milwaukee",
+    "continent": "North America",
+    "id": 38
+  },
+  {
+    "city": "Tucson",
+    "country": "USA",
+    "lat": 32.22174,
+    "lng": -110.92648,
+    "local_name": "Tucson",
+    "continent": "North America",
+    "id": 39
+  },
+  {
+    "city": "Fresno",
+    "country": "USA",
+    "lat": 36.74773,
+    "lng": -119.77237,
+    "local_name": "Fresno",
+    "continent": "North America",
+    "id": 40
+  },
+  {
+    "city": "Sacramento",
+    "country": "USA",
+    "lat": 38.58157,
+    "lng": -121.4944,
+    "local_name": "Sacramento",
+    "continent": "North America",
+    "id": 41
+  },
+  {
+    "city": "Atlanta",
+    "country": "USA",
+    "lat": 33.749,
+    "lng": -84.38798,
+    "local_name": "Atlanta",
+    "continent": "North America",
+    "id": 42
+  },
+  {
+    "city": "Miami",
+    "country": "USA",
+    "lat": 25.77427,
+    "lng": -80.19366,
+    "local_name": "Miami",
+    "continent": "North America",
+    "id": 43
+  },
+  {
+    "city": "Omaha",
+    "country": "USA",
+    "lat": 41.25626,
+    "lng": -95.94043,
+    "local_name": "Omaha",
+    "continent": "North America",
+    "id": 44
+  },
+  {
+    "city": "Raleigh",
+    "country": "USA",
+    "lat": 35.7721,
+    "lng": -78.63861,
+    "local_name": "Raleigh",
+    "continent": "North America",
+    "id": 45
+  },
+  {
+    "city": "Kansas City",
+    "country": "USA",
+    "lat": 39.09973,
+    "lng": -94.57857,
+    "local_name": "Kansas City",
+    "continent": "North America",
+    "id": 46
+  },
+  {
+    "city": "Long Beach",
+    "country": "USA",
+    "lat": 33.76696,
+    "lng": -118.18923,
+    "local_name": "Long Beach",
+    "continent": "North America",
+    "id": 47
+  },
+  {
+    "city": "Mesa",
+    "country": "USA",
+    "lat": 33.42227,
+    "lng": -111.82264,
+    "local_name": "Mesa",
+    "continent": "North America",
+    "id": 48
+  },
+  {
+    "city": "Staten Island",
+    "country": "USA",
+    "lat": 40.56233,
+    "lng": -74.13986,
+    "local_name": "Staten Island",
+    "continent": "North America",
+    "id": 49
+  },
+  {
+    "city": "Colorado Springs",
+    "country": "USA",
+    "lat": 38.83388,
+    "lng": -104.82136,
+    "local_name": "Colorado Springs",
+    "continent": "North America",
+    "id": 50
+  },
+  {
+    "city": "Virginia Beach",
+    "country": "USA",
+    "lat": 36.85293,
+    "lng": -75.97799,
+    "local_name": "Virginia Beach",
+    "continent": "North America",
+    "id": 51
+  },
+  {
+    "city": "Oakland",
+    "country": "USA",
+    "lat": 37.80437,
+    "lng": -122.2708,
+    "local_name": "Oakland",
+    "continent": "North America",
+    "id": 52
+  },
+  {
+    "city": "Tampa",
+    "country": "USA",
+    "lat": 27.94752,
+    "lng": -82.45843,
+    "local_name": "Tampa",
+    "continent": "North America",
+    "id": 53
+  },
+  {
+    "city": "Tulsa",
+    "country": "USA",
+    "lat": 36.15398,
+    "lng": -95.99277,
+    "local_name": "Tulsa",
+    "continent": "North America",
+    "id": 54
+  },
+  {
+    "city": "Minneapolis",
+    "country": "USA",
+    "lat": 44.97997,
+    "lng": -93.26384,
+    "local_name": "Minneapolis",
+    "continent": "North America",
+    "id": 55
+  },
+  {
+    "city": "Wichita",
+    "country": "USA",
+    "lat": 37.69224,
+    "lng": -97.33754,
+    "local_name": "Wichita",
+    "continent": "North America",
+    "id": 56
+  },
+  {
+    "city": "Arlington",
+    "country": "USA",
+    "lat": 32.73569,
+    "lng": -97.10807,
+    "local_name": "Arlington",
+    "continent": "North America",
+    "id": 57
+  },
+  {
+    "city": "Bakersfield",
+    "country": "USA",
+    "lat": 35.37329,
+    "lng": -119.01871,
+    "local_name": "Bakersfield",
+    "continent": "North America",
+    "id": 58
+  },
+  {
+    "city": "Cleveland",
+    "country": "USA",
+    "lat": 41.4995,
+    "lng": -81.69541,
+    "local_name": "Cleveland",
+    "continent": "North America",
+    "id": 59
+  },
+  {
+    "city": "New Orleans",
+    "country": "USA",
+    "lat": 29.95465,
+    "lng": -90.07507,
+    "local_name": "New Orleans",
+    "continent": "North America",
+    "id": 60
+  },
+  {
+    "city": "Aurora",
+    "country": "USA",
+    "lat": 39.72943,
+    "lng": -104.83192,
+    "local_name": "Aurora",
+    "continent": "North America",
+    "id": 61
+  },
+  {
+    "city": "Honolulu",
+    "country": "USA",
+    "lat": 21.30694,
+    "lng": -157.85833,
+    "local_name": "Honolulu",
+    "continent": "North America",
+    "id": 62
+  },
+  {
+    "city": "Anaheim",
+    "country": "USA",
+    "lat": 33.83529,
+    "lng": -117.9145,
+    "local_name": "Anaheim",
+    "continent": "North America",
+    "id": 63
+  },
+  {
+    "city": "West Raleigh",
+    "country": "USA",
+    "lat": 35.78682,
+    "lng": -78.66389,
+    "local_name": "West Raleigh",
+    "continent": "North America",
+    "id": 64
+  },
+  {
+    "city": "Orlando",
+    "country": "USA",
+    "lat": 28.53834,
+    "lng": -81.37924,
+    "local_name": "Orlando",
+    "continent": "North America",
+    "id": 65
+  },
+  {
+    "city": "Lexington",
+    "country": "USA",
+    "lat": 37.98869,
+    "lng": -84.47772,
+    "local_name": "Lexington",
+    "continent": "North America",
+    "id": 66
+  },
+  {
+    "city": "Riverside",
+    "country": "USA",
+    "lat": 33.95335,
+    "lng": -117.39616,
+    "local_name": "Riverside",
+    "continent": "North America",
+    "id": 67
+  },
+  {
+    "city": "Corpus Christi",
+    "country": "USA",
+    "lat": 27.80058,
+    "lng": -97.39638,
+    "local_name": "Corpus Christi",
+    "continent": "North America",
+    "id": 68
+  },
+  {
+    "city": "Lexington-Fayette",
+    "country": "USA",
+    "lat": 38.0498,
+    "lng": -84.45855,
+    "local_name": "Lexington-Fayette",
+    "continent": "North America",
+    "id": 69
+  },
+  {
+    "city": "Cincinnati",
+    "country": "USA",
+    "lat": 39.12711,
+    "lng": -84.51439,
+    "local_name": "Cincinnati",
+    "continent": "North America",
+    "id": 70
+  },
+  {
+    "city": "Santa Ana",
+    "country": "USA",
+    "lat": 33.74557,
+    "lng": -117.86783,
+    "local_name": "Santa Ana",
+    "continent": "North America",
+    "id": 71
+  },
+  {
+    "city": "Stockton",
+    "country": "USA",
+    "lat": 37.9577,
+    "lng": -121.29078,
+    "local_name": "Stockton",
+    "continent": "North America",
+    "id": 72
+  },
+  {
+    "city": "Pittsburgh",
+    "country": "USA",
+    "lat": 40.44062,
+    "lng": -79.99589,
+    "local_name": "Pittsburgh",
+    "continent": "North America",
+    "id": 73
+  },
+  {
+    "city": "Saint Paul",
+    "country": "USA",
+    "lat": 44.94441,
+    "lng": -93.09327,
+    "local_name": "Saint Paul",
+    "continent": "North America",
+    "id": 74
+  },
+  {
+    "city": "Lincoln",
+    "country": "USA",
+    "lat": 40.8,
+    "lng": -96.66696,
+    "local_name": "Lincoln",
+    "continent": "North America",
+    "id": 75
+  },
+  {
+    "city": "Anchorage",
+    "country": "USA",
+    "lat": 61.21806,
+    "lng": -149.90028,
+    "local_name": "Anchorage",
+    "continent": "North America",
+    "id": 76
+  },
+  {
+    "city": "Meads",
+    "country": "USA",
+    "lat": 38.41258,
+    "lng": -82.70905,
+    "local_name": "Meads",
+    "continent": "North America",
+    "id": 77
+  },
+  {
+    "city": "Henderson",
+    "country": "USA",
+    "lat": 36.0397,
+    "lng": -114.98194,
+    "local_name": "Henderson",
+    "continent": "North America",
+    "id": 78
+  },
+  {
+    "city": "Greensboro",
+    "country": "USA",
+    "lat": 36.07264,
+    "lng": -79.79198,
+    "local_name": "Greensboro",
+    "continent": "North America",
+    "id": 79
+  },
+  {
+    "city": "Plano",
+    "country": "USA",
+    "lat": 33.01984,
+    "lng": -96.69889,
+    "local_name": "Plano",
+    "continent": "North America",
+    "id": 80
+  },
+  {
+    "city": "Newark",
+    "country": "USA",
+    "lat": 40.73566,
+    "lng": -74.17237,
+    "local_name": "Newark",
+    "continent": "North America",
+    "id": 81
+  },
+  {
+    "city": "Madison",
+    "country": "USA",
+    "lat": 43.07305,
+    "lng": -89.40123,
+    "local_name": "Madison",
+    "continent": "North America",
+    "id": 82
+  },
+  {
+    "city": "St. Louis",
+    "country": "USA",
+    "lat": 38.62727,
+    "lng": -90.19789,
+    "local_name": "St. Louis",
+    "continent": "North America",
+    "id": 83
+  },
+  {
+    "city": "Chula Vista",
+    "country": "USA",
+    "lat": 32.64005,
+    "lng": -117.0842,
+    "local_name": "Chula Vista",
+    "continent": "North America",
+    "id": 84
+  },
+  {
+    "city": "Toledo",
+    "country": "USA",
+    "lat": 41.66394,
+    "lng": -83.55521,
+    "local_name": "Toledo",
+    "continent": "North America",
+    "id": 85
+  },
+  {
+    "city": "Jersey City",
+    "country": "USA",
+    "lat": 40.72816,
+    "lng": -74.07764,
+    "local_name": "Jersey City",
+    "continent": "North America",
+    "id": 86
+  },
+  {
+    "city": "Reno",
+    "country": "USA",
+    "lat": 39.52963,
+    "lng": -119.8138,
+    "local_name": "Reno",
+    "continent": "North America",
+    "id": 87
+  },
+  {
+    "city": "Chandler",
+    "country": "USA",
+    "lat": 33.30616,
+    "lng": -111.84125,
+    "local_name": "Chandler",
+    "continent": "North America",
+    "id": 88
+  },
+  {
+    "city": "Fort Wayne",
+    "country": "USA",
+    "lat": 41.1306,
+    "lng": -85.12886,
+    "local_name": "Fort Wayne",
+    "continent": "North America",
+    "id": 89
+  },
+  {
+    "city": "Buffalo",
+    "country": "USA",
+    "lat": 42.88645,
+    "lng": -78.87837,
+    "local_name": "Buffalo",
+    "continent": "North America",
+    "id": 90
+  },
+  {
+    "city": "Durham",
+    "country": "USA",
+    "lat": 35.99403,
+    "lng": -78.89862,
+    "local_name": "Durham",
+    "continent": "North America",
+    "id": 91
+  },
+  {
+    "city": "St. Petersburg",
+    "country": "USA",
+    "lat": 27.77086,
+    "lng": -82.67927,
+    "local_name": "St. Petersburg",
+    "continent": "North America",
+    "id": 92
+  },
+  {
+    "city": "Irvine",
+    "country": "USA",
+    "lat": 33.66946,
+    "lng": -117.82311,
+    "local_name": "Irvine",
+    "continent": "North America",
+    "id": 93
+  },
+  {
+    "city": "Laredo",
+    "country": "USA",
+    "lat": 27.50641,
+    "lng": -99.50754,
+    "local_name": "Laredo",
+    "continent": "North America",
+    "id": 94
+  },
+  {
+    "city": "Lubbock",
+    "country": "USA",
+    "lat": 33.57786,
+    "lng": -101.85517,
+    "local_name": "Lubbock",
+    "continent": "North America",
+    "id": 95
+  },
+  {
+    "city": "Gilbert",
+    "country": "USA",
+    "lat": 33.35283,
+    "lng": -111.78903,
+    "local_name": "Gilbert",
+    "continent": "North America",
+    "id": 96
+  },
+  {
+    "city": "Tri-Cities",
+    "country": "USA",
+    "lat": 46.2454,
+    "lng": -119.19617,
+    "local_name": "Tri-Cities",
+    "continent": "North America",
+    "id": 97
+  },
+  {
+    "city": "Winston-Salem",
+    "country": "USA",
+    "lat": 36.09986,
+    "lng": -80.24422,
+    "local_name": "Winston-Salem",
+    "continent": "North America",
+    "id": 98
+  },
+  {
+    "city": "Glendale",
+    "country": "USA",
+    "lat": 33.53865,
+    "lng": -112.18599,
+    "local_name": "Glendale",
+    "continent": "North America",
+    "id": 99
+  },
+  {
+    "city": "Norfolk",
+    "country": "USA",
+    "lat": 36.84681,
+    "lng": -76.28522,
+    "local_name": "Norfolk",
+    "continent": "North America",
+    "id": 100
+  },
+  {
+    "city": "Hialeah",
+    "country": "USA",
+    "lat": 25.8576,
+    "lng": -80.27811,
+    "local_name": "Hialeah",
+    "continent": "North America",
+    "id": 101
+  },
+  {
+    "city": "Garland",
+    "country": "USA",
+    "lat": 32.91262,
+    "lng": -96.63888,
+    "local_name": "Garland",
+    "continent": "North America",
+    "id": 102
+  },
+  {
+    "city": "Scottsdale",
+    "country": "USA",
+    "lat": 33.50921,
+    "lng": -111.89903,
+    "local_name": "Scottsdale",
+    "continent": "North America",
+    "id": 103
+  },
+  {
+    "city": "Irving",
+    "country": "USA",
+    "lat": 32.81402,
+    "lng": -96.94889,
+    "local_name": "Irving",
+    "continent": "North America",
+    "id": 104
+  },
+  {
+    "city": "Boise",
+    "country": "USA",
+    "lat": 43.6135,
+    "lng": -116.20345,
+    "local_name": "Boise",
+    "continent": "North America",
+    "id": 105
+  },
+  {
+    "city": "Chesapeake",
+    "country": "USA",
+    "lat": 36.81904,
+    "lng": -76.27494,
+    "local_name": "Chesapeake",
+    "continent": "North America",
+    "id": 106
+  },
+  {
+    "city": "North Las Vegas",
+    "country": "USA",
+    "lat": 36.19886,
+    "lng": -115.1175,
+    "local_name": "North Las Vegas",
+    "continent": "North America",
+    "id": 107
+  },
+  {
+    "city": "Fremont",
+    "country": "USA",
+    "lat": 37.54827,
+    "lng": -121.98857,
+    "local_name": "Fremont",
+    "continent": "North America",
+    "id": 108
+  },
+  {
+    "city": "Spokane",
+    "country": "USA",
+    "lat": 47.65966,
+    "lng": -117.42908,
+    "local_name": "Spokane",
+    "continent": "North America",
+    "id": 109
+  },
+  {
+    "city": "Baton Rouge",
+    "country": "USA",
+    "lat": 30.44332,
+    "lng": -91.18747,
+    "local_name": "Baton Rouge",
+    "continent": "North America",
+    "id": 110
+  },
+  {
+    "city": "Upper West Side",
+    "country": "USA",
+    "lat": 40.78705,
+    "lng": -73.97542,
+    "local_name": "Upper West Side",
+    "continent": "North America",
+    "id": 111
+  },
+  {
+    "city": "Richmond",
+    "country": "USA",
+    "lat": 37.55376,
+    "lng": -77.46026,
+    "local_name": "Richmond",
+    "continent": "North America",
+    "id": 112
+  },
+  {
+    "city": "Paradise",
+    "country": "USA",
+    "lat": 36.09719,
+    "lng": -115.14666,
+    "local_name": "Paradise",
+    "continent": "North America",
+    "id": 113
+  },
+  {
+    "city": "Tacoma",
+    "country": "USA",
+    "lat": 47.25288,
+    "lng": -122.44429,
+    "local_name": "Tacoma",
+    "continent": "North America",
+    "id": 114
+  },
+  {
+    "city": "Jamaica",
+    "country": "USA",
+    "lat": 40.69149,
+    "lng": -73.80569,
+    "local_name": "Jamaica",
+    "continent": "North America",
+    "id": 115
+  },
+  {
+    "city": "San Bernardino",
+    "country": "USA",
+    "lat": 34.10834,
+    "lng": -117.28977,
+    "local_name": "San Bernardino",
+    "continent": "North America",
+    "id": 116
+  },
+  {
+    "city": "Salt Lake City",
+    "country": "USA",
+    "lat": 40.76078,
+    "lng": -111.89105,
+    "local_name": "Salt Lake City",
+    "continent": "North America",
+    "id": 117
+  },
+  {
+    "city": "Huntsville",
+    "country": "USA",
+    "lat": 34.7304,
+    "lng": -86.58594,
+    "local_name": "Huntsville",
+    "continent": "North America",
+    "id": 118
+  },
+  {
+    "city": "Des Moines",
+    "country": "USA",
+    "lat": 41.60054,
+    "lng": -93.60911,
+    "local_name": "Des Moines",
+    "continent": "North America",
+    "id": 119
+  },
+  {
+    "city": "Fontana",
+    "country": "USA",
+    "lat": 34.09223,
+    "lng": -117.43505,
+    "local_name": "Fontana",
+    "continent": "North America",
+    "id": 120
+  },
+  {
+    "city": "Modesto",
+    "country": "USA",
+    "lat": 37.6391,
+    "lng": -120.99688,
+    "local_name": "Modesto",
+    "continent": "North America",
+    "id": 121
+  },
+  {
+    "city": "Rochester",
+    "country": "USA",
+    "lat": 43.15478,
+    "lng": -77.61556,
+    "local_name": "Rochester",
+    "continent": "North America",
+    "id": 122
+  },
+  {
+    "city": "Maryvale",
+    "country": "USA",
+    "lat": 33.50199,
+    "lng": -112.17765,
+    "local_name": "Maryvale",
+    "continent": "North America",
+    "id": 123
+  },
+  {
+    "city": "Arlington",
+    "country": "USA",
+    "lat": 38.88101,
+    "lng": -77.10428,
+    "local_name": "Arlington",
+    "continent": "North America",
+    "id": 124
+  },
+  {
+    "city": "Oxnard",
+    "country": "USA",
+    "lat": 34.1975,
+    "lng": -119.17705,
+    "local_name": "Oxnard",
+    "continent": "North America",
+    "id": 125
+  },
+  {
+    "city": "Columbus",
+    "country": "USA",
+    "lat": 32.46098,
+    "lng": -84.98771,
+    "local_name": "Columbus",
+    "continent": "North America",
+    "id": 126
+  },
+  {
+    "city": "Worcester",
+    "country": "USA",
+    "lat": 42.26259,
+    "lng": -71.80229,
+    "local_name": "Worcester",
+    "continent": "North America",
+    "id": 127
+  },
+  {
+    "city": "Moreno Valley",
+    "country": "USA",
+    "lat": 33.93752,
+    "lng": -117.23059,
+    "local_name": "Moreno Valley",
+    "continent": "North America",
+    "id": 128
+  },
+  {
+    "city": "Little Rock",
+    "country": "USA",
+    "lat": 34.74648,
+    "lng": -92.28959,
+    "local_name": "Little Rock",
+    "continent": "North America",
+    "id": 129
+  },
+  {
+    "city": "Fayetteville",
+    "country": "USA",
+    "lat": 35.05266,
+    "lng": -78.87836,
+    "local_name": "Fayetteville",
+    "continent": "North America",
+    "id": 130
+  },
+  {
+    "city": "Huntington Beach",
+    "country": "USA",
+    "lat": 33.6603,
+    "lng": -117.99923,
+    "local_name": "Huntington Beach",
+    "continent": "North America",
+    "id": 131
+  },
+  {
+    "city": "Tallahassee",
+    "country": "USA",
+    "lat": 30.43826,
+    "lng": -84.28073,
+    "local_name": "Tallahassee",
+    "continent": "North America",
+    "id": 132
+  },
+  {
+    "city": "Yonkers",
+    "country": "USA",
+    "lat": 40.9304,
+    "lng": -73.89789,
+    "local_name": "Yonkers",
+    "continent": "North America",
+    "id": 133
+  },
+  {
+    "city": "Glendale",
+    "country": "USA",
+    "lat": 34.14251,
+    "lng": -118.25508,
+    "local_name": "Glendale",
+    "continent": "North America",
+    "id": 134
+  },
+  {
+    "city": "Cypress",
+    "country": "USA",
+    "lat": 29.96911,
+    "lng": -95.69717,
+    "local_name": "Cypress",
+    "continent": "North America",
+    "id": 135
+  },
+  {
+    "city": "Aurora",
+    "country": "USA",
+    "lat": 41.76058,
+    "lng": -88.32007,
+    "local_name": "Aurora",
+    "continent": "North America",
+    "id": 136
+  },
+  {
+    "city": "Amarillo",
+    "country": "USA",
+    "lat": 35.222,
+    "lng": -101.8313,
+    "local_name": "Amarillo",
+    "continent": "North America",
+    "id": 137
+  },
+  {
+    "city": "Akron",
+    "country": "USA",
+    "lat": 41.08144,
+    "lng": -81.51901,
+    "local_name": "Akron",
+    "continent": "North America",
+    "id": 138
+  },
+  {
+    "city": "Vancouver",
+    "country": "USA",
+    "lat": 45.63873,
+    "lng": -122.66149,
+    "local_name": "Vancouver",
+    "continent": "North America",
+    "id": 139
+  },
+  {
+    "city": "Birmingham",
+    "country": "USA",
+    "lat": 33.52066,
+    "lng": -86.80249,
+    "local_name": "Birmingham",
+    "continent": "North America",
+    "id": 140
+  },
+  {
+    "city": "Montgomery",
+    "country": "USA",
+    "lat": 32.36681,
+    "lng": -86.29997,
+    "local_name": "Montgomery",
+    "continent": "North America",
+    "id": 141
+  },
+  {
+    "city": "Grand Rapids",
+    "country": "USA",
+    "lat": 42.96336,
+    "lng": -85.66809,
+    "local_name": "Grand Rapids",
+    "continent": "North America",
+    "id": 142
+  },
+  {
+    "city": "Peoria",
+    "country": "USA",
+    "lat": 33.5806,
+    "lng": -112.23738,
+    "local_name": "Peoria",
+    "continent": "North America",
+    "id": 143
+  },
+  {
+    "city": "Providence",
+    "country": "USA",
+    "lat": 41.82399,
+    "lng": -71.41283,
+    "local_name": "Providence",
+    "continent": "North America",
+    "id": 144
+  },
+  {
+    "city": "Knoxville",
+    "country": "USA",
+    "lat": 35.96064,
+    "lng": -83.92074,
+    "local_name": "Knoxville",
+    "continent": "North America",
+    "id": 145
+  },
+  {
+    "city": "Sunrise Manor",
+    "country": "USA",
+    "lat": 36.21108,
+    "lng": -115.07306,
+    "local_name": "Sunrise Manor",
+    "continent": "North America",
+    "id": 146
+  },
+  {
+    "city": "Grand Prairie",
+    "country": "USA",
+    "lat": 32.74596,
+    "lng": -96.99778,
+    "local_name": "Grand Prairie",
+    "continent": "North America",
+    "id": 147
+  },
+  {
+    "city": "Shreveport",
+    "country": "USA",
+    "lat": 32.52515,
+    "lng": -93.75018,
+    "local_name": "Shreveport",
+    "continent": "North America",
+    "id": 148
+  },
+  {
+    "city": "Brownsville",
+    "country": "USA",
+    "lat": 25.90175,
+    "lng": -97.49748,
+    "local_name": "Brownsville",
+    "continent": "North America",
+    "id": 149
+  },
+  {
+    "city": "Overland Park",
+    "country": "USA",
+    "lat": 38.98223,
+    "lng": -94.67079,
+    "local_name": "Overland Park",
+    "continent": "North America",
+    "id": 150
+  },
+  {
+    "city": "Newport News",
+    "country": "USA",
+    "lat": 36.98038,
+    "lng": -76.42975,
+    "local_name": "Newport News",
+    "continent": "North America",
+    "id": 151
+  },
+  {
+    "city": "Mobile",
+    "country": "USA",
+    "lat": 30.69436,
+    "lng": -88.04305,
+    "local_name": "Mobile",
+    "continent": "North America",
+    "id": 152
+  },
+  {
+    "city": "Fort Lauderdale",
+    "country": "USA",
+    "lat": 26.12231,
+    "lng": -80.14338,
+    "local_name": "Fort Lauderdale",
+    "continent": "North America",
+    "id": 153
+  },
+  {
+    "city": "Santa Clarita",
+    "country": "USA",
+    "lat": 34.39166,
+    "lng": -118.54259,
+    "local_name": "Santa Clarita",
+    "continent": "North America",
+    "id": 154
+  },
+  {
+    "city": "Chattanooga",
+    "country": "USA",
+    "lat": 35.04563,
+    "lng": -85.30968,
+    "local_name": "Chattanooga",
+    "continent": "North America",
+    "id": 155
+  },
+  {
+    "city": "East Flatbush",
+    "country": "USA",
+    "lat": 40.65371,
+    "lng": -73.93042,
+    "local_name": "East Flatbush",
+    "continent": "North America",
+    "id": 156
+  },
+  {
+    "city": "Spring Valley",
+    "country": "USA",
+    "lat": 36.10803,
+    "lng": -115.245,
+    "local_name": "Spring Valley",
+    "continent": "North America",
+    "id": 157
+  },
+  {
+    "city": "Santa Rosa",
+    "country": "USA",
+    "lat": 38.44047,
+    "lng": -122.71443,
+    "local_name": "Santa Rosa",
+    "continent": "North America",
+    "id": 158
+  },
+  {
+    "city": "Eugene",
+    "country": "USA",
+    "lat": 44.05207,
+    "lng": -123.08675,
+    "local_name": "Eugene",
+    "continent": "North America",
+    "id": 159
+  },
+  {
+    "city": "Tempe",
+    "country": "USA",
+    "lat": 33.41477,
+    "lng": -111.90931,
+    "local_name": "Tempe",
+    "continent": "North America",
+    "id": 160
+  },
+  {
+    "city": "Oceanside",
+    "country": "USA",
+    "lat": 33.19587,
+    "lng": -117.37948,
+    "local_name": "Oceanside",
+    "continent": "North America",
+    "id": 161
+  },
+  {
+    "city": "Salem",
+    "country": "USA",
+    "lat": 44.9429,
+    "lng": -123.0351,
+    "local_name": "Salem",
+    "continent": "North America",
+    "id": 162
+  },
+  {
+    "city": "Garden Grove",
+    "country": "USA",
+    "lat": 33.77391,
+    "lng": -117.94145,
+    "local_name": "Garden Grove",
+    "continent": "North America",
+    "id": 163
+  },
+  {
+    "city": "Rancho Cucamonga",
+    "country": "USA",
+    "lat": 34.1064,
+    "lng": -117.59311,
+    "local_name": "Rancho Cucamonga",
+    "continent": "North America",
+    "id": 164
+  },
+  {
+    "city": "Cape Coral",
+    "country": "USA",
+    "lat": 26.56285,
+    "lng": -81.94953,
+    "local_name": "Cape Coral",
+    "continent": "North America",
+    "id": 165
+  },
+  {
+    "city": "East New York",
+    "country": "USA",
+    "lat": 40.66677,
+    "lng": -73.88236,
+    "local_name": "East New York",
+    "continent": "North America",
+    "id": 166
+  },
+  {
+    "city": "Sioux Falls",
+    "country": "USA",
+    "lat": 43.54369,
+    "lng": -96.72796,
+    "local_name": "Sioux Falls",
+    "continent": "North America",
+    "id": 167
+  },
+  {
+    "city": "Ontario",
+    "country": "USA",
+    "lat": 34.06334,
+    "lng": -117.65089,
+    "local_name": "Ontario",
+    "continent": "North America",
+    "id": 168
+  },
+  {
+    "city": "Fort Collins",
+    "country": "USA",
+    "lat": 40.58526,
+    "lng": -105.08442,
+    "local_name": "Fort Collins",
+    "continent": "North America",
+    "id": 169
+  },
+  {
+    "city": "Springfield",
+    "country": "USA",
+    "lat": 37.21533,
+    "lng": -93.29824,
+    "local_name": "Springfield",
+    "continent": "North America",
+    "id": 170
+  },
+  {
+    "city": "Hollywood",
+    "country": "USA",
+    "lat": 34.09834,
+    "lng": -118.32674,
+    "local_name": "Hollywood",
+    "continent": "North America",
+    "id": 171
+  },
+  {
+    "city": "Elk Grove",
+    "country": "USA",
+    "lat": 38.4088,
+    "lng": -121.37162,
+    "local_name": "Elk Grove",
+    "continent": "North America",
+    "id": 172
+  },
+  {
+    "city": "Clarksville",
+    "country": "USA",
+    "lat": 36.52977,
+    "lng": -87.35945,
+    "local_name": "Clarksville",
+    "continent": "North America",
+    "id": 173
+  },
+  {
+    "city": "Pembroke Pines",
+    "country": "USA",
+    "lat": 26.00315,
+    "lng": -80.22394,
+    "local_name": "Pembroke Pines",
+    "continent": "North America",
+    "id": 174
+  },
+  {
+    "city": "Deer Valley",
+    "country": "USA",
+    "lat": 33.68393,
+    "lng": -112.13488,
+    "local_name": "Deer Valley",
+    "continent": "North America",
+    "id": 175
+  },
+  {
+    "city": "Murfreesboro",
+    "country": "USA",
+    "lat": 35.84562,
+    "lng": -86.39027,
+    "local_name": "Murfreesboro",
+    "continent": "North America",
+    "id": 176
+  },
+  {
+    "city": "Port Saint Lucie",
+    "country": "USA",
+    "lat": 27.29393,
+    "lng": -80.35033,
+    "local_name": "Port Saint Lucie",
+    "continent": "North America",
+    "id": 177
+  },
+  {
+    "city": "Corona",
+    "country": "USA",
+    "lat": 33.87529,
+    "lng": -117.56644,
+    "local_name": "Corona",
+    "continent": "North America",
+    "id": 178
+  },
+  {
+    "city": "McKinney",
+    "country": "USA",
+    "lat": 33.19762,
+    "lng": -96.61527,
+    "local_name": "McKinney",
+    "continent": "North America",
+    "id": 179
+  },
+  {
+    "city": "Lancaster",
+    "country": "USA",
+    "lat": 34.69804,
+    "lng": -118.13674,
+    "local_name": "Lancaster",
+    "continent": "North America",
+    "id": 180
+  },
+  {
+    "city": "Cary",
+    "country": "USA",
+    "lat": 35.79154,
+    "lng": -78.78112,
+    "local_name": "Cary",
+    "continent": "North America",
+    "id": 181
+  },
+  {
+    "city": "Alexandria",
+    "country": "USA",
+    "lat": 38.80484,
+    "lng": -77.04692,
+    "local_name": "Alexandria",
+    "continent": "North America",
+    "id": 182
+  },
+  {
+    "city": "Tempe Junction",
+    "country": "USA",
+    "lat": 33.41421,
+    "lng": -111.94348,
+    "local_name": "Tempe Junction",
+    "continent": "North America",
+    "id": 183
+  },
+  {
+    "city": "Palmdale",
+    "country": "USA",
+    "lat": 34.57943,
+    "lng": -118.11646,
+    "local_name": "Palmdale",
+    "continent": "North America",
+    "id": 184
+  },
+  {
+    "city": "Hayward",
+    "country": "USA",
+    "lat": 37.66882,
+    "lng": -122.0808,
+    "local_name": "Hayward",
+    "continent": "North America",
+    "id": 185
+  },
+  {
+    "city": "Salinas",
+    "country": "USA",
+    "lat": 36.67774,
+    "lng": -121.6555,
+    "local_name": "Salinas",
+    "continent": "North America",
+    "id": 186
+  },
+  {
+    "city": "Sunnyvale",
+    "country": "USA",
+    "lat": 37.36883,
+    "lng": -122.03635,
+    "local_name": "Sunnyvale",
+    "continent": "North America",
+    "id": 187
+  },
+  {
+    "city": "Frisco",
+    "country": "USA",
+    "lat": 33.15067,
+    "lng": -96.82361,
+    "local_name": "Frisco",
+    "continent": "North America",
+    "id": 188
+  },
+  {
+    "city": "Springfield",
+    "country": "USA",
+    "lat": 42.10148,
+    "lng": -72.58981,
+    "local_name": "Springfield",
+    "continent": "North America",
+    "id": 189
+  },
+  {
+    "city": "East Chattanooga",
+    "country": "USA",
+    "lat": 35.06535,
+    "lng": -85.24912,
+    "local_name": "East Chattanooga",
+    "continent": "North America",
+    "id": 190
+  },
+  {
+    "city": "Pasadena",
+    "country": "USA",
+    "lat": 29.69106,
+    "lng": -95.2091,
+    "local_name": "Pasadena",
+    "continent": "North America",
+    "id": 191
+  },
+  {
+    "city": "Jackson",
+    "country": "USA",
+    "lat": 32.29876,
+    "lng": -90.18481,
+    "local_name": "Jackson",
+    "continent": "North America",
+    "id": 192
+  },
+  {
+    "city": "Pomona",
+    "country": "USA",
+    "lat": 34.05529,
+    "lng": -117.75228,
+    "local_name": "Pomona",
+    "continent": "North America",
+    "id": 193
+  },
+  {
+    "city": "Kansas City",
+    "country": "USA",
+    "lat": 39.11417,
+    "lng": -94.62746,
+    "local_name": "Kansas City",
+    "continent": "North America",
+    "id": 194
+  },
+  {
+    "city": "Washington Heights",
+    "country": "USA",
+    "lat": 40.8501,
+    "lng": -73.93541,
+    "local_name": "Washington Heights",
+    "continent": "North America",
+    "id": 195
+  },
+  {
+    "city": "Lakewood",
+    "country": "USA",
+    "lat": 39.70471,
+    "lng": -105.08137,
+    "local_name": "Lakewood",
+    "continent": "North America",
+    "id": 196
+  },
+  {
+    "city": "Escondido",
+    "country": "USA",
+    "lat": 33.11921,
+    "lng": -117.08642,
+    "local_name": "Escondido",
+    "continent": "North America",
+    "id": 197
+  },
+  {
+    "city": "Astoria",
+    "country": "USA",
+    "lat": 40.77205,
+    "lng": -73.93014,
+    "local_name": "Astoria",
+    "continent": "North America",
+    "id": 198
+  },
+  {
+    "city": "Hollywood",
+    "country": "USA",
+    "lat": 26.0112,
+    "lng": -80.14949,
+    "local_name": "Hollywood",
+    "continent": "North America",
+    "id": 199
+  },
+  {
+    "city": "Borough Park",
+    "country": "USA",
+    "lat": 40.63399,
+    "lng": -73.99681,
+    "local_name": "Borough Park",
+    "continent": "North America",
+    "id": 200
+  },
+  {
+    "city": "Valencia",
+    "country": "USA",
+    "lat": 34.44361,
+    "lng": -118.60953,
+    "local_name": "Valencia",
+    "continent": "North America",
+    "id": 201
+  },
+  {
+    "city": "Rockford",
+    "country": "USA",
+    "lat": 42.27113,
+    "lng": -89.094,
+    "local_name": "Rockford",
+    "continent": "North America",
+    "id": 202
+  },
+  {
+    "city": "East Hampton",
+    "country": "USA",
+    "lat": 37.03737,
+    "lng": -76.33161,
+    "local_name": "East Hampton",
+    "continent": "North America",
+    "id": 203
+  },
+  {
+    "city": "Joliet",
+    "country": "USA",
+    "lat": 41.52519,
+    "lng": -88.0834,
+    "local_name": "Joliet",
+    "continent": "North America",
+    "id": 204
+  },
+  {
+    "city": "Savannah",
+    "country": "USA",
+    "lat": 32.08354,
+    "lng": -81.09983,
+    "local_name": "Savannah",
+    "continent": "North America",
+    "id": 205
+  },
+  {
+    "city": "Paterson",
+    "country": "USA",
+    "lat": 40.91677,
+    "lng": -74.17181,
+    "local_name": "Paterson",
+    "continent": "North America",
+    "id": 206
+  },
+  {
+    "city": "Bridgeport",
+    "country": "USA",
+    "lat": 41.17923,
+    "lng": -73.18945,
+    "local_name": "Bridgeport",
+    "continent": "North America",
+    "id": 207
+  },
+  {
+    "city": "Naperville",
+    "country": "USA",
+    "lat": 41.78586,
+    "lng": -88.14729,
+    "local_name": "Naperville",
+    "continent": "North America",
+    "id": 208
+  },
+  {
+    "city": "Gainesville",
+    "country": "USA",
+    "lat": 29.65163,
+    "lng": -82.32483,
+    "local_name": "Gainesville",
+    "continent": "North America",
+    "id": 209
+  },
+  {
+    "city": "Mesquite",
+    "country": "USA",
+    "lat": 32.7668,
+    "lng": -96.59916,
+    "local_name": "Mesquite",
+    "continent": "North America",
+    "id": 210
+  },
+  {
+    "city": "Syracuse",
+    "country": "USA",
+    "lat": 43.04812,
+    "lng": -76.14742,
+    "local_name": "Syracuse",
+    "continent": "North America",
+    "id": 211
+  },
+  {
+    "city": "Torrance",
+    "country": "USA",
+    "lat": 33.83585,
+    "lng": -118.34063,
+    "local_name": "Torrance",
+    "continent": "North America",
+    "id": 212
+  },
+  {
+    "city": "Surprise",
+    "country": "USA",
+    "lat": 33.63059,
+    "lng": -112.33322,
+    "local_name": "Surprise",
+    "continent": "North America",
+    "id": 213
+  },
+  {
+    "city": "Metairie Terrace",
+    "country": "USA",
+    "lat": 29.97854,
+    "lng": -90.16396,
+    "local_name": "Metairie Terrace",
+    "continent": "North America",
+    "id": 214
+  },
+  {
+    "city": "Columbia",
+    "country": "USA",
+    "lat": 34.00071,
+    "lng": -81.03481,
+    "local_name": "Columbia",
+    "continent": "North America",
+    "id": 215
+  },
+  {
+    "city": "Pasadena",
+    "country": "USA",
+    "lat": 34.14778,
+    "lng": -118.14452,
+    "local_name": "Pasadena",
+    "continent": "North America",
+    "id": 216
+  },
+  {
+    "city": "Orange",
+    "country": "USA",
+    "lat": 33.78779,
+    "lng": -117.85311,
+    "local_name": "Orange",
+    "continent": "North America",
+    "id": 217
+  },
+  {
+    "city": "Fullerton",
+    "country": "USA",
+    "lat": 33.87029,
+    "lng": -117.92534,
+    "local_name": "Fullerton",
+    "continent": "North America",
+    "id": 218
+  },
+  {
+    "city": "Killeen",
+    "country": "USA",
+    "lat": 31.11712,
+    "lng": -97.7278,
+    "local_name": "Killeen",
+    "continent": "North America",
+    "id": 219
+  },
+  {
+    "city": "McAllen",
+    "country": "USA",
+    "lat": 26.20341,
+    "lng": -98.23001,
+    "local_name": "McAllen",
+    "continent": "North America",
+    "id": 220
+  },
+  {
+    "city": "Bellevue",
+    "country": "USA",
+    "lat": 47.61038,
+    "lng": -122.20068,
+    "local_name": "Bellevue",
+    "continent": "North America",
+    "id": 221
+  },
+  {
+    "city": "Metairie",
+    "country": "USA",
+    "lat": 29.98409,
+    "lng": -90.15285,
+    "local_name": "Metairie",
+    "continent": "North America",
+    "id": 222
+  },
+  {
+    "city": "Hampton",
+    "country": "USA",
+    "lat": 37.02987,
+    "lng": -76.34522,
+    "local_name": "Hampton",
+    "continent": "North America",
+    "id": 223
+  },
+  {
+    "city": "Miramar",
+    "country": "USA",
+    "lat": 25.98731,
+    "lng": -80.23227,
+    "local_name": "Miramar",
+    "continent": "North America",
+    "id": 224
+  },
+  {
+    "city": "Van Nuys",
+    "country": "USA",
+    "lat": 34.18667,
+    "lng": -118.44897,
+    "local_name": "Van Nuys",
+    "continent": "North America",
+    "id": 225
+  },
+  {
+    "city": "West Valley City",
+    "country": "USA",
+    "lat": 40.69161,
+    "lng": -112.00105,
+    "local_name": "West Valley City",
+    "continent": "North America",
+    "id": 226
+  },
+  {
+    "city": "Dayton",
+    "country": "USA",
+    "lat": 39.75895,
+    "lng": -84.19161,
+    "local_name": "Dayton",
+    "continent": "North America",
+    "id": 227
+  },
+  {
+    "city": "Olathe",
+    "country": "USA",
+    "lat": 38.8814,
+    "lng": -94.81913,
+    "local_name": "Olathe",
+    "continent": "North America",
+    "id": 228
+  },
+  {
+    "city": "Warren",
+    "country": "USA",
+    "lat": 42.49044,
+    "lng": -83.01304,
+    "local_name": "Warren",
+    "continent": "North America",
+    "id": 229
+  },
+  {
+    "city": "Thornton",
+    "country": "USA",
+    "lat": 39.86804,
+    "lng": -104.97192,
+    "local_name": "Thornton",
+    "continent": "North America",
+    "id": 230
+  },
+  {
+    "city": "Carrollton",
+    "country": "USA",
+    "lat": 32.95373,
+    "lng": -96.89028,
+    "local_name": "Carrollton",
+    "continent": "North America",
+    "id": 231
+  },
+  {
+    "city": "Charleston",
+    "country": "USA",
+    "lat": 32.77632,
+    "lng": -79.93275,
+    "local_name": "Charleston",
+    "continent": "North America",
+    "id": 232
+  },
+  {
+    "city": "Midland",
+    "country": "USA",
+    "lat": 31.99735,
+    "lng": -102.07791,
+    "local_name": "Midland",
+    "continent": "North America",
+    "id": 233
+  },
+  {
+    "city": "Waco",
+    "country": "USA",
+    "lat": 31.54933,
+    "lng": -97.14667,
+    "local_name": "Waco",
+    "continent": "North America",
+    "id": 234
+  },
+  {
+    "city": "Sterling Heights",
+    "country": "USA",
+    "lat": 42.58031,
+    "lng": -83.0302,
+    "local_name": "Sterling Heights",
+    "continent": "North America",
+    "id": 235
+  },
+  {
+    "city": "Denton",
+    "country": "USA",
+    "lat": 33.21484,
+    "lng": -97.13307,
+    "local_name": "Denton",
+    "continent": "North America",
+    "id": 236
+  },
+  {
+    "city": "Cedar Rapids",
+    "country": "USA",
+    "lat": 42.00833,
+    "lng": -91.64407,
+    "local_name": "Cedar Rapids",
+    "continent": "North America",
+    "id": 237
+  },
+  {
+    "city": "New Haven",
+    "country": "USA",
+    "lat": 41.30815,
+    "lng": -72.92816,
+    "local_name": "New Haven",
+    "continent": "North America",
+    "id": 238
+  },
+  {
+    "city": "Roseville",
+    "country": "USA",
+    "lat": 38.75212,
+    "lng": -121.28801,
+    "local_name": "Roseville",
+    "continent": "North America",
+    "id": 239
+  },
+  {
+    "city": "Visalia",
+    "country": "USA",
+    "lat": 36.33023,
+    "lng": -119.29206,
+    "local_name": "Visalia",
+    "continent": "North America",
+    "id": 240
+  },
+  {
+    "city": "Coral Springs",
+    "country": "USA",
+    "lat": 26.27119,
+    "lng": -80.2706,
+    "local_name": "Coral Springs",
+    "continent": "North America",
+    "id": 241
+  },
+  {
+    "city": "Thousand Oaks",
+    "country": "USA",
+    "lat": 34.17056,
+    "lng": -118.83759,
+    "local_name": "Thousand Oaks",
+    "continent": "North America",
+    "id": 242
+  },
+  {
+    "city": "Columbia",
+    "country": "USA",
+    "lat": 38.95171,
+    "lng": -92.33407,
+    "local_name": "Columbia",
+    "continent": "North America",
+    "id": 243
+  },
+  {
+    "city": "Elizabeth",
+    "country": "USA",
+    "lat": 40.66399,
+    "lng": -74.2107,
+    "local_name": "Elizabeth",
+    "continent": "North America",
+    "id": 244
+  },
+  {
+    "city": "Stamford",
+    "country": "USA",
+    "lat": 41.05343,
+    "lng": -73.53873,
+    "local_name": "Stamford",
+    "continent": "North America",
+    "id": 245
+  },
+  {
+    "city": "Concord",
+    "country": "USA",
+    "lat": 37.97798,
+    "lng": -122.03107,
+    "local_name": "Concord",
+    "continent": "North America",
+    "id": 246
+  },
+  {
+    "city": "Norman",
+    "country": "USA",
+    "lat": 35.22257,
+    "lng": -97.43948,
+    "local_name": "Norman",
+    "continent": "North America",
+    "id": 247
+  },
+  {
+    "city": "Alhambra",
+    "country": "USA",
+    "lat": 33.49838,
+    "lng": -112.13432,
+    "local_name": "Alhambra",
+    "continent": "North America",
+    "id": 248
+  },
+  {
+    "city": "Athens",
+    "country": "USA",
+    "lat": 33.96095,
+    "lng": -83.37794,
+    "local_name": "Athens",
+    "continent": "North America",
+    "id": 249
+  },
+  {
+    "city": "Kent",
+    "country": "USA",
+    "lat": 47.38093,
+    "lng": -122.23484,
+    "local_name": "Kent",
+    "continent": "North America",
+    "id": 250
+  }
+]

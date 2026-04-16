@@ -1,0 +1,2162 @@
+[
+  {
+    "city": "Kinshasa",
+    "country": "DR Congo",
+    "lat": -4.32758,
+    "lng": 15.31357,
+    "local_name": "Kinshasa",
+    "continent": "Africa",
+    "id": 1
+  },
+  {
+    "city": "Lagos",
+    "country": "Nigeria",
+    "lat": 6.45407,
+    "lng": 3.39467,
+    "local_name": "Lagos",
+    "continent": "Africa",
+    "id": 2
+  },
+  {
+    "city": "Cairo",
+    "country": "Egypt",
+    "lat": 30.06263,
+    "lng": 31.24967,
+    "local_name": "Cairo",
+    "continent": "Africa",
+    "id": 3
+  },
+  {
+    "city": "Johannesburg",
+    "country": "South Africa",
+    "lat": -26.20227,
+    "lng": 28.04363,
+    "local_name": "Johannesburg",
+    "continent": "Africa",
+    "id": 4
+  },
+  {
+    "city": "Abidjan",
+    "country": "Ivory Coast",
+    "lat": 5.35444,
+    "lng": -4.00167,
+    "local_name": "Abidjan",
+    "continent": "Africa",
+    "id": 5
+  },
+  {
+    "city": "Dar es Salaam",
+    "country": "Tanzania",
+    "lat": -6.82349,
+    "lng": 39.26951,
+    "local_name": "Dar es Salaam",
+    "continent": "Africa",
+    "id": 6
+  },
+  {
+    "city": "Alexandria",
+    "country": "Egypt",
+    "lat": 31.20176,
+    "lng": 29.91582,
+    "local_name": "Alexandria",
+    "continent": "Africa",
+    "id": 7
+  },
+  {
+    "city": "Kano",
+    "country": "Nigeria",
+    "lat": 12.00012,
+    "lng": 8.51672,
+    "local_name": "Kano",
+    "continent": "Africa",
+    "id": 8
+  },
+  {
+    "city": "Cape Town",
+    "country": "South Africa",
+    "lat": -33.92584,
+    "lng": 18.42322,
+    "local_name": "Cape Town",
+    "continent": "Africa",
+    "id": 9
+  },
+  {
+    "city": "Nairobi",
+    "country": "Kenya",
+    "lat": -1.28333,
+    "lng": 36.81667,
+    "local_name": "Nairobi",
+    "continent": "Africa",
+    "id": 10
+  },
+  {
+    "city": "Giza",
+    "country": "Egypt",
+    "lat": 30.00944,
+    "lng": 31.20861,
+    "local_name": "Giza",
+    "continent": "Africa",
+    "id": 11
+  },
+  {
+    "city": "Bamako",
+    "country": "Mali",
+    "lat": 12.60915,
+    "lng": -7.97522,
+    "local_name": "Bamako",
+    "continent": "Africa",
+    "id": 12
+  },
+  {
+    "city": "Addis Ababa",
+    "country": "Ethiopia",
+    "lat": 9.02497,
+    "lng": 38.74689,
+    "local_name": "Addis Ababa",
+    "continent": "Africa",
+    "id": 13
+  },
+  {
+    "city": "Casablanca",
+    "country": "Morocco",
+    "lat": 33.58831,
+    "lng": -7.61138,
+    "local_name": "Casablanca",
+    "continent": "Africa",
+    "id": 14
+  },
+  {
+    "city": "Ibadan",
+    "country": "Nigeria",
+    "lat": 7.37756,
+    "lng": 3.90591,
+    "local_name": "Ibadan",
+    "continent": "Africa",
+    "id": 15
+  },
+  {
+    "city": "Durban",
+    "country": "South Africa",
+    "lat": -29.8579,
+    "lng": 31.0292,
+    "local_name": "Durban",
+    "continent": "Africa",
+    "id": 16
+  },
+  {
+    "city": "Luanda",
+    "country": "Angola",
+    "lat": -8.83682,
+    "lng": 13.23432,
+    "local_name": "Luanda",
+    "continent": "Africa",
+    "id": 17
+  },
+  {
+    "city": "Abuja",
+    "country": "Nigeria",
+    "lat": 9.05785,
+    "lng": 7.49508,
+    "local_name": "Abuja",
+    "continent": "Africa",
+    "id": 18
+  },
+  {
+    "city": "Dakar",
+    "country": "Senegal",
+    "lat": 14.6937,
+    "lng": -17.44406,
+    "local_name": "Dakar",
+    "continent": "Africa",
+    "id": 19
+  },
+  {
+    "city": "Mogadishu",
+    "country": "Somalia",
+    "lat": 2.03711,
+    "lng": 45.34375,
+    "local_name": "Mogadishu",
+    "continent": "Africa",
+    "id": 20
+  },
+  {
+    "city": "Kumasi",
+    "country": "Ghana",
+    "lat": 6.68848,
+    "lng": -1.62443,
+    "local_name": "Kumasi",
+    "continent": "Africa",
+    "id": 21
+  },
+  {
+    "city": "Ouagadougou",
+    "country": "Burkina Faso",
+    "lat": 12.36566,
+    "lng": -1.53388,
+    "local_name": "Ouagadougou",
+    "continent": "Africa",
+    "id": 22
+  },
+  {
+    "city": "Algiers",
+    "country": "Algeria",
+    "lat": 36.73225,
+    "lng": 3.08746,
+    "local_name": "Algiers",
+    "continent": "Africa",
+    "id": 23
+  },
+  {
+    "city": "Lubumbashi",
+    "country": "DR Congo",
+    "lat": -11.66089,
+    "lng": 27.47938,
+    "local_name": "Lubumbashi",
+    "continent": "Africa",
+    "id": 24
+  },
+  {
+    "city": "Lusaka",
+    "country": "Zambia",
+    "lat": -15.40669,
+    "lng": 28.28713,
+    "local_name": "Lusaka",
+    "continent": "Africa",
+    "id": 25
+  },
+  {
+    "city": "Lomé",
+    "country": "Togo",
+    "lat": 6.12874,
+    "lng": 1.22154,
+    "local_name": "Lomé",
+    "continent": "Africa",
+    "id": 26
+  },
+  {
+    "city": "Port Harcourt",
+    "country": "Nigeria",
+    "lat": 4.77742,
+    "lng": 7.0134,
+    "local_name": "Port Harcourt",
+    "continent": "Africa",
+    "id": 27
+  },
+  {
+    "city": "Pretoria",
+    "country": "South Africa",
+    "lat": -25.74486,
+    "lng": 28.18783,
+    "local_name": "Pretoria",
+    "continent": "Africa",
+    "id": 28
+  },
+  {
+    "city": "Mbuji-Mayi",
+    "country": "DR Congo",
+    "lat": -6.13603,
+    "lng": 23.58979,
+    "local_name": "Mbuji-Mayi",
+    "continent": "Africa",
+    "id": 29
+  },
+  {
+    "city": "Brazzaville",
+    "country": "Congo",
+    "lat": -4.26613,
+    "lng": 15.28318,
+    "local_name": "Brazzaville",
+    "continent": "Africa",
+    "id": 30
+  },
+  {
+    "city": "Khartoum",
+    "country": "Sudan",
+    "lat": 15.55177,
+    "lng": 32.53241,
+    "local_name": "Khartoum",
+    "continent": "Africa",
+    "id": 31
+  },
+  {
+    "city": "Accra",
+    "country": "Ghana",
+    "lat": 5.55602,
+    "lng": -0.1969,
+    "local_name": "Accra",
+    "continent": "Africa",
+    "id": 32
+  },
+  {
+    "city": "Conakry",
+    "country": "Guinea",
+    "lat": 9.53795,
+    "lng": -13.67729,
+    "local_name": "Conakry",
+    "continent": "Africa",
+    "id": 33
+  },
+  {
+    "city": "Camayenne",
+    "country": "Guinea",
+    "lat": 9.535,
+    "lng": -13.68778,
+    "local_name": "Camayenne",
+    "continent": "Africa",
+    "id": 34
+  },
+  {
+    "city": "Kakamega",
+    "country": "Kenya",
+    "lat": 0.28422,
+    "lng": 34.75229,
+    "local_name": "Kakamega",
+    "continent": "Africa",
+    "id": 35
+  },
+  {
+    "city": "Kaduna",
+    "country": "Nigeria",
+    "lat": 10.52641,
+    "lng": 7.43879,
+    "local_name": "Kaduna",
+    "continent": "Africa",
+    "id": 36
+  },
+  {
+    "city": "Omdurman",
+    "country": "Sudan",
+    "lat": 15.64453,
+    "lng": 32.47773,
+    "local_name": "Omdurman",
+    "continent": "Africa",
+    "id": 37
+  },
+  {
+    "city": "Benin City",
+    "country": "Nigeria",
+    "lat": 6.33815,
+    "lng": 5.62575,
+    "local_name": "Benin City",
+    "continent": "Africa",
+    "id": 38
+  },
+  {
+    "city": "Soweto",
+    "country": "South Africa",
+    "lat": -26.26781,
+    "lng": 27.85849,
+    "local_name": "Soweto",
+    "continent": "Africa",
+    "id": 39
+  },
+  {
+    "city": "Kampala",
+    "country": "Uganda",
+    "lat": 0.31628,
+    "lng": 32.58219,
+    "local_name": "Kampala",
+    "continent": "Africa",
+    "id": 40
+  },
+  {
+    "city": "Rabat",
+    "country": "Morocco",
+    "lat": 34.01325,
+    "lng": -6.83255,
+    "local_name": "Rabat",
+    "continent": "Africa",
+    "id": 41
+  },
+  {
+    "city": "Onitsha",
+    "country": "Nigeria",
+    "lat": 6.14978,
+    "lng": 6.78569,
+    "local_name": "Onitsha",
+    "continent": "Africa",
+    "id": 42
+  },
+  {
+    "city": "Harare",
+    "country": "Zimbabwe",
+    "lat": -17.82772,
+    "lng": 31.05337,
+    "local_name": "Harare",
+    "continent": "Africa",
+    "id": 43
+  },
+  {
+    "city": "Monrovia",
+    "country": "Liberia",
+    "lat": 6.30054,
+    "lng": -10.7969,
+    "local_name": "Monrovia",
+    "continent": "Africa",
+    "id": 44
+  },
+  {
+    "city": "N'Djamena",
+    "country": "Chad",
+    "lat": 12.10672,
+    "lng": 15.0444,
+    "local_name": "N'Djamena",
+    "continent": "Africa",
+    "id": 45
+  },
+  {
+    "city": "Antananarivo",
+    "country": "Madagascar",
+    "lat": -18.91368,
+    "lng": 47.53613,
+    "local_name": "Antananarivo",
+    "continent": "Africa",
+    "id": 46
+  },
+  {
+    "city": "Abobo",
+    "country": "Ivory Coast",
+    "lat": 5.41613,
+    "lng": -4.0159,
+    "local_name": "Abobo",
+    "continent": "Africa",
+    "id": 47
+  },
+  {
+    "city": "Douala",
+    "country": "Cameroon",
+    "lat": 4.04827,
+    "lng": 9.70428,
+    "local_name": "Douala",
+    "continent": "Africa",
+    "id": 48
+  },
+  {
+    "city": "Niamey",
+    "country": "Niger",
+    "lat": 13.51366,
+    "lng": 2.1098,
+    "local_name": "Niamey",
+    "continent": "Africa",
+    "id": 49
+  },
+  {
+    "city": "Tripoli",
+    "country": "Libya",
+    "lat": 32.88743,
+    "lng": 13.18733,
+    "local_name": "Tripoli",
+    "continent": "Africa",
+    "id": 50
+  },
+  {
+    "city": "Yaoundé",
+    "country": "Cameroon",
+    "lat": 3.86667,
+    "lng": 11.51667,
+    "local_name": "Yaoundé",
+    "continent": "Africa",
+    "id": 51
+  },
+  {
+    "city": "Maputo",
+    "country": "Mozambique",
+    "lat": -25.96553,
+    "lng": 32.58322,
+    "local_name": "Maputo",
+    "continent": "Africa",
+    "id": 52
+  },
+  {
+    "city": "Kananga",
+    "country": "DR Congo",
+    "lat": -5.89624,
+    "lng": 22.41659,
+    "local_name": "Kananga",
+    "continent": "Africa",
+    "id": 53
+  },
+  {
+    "city": "Shubrā al Khaymah",
+    "country": "Egypt",
+    "lat": 30.12511,
+    "lng": 31.25053,
+    "local_name": "Shubrā al Khaymah",
+    "continent": "Africa",
+    "id": 54
+  },
+  {
+    "city": "Mombasa",
+    "country": "Kenya",
+    "lat": -4.05466,
+    "lng": 39.66359,
+    "local_name": "Mombasa",
+    "continent": "Africa",
+    "id": 55
+  },
+  {
+    "city": "Matola",
+    "country": "Mozambique",
+    "lat": -25.96222,
+    "lng": 32.45889,
+    "local_name": "Matola",
+    "continent": "Africa",
+    "id": 56
+  },
+  {
+    "city": "Fes",
+    "country": "Morocco",
+    "lat": 34.03313,
+    "lng": -5.00028,
+    "local_name": "Fes",
+    "continent": "Africa",
+    "id": 57
+  },
+  {
+    "city": "Nouakchott",
+    "country": "Mauritania",
+    "lat": 18.08581,
+    "lng": -15.9785,
+    "local_name": "Nouakchott",
+    "continent": "Africa",
+    "id": 58
+  },
+  {
+    "city": "Kisangani",
+    "country": "DR Congo",
+    "lat": 0.51528,
+    "lng": 25.19099,
+    "local_name": "Kisangani",
+    "continent": "Africa",
+    "id": 59
+  },
+  {
+    "city": "Aba",
+    "country": "Nigeria",
+    "lat": 5.10658,
+    "lng": 7.36667,
+    "local_name": "Aba",
+    "continent": "Africa",
+    "id": 60
+  },
+  {
+    "city": "Kigali",
+    "country": "Rwanda",
+    "lat": -1.94995,
+    "lng": 30.05885,
+    "local_name": "Kigali",
+    "continent": "Africa",
+    "id": 61
+  },
+  {
+    "city": "Touba",
+    "country": "Senegal",
+    "lat": 14.86229,
+    "lng": -15.87532,
+    "local_name": "Touba",
+    "continent": "Africa",
+    "id": 62
+  },
+  {
+    "city": "Lilongwe",
+    "country": "Malawi",
+    "lat": -13.96692,
+    "lng": 33.78725,
+    "local_name": "Lilongwe",
+    "continent": "Africa",
+    "id": 63
+  },
+  {
+    "city": "Maiduguri",
+    "country": "Nigeria",
+    "lat": 11.84692,
+    "lng": 13.15712,
+    "local_name": "Maiduguri",
+    "continent": "Africa",
+    "id": 64
+  },
+  {
+    "city": "Mwanza",
+    "country": "Tanzania",
+    "lat": -2.51667,
+    "lng": 32.9,
+    "local_name": "Mwanza",
+    "continent": "Africa",
+    "id": 65
+  },
+  {
+    "city": "Ilorin",
+    "country": "Nigeria",
+    "lat": 8.49664,
+    "lng": 4.54214,
+    "local_name": "Ilorin",
+    "continent": "Africa",
+    "id": 66
+  },
+  {
+    "city": "Gqeberha",
+    "country": "South Africa",
+    "lat": -33.96109,
+    "lng": 25.61494,
+    "local_name": "Gqeberha",
+    "continent": "Africa",
+    "id": 67
+  },
+  {
+    "city": "Sokoto",
+    "country": "Nigeria",
+    "lat": 13.06269,
+    "lng": 5.24322,
+    "local_name": "Sokoto",
+    "continent": "Africa",
+    "id": 68
+  },
+  {
+    "city": "Jos",
+    "country": "Nigeria",
+    "lat": 9.92849,
+    "lng": 8.89212,
+    "local_name": "Jos",
+    "continent": "Africa",
+    "id": 69
+  },
+  {
+    "city": "Tangier",
+    "country": "Morocco",
+    "lat": 35.76727,
+    "lng": -5.79975,
+    "local_name": "Tangier",
+    "continent": "Africa",
+    "id": 70
+  },
+  {
+    "city": "Pointe-Noire",
+    "country": "Congo",
+    "lat": -4.77609,
+    "lng": 11.86352,
+    "local_name": "Pointe-Noire",
+    "continent": "Africa",
+    "id": 71
+  },
+  {
+    "city": "Khartoum North",
+    "country": "Sudan",
+    "lat": 15.64925,
+    "lng": 32.53458,
+    "local_name": "Khartoum North",
+    "continent": "Africa",
+    "id": 72
+  },
+  {
+    "city": "Marrakesh",
+    "country": "Morocco",
+    "lat": 31.63416,
+    "lng": -7.99994,
+    "local_name": "Marrakesh",
+    "continent": "Africa",
+    "id": 73
+  },
+  {
+    "city": "Zaria",
+    "country": "Nigeria",
+    "lat": 11.11128,
+    "lng": 7.7227,
+    "local_name": "Zaria",
+    "continent": "Africa",
+    "id": 74
+  },
+  {
+    "city": "Salé",
+    "country": "Morocco",
+    "lat": 34.0531,
+    "lng": -6.79846,
+    "local_name": "Salé",
+    "continent": "Africa",
+    "id": 75
+  },
+  {
+    "city": "Enugu",
+    "country": "Nigeria",
+    "lat": 6.44132,
+    "lng": 7.49883,
+    "local_name": "Enugu",
+    "continent": "Africa",
+    "id": 76
+  },
+  {
+    "city": "Warri",
+    "country": "Nigeria",
+    "lat": 5.51737,
+    "lng": 5.75006,
+    "local_name": "Warri",
+    "continent": "Africa",
+    "id": 77
+  },
+  {
+    "city": "Bobo-Dioulasso",
+    "country": "Burkina Faso",
+    "lat": 11.18064,
+    "lng": -4.29489,
+    "local_name": "Bobo-Dioulasso",
+    "continent": "Africa",
+    "id": 78
+  },
+  {
+    "city": "Blantyre",
+    "country": "Malawi",
+    "lat": -15.78499,
+    "lng": 35.00854,
+    "local_name": "Blantyre",
+    "continent": "Africa",
+    "id": 79
+  },
+  {
+    "city": "Pikine",
+    "country": "Senegal",
+    "lat": 14.76457,
+    "lng": -17.39071,
+    "local_name": "Pikine",
+    "continent": "Africa",
+    "id": 80
+  },
+  {
+    "city": "Soshanguve",
+    "country": "South Africa",
+    "lat": -25.47288,
+    "lng": 28.09919,
+    "local_name": "Soshanguve",
+    "continent": "Africa",
+    "id": 81
+  },
+  {
+    "city": "Libreville",
+    "country": "Gabon",
+    "lat": 0.39241,
+    "lng": 9.45356,
+    "local_name": "Libreville",
+    "continent": "Africa",
+    "id": 82
+  },
+  {
+    "city": "Pietermaritzburg",
+    "country": "South Africa",
+    "lat": -29.61679,
+    "lng": 30.39278,
+    "local_name": "Pietermaritzburg",
+    "continent": "Africa",
+    "id": 83
+  },
+  {
+    "city": "Bouaké",
+    "country": "Ivory Coast",
+    "lat": 7.69385,
+    "lng": -5.03031,
+    "local_name": "Bouaké",
+    "continent": "Africa",
+    "id": 84
+  },
+  {
+    "city": "Bukavu",
+    "country": "DR Congo",
+    "lat": -2.49077,
+    "lng": 28.84281,
+    "local_name": "Bukavu",
+    "continent": "Africa",
+    "id": 85
+  },
+  {
+    "city": "Bangui",
+    "country": "Central African Republic",
+    "lat": 4.36122,
+    "lng": 18.55496,
+    "local_name": "Bangui",
+    "continent": "Africa",
+    "id": 86
+  },
+  {
+    "city": "Oran",
+    "country": "Algeria",
+    "lat": 35.69906,
+    "lng": -0.63588,
+    "local_name": "Oran",
+    "continent": "Africa",
+    "id": 87
+  },
+  {
+    "city": "Freetown",
+    "country": "Sierra Leone",
+    "lat": 8.48714,
+    "lng": -13.2356,
+    "local_name": "Freetown",
+    "continent": "Africa",
+    "id": 88
+  },
+  {
+    "city": "Kolwezi",
+    "country": "DR Congo",
+    "lat": -10.71484,
+    "lng": 25.46674,
+    "local_name": "Kolwezi",
+    "continent": "Africa",
+    "id": 89
+  },
+  {
+    "city": "Port Said",
+    "country": "Egypt",
+    "lat": 31.26531,
+    "lng": 32.3019,
+    "local_name": "Port Said",
+    "continent": "Africa",
+    "id": 90
+  },
+  {
+    "city": "Nampula",
+    "country": "Mozambique",
+    "lat": -15.11646,
+    "lng": 39.2666,
+    "local_name": "Nampula",
+    "continent": "Africa",
+    "id": 91
+  },
+  {
+    "city": "Bujumbura",
+    "country": "BI",
+    "lat": -3.38193,
+    "lng": 29.36142,
+    "local_name": "Bujumbura",
+    "continent": "Africa",
+    "id": 92
+  },
+  {
+    "city": "Dodoma",
+    "country": "Tanzania",
+    "lat": -6.17221,
+    "lng": 35.73947,
+    "local_name": "Dodoma",
+    "continent": "Africa",
+    "id": 93
+  },
+  {
+    "city": "Benghazi",
+    "country": "Libya",
+    "lat": 32.11486,
+    "lng": 20.06859,
+    "local_name": "Benghazi",
+    "continent": "Africa",
+    "id": 94
+  },
+  {
+    "city": "Oyo",
+    "country": "Nigeria",
+    "lat": 7.85367,
+    "lng": 3.93235,
+    "local_name": "Oyo",
+    "continent": "Africa",
+    "id": 95
+  },
+  {
+    "city": "Abeokuta",
+    "country": "Nigeria",
+    "lat": 7.15571,
+    "lng": 3.34509,
+    "local_name": "Abeokuta",
+    "continent": "Africa",
+    "id": 96
+  },
+  {
+    "city": "Akure",
+    "country": "Nigeria",
+    "lat": 7.25256,
+    "lng": 5.19312,
+    "local_name": "Akure",
+    "continent": "Africa",
+    "id": 97
+  },
+  {
+    "city": "Evaton",
+    "country": "South Africa",
+    "lat": -26.53333,
+    "lng": 27.85,
+    "local_name": "Evaton",
+    "continent": "Africa",
+    "id": 98
+  },
+  {
+    "city": "Zanzibar",
+    "country": "Tanzania",
+    "lat": -6.16394,
+    "lng": 39.19793,
+    "local_name": "Zanzibar",
+    "continent": "Africa",
+    "id": 99
+  },
+  {
+    "city": "Suez",
+    "country": "Egypt",
+    "lat": 29.97371,
+    "lng": 32.52627,
+    "local_name": "Suez",
+    "continent": "Africa",
+    "id": 100
+  },
+  {
+    "city": "Agadir",
+    "country": "Morocco",
+    "lat": 30.42018,
+    "lng": -9.59815,
+    "local_name": "Agadir",
+    "continent": "Africa",
+    "id": 101
+  },
+  {
+    "city": "Bauchi",
+    "country": "Nigeria",
+    "lat": 10.31032,
+    "lng": 9.84388,
+    "local_name": "Bauchi",
+    "continent": "Africa",
+    "id": 102
+  },
+  {
+    "city": "Tunis",
+    "country": "Tunisia",
+    "lat": 36.81897,
+    "lng": 10.16579,
+    "local_name": "Tunis",
+    "continent": "Africa",
+    "id": 103
+  },
+  {
+    "city": "Beira",
+    "country": "Mozambique",
+    "lat": -19.84361,
+    "lng": 34.83889,
+    "local_name": "Beira",
+    "continent": "Africa",
+    "id": 104
+  },
+  {
+    "city": "Cotonou",
+    "country": "Benin",
+    "lat": 6.36536,
+    "lng": 2.41833,
+    "local_name": "Cotonou",
+    "continent": "Africa",
+    "id": 105
+  },
+  {
+    "city": "Katsina",
+    "country": "Nigeria",
+    "lat": 12.99082,
+    "lng": 7.60177,
+    "local_name": "Katsina",
+    "continent": "Africa",
+    "id": 106
+  },
+  {
+    "city": "Madīnat an Naşr",
+    "country": "Egypt",
+    "lat": 30.06667,
+    "lng": 31.3,
+    "local_name": "Madīnat an Naşr",
+    "continent": "Africa",
+    "id": 107
+  },
+  {
+    "city": "Kitwe",
+    "country": "Zambia",
+    "lat": -12.80243,
+    "lng": 28.21323,
+    "local_name": "Kitwe",
+    "continent": "Africa",
+    "id": 108
+  },
+  {
+    "city": "Bulawayo",
+    "country": "Zimbabwe",
+    "lat": -20.15,
+    "lng": 28.58333,
+    "local_name": "Bulawayo",
+    "continent": "Africa",
+    "id": 109
+  },
+  {
+    "city": "Osogbo",
+    "country": "Nigeria",
+    "lat": 7.77104,
+    "lng": 4.55698,
+    "local_name": "Osogbo",
+    "continent": "Africa",
+    "id": 110
+  },
+  {
+    "city": "Likasi",
+    "country": "DR Congo",
+    "lat": -10.98303,
+    "lng": 26.7384,
+    "local_name": "Likasi",
+    "continent": "Africa",
+    "id": 111
+  },
+  {
+    "city": "Tshikapa",
+    "country": "DR Congo",
+    "lat": -6.41621,
+    "lng": 20.79995,
+    "local_name": "Tshikapa",
+    "continent": "Africa",
+    "id": 112
+  },
+  {
+    "city": "Ndola",
+    "country": "Zambia",
+    "lat": -12.95867,
+    "lng": 28.63659,
+    "local_name": "Ndola",
+    "continent": "Africa",
+    "id": 113
+  },
+  {
+    "city": "Djibouti",
+    "country": "Djibouti",
+    "lat": 11.58901,
+    "lng": 43.14503,
+    "local_name": "Djibouti",
+    "continent": "Africa",
+    "id": 114
+  },
+  {
+    "city": "Al Mansurah",
+    "country": "Egypt",
+    "lat": 31.03637,
+    "lng": 31.38069,
+    "local_name": "Al Mansurah",
+    "continent": "Africa",
+    "id": 115
+  },
+  {
+    "city": "Arusha",
+    "country": "Tanzania",
+    "lat": -3.36667,
+    "lng": 36.68333,
+    "local_name": "Arusha",
+    "continent": "Africa",
+    "id": 116
+  },
+  {
+    "city": "Benoni",
+    "country": "South Africa",
+    "lat": -26.18848,
+    "lng": 28.32078,
+    "local_name": "Benoni",
+    "continent": "Africa",
+    "id": 117
+  },
+  {
+    "city": "Lubango",
+    "country": "Angola",
+    "lat": -14.91717,
+    "lng": 13.4925,
+    "local_name": "Lubango",
+    "continent": "Africa",
+    "id": 118
+  },
+  {
+    "city": "Borama",
+    "country": "Somalia",
+    "lat": 9.93611,
+    "lng": 43.18278,
+    "local_name": "Borama",
+    "continent": "Africa",
+    "id": 119
+  },
+  {
+    "city": "Huambo",
+    "country": "Angola",
+    "lat": -12.77611,
+    "lng": 15.73917,
+    "local_name": "Huambo",
+    "continent": "Africa",
+    "id": 120
+  },
+  {
+    "city": "Al Maḩallah al Kubrá",
+    "country": "Egypt",
+    "lat": 30.97063,
+    "lng": 31.1669,
+    "local_name": "Al Maḩallah al Kubrá",
+    "continent": "Africa",
+    "id": 121
+  },
+  {
+    "city": "Tanta",
+    "country": "Egypt",
+    "lat": 30.78847,
+    "lng": 31.00192,
+    "local_name": "Tanta",
+    "continent": "Africa",
+    "id": 122
+  },
+  {
+    "city": "Nakuru",
+    "country": "Kenya",
+    "lat": -0.30719,
+    "lng": 36.07225,
+    "local_name": "Nakuru",
+    "continent": "Africa",
+    "id": 123
+  },
+  {
+    "city": "Meknes",
+    "country": "Morocco",
+    "lat": 33.89352,
+    "lng": -5.54727,
+    "local_name": "Meknes",
+    "continent": "Africa",
+    "id": 124
+  },
+  {
+    "city": "Nyala",
+    "country": "Sudan",
+    "lat": 12.04888,
+    "lng": 24.88069,
+    "local_name": "Nyala",
+    "continent": "Africa",
+    "id": 125
+  },
+  {
+    "city": "Asmara",
+    "country": "Eritrea",
+    "lat": 15.33805,
+    "lng": 38.93184,
+    "local_name": "Asmara",
+    "continent": "Africa",
+    "id": 126
+  },
+  {
+    "city": "Ile-Ife",
+    "country": "Nigeria",
+    "lat": 7.4824,
+    "lng": 4.56032,
+    "local_name": "Ile-Ife",
+    "continent": "Africa",
+    "id": 127
+  },
+  {
+    "city": "Gombe",
+    "country": "Nigeria",
+    "lat": 10.28969,
+    "lng": 11.16729,
+    "local_name": "Gombe",
+    "continent": "Africa",
+    "id": 128
+  },
+  {
+    "city": "Bloemfontein",
+    "country": "South Africa",
+    "lat": -29.12107,
+    "lng": 26.214,
+    "local_name": "Bloemfontein",
+    "continent": "Africa",
+    "id": 129
+  },
+  {
+    "city": "Benguela",
+    "country": "Angola",
+    "lat": -12.57674,
+    "lng": 13.40268,
+    "local_name": "Benguela",
+    "continent": "Africa",
+    "id": 130
+  },
+  {
+    "city": "Cabinda",
+    "country": "Angola",
+    "lat": -5.56198,
+    "lng": 12.19476,
+    "local_name": "Cabinda",
+    "continent": "Africa",
+    "id": 131
+  },
+  {
+    "city": "Ajegunle",
+    "country": "Nigeria",
+    "lat": 6.45197,
+    "lng": 3.33115,
+    "local_name": "Ajegunle",
+    "continent": "Africa",
+    "id": 132
+  },
+  {
+    "city": "Owerri",
+    "country": "Nigeria",
+    "lat": 5.48363,
+    "lng": 7.03325,
+    "local_name": "Owerri",
+    "continent": "Africa",
+    "id": 133
+  },
+  {
+    "city": "Mbeya",
+    "country": "Tanzania",
+    "lat": -8.9,
+    "lng": 33.45,
+    "local_name": "Mbeya",
+    "continent": "Africa",
+    "id": 134
+  },
+  {
+    "city": "Calabar",
+    "country": "Nigeria",
+    "lat": 4.95893,
+    "lng": 8.32695,
+    "local_name": "Calabar",
+    "continent": "Africa",
+    "id": 135
+  },
+  {
+    "city": "Oujda",
+    "country": "Morocco",
+    "lat": 34.68139,
+    "lng": -1.90858,
+    "local_name": "Oujda",
+    "continent": "Africa",
+    "id": 136
+  },
+  {
+    "city": "Ebute Ikorodu",
+    "country": "Nigeria",
+    "lat": 6.60086,
+    "lng": 3.48818,
+    "local_name": "Ebute Ikorodu",
+    "continent": "Africa",
+    "id": 137
+  },
+  {
+    "city": "Nansana",
+    "country": "Uganda",
+    "lat": 0.36389,
+    "lng": 32.52861,
+    "local_name": "Nansana",
+    "continent": "Africa",
+    "id": 138
+  },
+  {
+    "city": "Assiut",
+    "country": "Egypt",
+    "lat": 27.18096,
+    "lng": 31.18368,
+    "local_name": "Assiut",
+    "continent": "Africa",
+    "id": 139
+  },
+  {
+    "city": "Al Fayyum",
+    "country": "Egypt",
+    "lat": 29.30995,
+    "lng": 30.8418,
+    "local_name": "Al Fayyum",
+    "continent": "Africa",
+    "id": 140
+  },
+  {
+    "city": "Thembisa",
+    "country": "South Africa",
+    "lat": -25.99636,
+    "lng": 28.2268,
+    "local_name": "Thembisa",
+    "continent": "Africa",
+    "id": 141
+  },
+  {
+    "city": "Kikwit",
+    "country": "DR Congo",
+    "lat": -5.04098,
+    "lng": 18.81619,
+    "local_name": "Kikwit",
+    "continent": "Africa",
+    "id": 142
+  },
+  {
+    "city": "Talatona",
+    "country": "Angola",
+    "lat": -8.91783,
+    "lng": 13.18562,
+    "local_name": "Talatona",
+    "continent": "Africa",
+    "id": 143
+  },
+  {
+    "city": "Ruiru",
+    "country": "Kenya",
+    "lat": -1.14665,
+    "lng": 36.96087,
+    "local_name": "Ruiru",
+    "continent": "Africa",
+    "id": 144
+  },
+  {
+    "city": "Port Sudan",
+    "country": "Sudan",
+    "lat": 19.61745,
+    "lng": 37.21644,
+    "local_name": "Port Sudan",
+    "continent": "Africa",
+    "id": 145
+  },
+  {
+    "city": "Al Khuşūş",
+    "country": "Egypt",
+    "lat": 30.15293,
+    "lng": 31.31501,
+    "local_name": "Al Khuşūş",
+    "continent": "Africa",
+    "id": 146
+  },
+  {
+    "city": "Masina",
+    "country": "DR Congo",
+    "lat": -4.38361,
+    "lng": 15.39139,
+    "local_name": "Masina",
+    "continent": "Africa",
+    "id": 147
+  },
+  {
+    "city": "Jijiga",
+    "country": "Ethiopia",
+    "lat": 9.35,
+    "lng": 42.8,
+    "local_name": "Jijiga",
+    "continent": "Africa",
+    "id": 148
+  },
+  {
+    "city": "Okene",
+    "country": "Nigeria",
+    "lat": 7.55122,
+    "lng": 6.23589,
+    "local_name": "Okene",
+    "continent": "Africa",
+    "id": 149
+  },
+  {
+    "city": "East London",
+    "country": "South Africa",
+    "lat": -33.01529,
+    "lng": 27.91162,
+    "local_name": "East London",
+    "continent": "Africa",
+    "id": 150
+  },
+  {
+    "city": "Hargeysa",
+    "country": "Somalia",
+    "lat": 9.56,
+    "lng": 44.065,
+    "local_name": "Hargeysa",
+    "continent": "Africa",
+    "id": 151
+  },
+  {
+    "city": "Eldoret",
+    "country": "Kenya",
+    "lat": 0.52036,
+    "lng": 35.26993,
+    "local_name": "Eldoret",
+    "continent": "Africa",
+    "id": 152
+  },
+  {
+    "city": "Vereeniging",
+    "country": "South Africa",
+    "lat": -26.67313,
+    "lng": 27.92615,
+    "local_name": "Vereeniging",
+    "continent": "Africa",
+    "id": 153
+  },
+  {
+    "city": "Morogoro",
+    "country": "Tanzania",
+    "lat": -6.82102,
+    "lng": 37.66122,
+    "local_name": "Morogoro",
+    "continent": "Africa",
+    "id": 154
+  },
+  {
+    "city": "Kenitra",
+    "country": "Morocco",
+    "lat": 34.26101,
+    "lng": -6.5802,
+    "local_name": "Kenitra",
+    "continent": "Africa",
+    "id": 155
+  },
+  {
+    "city": "Gonder",
+    "country": "Ethiopia",
+    "lat": 12.6,
+    "lng": 37.46667,
+    "local_name": "Gonder",
+    "continent": "Africa",
+    "id": 156
+  },
+  {
+    "city": "Ikare",
+    "country": "Nigeria",
+    "lat": 7.52591,
+    "lng": 5.75342,
+    "local_name": "Ikare",
+    "continent": "Africa",
+    "id": 157
+  },
+  {
+    "city": "Tamale",
+    "country": "Ghana",
+    "lat": 9.40079,
+    "lng": -0.8393,
+    "local_name": "Tamale",
+    "continent": "Africa",
+    "id": 158
+  },
+  {
+    "city": "Kira",
+    "country": "Uganda",
+    "lat": 0.4,
+    "lng": 32.63333,
+    "local_name": "Kira",
+    "continent": "Africa",
+    "id": 159
+  },
+  {
+    "city": "Esna",
+    "country": "Egypt",
+    "lat": 25.29336,
+    "lng": 32.55402,
+    "local_name": "Esna",
+    "continent": "Africa",
+    "id": 160
+  },
+  {
+    "city": "Yola",
+    "country": "Nigeria",
+    "lat": 9.20839,
+    "lng": 12.48146,
+    "local_name": "Yola",
+    "continent": "Africa",
+    "id": 161
+  },
+  {
+    "city": "Mek'ele",
+    "country": "Ethiopia",
+    "lat": 13.49667,
+    "lng": 39.47528,
+    "local_name": "Mek'ele",
+    "continent": "Africa",
+    "id": 162
+  },
+  {
+    "city": "Nazrēt",
+    "country": "Ethiopia",
+    "lat": 8.55,
+    "lng": 39.26667,
+    "local_name": "Nazrēt",
+    "continent": "Africa",
+    "id": 163
+  },
+  {
+    "city": "Mbandaka",
+    "country": "DR Congo",
+    "lat": 0.04865,
+    "lng": 18.26034,
+    "local_name": "Mbandaka",
+    "continent": "Africa",
+    "id": 164
+  },
+  {
+    "city": "Malanje",
+    "country": "Angola",
+    "lat": -9.54015,
+    "lng": 16.34096,
+    "local_name": "Malanje",
+    "continent": "Africa",
+    "id": 165
+  },
+  {
+    "city": "Kahama",
+    "country": "Tanzania",
+    "lat": -3.83333,
+    "lng": 32.6,
+    "local_name": "Kahama",
+    "continent": "Africa",
+    "id": 166
+  },
+  {
+    "city": "Warder",
+    "country": "Ethiopia",
+    "lat": 6.97444,
+    "lng": 45.34083,
+    "local_name": "Warder",
+    "continent": "Africa",
+    "id": 167
+  },
+  {
+    "city": "Juba",
+    "country": "South Sudan",
+    "lat": 4.85165,
+    "lng": 31.58247,
+    "local_name": "Juba",
+    "continent": "Africa",
+    "id": 168
+  },
+  {
+    "city": "Constantine",
+    "country": "Algeria",
+    "lat": 36.365,
+    "lng": 6.61472,
+    "local_name": "Constantine",
+    "continent": "Africa",
+    "id": 169
+  },
+  {
+    "city": "Boksburg",
+    "country": "South Africa",
+    "lat": -26.21197,
+    "lng": 28.25958,
+    "local_name": "Boksburg",
+    "continent": "Africa",
+    "id": 170
+  },
+  {
+    "city": "Korhogo",
+    "country": "Ivory Coast",
+    "lat": 9.45803,
+    "lng": -5.62961,
+    "local_name": "Korhogo",
+    "continent": "Africa",
+    "id": 171
+  },
+  {
+    "city": "Bissau",
+    "country": "Guinea-Bissau",
+    "lat": 11.86357,
+    "lng": -15.59767,
+    "local_name": "Bissau",
+    "continent": "Africa",
+    "id": 172
+  },
+  {
+    "city": "Uyo",
+    "country": "Nigeria",
+    "lat": 5.05127,
+    "lng": 7.9335,
+    "local_name": "Uyo",
+    "continent": "Africa",
+    "id": 173
+  },
+  {
+    "city": "Ado-Ekiti",
+    "country": "Nigeria",
+    "lat": 7.62329,
+    "lng": 5.22087,
+    "local_name": "Ado-Ekiti",
+    "continent": "Africa",
+    "id": 174
+  },
+  {
+    "city": "Ogbomoso",
+    "country": "Nigeria",
+    "lat": 8.13373,
+    "lng": 4.24014,
+    "local_name": "Ogbomoso",
+    "continent": "Africa",
+    "id": 175
+  },
+  {
+    "city": "Goma",
+    "country": "DR Congo",
+    "lat": -1.67409,
+    "lng": 29.22845,
+    "local_name": "Goma",
+    "continent": "Africa",
+    "id": 176
+  },
+  {
+    "city": "Welkom",
+    "country": "South Africa",
+    "lat": -27.97742,
+    "lng": 26.73506,
+    "local_name": "Welkom",
+    "continent": "Africa",
+    "id": 177
+  },
+  {
+    "city": "Zagazig",
+    "country": "Egypt",
+    "lat": 30.58768,
+    "lng": 31.502,
+    "local_name": "Zagazig",
+    "continent": "Africa",
+    "id": 178
+  },
+  {
+    "city": "Ismailia",
+    "country": "Egypt",
+    "lat": 30.60427,
+    "lng": 32.27225,
+    "local_name": "Ismailia",
+    "continent": "Africa",
+    "id": 179
+  },
+  {
+    "city": "Matadi",
+    "country": "DR Congo",
+    "lat": -5.83861,
+    "lng": 13.46306,
+    "local_name": "Matadi",
+    "continent": "Africa",
+    "id": 180
+  },
+  {
+    "city": "Minna",
+    "country": "Nigeria",
+    "lat": 9.61524,
+    "lng": 6.54776,
+    "local_name": "Minna",
+    "continent": "Africa",
+    "id": 181
+  },
+  {
+    "city": "Cazenga",
+    "country": "Angola",
+    "lat": -8.82488,
+    "lng": 13.31318,
+    "local_name": "Cazenga",
+    "continent": "Africa",
+    "id": 182
+  },
+  {
+    "city": "Luxor",
+    "country": "Egypt",
+    "lat": 25.69893,
+    "lng": 32.6421,
+    "local_name": "Luxor",
+    "continent": "Africa",
+    "id": 183
+  },
+  {
+    "city": "Awasa",
+    "country": "Ethiopia",
+    "lat": 7.06205,
+    "lng": 38.47635,
+    "local_name": "Awasa",
+    "continent": "Africa",
+    "id": 184
+  },
+  {
+    "city": "Chimoio",
+    "country": "Mozambique",
+    "lat": -19.11639,
+    "lng": 33.48333,
+    "local_name": "Chimoio",
+    "continent": "Africa",
+    "id": 185
+  },
+  {
+    "city": "Daloa",
+    "country": "Ivory Coast",
+    "lat": 6.87735,
+    "lng": -6.45022,
+    "local_name": "Daloa",
+    "continent": "Africa",
+    "id": 186
+  },
+  {
+    "city": "Bamenda",
+    "country": "Cameroon",
+    "lat": 5.9597,
+    "lng": 10.14597,
+    "local_name": "Bamenda",
+    "continent": "Africa",
+    "id": 187
+  },
+  {
+    "city": "Tétouan",
+    "country": "Morocco",
+    "lat": 35.57845,
+    "lng": -5.36837,
+    "local_name": "Tétouan",
+    "continent": "Africa",
+    "id": 188
+  },
+  {
+    "city": "Bunamwaya",
+    "country": "Uganda",
+    "lat": 0.25344,
+    "lng": 32.55723,
+    "local_name": "Bunamwaya",
+    "continent": "Africa",
+    "id": 189
+  },
+  {
+    "city": "Koumassi",
+    "country": "Ivory Coast",
+    "lat": 5.29716,
+    "lng": -3.96753,
+    "local_name": "Koumassi",
+    "continent": "Africa",
+    "id": 190
+  },
+  {
+    "city": "Kom Ombo",
+    "country": "Egypt",
+    "lat": 24.47669,
+    "lng": 32.94626,
+    "local_name": "Kom Ombo",
+    "continent": "Africa",
+    "id": 191
+  },
+  {
+    "city": "Uvira",
+    "country": "DR Congo",
+    "lat": -3.39534,
+    "lng": 29.13779,
+    "local_name": "Uvira",
+    "continent": "Africa",
+    "id": 192
+  },
+  {
+    "city": "Newcastle",
+    "country": "South Africa",
+    "lat": -27.75796,
+    "lng": 29.9318,
+    "local_name": "Newcastle",
+    "continent": "Africa",
+    "id": 193
+  },
+  {
+    "city": "Kassala",
+    "country": "Sudan",
+    "lat": 15.45099,
+    "lng": 36.39998,
+    "local_name": "Kassala",
+    "continent": "Africa",
+    "id": 194
+  },
+  {
+    "city": "Lekki",
+    "country": "Nigeria",
+    "lat": 6.41222,
+    "lng": 4.0947,
+    "local_name": "Lekki",
+    "continent": "Africa",
+    "id": 195
+  },
+  {
+    "city": "Bida",
+    "country": "Nigeria",
+    "lat": 9.08044,
+    "lng": 6.0099,
+    "local_name": "Bida",
+    "continent": "Africa",
+    "id": 196
+  },
+  {
+    "city": "Bunia",
+    "country": "DR Congo",
+    "lat": 1.55941,
+    "lng": 30.25224,
+    "local_name": "Bunia",
+    "continent": "Africa",
+    "id": 197
+  },
+  {
+    "city": "Kisumu",
+    "country": "Kenya",
+    "lat": -0.10221,
+    "lng": 34.76171,
+    "local_name": "Kisumu",
+    "continent": "Africa",
+    "id": 198
+  },
+  {
+    "city": "Al Hoceïma",
+    "country": "Morocco",
+    "lat": 35.25165,
+    "lng": -3.93723,
+    "local_name": "Al Hoceïma",
+    "continent": "Africa",
+    "id": 199
+  },
+  {
+    "city": "Tanga",
+    "country": "Tanzania",
+    "lat": -5.06893,
+    "lng": 39.09875,
+    "local_name": "Tanga",
+    "continent": "Africa",
+    "id": 200
+  },
+  {
+    "city": "El Obeid",
+    "country": "Sudan",
+    "lat": 13.18421,
+    "lng": 30.21669,
+    "local_name": "El Obeid",
+    "continent": "Africa",
+    "id": 201
+  },
+  {
+    "city": "Saurimo",
+    "country": "Angola",
+    "lat": -9.66078,
+    "lng": 20.39155,
+    "local_name": "Saurimo",
+    "continent": "Africa",
+    "id": 202
+  },
+  {
+    "city": "San-Pédro",
+    "country": "Ivory Coast",
+    "lat": 4.74851,
+    "lng": -6.6363,
+    "local_name": "San-Pédro",
+    "continent": "Africa",
+    "id": 203
+  },
+  {
+    "city": "Makurdi",
+    "country": "Nigeria",
+    "lat": 7.73375,
+    "lng": 8.52139,
+    "local_name": "Makurdi",
+    "continent": "Africa",
+    "id": 204
+  },
+  {
+    "city": "Takoradi",
+    "country": "Ghana",
+    "lat": 4.89816,
+    "lng": -1.76029,
+    "local_name": "Takoradi",
+    "continent": "Africa",
+    "id": 205
+  },
+  {
+    "city": "Windhoek",
+    "country": "Namibia",
+    "lat": -22.55941,
+    "lng": 17.08323,
+    "local_name": "Windhoek",
+    "continent": "Africa",
+    "id": 206
+  },
+  {
+    "city": "Abomey-Calavi",
+    "country": "Benin",
+    "lat": 6.44852,
+    "lng": 2.35566,
+    "local_name": "Abomey-Calavi",
+    "continent": "Africa",
+    "id": 207
+  },
+  {
+    "city": "Aswān",
+    "country": "Egypt",
+    "lat": 24.09082,
+    "lng": 32.89942,
+    "local_name": "Aswān",
+    "continent": "Africa",
+    "id": 208
+  },
+  {
+    "city": "Krugersdorp",
+    "country": "South Africa",
+    "lat": -26.08577,
+    "lng": 27.77515,
+    "local_name": "Krugersdorp",
+    "continent": "Africa",
+    "id": 209
+  },
+  {
+    "city": "Ondo",
+    "country": "Nigeria",
+    "lat": 7.09316,
+    "lng": 4.83528,
+    "local_name": "Ondo",
+    "continent": "Africa",
+    "id": 210
+  },
+  {
+    "city": "Rustenburg",
+    "country": "South Africa",
+    "lat": -25.66756,
+    "lng": 27.24208,
+    "local_name": "Rustenburg",
+    "continent": "Africa",
+    "id": 211
+  },
+  {
+    "city": "Emalahleni",
+    "country": "South Africa",
+    "lat": -25.87133,
+    "lng": 29.23323,
+    "local_name": "Emalahleni",
+    "continent": "Africa",
+    "id": 212
+  },
+  {
+    "city": "Bafoussam",
+    "country": "Cameroon",
+    "lat": 5.47775,
+    "lng": 10.41759,
+    "local_name": "Bafoussam",
+    "continent": "Africa",
+    "id": 213
+  },
+  {
+    "city": "Chitungwiza",
+    "country": "Zimbabwe",
+    "lat": -18.01274,
+    "lng": 31.07555,
+    "local_name": "Chitungwiza",
+    "continent": "Africa",
+    "id": 214
+  },
+  {
+    "city": "Ingombota",
+    "country": "Angola",
+    "lat": -8.81806,
+    "lng": 13.22889,
+    "local_name": "Ingombota",
+    "continent": "Africa",
+    "id": 215
+  },
+  {
+    "city": "Umuahia",
+    "country": "Nigeria",
+    "lat": 5.52491,
+    "lng": 7.49461,
+    "local_name": "Umuahia",
+    "continent": "Africa",
+    "id": 216
+  },
+  {
+    "city": "6th of October City",
+    "country": "Egypt",
+    "lat": 29.81667,
+    "lng": 31.05,
+    "local_name": "6th of October City",
+    "continent": "Africa",
+    "id": 217
+  },
+  {
+    "city": "Iseyin",
+    "country": "Nigeria",
+    "lat": 7.97022,
+    "lng": 3.59626,
+    "local_name": "Iseyin",
+    "continent": "Africa",
+    "id": 218
+  },
+  {
+    "city": "Yenagoa",
+    "country": "Nigeria",
+    "lat": 4.92675,
+    "lng": 6.26764,
+    "local_name": "Yenagoa",
+    "continent": "Africa",
+    "id": 219
+  },
+  {
+    "city": "Gboko",
+    "country": "Nigeria",
+    "lat": 7.32275,
+    "lng": 9.00108,
+    "local_name": "Gboko",
+    "continent": "Africa",
+    "id": 220
+  },
+  {
+    "city": "Al Qadarif",
+    "country": "Sudan",
+    "lat": 14.03493,
+    "lng": 35.38344,
+    "local_name": "Al Qadarif",
+    "continent": "Africa",
+    "id": 221
+  },
+  {
+    "city": "Maradi",
+    "country": "Niger",
+    "lat": 13.5,
+    "lng": 7.10174,
+    "local_name": "Maradi",
+    "continent": "Africa",
+    "id": 222
+  },
+  {
+    "city": "Ijebu Ode",
+    "country": "Nigeria",
+    "lat": 6.81944,
+    "lng": 3.91731,
+    "local_name": "Ijebu Ode",
+    "continent": "Africa",
+    "id": 223
+  },
+  {
+    "city": "Maseru",
+    "country": "Lesotho",
+    "lat": -29.31667,
+    "lng": 27.48333,
+    "local_name": "Maseru",
+    "continent": "Africa",
+    "id": 224
+  },
+  {
+    "city": "Lobito",
+    "country": "Angola",
+    "lat": -12.3644,
+    "lng": 13.53601,
+    "local_name": "Lobito",
+    "continent": "Africa",
+    "id": 225
+  },
+  {
+    "city": "Tete",
+    "country": "Mozambique",
+    "lat": -16.15639,
+    "lng": 33.58667,
+    "local_name": "Tete",
+    "continent": "Africa",
+    "id": 226
+  },
+  {
+    "city": "Misratah",
+    "country": "Libya",
+    "lat": 32.37535,
+    "lng": 15.09254,
+    "local_name": "Misratah",
+    "continent": "Africa",
+    "id": 227
+  },
+  {
+    "city": "Cuíto",
+    "country": "Angola",
+    "lat": -12.38333,
+    "lng": 16.93333,
+    "local_name": "Cuíto",
+    "continent": "Africa",
+    "id": 228
+  },
+  {
+    "city": "Diepsloot",
+    "country": "South Africa",
+    "lat": -25.93312,
+    "lng": 28.01213,
+    "local_name": "Diepsloot",
+    "continent": "Africa",
+    "id": 229
+  },
+  {
+    "city": "Bahir Dar",
+    "country": "Ethiopia",
+    "lat": 11.59364,
+    "lng": 37.39077,
+    "local_name": "Bahir Dar",
+    "continent": "Africa",
+    "id": 230
+  },
+  {
+    "city": "Quelimane",
+    "country": "Mozambique",
+    "lat": -17.87861,
+    "lng": 36.88833,
+    "local_name": "Quelimane",
+    "continent": "Africa",
+    "id": 231
+  },
+  {
+    "city": "Sikasso",
+    "country": "Mali",
+    "lat": 11.31755,
+    "lng": -5.66654,
+    "local_name": "Sikasso",
+    "continent": "Africa",
+    "id": 232
+  },
+  {
+    "city": "Bimbo",
+    "country": "Central African Republic",
+    "lat": 4.25671,
+    "lng": 18.41583,
+    "local_name": "Bimbo",
+    "continent": "Africa",
+    "id": 233
+  },
+  {
+    "city": "Toamasina",
+    "country": "Madagascar",
+    "lat": -18.1492,
+    "lng": 49.40234,
+    "local_name": "Toamasina",
+    "continent": "Africa",
+    "id": 234
+  },
+  {
+    "city": "Kosti",
+    "country": "Sudan",
+    "lat": 13.1629,
+    "lng": 32.66347,
+    "local_name": "Kosti",
+    "continent": "Africa",
+    "id": 235
+  },
+  {
+    "city": "Dire Dawa",
+    "country": "Ethiopia",
+    "lat": 9.59306,
+    "lng": 41.86611,
+    "local_name": "Dire Dawa",
+    "continent": "Africa",
+    "id": 236
+  },
+  {
+    "city": "Annaba",
+    "country": "Algeria",
+    "lat": 36.9,
+    "lng": 7.76667,
+    "local_name": "Annaba",
+    "continent": "Africa",
+    "id": 237
+  },
+  {
+    "city": "Temara",
+    "country": "Morocco",
+    "lat": 33.92866,
+    "lng": -6.90656,
+    "local_name": "Temara",
+    "continent": "Africa",
+    "id": 238
+  },
+  {
+    "city": "Obalende",
+    "country": "Nigeria",
+    "lat": 6.44694,
+    "lng": 3.41528,
+    "local_name": "Obalende",
+    "continent": "Africa",
+    "id": 239
+  },
+  {
+    "city": "Serekunda",
+    "country": "Gambia",
+    "lat": 13.43833,
+    "lng": -16.67806,
+    "local_name": "Serekunda",
+    "continent": "Africa",
+    "id": 240
+  }
+]
