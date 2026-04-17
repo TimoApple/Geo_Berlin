@@ -896,7 +896,7 @@ const s = StyleSheet.create({
   scanCloseText: { color: C.onSurface, fontSize: 14, fontWeight: '700', fontFamily: FF.bold, letterSpacing: 2 },
 
   // Game
-  gameTopBar: { position: 'absolute', top: 0, left: 0, right: 0, flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 16, paddingTop: 44, paddingBottom: 12, backgroundColor: 'rgba(17,18,37,0.9)', zIndex: 20 },
+  gameTopBar: { position: 'absolute', top: 0, left: 0, right: 0, flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 16, paddingTop: 44, paddingBottom: 16, backgroundColor: 'rgba(17,18,37,0.95)', zIndex: 20, borderBottomWidth: 1, borderBottomColor: 'rgba(166,215,0,0.15)' },
   tableList: { width: '100%', backgroundColor: C.surface, padding: 16, marginBottom: 32 },
   tableRow: { flexDirection: 'row', alignItems: 'center', paddingVertical: 10, paddingHorizontal: 12 },
 
@@ -915,6 +915,6 @@ const s = StyleSheet.create({
   resultCard: { backgroundColor: C.surface, padding: 24 },
 
   // End screen
-  endScroll: { paddingTop: 60, paddingBottom: 80, paddingHorizontal: 24, alignItems: 'center' },
+  endScroll: { paddingTop: 90, paddingBottom: 80, paddingHorizontal: 24, alignItems: 'center' },
   endRow: { flexDirection: 'row', alignItems: 'center', width: '100%', paddingVertical: 18, paddingHorizontal: 16, marginBottom: 2 },
 });
