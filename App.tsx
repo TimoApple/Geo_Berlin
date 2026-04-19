@@ -806,28 +806,48 @@ export default function App() {
 
   // ═══════════════ END SCREEN ═══════════════
   const sorted = [...players].sort((a, b) => b.score - a.score);
+  const isTie = sorted.length >= 2 && sorted[0].score === sorted[1].score;
+  const tiePlayers = isTie ? sorted.filter(p => p.score === sorted[0].score) : [];
+  
+  // Tie-breaker: play sudden death rounds until someone breaks the tie
+  const startTieBreaker = () => {
+    // Reset to game but keep scores and names
+    setRound(round + 1);
+    setMaxRounds(maxRounds + tiePlayers.length);
+    setPhase('scan-qr');
+    setScreen('game');
+    setActivePlayerIdx(0);
+    startRound();
+  };
+
   return (
     <View style={s.container}><StatusBar hidden />
       <ScrollView contentContainerStyle={s.endScroll}>
-        <Text style={{ fontSize: 64, color: C.primary, marginBottom: 16 }}>✓</Text>
-        <Text style={{ color: C.onSurface, fontSize: 28, fontWeight: '700', textAlign: 'center', marginBottom: 4 }}>EVALUATION COMPLETE</Text>
-        <Text style={{ color: 'rgba(225,224,251,0.4)', fontSize: 11, fontWeight: '700', letterSpacing: 3, textTransform: 'uppercase', textAlign: 'center', marginBottom: 40 }}>SESSION DATA READY FOR ANALYSIS</Text>
+        <Text style={{ fontSize: 64, color: isTie ? C.error : C.primary, marginBottom: 16 }}>{isTie ? '⚡' : '✓'}</Text>
+        <Text style={{ color: C.onSurface, fontSize: 28, fontWeight: '700', textAlign: 'center', marginBottom: 4 }}>{isTie ? "IT'S A TIE!" : 'EVALUATION COMPLETE'}</Text>
+        <Text style={{ color: 'rgba(225,224,251,0.4)', fontSize: 11, fontWeight: '700', letterSpacing: 3, textTransform: 'uppercase', textAlign: 'center', marginBottom: 40 }}>{isTie ? `${tiePlayers.map(p => p.name).join(' & ')} tied at ${sorted[0].score} pts — sudden death!` : 'SESSION DATA READY FOR ANALYSIS'}</Text>
         {sorted.map((p, i) => (
-          <View key={p.id} style={[s.endRow, i % 2 === 0 ? { backgroundColor: C.surfaceLow } : { backgroundColor: C.surface }]}>
+          <View key={p.id} style={[s.endRow, i % 2 === 0 ? { backgroundColor: C.surfaceLow } : { backgroundColor: C.surface }, isTie && tiePlayers.some(tp => tp.id === p.id) && { borderWidth: 2, borderColor: C.error }]}>
             <Text style={{ color: C.primary, fontSize: 14, fontWeight: '700', width: 36 }}>#{i + 1}</Text>
             <View style={{ flex: 1 }}>
-              <Text style={{ color: C.onSurface, fontSize: 18, fontWeight: '700' }}>{p.name}</Text>
+              <Text style={{ color: C.onSurface, fontSize: 18, fontWeight: '700' }}>{p.name}{isTie && tiePlayers.some(tp => tp.id === p.id) ? ' ⚡' : ''}</Text>
               <Text style={{ color: 'rgba(225,224,251,0.4)', fontSize: 12, marginTop: 2 }}>{p.city}</Text>
             </View>
             <Text style={{ color: C.onSurface, fontSize: 28, fontWeight: '700' }}>{p.score}</Text>
           </View>
         ))}
-        <TouchableOpacity style={[s.primaryBtn, { marginTop: 32, width: '100%' }]} onPress={() => {
-          setPlayers(prev => prev.map(p => ({ ...p, city: '', cityId: -1, lat: 0, lng: 0, score: 0 })));
-          setScreen('setup');
-        }}>
-          <Text style={s.primaryBtnText}>PLAY AGAIN</Text>
-        </TouchableOpacity>
+        {isTie ? (
+          <TouchableOpacity style={[s.primaryBtn, { marginTop: 32, width: '100%', backgroundColor: C.error }]} onPress={startTieBreaker}>
+            <Text style={s.primaryBtnText}>⚡ TIE BREAKER — PLAY ON!</Text>
+          </TouchableOpacity>
+        ) : (
+          <TouchableOpacity style={[s.primaryBtn, { marginTop: 32, width: '100%' }]} onPress={() => {
+            setPlayers(prev => prev.map(p => ({ ...p, city: '', cityId: -1, lat: 0, lng: 0, score: 0 })));
+            setScreen('setup');
+          }}>
+            <Text style={s.primaryBtnText}>PLAY AGAIN</Text>
+          </TouchableOpacity>
+        )}
       </ScrollView>
     </View>
   );
