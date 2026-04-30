@@ -14,6 +14,7 @@ import { useFonts, SpaceGrotesk_400Regular, SpaceGrotesk_700Bold } from '@expo-g
 import { calculateDistance, formatDistance } from './src/utils/distance';
 import { playClickSound, playSuccessSound, playErrorSound, playPerfectSound, playTimerWarning, playTimerTick, playAnswerphoneBeep } from './src/utils/sounds';
 import { panoramaLocations, PanoramaLocation } from './src/data/panoramaLocations';
+import Video from 'react-native-video';
 
 const { width, height } = Dimensions.get('window');
 const API_KEY = 'AIzaSyCl3ogHqguF1QcwhyHdvJmUkbgx3bpKLJI';
@@ -35,7 +36,7 @@ const C = {
 // TYPES
 interface Player { id: number; name: string; city: string; cityId: number; lat: number; lng: number; score: number; }
 interface TableCity { city: string; lat: number; lng: number; ownerPlayerId: number | null; isPlayerCity: boolean; }
-type Screen = 'loading' | 'tutorial' | 'setup' | 'scan-city' | 'game' | 'result';
+type Screen = 'intro' | 'loading' | 'tutorial' | 'setup' | 'scan-city' | 'game' | 'result';
 
 // LOADING QUOTES
 const QUOTES = [
@@ -53,7 +54,7 @@ function buildStreetViewHtml(lat: number, lng: number): string {
 
 export default function App() {
   const [fontsLoaded] = useFonts({ SpaceGrotesk_400Regular, SpaceGrotesk_700Bold });
-  const [screen, setScreen] = useState<Screen>('loading');
+  const [screen, setScreen] = useState<Screen>('intro');
   const [tutorialPage, setTutorialPage] = useState(0);
   const [loadingFade] = useState(new Animated.Value(0));
   const [loadingQuote] = useState(QUOTES[Math.floor(Math.random() * QUOTES.length)]);
@@ -484,11 +485,36 @@ export default function App() {
     );
   }
 
+  // ═══════════════ INTRO VIDEO ═══════════════
+  if (screen === 'intro') {
+    return (
+      <View style={{ flex: 1, backgroundColor: '#000' }}>
+        <StatusBar hidden />
+        <Video
+          source={require('./assets/intro.mp4')}
+          style={{ flex: 1 }}
+          resizeMode="contain"
+          onEnd={() => setScreen('loading')}
+          onError={(e) => { console.warn('Intro video error', e); setScreen('loading'); }}
+          playInBackground={false}
+          playWhenInactive={false}
+        />
+        <TouchableOpacity
+          style={{ position: 'absolute', bottom: 60, right: 20, padding: 12 }}
+          onPress={() => setScreen('loading')}
+        >
+          <Text style={{ color: 'rgba(255,255,255,0.5)', fontSize: 14 }}>Skip</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  }
+
   // ═══════════════ LOADING ═══════════════
   if (screen === 'loading') {
     return (
       <View style={[s.container, { justifyContent: 'center', alignItems: 'center', paddingHorizontal: 40 }]}>
         <StatusBar hidden />
+        <Image source={require('./assets/intro_last_frame.png')} style={{ position: 'absolute', width: '100%', height: '100%', opacity: 0.3 }} resizeMode="cover" />
         <Animated.View style={{ opacity: loadingFade, alignItems: 'center' }}>
           <Image source={require('./assets/icon.png')} style={{ width: 100, height: 100, marginBottom: 24 }} resizeMode="contain" />
           <Text style={{ color: C.primary, fontSize: 14, fontWeight: '700', letterSpacing: 3, marginBottom: 20 }}>GEOCHECKR</Text>
