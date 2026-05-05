@@ -26,10 +26,10 @@ const C = {
   surfaceHigh: '#3a3836', surfaceHighest: '#4a4845',
   primary: '#F2A344', primaryBright: '#f5b866',
   onPrimary: '#262523', onPrimaryContainer: '#262523',
-  secondary: '#625EF1', secondaryContainer: '#625EF1',
+  secondary: '#D9593C', secondaryContainer: '#D9593C',
   onSecondaryContainer: '#ffffff',
   onSurface: '#F1E8E1', outline: '#6b6560',
-  error: '#D9593C', accent: '#625EF1', green: '#F2A344', blue: '#625EF1',
+  error: '#D9593C', accent: '#D9593C', green: '#F2A344', blue: '#D9593C',
   text: '#F1E8E1', muted: '#8a8580',
 };
 
@@ -57,7 +57,7 @@ export default function App() {
   const [fontsLoaded] = useFonts({ SpaceGrotesk_400Regular, SpaceGrotesk_700Bold });
   const [screen, setScreen] = useState<Screen>('intro');
   const [tutorialPage, setTutorialPage] = useState(0);
-  const [loadingFade] = useState(new Animated.Value(0));
+  const [introPhase, setIntroPhase] = useState<'video' | 'freeze'>('video');
   const [loadingQuote] = useState(QUOTES[Math.floor(Math.random() * QUOTES.length)]);
 
   // Setup
@@ -160,6 +160,7 @@ export default function App() {
         return;
       }
       playClickSound(); Vibration.vibrate(100);
+      setUsedLocations(prev => [...prev, id]);
       setPlayers(prev => prev.map((p, i) =>
         i === scanCityForIdx ? { ...p, city: loc.city, cityId: id, lat: loc.lat, lng: loc.lng } : p
       ));
@@ -301,14 +302,26 @@ export default function App() {
         const id = parseInt(numMatch[1], 10);
         if (id >= 0 && id < panoramaLocations.length) {
           const loc = panoramaLocations.find(l => l.id === id);
-          if (loc) { playClickSound(); setScanned(true); Vibration.vibrate(100); onQrScanned(loc); return; }
+          if (loc) { 
+            if (usedLocations.includes(id) || tableCities.some(tc => tc.city.toLowerCase() === loc.city.toLowerCase())) {
+              setScanError('Diese Stadt liegt bereits auf dem Tisch!');
+              setScanned(true); setTimeout(() => { setScanError(''); setScanned(false); }, 2500); return;
+            }
+            playClickSound(); setScanned(true); Vibration.vibrate(100); onQrScanned(loc); return; 
+          }
         }
       }
       if (data.startsWith('city:')) {
         const id = parseInt(data.split(':')[1]);
         if (id >= 0 && id < panoramaLocations.length) {
           const loc = panoramaLocations.find(l => l.id === id);
-          if (loc) { playClickSound(); setScanned(true); Vibration.vibrate(100); onQrScanned(loc); return; }
+          if (loc) { 
+            if (usedLocations.includes(id) || tableCities.some(tc => tc.city.toLowerCase() === loc.city.toLowerCase())) {
+              setScanError('Diese Stadt liegt bereits auf dem Tisch!');
+              setScanned(true); setTimeout(() => { setScanError(''); setScanned(false); }, 2500); return;
+            }
+            playClickSound(); setScanned(true); Vibration.vibrate(100); onQrScanned(loc); return; 
+          }
         }
       }
       return;
@@ -327,6 +340,7 @@ export default function App() {
         return;
       }
       playClickSound(); setScanned(true); Vibration.vibrate(100);
+      setUsedLocations(prev => [...prev, id]);
       setPlayers(prev => prev.map((p, i) =>
         i === scanCityForIdx ? { ...p, city: loc.city, cityId: id, lat: loc.lat, lng: loc.lng } : p
       ));
@@ -363,10 +377,10 @@ export default function App() {
 
   // TUTORIAL
   const TUT_PAGES = [
-    { bg: C.bg, titleColor: C.error, title: 'Eine Aufgabe. Nur eine.', body: 'Du stehst plötzlich irgendwo auf der Welt. Wo bist du nur? Auf dem Tisch liegen Stadtnamen. Deine Aufgabe: Welche Stadt liegt am nächsten zu dem, was du siehst?' },
-    { bg: C.bg, titleColor: C.error, title: 'Ziehen. Scannen. Die Zeit läuft.', body: 'Zieh eine Karte vom Stapel. Scanne den QR-Code mit der App. Ein Ort irgendwo auf der Welt erscheint – und der Timer startet, ob du bereit bist oder nicht.' },
-    { bg: C.bg, titleColor: C.accent, title: 'Wo zur Hölle bist du?', body: 'Schau dich um. Lies die Zeichen. Hast du eine Landkarte im Kopf?\n\nWähle die Stadt vom Tisch, die am nächsten dran liegt. Je näher du liegst, desto mehr Punkte.' },
-    { bg: '#262523', titleColor: C.error, title: 'Auf die harte Tour?', body: 'Denkst du, jemand lag falsch? Setz einen Token und nenn DEINE Stadt.\n\nRichtig → Bonuspunkte.\nFalsch → Tschüss, Token.\n\n→ Los geht\'s!' },
+    { bg: '#262523', titleColor: '#D9593C', bodyColor: '#F1E8E1', title: 'Eine Aufgabe. Nur eine.', body: 'Du stehst plötzlich irgendwo auf der Welt. Wo bist du nur? Auf dem Tisch liegen Stadtnamen. Deine Aufgabe: Welche Stadt liegt am nächsten zu dem, was du siehst?' },
+    { bg: '#F2A344', titleColor: '#262523', bodyColor: '#262523', title: 'Ziehen. Scannen. Die Zeit läuft.', body: 'Zieh eine Karte vom Stapel. Scanne den QR-Code mit der App. Ein Ort irgendwo auf der Welt erscheint – und der Timer startet, ob du bereit bist oder nicht.' },
+    { bg: '#262523', titleColor: '#F2A344', bodyColor: '#F1E8E1', title: 'Wo zur Hölle bist du?', body: 'Schau dich um. Lies die Zeichen. Hast du eine Landkarte im Kopf?\n\nWähle die Stadt vom Tisch, die am nächsten dran liegt. Je näher du liegst, desto mehr Punkte.' },
+    { bg: '#D9593C', titleColor: '#262523', bodyColor: '#262523', title: 'Auf die harte Tour?', body: 'Denkst du, jemand lag falsch? Setz einen Token und nenn DEINE Stadt.\n\nRichtig → Bonuspunkte.\nFalsch → Tschüss, Token.\n\n→ Los geht\'s!' },
   ];
 
   // ═══════════════ SCANNERS ═══════════════
@@ -394,10 +408,10 @@ export default function App() {
         >
           <View style={s.scanOverlay}>
             <View style={{ alignItems: 'center', marginBottom: 20 }}>
-              <Text style={{ color: C.primary, fontSize: 13, fontWeight: '700', letterSpacing: 2, marginBottom: 6 }}>
+              <Text style={{ color: C.primary, fontSize: 13, fontWeight: '700', fontFamily: FF.bold, letterSpacing: 2, marginBottom: 6 }}>
                 {showCityScanner ? 'KARTE ZUWEISEN' : 'QR-KARTE SCANNEN'}}
               </Text>
-              <Text style={{ color: '#fff', fontSize: 22, fontWeight: '700' }}>{assignName || 'Spieler'}</Text>
+              <Text style={{ color: '#fff', fontSize: 22, fontWeight: '700', fontFamily: FF.bold }}>{assignName || 'Spieler'}</Text>
             </View>
             <View style={s.scanFrame}>
               <Text style={{ color: C.primary, fontSize: 16, fontWeight: '600', textAlign: 'center' }}>
@@ -413,7 +427,7 @@ export default function App() {
 
             {showCityScanner && (
               <View style={{ width: '100%', paddingHorizontal: 20, marginTop: 16 }}>
-                <Text style={{ color: 'rgba(241,232,225,0.6)', fontSize: 11, fontWeight: '700', letterSpacing: 2, textAlign: 'center', marginBottom: 10, textTransform: 'uppercase' }}>Oder Code manuell eingeben</Text>
+                <Text style={{ color: 'rgba(241,232,225,0.6)', fontSize: 11, fontWeight: '700', fontFamily: FF.bold, letterSpacing: 2, textAlign: 'center', marginBottom: 10, textTransform: 'uppercase' }}>Oder Code manuell eingeben</Text>
                 <View style={{ flexDirection: 'row', gap: 8 }}>
                   <View style={{ flex: 1, backgroundColor: 'rgba(25,26,45,0.9)', borderWidth: 1, borderColor: 'rgba(68,73,52,0.4)', borderRadius: 0 }}>
                     <TextInput
@@ -456,20 +470,31 @@ export default function App() {
         <TouchableOpacity
           activeOpacity={1}
           style={{ ...StyleSheet.absoluteFillObject, zIndex: 10 }}
-          onPress={() => setScreen('loading')}
+          onPress={() => setScreen('tutorial')}
         >
           <View style={{ position: 'absolute', top: 50, right: 20, zIndex: 20 }}>
-            <Text style={{ color: 'rgba(255,255,255,0.5)', fontSize: 14 }}>Überspringen</Text>
+            <Text style={{ color: 'rgba(255,255,255,0.5)', fontSize: 14, fontFamily: FF.regular }}>Überspringen</Text>
           </View>
         </TouchableOpacity>
-        <Video
-          source={require('./assets/intro.mp4')}
-          style={{ ...StyleSheet.absoluteFillObject }}
-          resizeMode="cover"
-          shouldPlay
-          onEnd={() => setScreen('loading')}
-          onError={(e) => { console.warn('Intro video error', e); setScreen('loading'); }}
-        />
+        <Image source={require('./assets/intro_last_frame.png')} style={{ ...StyleSheet.absoluteFillObject }} resizeMode="cover" />
+        {introPhase === 'video' && (
+          <Video
+            source={require('./assets/intro.mp4')}
+            style={{ ...StyleSheet.absoluteFillObject }}
+            resizeMode="cover"
+            shouldPlay
+            onEnd={() => {
+              setIntroPhase('freeze');
+              setTimeout(() => setScreen('tutorial'), 2500);
+            }}
+            onError={(e) => { console.warn('Intro video error', e); setScreen('tutorial'); }}
+          />
+        )}
+        {introPhase === 'freeze' && (
+          <View style={{ ...StyleSheet.absoluteFillObject, justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(38,37,35,0.6)' }}>
+            <Text style={{ color: C.primary, fontSize: 16, fontFamily: FF.regular, fontStyle: 'italic', textAlign: 'center', paddingHorizontal: 40, lineHeight: 24 }}">"{loadingQuote}"</Text>
+          </View>
+        )}
       </View>
     );
   }
@@ -524,10 +549,10 @@ export default function App() {
         >
           {TUT_PAGES.map((p, i) => (
             <View key={i} style={{ width, height, backgroundColor: p.bg, justifyContent: 'center', alignItems: 'center', paddingHorizontal: 36 }}>
-              <Animated.View style={{ opacity: tutorialPage === i ? tutOpacity : 0.15, alignItems: 'center', paddingHorizontal: 10 }}>
-                <Text style={{ color: p.titleColor, fontSize: 40, fontWeight: '700', fontFamily: FF.bold, textAlign: 'center', marginBottom: 36, lineHeight: 48 }}>{p.title}</Text>
-                <Text style={{ color: i === 3 ? '#c8f040' : C.text, fontSize: 24, fontFamily: FF.regular, textAlign: 'center', lineHeight: 38, opacity: 0.95 }}>{p.body}</Text>
-              </Animated.View>
+              <View style={{ alignItems: 'center', paddingHorizontal: 10 }}>
+                <Text style={{ color: p.titleColor, fontSize: 48, fontWeight: '700', fontFamily: FF.bold, textAlign: 'center', marginBottom: 36, lineHeight: 56 }}>{p.title}</Text>
+                <Text style={{ color: p.bodyColor || '#F1E8E1', fontSize: 24, fontFamily: FF.regular, textAlign: 'center', lineHeight: 38, opacity: 0.95 }}>{p.body}</Text>
+              </View>
             </View>
           ))}
           {/* Spacer page — swipe past last tutorial page → setup */}
@@ -556,7 +581,6 @@ export default function App() {
       <KeyboardAvoidingView style={s.container} behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
         <StatusBar hidden />
         <ScrollView contentContainerStyle={s.setupScroll} keyboardShouldPersistTaps="handled">
-          <Text style={s.setupHeader}>GEO CHECKER D</Text>
           <Text style={s.setupTitle}>SESSION EINRICHTEN</Text>
           <View style={s.titleBar} />
 
@@ -634,15 +658,16 @@ export default function App() {
       return (
         <View style={s.container}><StatusBar hidden />
           <View style={s.gameTopBar}>
-            <Text style={{ color: C.primary, fontSize: 14, fontWeight: '700', letterSpacing: 1 }}>{activePlayer.name}</Text>
+            <Text style={{ color: C.primary, fontSize: 14, fontWeight: '700', fontFamily: FF.bold, letterSpacing: 1 }}>{activePlayer.name}</Text>
             <Text style={{ color: C.onSurface, fontSize: 12, backgroundColor: C.surface, paddingHorizontal: 10, paddingVertical: 4 }}>R{round}/{maxRounds}</Text>
           </View>
           <ScrollView contentContainerStyle={{ flexGrow: 1, justifyContent: 'center', alignItems: 'center', paddingHorizontal: 32, paddingTop: 60, paddingBottom: 40 }}>
-            <Text style={{ color: C.onSurface, fontSize: 22, fontWeight: '700', textAlign: 'center', marginBottom: 8 }}>{activePlayer.name}, zieh eine QR-Karte!</Text>
-            <Text style={{ color: 'rgba(241,232,225,0.6)', fontSize: 14, textAlign: 'center', marginBottom: 32 }}>QR-Karte scannen, um den Ort zu enthüllen</Text>
-            <View style={[s.tableList, { maxHeight: height * 0.35 }]}>
-              <Text style={{ color: C.secondary, fontSize: 10, fontWeight: '700', letterSpacing: 3, marginBottom: 12 }}>STÄDTE AUF DEM TISCH</Text>
-              <ScrollView nestedScrollEnabled style={{ maxHeight: height * 0.28 }}>
+            <Text style={{ color: C.onSurface, fontSize: 15, fontFamily: FF.regular, textAlign: 'center', marginBottom: 12, opacity: 0.6 }}>Karte auf dem Tisch abgelegt?</Text>
+            <Text style={{ color: C.onSurface, fontSize: 22, fontWeight: '700', fontFamily: FF.bold, textAlign: 'center', marginBottom: 8 }}>{activePlayer.name}, zieh eine QR-Karte!</Text>
+            <Text style={{ color: 'rgba(241,232,225,0.6)', fontSize: 14, fontFamily: FF.regular, textAlign: 'center', marginBottom: 24 }}>QR-Karte scannen, um den Ort zu enthüllen</Text>
+            <View style={[s.tableList, { maxHeight: height * 0.45 }]}>
+              <Text style={{ color: C.primary, fontSize: 10, fontWeight: '700', fontFamily: FF.bold, letterSpacing: 3, marginBottom: 12 }}>STÄDTE AUF DEM TISCH</Text>
+              <ScrollView nestedScrollEnabled showsVerticalScrollIndicator={true} style={{ maxHeight: height * 0.38 }}>
                 {tableCities.map((tc, i) => (
                   <View key={i} style={[s.tableRow, i % 2 === 0 ? { backgroundColor: C.surfaceLow } : { backgroundColor: C.surface }]}>
                     <Text style={{ color: C.primary, fontSize: 14, marginRight: 10 }}>{tc.isPlayerCity ? '◉' : '◈'}</Text>
@@ -663,7 +688,7 @@ export default function App() {
     return (
       <View style={s.container}><StatusBar hidden />
         <View style={s.gameTopBar}>
-          <Text style={{ color: C.primary, fontSize: 14, fontWeight: '700', letterSpacing: 1 }}>{activePlayer.name}</Text>
+          <Text style={{ color: C.primary, fontSize: 14, fontWeight: '700', fontFamily: FF.bold, letterSpacing: 1 }}>{activePlayer.name}</Text>
           <Text style={{ color: C.onSurface, fontSize: 12, backgroundColor: C.surface, paddingHorizontal: 10, paddingVertical: 4 }}>R{round}/{maxRounds}</Text>
         </View>
 
@@ -686,7 +711,7 @@ export default function App() {
 
         {phase === 'pick' && (
           <View style={s.pickScreen}>
-            <Text style={{ color: C.onSurface, fontSize: 20, fontWeight: '700', textAlign: 'center', marginBottom: 4 }}>
+            <Text style={{ color: C.onSurface, fontSize: 20, fontWeight: '700', fontFamily: FF.bold, textAlign: 'center', marginBottom: 4 }}>
 {challengerId !== null ? `${players.find(p => p.id === challengerId)?.name}, wähle deine Stadt` : `${activePlayer.name}, wähle die Stadt, die dem gezeigten Ort am nächsten liegt`}
             </Text>
             <Text style={{ color: 'rgba(241,232,225,0.6)', fontSize: 13, textAlign: 'center', marginBottom: 24 }}>
@@ -719,10 +744,10 @@ export default function App() {
 
         {phase === 'challenge' && activePickIdx !== null && (
           <View style={s.pickScreen}>
-            <Text style={{ color: C.accent, fontSize: 20, fontWeight: '700', textAlign: 'center', marginBottom: 4 }}>CHALLENGE?</Text>
+            <Text style={{ color: C.accent, fontSize: 20, fontWeight: '700', fontFamily: FF.bold, textAlign: 'center', marginBottom: 4 }}>CHALLENGE?</Text>
             <Text style={{ color: C.onSurface, fontSize: 16, textAlign: 'center', marginBottom: 6 }}>{activePlayer.name} wählte:</Text>
             <View style={{ backgroundColor: C.surface, paddingVertical: 14, paddingHorizontal: 20, marginBottom: 24, width: '100%', alignItems: 'center' }}>
-              <Text style={{ color: C.primary, fontSize: 22, fontWeight: '700' }}>{tableCities[activePickIdx].city}</Text>
+              <Text style={{ color: C.primary, fontSize: 22, fontWeight: '700', fontFamily: FF.bold }}>{tableCities[activePickIdx].city}</Text>
             </View>
             <Text style={{ color: 'rgba(241,232,225,0.6)', fontSize: 13, textAlign: 'center', marginBottom: 16 }}>Möchte ein Spieler challengen?</Text>
             <ScrollView style={{ flex: 1, width: '100%' }}>
@@ -732,7 +757,7 @@ export default function App() {
                   <View style={{ flex: 1 }}>
                     <Text style={{ color: C.onSurface, fontSize: 18, fontWeight: '600' }}>{p.name}</Text>
                   </View>
-                  {challengerId === p.id && <Text style={{ color: C.green, fontSize: 14, fontWeight: '700' }}>CHALLENGT</Text>}
+                  {challengerId === p.id && <Text style={{ color: C.green, fontSize: 14, fontWeight: '700', fontFamily: FF.bold }}>CHALLENGT</Text>}
                 </TouchableOpacity>
               ))}
             </ScrollView>
@@ -752,16 +777,16 @@ export default function App() {
           <View style={s.resultOverlay}>
             <Animated.View style={[s.resultCard, { transform: [{ scale: resultScale }] }]}>
               <Text style={{ fontSize: 48, textAlign: 'center', marginBottom: 12 }}>{winnerId !== null && winnerId === activePlayer.id ? '🎯' : '📍'}</Text>
-              <Text style={{ color: C.primary, fontSize: 26, fontWeight: '700', textAlign: 'center', marginBottom: 4 }}>{location.city}</Text>
+              <Text style={{ color: C.primary, fontSize: 26, fontWeight: '700', fontFamily: FF.bold, textAlign: 'center', marginBottom: 4 }}>{location.city}</Text>
               <Text style={{ color: 'rgba(241,232,225,0.6)', fontSize: 14, textAlign: 'center', marginBottom: 6 }}>({location.country})</Text>
               <Text style={{ color: C.onSurface, fontSize: 17, fontWeight: '600', textAlign: 'center', marginBottom: 20 }}>liegt am nächsten an {tableCities[closestCityIdx].city}</Text>
-              {tableCities.map((tc, i) => (
-                <View key={i} style={{ flexDirection: 'row', justifyContent: 'space-between', paddingVertical: 10, paddingHorizontal: 12, backgroundColor: C.surfaceLow, marginBottom: 2 }}>
-                  <Text style={{ color: 'rgba(38,37,35,0.7)', fontSize: 14 }}>{tc.isPlayerCity ? '◉' : '◈'} {tc.city}</Text>
-                  <Text style={{ color: C.onSurface, fontSize: 14, fontWeight: '600' }}>{formatDistance(distances[i] ?? 0)}</Text>
+              {tableCities.filter(tc => tc.city.toLowerCase() !== location.city.toLowerCase()).map((tc, i) => (
+                <View key={i} style={{ flexDirection: 'row', justifyContent: 'space-between', paddingVertical: 10, paddingHorizontal: 12, backgroundColor: i === closestCityIdx ? 'rgba(242,163,68,0.15)' : C.surfaceLow, marginBottom: 2, borderRadius: 4 }}>
+                  <Text style={{ color: C.primary, fontSize: 15, fontWeight: '600', fontFamily: FF.bold }}>{tc.isPlayerCity ? '◉' : '◈'} {tc.city}</Text>
+                  <Text style={{ color: C.onSurface, fontSize: 14, fontWeight: '600', fontFamily: FF.regular }}>{formatDistance(distances[tableCities.indexOf(tc)] ?? 0)}</Text>
                 </View>
               ))}
-              {winnerId !== null && <Text style={{ color: C.primary, fontSize: 16, fontWeight: '700', textAlign: 'center', marginVertical: 16 }}>⭐️ {players.find(pp => pp.id === winnerId)?.name} punktet!</Text>}
+              {winnerId !== null && <Text style={{ color: C.primary, fontSize: 16, fontWeight: '700', fontFamily: FF.bold, textAlign: 'center', marginVertical: 16 }}>⭐️ {players.find(pp => pp.id === winnerId)?.name} punktet!</Text>}
               <TouchableOpacity style={s.primaryBtn} onPress={nextTurn}>
                 <Text style={s.primaryBtnText}>{round >= maxRounds ? 'ENDERGEBNIS' : 'NÄCHSTE RUNDE →'}</Text>
               </TouchableOpacity>
@@ -774,20 +799,22 @@ export default function App() {
 
   // ═══════════════ END SCREEN ═══════════════
   const sorted = [...players].sort((a, b) => b.score - a.score);
+  const isTie = sorted.length >= 2 && sorted[0].score === sorted[1].score;
+  const tiePlayers = isTie ? sorted.filter(p => p.score === sorted[0].score) : [];
   return (
     <View style={s.container}><StatusBar hidden />
       <ScrollView contentContainerStyle={s.endScroll}>
         <Text style={{ fontSize: 64, color: C.primary, marginBottom: 16 }}>✓</Text>
-        <Text style={{ color: C.onSurface, fontSize: 28, fontWeight: '700', textAlign: 'center', marginBottom: 4 }}>{isTie ? 'UNENTSCHIEDEN!' : 'AUSWERTUNG ABGESCHLOSSEN'}</Text>
-        <Text style={{ color: 'rgba(241,232,225,0.5)', fontSize: 11, fontWeight: '700', letterSpacing: 3, textTransform: 'uppercase', textAlign: 'center', marginBottom: 40 }}>{isTie ? `${tiePlayers.map(p => p.name).join(' & ')} gleichauf mit ${sorted[0].score} Pkt. – Stechen!` : 'SESSIONDATEN BEREIT ZUR AUSWERTUNG'}</Text>
+        <Text style={{ color: C.onSurface, fontSize: 28, fontWeight: '700', fontFamily: FF.bold, textAlign: 'center', marginBottom: 4 }}>{isTie ? 'UNENTSCHIEDEN!' : 'AUSWERTUNG ABGESCHLOSSEN'}</Text>
+        <Text style={{ color: 'rgba(241,232,225,0.5)', fontSize: 11, fontWeight: '700', fontFamily: FF.bold, letterSpacing: 3, textTransform: 'uppercase', textAlign: 'center', marginBottom: 40 }}>{isTie ? `${tiePlayers.map(p => p.name).join(' & ')} gleichauf mit ${sorted[0].score} Pkt. – Stechen!` : 'SESSIONDATEN BEREIT ZUR AUSWERTUNG'}</Text>
         {sorted.map((p, i) => (
           <View key={p.id} style={[s.endRow, i % 2 === 0 ? { backgroundColor: C.surfaceLow } : { backgroundColor: C.surface }]}>
-            <Text style={{ color: C.primary, fontSize: 14, fontWeight: '700', width: 36 }}>#{i + 1}</Text>
+            <Text style={{ color: C.primary, fontSize: 14, fontWeight: '700', fontFamily: FF.bold, width: 36 }}>#{i + 1}</Text>
             <View style={{ flex: 1 }}>
-              <Text style={{ color: C.onSurface, fontSize: 18, fontWeight: '700' }}>{p.name}</Text>
+              <Text style={{ color: C.onSurface, fontSize: 18, fontWeight: '700', fontFamily: FF.bold }}>{p.name}</Text>
               <Text style={{ color: 'rgba(241,232,225,0.5)', fontSize: 12, marginTop: 2 }}>{p.city}</Text>
             </View>
-            <Text style={{ color: C.onSurface, fontSize: 28, fontWeight: '700' }}>{p.score}</Text>
+            <Text style={{ color: C.onSurface, fontSize: 28, fontWeight: '700', fontFamily: FF.bold }}>{p.score}</Text>
           </View>
         ))}
         <TouchableOpacity style={[s.primaryBtn, { marginTop: 32, width: '100%' }]} onPress={() => {
