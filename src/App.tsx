@@ -492,7 +492,7 @@ export default function App() {
         )}
         {introPhase === 'freeze' && (
           <View style={{ ...StyleSheet.absoluteFillObject, justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(38,37,35,0.6)' }}>
-            <Text style={{ color: C.primary, fontSize: 16, fontFamily: FF.regular, fontStyle: 'italic', textAlign: 'center', paddingHorizontal: 40, lineHeight: 24 }}">"{loadingQuote}"</Text>
+            <Text style={{ color: C.primary, fontSize: 16, fontFamily: FF.regular, fontStyle: 'italic', textAlign: 'center', paddingHorizontal: 40, lineHeight: 24 }}>„{loadingQuote}“</Text>
           </View>
         )}
       </View>
