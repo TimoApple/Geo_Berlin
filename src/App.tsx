@@ -40,31 +40,17 @@ type Screen = 'intro' | 'loading' | 'tutorial' | 'setup' | 'scan-city' | 'game' 
 
 // LOADING QUOTES
 const QUOTES = [
-  'Alle Wege führen nach Rom.',
-  'Andere Länder, andere Sitten.',
-  'Reisen bildet.',
-  'Die Welt ist ein Buch — wer nicht reist, liest nur eine Seite.',
-  'Wer rastet, der rostet.',
-  'Die Erde ist rund — das ist ihr größtes Alibi.',
-  'Man reist nicht um anzukommen, sondern um zu reisen.',
-  'Der Horizont ist nur der Anfang.',
-  'Entfernung ist relativ. Unwissenheit weniger.',
-  'Nicht alle, die wandern, sind verloren.',
-  'Die Welt wartet nicht. Der Timer auch nicht.',
-  'Jede Straße führt irgendwohin. Aber wohin?',
-  'Heimat ist, wo du weißt, wo du bist.',
-  'Wer die Welt kennt, braucht keine Karte.',
-  'Ein Street View sagt mehr als tausend Worte.',
-  'Weiter weg als gedacht. Näher als du hoffst.',
-  'Geografiekenntnisse: 10% Schule, 90% Bauchgefühl.',
-  'Die Welt ist groß. Dein Radius auch.',
-  'Wer nicht rät, kann auch nicht gewinnen.',
+  'Die Welt ist ein Buch. Wer nicht reist, liest nur eine Seite.',
+  'Nicht jeder, der wandert, hat sich verloren.',
+  'Reisen ist Leben.',
+  'Die Erde hat eine Melodie – für die, die zuhören.',
+  'Das Abenteuer ist sein eigener Lohn.',
   'Irgendwo auf der Erde liegt deine Antwort. Rate schneller.',
 ];
 
 // STREET VIEW HTML
 function buildStreetViewHtml(lat: number, lng: number): string {
-  return `<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><style>*{margin:0;padding:0;box-sizing:border-box}html,body,#pano{width:100%;height:100%;overflow:hidden;background:#000}#status{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);color:#888;font-family:sans-serif;text-align:center;font-size:14px;z-index:999}#status .spinner{width:32px;height:32px;border:3px solid #333;border-top-color:#F2A344;border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 12px}@keyframes spin{to{transform:rotate(360deg)}}</style></head><body><div id="pano"></div><div id="status"><div class="spinner"></div>Street View lädt...</div><script>function init(){var sv=new google.maps.StreetViewService();sv.getPanorama({location:{lat:${lat},lng:${lng}},radius:50000,preference:google.maps.StreetViewPreference.NEAREST,source:google.maps.StreetViewSource.OUTDOOR},function(data,st){if(st===google.maps.StreetViewStatus.OK){new google.maps.StreetViewPanorama(document.getElementById('pano'),{pano:data.location.pano,pov:{heading:Math.random()*360,pitch:0},zoom:0,addressControl:false,linksControl:true,panControl:true,zoomControl:true,fullscreenControl:false,motionTracking:false,motionTrackingControl:false,enableCloseButton:false,clickToGo:true,scrollwheel:true,disableDefaultUI:false});document.getElementById('status').style.display='none';window.ReactNativeWebView&&window.ReactNativeWebView.postMessage('loaded')}else{document.getElementById('status').innerHTML='Kein Street View';window.ReactNativeWebView&&window.ReactNativeWebView.postMessage('error')}})}</script><script async defer src="https://maps.googleapis.com/maps/api/js?key=${API_KEY}&callback=init&libraries=streetView"></script></body></html>`;
+  return `<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><style>*{margin:0;padding:0;box-sizing:border-box}html,body,#pano{width:100%;height:100%;overflow:hidden;background:#000}#status{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);color:#888;font-family:sans-serif;text-align:center;font-size:14px;z-index:999}#status .spinner{width:32px;height:32px;border:3px solid #333;border-top-color:#F2A344;border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 12px}@keyframes spin{to{transform:rotate(360deg)}}</style></head><body><div id="pano"></div><div id="status"><div class="spinner"></div>Ort wird geladen...</div><script>function init(){var sv=new google.maps.StreetViewService();sv.getPanorama({location:{lat:${lat},lng:${lng}},radius:50000,preference:google.maps.StreetViewPreference.NEAREST,source:google.maps.StreetViewSource.DEFAULT},function(data,st){if(st===google.maps.StreetViewStatus.OK){new google.maps.StreetViewPanorama(document.getElementById('pano'),{pano:data.location.pano,pov:{heading:Math.random()*360,pitch:0},zoom:0,addressControl:false,linksControl:true,panControl:true,zoomControl:true,fullscreenControl:false,motionTracking:false,motionTrackingControl:false,enableCloseButton:false,clickToGo:true,scrollwheel:true,disableDefaultUI:false});document.getElementById('status').style.display='none';window.ReactNativeWebView&&window.ReactNativeWebView.postMessage('loaded')}else{document.getElementById('status').innerHTML='Kein Ort verfügbar';window.ReactNativeWebView&&window.ReactNativeWebView.postMessage('error')}})}</script><script async defer src="https://maps.googleapis.com/maps/api/js?key=${API_KEY}&callback=init&libraries=streetView"></script></body></html>`;
 }
 
 export default function App() {
@@ -76,8 +62,8 @@ export default function App() {
 
   // Setup
   const [players, setPlayers] = useState<Player[]>([
-    { id: 1, name: 'Player 1', city: '', cityId: -1, lat: 0, lng: 0, score: 0 },
-    { id: 2, name: 'Player 2', city: '', cityId: -1, lat: 0, lng: 0, score: 0 },
+    { id: 1, name: 'Spieler 1', city: '', cityId: -1, lat: 0, lng: 0, score: 0 },
+    { id: 2, name: 'Spieler 2', city: '', cityId: -1, lat: 0, lng: 0, score: 0 },
   ]);
   const [timerSetting, setTimerSetting] = useState(15);
   const [roundsSetting, setRoundsSetting] = useState(10);
@@ -152,7 +138,7 @@ export default function App() {
 
   const addPlayer = () => {
     const count = players.length + 1;
-    setPlayers(prev => [...prev, { id: Date.now(), name: `Player ${count}`, city: '', cityId: -1, lat: 0, lng: 0, score: 0 }]);
+    setPlayers(prev => [...prev, { id: Date.now(), name: `Spieler ${count}`, city: '', cityId: -1, lat: 0, lng: 0, score: 0 }]);
 
     playClickSound();
   };
@@ -192,7 +178,7 @@ export default function App() {
     const normalized = code.toLowerCase().trim().replace(/ä/g,'ae').replace(/ö/g,'oe').replace(/ü/g,'ue').replace(/ß/g,'ss');
     const textMatch = panoramaLocations.find(l => l.city.toLowerCase() === normalized);
     if (textMatch) { assign(textMatch, textMatch.id); return; }
-    setScanError('Nicht erkannt — Code oder Stadtnamen prüfen');
+    setScanError('Nicht erkannt – Code oder Stadtname prüfen');
     setTimeout(() => setScanError(''), 2000);
   }, [manualCode, scanCityForIdx, players]);
 
@@ -294,11 +280,11 @@ export default function App() {
         ));
         setShowCityScanner(false); setScanned(false); setScanCityForIdx(null);
       } else {
-        setScanError('Stadt nicht erkannt — nochmal versuchen oder Code eingeben');
+        setScanError('Stadt nicht erkannt – nochmal versuchen oder Code eingeben');
         setTimeout(() => setScanError(''), 2500);
       }
     } catch (e) {
-      setScanError('Aufnahme fehlgeschlagen — nochmal versuchen');
+      setScanError('Aufnahme fehlgeschlagen – nochmal versuchen');
       setTimeout(() => setScanError(''), 2000);
     }
   }, [scanned, scanCityForIdx, players]);
@@ -371,16 +357,16 @@ export default function App() {
       }
     }
 
-    setScanError('Card not recognized — try again');
+    setScanError('Karte nicht erkannt – nochmal versuchen');
     setTimeout(() => setScanError(''), 2000);
   }, [scanned, showCityScanner, scanCityForIdx, showQrScanner, onQrScanned]);
 
   // TUTORIAL
   const TUT_PAGES = [
-    { bg: C.bg, titleColor: C.error, title: 'Eine Aufgabe. Nur eine.', body: 'Irgendwo auf der Erde öffnet sich ein Street View. Du hältst eine City Card. Finde heraus, welche Stadt auf dem Tisch am nächsten dran ist.\n\nSimpel? Klar. Einfach? Auf keinen Fall.' },
-    { bg: C.bg, titleColor: C.error, title: 'Karte. Scan. Los.', body: 'Schnapp dir eine Karte. Scan den QR-Code. Ein Street View lädt sofort — und der Timer läuft, ob du bereit bist oder nicht.' },
-    { bg: C.bg, titleColor: C.accent, title: 'Stadt gesucht.', body: 'Schau dir den Street View an. Welche City Card liegt am nächsten dran? Tipp aufs Mikro und sag sie laut — die App speichert deine Antwort.\n\nJe näher du liegst, desto mehr Punkte. Je überzeugter du klingst, desto besser fühlst du dich. Ergebnisse können variieren.' },
-    { bg: '#262523', titleColor: C.error, title: 'All in.', body: 'Du glaubst, jemand liegt falsch? Setz einen Token und nenn DEINE Stadt.\n\nRichtig → Bonuspunkte.\nFalsch → tschüss, Token.\n\n→ Auf geht\'s!' },
+    { bg: C.bg, titleColor: C.error, title: 'Eine Aufgabe. Nur eine.', body: 'Du stehst plötzlich irgendwo auf der Welt. Wo bist du nur? Auf dem Tisch liegen Stadtnamen. Deine Aufgabe: Welche Stadt liegt am nächsten zu dem, was du siehst?' },
+    { bg: C.bg, titleColor: C.error, title: 'Ziehen. Scannen. Die Zeit läuft.', body: 'Zieh eine Karte vom Stapel. Scanne den QR-Code mit der App. Ein Ort irgendwo auf der Welt erscheint – und der Timer startet, ob du bereit bist oder nicht.' },
+    { bg: C.bg, titleColor: C.accent, title: 'Wo zur Hölle bist du?', body: 'Schau dich um. Lies die Zeichen. Hast du eine Landkarte im Kopf?\n\nWähle die Stadt vom Tisch, die am nächsten dran liegt. Je näher du liegst, desto mehr Punkte.' },
+    { bg: '#262523', titleColor: C.error, title: 'Auf die harte Tour?', body: 'Denkst du, jemand lag falsch? Setz einen Token und nenn DEINE Stadt.\n\nRichtig → Bonuspunkte.\nFalsch → Tschüss, Token.\n\n→ Los geht\'s!' },
   ];
 
   // ═══════════════ SCANNERS ═══════════════
@@ -390,7 +376,7 @@ export default function App() {
         <View style={s.container}><StatusBar hidden />
           <View style={s.centerScreen}>
             <Text style={{ color: C.onSurface, fontSize: 18, marginBottom: 20, textAlign: 'center' }}>Kamera-Berechtigung erforderlich</Text>
-            <TouchableOpacity style={s.primaryBtn} onPress={requestCameraPermission}><Text style={s.primaryBtnText}>ZUGRIFF</Text></TouchableOpacity>
+            <TouchableOpacity style={s.primaryBtn} onPress={requestCameraPermission}><Text style={s.primaryBtnText}>ERLAUBEN</Text></TouchableOpacity>
             <TouchableOpacity style={s.tertiaryBtn} onPress={() => { setShowCityScanner(false); setShowQrScanner(false); setScanned(false); }}><Text style={s.tertiaryBtnText}>ABBRECHEN</Text></TouchableOpacity>
           </View>
         </View>
@@ -409,9 +395,9 @@ export default function App() {
           <View style={s.scanOverlay}>
             <View style={{ alignItems: 'center', marginBottom: 20 }}>
               <Text style={{ color: C.primary, fontSize: 13, fontWeight: '700', letterSpacing: 2, marginBottom: 6 }}>
-                {showCityScanner ? 'KARTE ZUWEISEN' : 'QR-KARTE SCANNEN'}
+                {showCityScanner ? 'KARTE ZUWEISEN' : 'QR-KARTE SCANNEN'}}
               </Text>
-              <Text style={{ color: '#fff', fontSize: 22, fontWeight: '700' }}>{assignName || 'Player'}</Text>
+              <Text style={{ color: '#fff', fontSize: 22, fontWeight: '700' }}>{assignName || 'Spieler'}</Text>
             </View>
             <View style={s.scanFrame}>
               <Text style={{ color: C.primary, fontSize: 16, fontWeight: '600', textAlign: 'center' }}>
@@ -455,7 +441,7 @@ export default function App() {
               </View>
             ) : null}
             <TouchableOpacity style={s.scanCloseBtn} onPress={() => { setShowCityScanner(false); setShowQrScanner(false); setScanned(false); setManualCode(''); }}>
-              <Text style={s.scanCloseText}>CLOSE</Text>
+              <Text style={s.scanCloseText}>SCHLIESSEN</Text>
             </TouchableOpacity>
           </View>
         </CameraView>
@@ -581,9 +567,9 @@ export default function App() {
               <View style={{ flex: 1, position: 'relative' }}>
                 <TextInput
                   style={[s.playerInput, p.city.length > 0 && { paddingBottom: 2 }]}
-                  value={p.name.startsWith('Player ') ? '' : p.name}
-                  onChangeText={t => setPlayers(prev => prev.map((pp, idx) => idx === i ? { ...pp, name: t.length > 0 ? t : `Player ${idx + 1}` } : pp))}
-                  placeholder={`Player ${i + 1}`}
+                  value={p.name.startsWith('Spieler ') ? '' : p.name}
+                  onChangeText={t => setPlayers(prev => prev.map((pp, idx) => idx === i ? { ...pp, name: t.length > 0 ? t : `Spieler ${idx + 1}` } : pp))}
+                  placeholder={`Spieler ${i + 1}`}
                   placeholderTextColor="rgba(241,232,225,0.3)"
                 />
                 {p.city.length > 0 && <Text style={s.cityBadgeInline}>{p.city}</Text>}
@@ -630,9 +616,9 @@ export default function App() {
 
           <View style={{ marginTop: 32 }}>
             <TouchableOpacity style={[s.mainBtn, !allPlayersScanned && s.mainBtnDisabled]} disabled={!allPlayersScanned} onPress={startGame}>
-              <Text style={s.mainBtnText}>{allPlayersScanned ? 'ALLE BEREIT, LOS GEHT\'S!' : 'ERST ALLE KARTEN SCANNEN'}</Text>
+              <Text style={s.mainBtnText}>{allPlayersScanned ? 'ALLES KLAR, LOS GEHT\'S!' : 'ERST ALLE KARTEN SCANNEN'}</Text>
             </TouchableOpacity>
-            <Text style={s.actionHint}>{allPlayersScanned ? `${players.length} players ready` : 'Scan city cards for all players'}</Text>
+            <Text style={s.actionHint}>{allPlayersScanned ? `${players.length} Spieler bereit` : 'City Cards für alle Spieler scannen'}</Text>
           </View>
         </ScrollView>
       </KeyboardAvoidingView>
@@ -689,11 +675,11 @@ export default function App() {
               onError={() => setSvError(true)}
               onMessage={(e) => { const msg = e.nativeEvent.data; if (msg === 'loaded') setSvLoaded(true); if (msg.startsWith('error')) setSvError(true); }}
               userAgent="Mozilla/5.0 (Linux; Android 13) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36" />
-            {!svLoaded && !svError && <View style={s.loadingOverlay}><Text style={{ color: 'rgba(241,232,225,0.6)' }}>Street View lädt...</Text></View>}
-            {svError && <View style={s.errorOverlay}><Text style={{ color: C.error, fontSize: 16, marginBottom: 20 }}>Kein Street View</Text><TouchableOpacity style={s.primaryBtn} onPress={nextTurn}><Text style={s.primaryBtnText}>ÜBERSPRINGEN</Text></TouchableOpacity></View>}
+            {!svLoaded && !svError && <View style={s.loadingOverlay}><Text style={{ color: 'rgba(241,232,225,0.6)' }}>Ort wird geladen...</Text></View>}
+            {svError && <View style={s.errorOverlay}><Text style={{ color: C.error, fontSize: 16, marginBottom: 20 }}>Kein Ort verfügbar</Text><TouchableOpacity style={s.primaryBtn} onPress={nextTurn}><Text style={s.primaryBtnText}>ÜBERSPRINGEN</Text></TouchableOpacity></View>}
             {svLoaded && <>
               <Animated.View style={[s.timer, { borderColor: timerColor, transform: [{ scale: timerPulse }] }]}><Text style={[s.timerText, { color: timerColor }]}>{timer}</Text></Animated.View>
-              <TouchableOpacity style={s.pickBtn} onPress={() => { playClickSound(); setTimerPaused(true); setPhase('pick'); }}><Text style={s.pickBtnText}>I KNOW IT!</Text></TouchableOpacity>
+              <TouchableOpacity style={s.pickBtn} onPress={() => { playClickSound(); setTimerPaused(true); setPhase('pick'); }}><Text style={s.pickBtnText}>ICH WEISS ES!</Text></TouchableOpacity>
             </>}
           </>
         )}
@@ -701,7 +687,7 @@ export default function App() {
         {phase === 'pick' && (
           <View style={s.pickScreen}>
             <Text style={{ color: C.onSurface, fontSize: 20, fontWeight: '700', textAlign: 'center', marginBottom: 4 }}>
-              {challengerId !== null ? 'CHALLENGER WÄHLT' : 'WELCHE STADT IST AM NÄCHSTEN?'}
+{challengerId !== null ? `${players.find(p => p.id === challengerId)?.name}, wähle deine Stadt` : `${activePlayer.name}, wähle die Stadt, die dem gezeigten Ort am nächsten liegt`}
             </Text>
             <Text style={{ color: 'rgba(241,232,225,0.6)', fontSize: 13, textAlign: 'center', marginBottom: 24 }}>
               {challengerId !== null ? `${players.find(p => p.id === challengerId)?.name}, wähle deine Stadt` : `${activePlayer.name}, wähle die nächste Stadt zum gezeigten Ort`}
@@ -752,7 +738,7 @@ export default function App() {
             </ScrollView>
             {challengerId !== null ? (
               <TouchableOpacity style={[s.primaryBtn, { marginTop: 16, width: '100%' }]} onPress={() => { playClickSound(); setPhase('pick'); }}>
-                <Text style={s.primaryBtnText}>CHALLENGER WÄHLT STADT</Text>
+                <Text style={s.primaryBtnText}>CHALLENGER WÄHLT</Text>
               </TouchableOpacity>
             ) : (
               <TouchableOpacity style={[s.primaryBtn, { marginTop: 16, width: '100%', backgroundColor: C.surfaceHigh }]} onPress={() => resolveRound()}>
@@ -775,7 +761,7 @@ export default function App() {
                   <Text style={{ color: C.onSurface, fontSize: 14, fontWeight: '600' }}>{formatDistance(distances[i] ?? 0)}</Text>
                 </View>
               ))}
-              {winnerId !== null && <Text style={{ color: C.primary, fontSize: 16, fontWeight: '700', textAlign: 'center', marginVertical: 16 }}>⭐ {players.find(pp => pp.id === winnerId)?.name} scores!</Text>}
+              {winnerId !== null && <Text style={{ color: C.primary, fontSize: 16, fontWeight: '700', textAlign: 'center', marginVertical: 16 }}>⭐️ {players.find(pp => pp.id === winnerId)?.name} punktet!</Text>}
               <TouchableOpacity style={s.primaryBtn} onPress={nextTurn}>
                 <Text style={s.primaryBtnText}>{round >= maxRounds ? 'ENDERGEBNIS' : 'NÄCHSTE RUNDE →'}</Text>
               </TouchableOpacity>
@@ -792,8 +778,8 @@ export default function App() {
     <View style={s.container}><StatusBar hidden />
       <ScrollView contentContainerStyle={s.endScroll}>
         <Text style={{ fontSize: 64, color: C.primary, marginBottom: 16 }}>✓</Text>
-        <Text style={{ color: C.onSurface, fontSize: 28, fontWeight: '700', textAlign: 'center', marginBottom: 4 }}>AUSWERTUNG ABGESCHLOSSEN</Text>
-        <Text style={{ color: 'rgba(241,232,225,0.5)', fontSize: 11, fontWeight: '700', letterSpacing: 3, textTransform: 'uppercase', textAlign: 'center', marginBottom: 40 }}>SESSION-DATEN BEREIT</Text>
+        <Text style={{ color: C.onSurface, fontSize: 28, fontWeight: '700', textAlign: 'center', marginBottom: 4 }}>{isTie ? 'UNENTSCHIEDEN!' : 'AUSWERTUNG ABGESCHLOSSEN'}</Text>
+        <Text style={{ color: 'rgba(241,232,225,0.5)', fontSize: 11, fontWeight: '700', letterSpacing: 3, textTransform: 'uppercase', textAlign: 'center', marginBottom: 40 }}>{isTie ? `${tiePlayers.map(p => p.name).join(' & ')} gleichauf mit ${sorted[0].score} Pkt. – Stechen!` : 'SESSIONDATEN BEREIT ZUR AUSWERTUNG'}</Text>
         {sorted.map((p, i) => (
           <View key={p.id} style={[s.endRow, i % 2 === 0 ? { backgroundColor: C.surfaceLow } : { backgroundColor: C.surface }]}>
             <Text style={{ color: C.primary, fontSize: 14, fontWeight: '700', width: 36 }}>#{i + 1}</Text>
