@@ -58,6 +58,7 @@ export default function App() {
   const [screen, setScreen] = useState<Screen>('intro');
   const [tutorialPage, setTutorialPage] = useState(0);
   const [introPhase, setIntroPhase] = useState<'video' | 'freeze'>('video');
+  const [loadingFade] = useState(new Animated.Value(0));
   const [loadingQuote] = useState(QUOTES[Math.floor(Math.random() * QUOTES.length)]);
 
   // Setup
