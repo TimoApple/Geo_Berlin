@@ -481,22 +481,23 @@ export default function App() {
             <Text style={{ color: 'rgba(255,255,255,0.5)', fontSize: 14, fontFamily: FF.regular }}>Überspringen</Text>
           </View>
         </TouchableOpacity>
-        <Image source={require('./assets/intro_last_frame.png')} style={{ ...StyleSheet.absoluteFillObject }} resizeMode="cover" />
-        {introPhase === 'video' && (
-          <Video
-            source={require('./assets/intro.mp4')}
-            style={{ ...StyleSheet.absoluteFillObject }}
-            resizeMode="cover"
-            shouldPlay
-            onEnd={() => {
-              setIntroPhase('still');
-              setTimeout(() => {
-                setIntroPhase('freeze');
-                setTimeout(() => setScreen('tutorial'), 2500);
-              }, 500);
-            }}
-            onError={(e) => { console.warn('Intro video error', e); setScreen('tutorial'); }}
-          />
+        <Video
+          source={require('./assets/intro.mp4')}
+          style={{ ...StyleSheet.absoluteFillObject }}
+          resizeMode="cover"
+          shouldPlay={introPhase === 'video'}
+          repeat={false}
+          onEnd={() => {
+            setIntroPhase('still');
+            setTimeout(() => {
+              setIntroPhase('freeze');
+              setTimeout(() => setScreen('tutorial'), 2500);
+            }, 500);
+          }}
+          onError={(e) => { console.warn('Intro video error', e); setScreen('tutorial'); }}
+        />
+        {(introPhase === 'still' || introPhase === 'freeze') && (
+          <Image source={require('./assets/intro_last_frame.png')} style={{ ...StyleSheet.absoluteFillObject }} resizeMode="cover" />
         )}
         {introPhase === 'freeze' && (
           <View style={{ ...StyleSheet.absoluteFillObject, justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(38,37,35,0.6)' }}>
