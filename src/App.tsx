@@ -55,7 +55,6 @@ function buildStreetViewHtml(lat: number, lng: number): string {
 
 export default function App() {
   const [fontsLoaded] = useFonts({ SpaceGrotesk_400Regular, SpaceGrotesk_700Bold });
-  if (!fontsLoaded) return <View style={{ flex: 1, backgroundColor: '#262523' }} />;
   const [screen, setScreen] = useState<Screen>('intro');
   const [tutorialPage, setTutorialPage] = useState(0);
   const [introPhase, setIntroPhase] = useState<'video' | 'still' | 'freeze'>('video');
