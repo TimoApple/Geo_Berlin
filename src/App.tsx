@@ -413,10 +413,10 @@ export default function App() {
         >
           <View style={s.scanOverlay}>
             <View style={{ alignItems: 'center', marginBottom: 20 }}>
-              <Text style={{ color: C.primary, fontSize: 13, fontWeight: '700', fontFamily: FF.bold, letterSpacing: 2, marginBottom: 6 }}>
+              <Text style={{ color: C.primary, fontSize: 13, fontFamily: FF.bold, letterSpacing: 2, marginBottom: 6 }}>
                 {showCityScanner ? 'KARTE ZUWEISEN' : 'QR-KARTE SCANNEN'}}
               </Text>
-              <Text style={{ color: '#fff', fontSize: 22, fontWeight: '700', fontFamily: FF.bold }}>{assignName || 'Spieler'}</Text>
+              <Text style={{ color: '#fff', fontSize: 22, fontFamily: FF.bold }}>{assignName || 'Spieler'}</Text>
             </View>
             <View style={s.scanFrame}>
               <Text style={{ color: C.primary, fontSize: 16, fontWeight: '600', textAlign: 'center' }}>
@@ -426,13 +426,13 @@ export default function App() {
 
             {showCityScanner && (
               <TouchableOpacity style={{ backgroundColor: C.error, width: 72, height: 72, borderRadius: 36, borderWidth: 4, borderColor: '#fff', justifyContent: 'center', alignItems: 'center', marginTop: 20, alignSelf: 'center' }} onPress={captureAndRecognize}>
-                <Text style={{ color: C.bg, fontSize: 26, fontWeight: '700', fontFamily: FF.bold }}>◉</Text>
+                <Text style={{ color: C.bg, fontSize: 26, fontFamily: FF.bold }}>◉</Text>
               </TouchableOpacity>
             )}
 
             {showCityScanner && (
               <View style={{ width: '100%', paddingHorizontal: 20, marginTop: 16 }}>
-                <Text style={{ color: 'rgba(241,232,225,0.6)', fontSize: 11, fontWeight: '700', fontFamily: FF.bold, letterSpacing: 2, textAlign: 'center', marginBottom: 10, textTransform: 'uppercase' }}>Oder Code manuell eingeben</Text>
+                <Text style={{ color: 'rgba(241,232,225,0.6)', fontSize: 11, fontFamily: FF.bold, letterSpacing: 2, textAlign: 'center', marginBottom: 10, textTransform: 'uppercase' }}>Oder Code manuell eingeben</Text>
                 <View style={{ flexDirection: 'row', gap: 8 }}>
                   <View style={{ flex: 1, backgroundColor: 'rgba(25,26,45,0.9)', borderWidth: 1, borderColor: 'rgba(68,73,52,0.4)', borderRadius: 0 }}>
                     <TextInput
@@ -448,7 +448,7 @@ export default function App() {
                     />
                   </View>
                   <TouchableOpacity style={{ backgroundColor: C.primary, paddingVertical: 12, paddingHorizontal: 20, justifyContent: 'center' }} onPress={submitManualCode}>
-                    <Text style={{ color: C.onPrimaryContainer, fontSize: 14, fontWeight: '700', fontFamily: FF.bold }}>GO</Text>
+                    <Text style={{ color: C.onPrimaryContainer, fontSize: 14, fontFamily: FF.bold }}>GO</Text>
                   </TouchableOpacity>
                 </View>
               </View>
@@ -559,7 +559,7 @@ export default function App() {
           {TUT_PAGES.map((p, i) => (
             <View key={i} style={{ width, height, backgroundColor: p.bg, justifyContent: 'center', alignItems: 'center', paddingHorizontal: 36 }}>
               <View style={{ alignItems: 'center', paddingHorizontal: 10 }}>
-                <Text style={{ color: p.titleColor, fontSize: 48, fontWeight: '700', fontFamily: FF.bold, textAlign: 'center', marginBottom: 36, lineHeight: 56 }}>{p.title}</Text>
+                <Text style={{ color: p.titleColor, fontSize: 48, fontFamily: FF.bold, textAlign: 'center', marginBottom: 36, lineHeight: 56 }}>{p.title}</Text>
                 <Text style={{ color: p.bodyColor || '#F1E8E1', fontSize: 24, fontFamily: FF.regular, textAlign: 'center', lineHeight: 38, opacity: 0.95 }}>{p.body}</Text>
               </View>
             </View>
@@ -576,7 +576,7 @@ export default function App() {
             <Text style={{ color: 'rgba(255,255,255,0.4)', fontSize: 14, fontFamily: FF.regular }}>Swipe →</Text>
           ) : (
             <TouchableOpacity style={{ backgroundColor: C.error, paddingVertical: 14, paddingHorizontal: 28, borderRadius: 9999 }} onPress={() => setScreen('setup')}>
-              <Text style={{ color: '#fff', fontSize: 17, fontWeight: '700', fontFamily: FF.bold }}>Auf geht's!</Text>
+              <Text style={{ color: '#fff', fontSize: 17, fontFamily: FF.bold }}>Auf geht's!</Text>
             </TouchableOpacity>
           )}
         </View>
@@ -614,7 +614,7 @@ export default function App() {
               </TouchableOpacity>
               {players.length > 2 ? (
                 <TouchableOpacity style={s.removeBtn} onPress={() => setPlayers(prev => prev.filter(pp => pp.id !== p.id))}>
-                  <Text style={{ color: C.error, fontSize: 14, fontWeight: '700', fontFamily: FF.bold }}>✕</Text>
+                  <Text style={{ color: C.error, fontSize: 14, fontFamily: FF.bold }}>✕</Text>
                 </TouchableOpacity>
               ) : null}
             </View>
@@ -667,15 +667,15 @@ export default function App() {
       return (
         <View style={s.container}><StatusBar hidden />
           <View style={s.gameTopBar}>
-            <Text style={{ color: C.primary, fontSize: 14, fontWeight: '700', fontFamily: FF.bold, letterSpacing: 1 }}>{activePlayer.name}</Text>
+            <Text style={{ color: C.primary, fontSize: 14, fontFamily: FF.bold, letterSpacing: 1 }}>{activePlayer.name}</Text>
             <Text style={{ color: C.onSurface, fontSize: 12, backgroundColor: C.surface, paddingHorizontal: 10, paddingVertical: 4 }}>R{round}/{maxRounds}</Text>
           </View>
           <ScrollView contentContainerStyle={{ flexGrow: 1, justifyContent: 'center', alignItems: 'center', paddingHorizontal: 32, paddingTop: 60, paddingBottom: 40 }}>
             <Text style={{ color: C.onSurface, fontSize: 15, fontFamily: FF.regular, textAlign: 'center', marginBottom: 12, opacity: 0.6 }}>Karte auf dem Tisch abgelegt?</Text>
-            <Text style={{ color: C.onSurface, fontSize: 22, fontWeight: '700', fontFamily: FF.bold, textAlign: 'center', marginBottom: 8 }}>{activePlayer.name}, zieh eine QR-Karte!</Text>
+            <Text style={{ color: C.onSurface, fontSize: 22, fontFamily: FF.bold, textAlign: 'center', marginBottom: 8 }}>{activePlayer.name}, zieh eine QR-Karte!</Text>
             <Text style={{ color: 'rgba(241,232,225,0.6)', fontSize: 14, fontFamily: FF.regular, textAlign: 'center', marginBottom: 24 }}>QR-Karte scannen, um den Ort zu enthüllen</Text>
             <View style={[s.tableList, { maxHeight: height * 0.45 }]}>
-              <Text style={{ color: C.primary, fontSize: 10, fontWeight: '700', fontFamily: FF.bold, letterSpacing: 3, marginBottom: 12 }}>STÄDTE AUF DEM TISCH</Text>
+              <Text style={{ color: C.primary, fontSize: 10, fontFamily: FF.bold, letterSpacing: 3, marginBottom: 12 }}>STÄDTE AUF DEM TISCH</Text>
               <ScrollView nestedScrollEnabled showsVerticalScrollIndicator={true} style={{ maxHeight: height * 0.38 }}>
                 {tableCities.map((tc, i) => (
                   <View key={i} style={[s.tableRow, i % 2 === 0 ? { backgroundColor: C.surfaceLow } : { backgroundColor: C.surface }]}>
@@ -697,7 +697,7 @@ export default function App() {
     return (
       <View style={s.container}><StatusBar hidden />
         <View style={s.gameTopBar}>
-          <Text style={{ color: C.primary, fontSize: 14, fontWeight: '700', fontFamily: FF.bold, letterSpacing: 1 }}>{activePlayer.name}</Text>
+          <Text style={{ color: C.primary, fontSize: 14, fontFamily: FF.bold, letterSpacing: 1 }}>{activePlayer.name}</Text>
           <Text style={{ color: C.onSurface, fontSize: 12, backgroundColor: C.surface, paddingHorizontal: 10, paddingVertical: 4 }}>R{round}/{maxRounds}</Text>
         </View>
 
@@ -720,7 +720,7 @@ export default function App() {
 
         {phase === 'pick' && (
           <View style={s.pickScreen}>
-            <Text style={{ color: C.onSurface, fontSize: 20, fontWeight: '700', fontFamily: FF.bold, textAlign: 'center', marginBottom: 4 }}>
+            <Text style={{ color: C.onSurface, fontSize: 20, fontFamily: FF.bold, textAlign: 'center', marginBottom: 4 }}>
 {challengerId !== null ? `${players.find(p => p.id === challengerId)?.name}, wähle deine Stadt` : `${activePlayer.name}, wähle die Stadt, die dem gezeigten Ort am nächsten liegt`}
             </Text>
             <Text style={{ color: 'rgba(241,232,225,0.6)', fontSize: 13, textAlign: 'center', marginBottom: 24 }}>
@@ -753,10 +753,10 @@ export default function App() {
 
         {phase === 'challenge' && activePickIdx !== null && (
           <View style={s.pickScreen}>
-            <Text style={{ color: C.accent, fontSize: 20, fontWeight: '700', fontFamily: FF.bold, textAlign: 'center', marginBottom: 4 }}>CHALLENGE?</Text>
+            <Text style={{ color: C.accent, fontSize: 20, fontFamily: FF.bold, textAlign: 'center', marginBottom: 4 }}>CHALLENGE?</Text>
             <Text style={{ color: C.onSurface, fontSize: 16, textAlign: 'center', marginBottom: 6 }}>{activePlayer.name} wählte:</Text>
             <View style={{ backgroundColor: C.surface, paddingVertical: 14, paddingHorizontal: 20, marginBottom: 24, width: '100%', alignItems: 'center' }}>
-              <Text style={{ color: C.primary, fontSize: 22, fontWeight: '700', fontFamily: FF.bold }}>{tableCities[activePickIdx].city}</Text>
+              <Text style={{ color: C.primary, fontSize: 22, fontFamily: FF.bold }}>{tableCities[activePickIdx].city}</Text>
             </View>
             <Text style={{ color: 'rgba(241,232,225,0.6)', fontSize: 13, textAlign: 'center', marginBottom: 16 }}>Möchte ein Spieler challengen?</Text>
             <ScrollView style={{ flex: 1, width: '100%' }}>
@@ -766,7 +766,7 @@ export default function App() {
                   <View style={{ flex: 1 }}>
                     <Text style={{ color: C.onSurface, fontSize: 18, fontWeight: '600' }}>{p.name}</Text>
                   </View>
-                  {challengerId === p.id && <Text style={{ color: C.green, fontSize: 14, fontWeight: '700', fontFamily: FF.bold }}>CHALLENGT</Text>}
+                  {challengerId === p.id && <Text style={{ color: C.green, fontSize: 14, fontFamily: FF.bold }}>CHALLENGT</Text>}
                 </TouchableOpacity>
               ))}
             </ScrollView>
@@ -786,16 +786,16 @@ export default function App() {
           <View style={s.resultOverlay}>
             <Animated.View style={[s.resultCard, { transform: [{ scale: resultScale }] }]}>
               <Text style={{ fontSize: 48, textAlign: 'center', marginBottom: 12 }}>{winnerId !== null && winnerId === activePlayer.id ? '🎯' : '📍'}</Text>
-              <Text style={{ color: C.primary, fontSize: 26, fontWeight: '700', fontFamily: FF.bold, textAlign: 'center', marginBottom: 4 }}>{location.city}</Text>
+              <Text style={{ color: C.primary, fontSize: 26, fontFamily: FF.bold, textAlign: 'center', marginBottom: 4 }}>{location.city}</Text>
               <Text style={{ color: 'rgba(241,232,225,0.6)', fontSize: 14, textAlign: 'center', marginBottom: 6 }}>({location.country})</Text>
               <Text style={{ color: C.onSurface, fontSize: 17, fontWeight: '600', textAlign: 'center', marginBottom: 20 }}>liegt am nächsten an {tableCities[closestCityIdx].city}</Text>
               {tableCities.filter(tc => tc.city.toLowerCase() !== location.city.toLowerCase()).map((tc, i) => (
                 <View key={i} style={{ flexDirection: 'row', justifyContent: 'space-between', paddingVertical: 10, paddingHorizontal: 12, backgroundColor: i === closestCityIdx ? 'rgba(242,163,68,0.15)' : C.surfaceLow, marginBottom: 2, borderRadius: 4 }}>
-                  <Text style={{ color: C.primary, fontSize: 15, fontWeight: '600', fontFamily: FF.bold }}>{tc.isPlayerCity ? '◉' : '◈'} {tc.city}</Text>
+                  <Text style={{ color: C.primary, fontSize: 15, fontFamily: FF.bold }}>{tc.isPlayerCity ? '◉' : '◈'} {tc.city}</Text>
                   <Text style={{ color: C.onSurface, fontSize: 14, fontWeight: '600', fontFamily: FF.regular }}>{formatDistance(distances[tableCities.indexOf(tc)] ?? 0)}</Text>
                 </View>
               ))}
-              {winnerId !== null && <Text style={{ color: C.primary, fontSize: 16, fontWeight: '700', fontFamily: FF.bold, textAlign: 'center', marginVertical: 16 }}>⭐️ {players.find(pp => pp.id === winnerId)?.name} punktet!</Text>}
+              {winnerId !== null && <Text style={{ color: C.primary, fontSize: 16, fontFamily: FF.bold, textAlign: 'center', marginVertical: 16 }}>⭐️ {players.find(pp => pp.id === winnerId)?.name} punktet!</Text>}
               <TouchableOpacity style={s.primaryBtn} onPress={nextTurn}>
                 <Text style={s.primaryBtnText}>{round >= maxRounds ? 'ENDERGEBNIS' : 'NÄCHSTE RUNDE →'}</Text>
               </TouchableOpacity>
@@ -814,16 +814,16 @@ export default function App() {
     <View style={s.container}><StatusBar hidden />
       <ScrollView contentContainerStyle={s.endScroll}>
         <Text style={{ fontSize: 64, color: C.primary, marginBottom: 16 }}>✓</Text>
-        <Text style={{ color: C.onSurface, fontSize: 28, fontWeight: '700', fontFamily: FF.bold, textAlign: 'center', marginBottom: 4 }}>{isTie ? 'UNENTSCHIEDEN!' : 'AUSWERTUNG ABGESCHLOSSEN'}</Text>
-        <Text style={{ color: 'rgba(241,232,225,0.5)', fontSize: 11, fontWeight: '700', fontFamily: FF.bold, letterSpacing: 3, textTransform: 'uppercase', textAlign: 'center', marginBottom: 40 }}>{isTie ? `${tiePlayers.map(p => p.name).join(' & ')} gleichauf mit ${sorted[0].score} Pkt. – Stechen!` : 'SESSIONDATEN BEREIT ZUR AUSWERTUNG'}</Text>
+        <Text style={{ color: C.onSurface, fontSize: 28, fontFamily: FF.bold, textAlign: 'center', marginBottom: 4 }}>{isTie ? 'UNENTSCHIEDEN!' : 'AUSWERTUNG ABGESCHLOSSEN'}</Text>
+        <Text style={{ color: 'rgba(241,232,225,0.5)', fontSize: 11, fontFamily: FF.bold, letterSpacing: 3, textTransform: 'uppercase', textAlign: 'center', marginBottom: 40 }}>{isTie ? `${tiePlayers.map(p => p.name).join(' & ')} gleichauf mit ${sorted[0].score} Pkt. – Stechen!` : 'SESSIONDATEN BEREIT ZUR AUSWERTUNG'}</Text>
         {sorted.map((p, i) => (
           <View key={p.id} style={[s.endRow, i % 2 === 0 ? { backgroundColor: C.surfaceLow } : { backgroundColor: C.surface }]}>
-            <Text style={{ color: C.primary, fontSize: 14, fontWeight: '700', fontFamily: FF.bold, width: 36 }}>#{i + 1}</Text>
+            <Text style={{ color: C.primary, fontSize: 14, fontFamily: FF.bold, width: 36 }}>#{i + 1}</Text>
             <View style={{ flex: 1 }}>
-              <Text style={{ color: C.onSurface, fontSize: 18, fontWeight: '700', fontFamily: FF.bold }}>{p.name}</Text>
+              <Text style={{ color: C.onSurface, fontSize: 18, fontFamily: FF.bold }}>{p.name}</Text>
               <Text style={{ color: 'rgba(241,232,225,0.5)', fontSize: 12, marginTop: 2 }}>{p.city}</Text>
             </View>
-            <Text style={{ color: C.onSurface, fontSize: 28, fontWeight: '700', fontFamily: FF.bold }}>{p.score}</Text>
+            <Text style={{ color: C.onSurface, fontSize: 28, fontFamily: FF.bold }}>{p.score}</Text>
           </View>
         ))}
         <TouchableOpacity style={[s.primaryBtn, { marginTop: 32, width: '100%' }]} onPress={() => {
@@ -854,17 +854,17 @@ const s = StyleSheet.create({
 
   // Buttons
   primaryBtn: { backgroundColor: C.primary, paddingVertical: 16, paddingHorizontal: 24, alignItems: 'center' },
-  primaryBtnText: { color: C.onPrimaryContainer, fontSize: 14, fontWeight: '700', fontFamily: FF.bold, letterSpacing: 2, textTransform: 'uppercase' },
+  primaryBtnText: { color: C.onPrimaryContainer, fontSize: 14, fontFamily: FF.bold, letterSpacing: 2, textTransform: 'uppercase' },
   tertiaryBtn: { paddingVertical: 14, paddingHorizontal: 20 },
-  tertiaryBtnText: { color: 'rgba(38,37,35,0.35)', fontSize: 13, fontWeight: '700', fontFamily: FF.bold, letterSpacing: 2, textTransform: 'uppercase' },
+  tertiaryBtnText: { color: 'rgba(38,37,35,0.35)', fontSize: 13, fontFamily: FF.bold, letterSpacing: 2, textTransform: 'uppercase' },
 
   // Setup
   setupScroll: { paddingTop: 48, paddingBottom: 80, paddingHorizontal: 24 },
-  setupHeader: { color: C.primary, fontSize: 24, fontWeight: '700', fontFamily: FF.bold, letterSpacing: 3, textTransform: 'uppercase', marginBottom: 32 },
-  setupTitle: { color: C.onSurface, fontSize: 28, fontWeight: '700', fontFamily: FF.bold, marginBottom: 8 },
+  setupHeader: { color: C.primary, fontSize: 24, fontFamily: FF.bold, letterSpacing: 3, textTransform: 'uppercase', marginBottom: 32 },
+  setupTitle: { color: C.onSurface, fontSize: 28, fontFamily: FF.bold, marginBottom: 8 },
   titleBar: { width: 48, height: 4, backgroundColor: C.error, marginBottom: 32 },
   sectionLabel: { marginBottom: 12, marginTop: 8 },
-  sectionLabelText: { color: C.secondary, fontSize: 10, fontWeight: '700', fontFamily: FF.bold, letterSpacing: 3, textTransform: 'uppercase' },
+  sectionLabelText: { color: C.secondary, fontSize: 10, fontFamily: FF.bold, letterSpacing: 3, textTransform: 'uppercase' },
 
   playerRow: { flexDirection: 'row', alignItems: 'center', backgroundColor: C.surfaceLow, marginBottom: 8, paddingRight: 0 },
   playerInput: { flex: 1, color: C.onSurface, fontSize: 16, fontWeight: '500', fontFamily: FF.regular, paddingVertical: 16, paddingHorizontal: 16, backgroundColor: C.surfaceLow, borderBottomWidth: 1, borderBottomColor: 'rgba(68,73,52,0.15)' },
@@ -872,32 +872,32 @@ const s = StyleSheet.create({
   cityBadgeBelow: { color: C.primary, fontSize: 11, fontWeight: '600', letterSpacing: 1, paddingHorizontal: 16, paddingBottom: 6, paddingTop: 2, backgroundColor: C.surfaceLow },
   hashBtn: { backgroundColor: C.error, paddingVertical: 16, paddingHorizontal: 18, alignItems: 'center', justifyContent: 'center', minWidth: 52 },
   hashBtnDone: { backgroundColor: C.primary },
-  hashBtnText: { color: '#fff', fontSize: 16, fontWeight: '700', fontFamily: FF.bold },
+  hashBtnText: { color: '#fff', fontSize: 16, fontFamily: FF.bold },
   hashBtnTextDone: { color: C.bg },
   cityBadge: { color: C.primary, fontSize: 11, fontWeight: '600', letterSpacing: 1, marginLeft: 8 },
   removeBtn: { paddingVertical: 16, paddingHorizontal: 10, alignItems: 'center', justifyContent: 'center' },
   nameRow: { flexDirection: 'row', alignItems: 'center', backgroundColor: C.surfaceLow, marginBottom: 8 },
   recruitBtn: { alignItems: 'center', paddingVertical: 16, marginBottom: 32 },
-  recruitBtnText: { color: C.error, fontSize: 12, fontWeight: '700', fontFamily: FF.bold, letterSpacing: 3, textTransform: 'uppercase' },
+  recruitBtnText: { color: C.error, fontSize: 12, fontFamily: FF.bold, letterSpacing: 3, textTransform: 'uppercase' },
 
   gridRow: { flexDirection: 'row', gap: 24, marginBottom: 48 },
   gridCol: { flex: 1 },
   chipRow: { flexDirection: 'row', gap: 8 },
   chip: { flex: 1, paddingVertical: 12, alignItems: 'center', borderWidth: 1, borderColor: 'rgba(68,73,52,0.3)' },
   chipActive: { backgroundColor: C.error, borderColor: C.error },
-  chipText: { color: 'rgba(241,232,225,0.6)', fontSize: 12, fontWeight: '700', fontFamily: FF.bold, letterSpacing: 2 },
+  chipText: { color: 'rgba(241,232,225,0.6)', fontSize: 12, fontFamily: FF.bold, letterSpacing: 2 },
   chipTextActive: { color: '#fff' },
 
   mainBtn: { backgroundColor: C.error, paddingVertical: 20, alignItems: 'center' },
   mainBtnDisabled: { backgroundColor: C.surfaceHighest },
-  mainBtnText: { color: '#fff', fontSize: 15, fontWeight: '700', fontFamily: FF.bold, letterSpacing: 3, textTransform: 'uppercase' },
+  mainBtnText: { color: '#fff', fontSize: 15, fontFamily: FF.bold, letterSpacing: 3, textTransform: 'uppercase' },
   actionHint: { color: 'rgba(241,232,225,0.3)', fontSize: 10, fontFamily: FF.regular, textAlign: 'center', marginTop: 12, letterSpacing: 2, textTransform: 'uppercase' },
 
   // Scanner
   scanOverlay: { flex: 1, backgroundColor: 'rgba(0,0,0,0.5)', justifyContent: 'center', alignItems: 'center', paddingHorizontal: 20 },
   scanFrame: { width: 260, height: 260, borderWidth: 3, borderColor: C.error, justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(0,0,0,0.3)', marginBottom: 20 },
   scanCloseBtn: { position: 'absolute', bottom: 60, alignSelf: 'center', backgroundColor: 'rgba(0,0,0,0.8)', paddingHorizontal: 24, paddingVertical: 12 },
-  scanCloseText: { color: C.onSurface, fontSize: 14, fontWeight: '700', fontFamily: FF.bold, letterSpacing: 2 },
+  scanCloseText: { color: C.onSurface, fontSize: 14, fontFamily: FF.bold, letterSpacing: 2 },
 
   // Game
   gameTopBar: { position: 'absolute', top: 0, left: 0, right: 0, flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 16, paddingTop: 44, paddingBottom: 8, backgroundColor: 'rgba(38,37,35,0.92)', zIndex: 20 },
@@ -905,9 +905,9 @@ const s = StyleSheet.create({
   tableRow: { flexDirection: 'row', alignItems: 'center', paddingVertical: 10, paddingHorizontal: 12 },
 
   timer: { position: 'absolute', top: 80, right: 16, width: 52, height: 52, borderRadius: 26, backgroundColor: 'rgba(241,232,225,0.95)', borderWidth: 3, justifyContent: 'center', alignItems: 'center', zIndex: 20 },
-  timerText: { fontSize: 22, fontWeight: '700', fontFamily: FF.bold },
+  timerText: { fontSize: 22, fontFamily: FF.bold },
   pickBtn: { position: 'absolute', bottom: 40, alignSelf: 'center', backgroundColor: 'rgba(241,232,225,0.95)', paddingHorizontal: 28, paddingVertical: 14, borderWidth: 1.5, borderColor: C.primary, zIndex: 20 },
-  pickBtnText: { color: C.primary, fontSize: 16, fontWeight: '700', fontFamily: FF.bold, letterSpacing: 2 },
+  pickBtnText: { color: C.primary, fontSize: 16, fontFamily: FF.bold, letterSpacing: 2 },
 
   loadingOverlay: { ...StyleSheet.absoluteFillObject, justifyContent: 'center', alignItems: 'center', backgroundColor: C.bg, zIndex: 5 },
   errorOverlay: { ...StyleSheet.absoluteFillObject, justifyContent: 'center', alignItems: 'center', backgroundColor: C.bg, zIndex: 10, paddingHorizontal: 32 },
