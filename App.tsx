@@ -493,8 +493,8 @@ export default function App() {
               setIntroPhase('still');
               setTimeout(() => {
                 setIntroPhase('freeze');
-                setTimeout(() => setScreen('tutorial'), 1500);
-              }, 1500);
+                setTimeout(() => setScreen('tutorial'), 2500);
+              }, 500);
             }}
             onError={(e) => { console.warn('Intro video error', e); setScreen('tutorial'); }}
           />
