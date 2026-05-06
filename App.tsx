@@ -55,9 +55,10 @@ function buildStreetViewHtml(lat: number, lng: number): string {
 
 export default function App() {
   const [fontsLoaded] = useFonts({ SpaceGrotesk_400Regular, SpaceGrotesk_700Bold });
+  if (!fontsLoaded) return <View style={{ flex: 1, backgroundColor: '#262523' }} />;
   const [screen, setScreen] = useState<Screen>('intro');
   const [tutorialPage, setTutorialPage] = useState(0);
-  const [introPhase, setIntroPhase] = useState<'video' | 'freeze'>('video');
+  const [introPhase, setIntroPhase] = useState<'video' | 'still' | 'freeze'>('video');
   const [loadingFade] = useState(new Animated.Value(0));
   const [loadingQuote] = useState(QUOTES[Math.floor(Math.random() * QUOTES.length)]);
 
@@ -227,11 +228,10 @@ export default function App() {
     if (challengerId !== null) {
       // There was a challenge
       if (originalCorrect) {
-        // Original player was right — challenge fails
+        // Original player was right — challenge fails, active player gets point
         playPerfectSound(); Vibration.vibrate([100, 50, 100]);
-        const actualWinner = tableCities[minIdx].ownerPlayerId;
-        if (actualWinner !== null) setPlayers(prev => prev.map(p => p.id === actualWinner ? { ...p, score: p.score + 1 } : p));
-        setWinnerId(actualWinner);
+        setPlayers(prev => prev.map(p => p.id === players[activePlayerIdx].id ? { ...p, score: p.score + 1 } : p));
+        setWinnerId(players[activePlayerIdx].id);
       } else {
         // Original player was wrong — challenger gets the point
         playPerfectSound(); Vibration.vibrate([100, 50, 100]);
@@ -240,16 +240,21 @@ export default function App() {
       }
     } else {
       // No challenge — normal resolution
-      if (originalCorrect) { playPerfectSound(); Vibration.vibrate([100, 50, 100]); } else { playErrorSound(); Vibration.vibrate(500); }
-      const actualWinner = tableCities[minIdx].ownerPlayerId;
-      if (actualWinner !== null) setPlayers(prev => prev.map(p => p.id === actualWinner ? { ...p, score: p.score + 1 } : p));
-      setWinnerId(actualWinner);
+      if (originalCorrect) {
+        playPerfectSound(); Vibration.vibrate([100, 50, 100]);
+        // Point goes to the active player who picked correctly
+        setPlayers(prev => prev.map(p => p.id === players[activePlayerIdx].id ? { ...p, score: p.score + 1 } : p));
+        setWinnerId(players[activePlayerIdx].id);
+      } else {
+        playErrorSound(); Vibration.vibrate(500);
+        setWinnerId(null);
+      }
     }
 
     setTableCities(prev => [...prev, { city: location.city, lat: location.lat, lng: location.lng, ownerPlayerId: null, isPlayerCity: false }]);
     Animated.spring(resultScale, { toValue: 1, friction: 6, useNativeDriver: true }).start();
     setPhase('result');
-  }, [closestCityIdx, activePickIdx, challengerId, tableCities, location]);
+  }, [closestCityIdx, activePickIdx, challengerId, tableCities, location, activePlayerIdx]);
 
   const nextTurn = () => {
     playClickSound();
@@ -485,8 +490,11 @@ export default function App() {
             resizeMode="cover"
             shouldPlay
             onEnd={() => {
-              setIntroPhase('freeze');
-              setTimeout(() => setScreen('tutorial'), 2500);
+              setIntroPhase('still');
+              setTimeout(() => {
+                setIntroPhase('freeze');
+                setTimeout(() => setScreen('tutorial'), 1500);
+              }, 1500);
             }}
             onError={(e) => { console.warn('Intro video error', e); setScreen('tutorial'); }}
           />
