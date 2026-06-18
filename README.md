@@ -1,3 +1,0 @@
-# GeoCheckr
-
-Private project.

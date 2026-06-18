@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "GeoCheckr",
-    "slug": "geocheckr",
+    "name": "Geo Checker D",
+    "slug": "geo-checker-d",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -9,23 +9,23 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#111225"
+      "backgroundColor": "#262523"
     },
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.geocheckr.app"
+      "bundleIdentifier": "com.geocheckr.app.de"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png",
-        "backgroundColor": "#111225"
+        "backgroundColor": "#262523"
       },
-      "package": "com.geocheckr.app",
+      "package": "com.geocheckr.app.de",
       "config": {
         "googleMaps": {
           "apiKey": "AIzaSyCl3ogHqguF1QcwhyHdvJmUkbgx3bpKLJI"
@@ -42,7 +42,7 @@
       "name": "GeoCheckr \u2014 Geografie Party-Spiel",
       "shortName": "GeoCheckr",
       "description": "Finde den Ort! Ein Geografie-Party-Spiel f\u00fcr 2-8 Spieler.",
-      "backgroundColor": "#1a1a2e",
+      "backgroundColor": "#262523",
       "themeColor": "#e94560",
       "display": "standalone",
       "orientation": "portrait"
