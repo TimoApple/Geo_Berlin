@@ -7,10 +7,8 @@ import {
 } from 'react-native';
 import { WebView } from 'react-native-webview';
 import { CameraView, useCameraPermissions } from 'expo-camera';
-import TextRecognition from '@react-native-ml-kit/text-recognition';
-import * as NavigationBar from 'expo-navigation-bar';
 import { useFonts, SpaceGrotesk_400Regular, SpaceGrotesk_700Bold } from '@expo-google-fonts/space-grotesk';
-import Video from 'react-native-video';
+import { Video, ResizeMode } from 'expo-av';
 
 import { calculateDistance, formatDistance } from './src/utils/distance';
 import { playClickSound, playSuccessSound, playErrorSound, playPerfectSound, playTimerWarning, playTimerTick, playAnswerphoneBeep } from './src/utils/sounds';
@@ -108,7 +106,8 @@ export default function App() {
   // LOADING SCREEN
   useEffect(() => {
     Animated.timing(loadingFade, { toValue: 1, duration: 800, useNativeDriver: true }).start();
-    NavigationBar.setBackgroundColorAsync('#262523').catch(() => {});
+    // NavigationBar dynamisch importieren (verhindert Crash bei Fehlen des Moduls)
+    try { require('expo-navigation-bar').then((nb: any) => nb.setBackgroundColorAsync('#262523').catch(() => {})); } catch (_) {}
     const t = setTimeout(() => setScreen('tutorial'), 2500);
     return () => clearTimeout(t);
   }, []);
@@ -262,38 +261,12 @@ export default function App() {
     setRound(r => r + 1); startRound();
   };
 
-  // Camera capture + OCR
+  // Camera capture (disabled – manual entry only)
   const captureAndRecognize = useCallback(async () => {
-    if (!cameraRef.current || scanned || scanCityForIdx === null) return;
-    try {
-      const photo = await cameraRef.current.takePictureAsync({ quality: 0.5 });
-      if (!photo?.uri) return;
-      const result = await TextRecognition.recognize(photo.uri);
-      const allText = result.text.toLowerCase().replace(/ä/g,'ae').replace(/ö/g,'oe').replace(/ü/g,'ue').replace(/ß/g,'ss');
-      // Try to match a known city name from OCR text
-      const matched = panoramaLocations.find(l => allText.includes(l.city.toLowerCase()));
-      if (matched) {
-        const takenBy = players.find(p => p.city.toLowerCase() === matched.city.toLowerCase() && players.indexOf(p) !== scanCityForIdx);
-        if (takenBy) {
-          setScanError(`Diese Karte ist bereits vergeben von ${takenBy.name}`);
-          setScanned(true);
-          setTimeout(() => { setScanError(''); setScanned(false); }, 2500);
-          return;
-        }
-        playClickSound(); setScanned(true); Vibration.vibrate(100);
-        setPlayers(prev => prev.map((p, i) =>
-          i === scanCityForIdx ? { ...p, city: matched.city, cityId: matched.id, lat: matched.lat, lng: matched.lng } : p
-        ));
-        setShowCityScanner(false); setScanned(false); setScanCityForIdx(null);
-      } else {
-        setScanError('Stadt nicht erkannt – nochmal versuchen oder Code eingeben');
-        setTimeout(() => setScanError(''), 2500);
-      }
-    } catch (e) {
-      setScanError('Aufnahme fehlgeschlagen – nochmal versuchen');
-      setTimeout(() => setScanError(''), 2000);
-    }
-  }, [scanned, scanCityForIdx, players]);
+    // OCR deaktiviert – bitte Code manuell eingeben
+    setScanError('OCR deaktiviert – Code manuell eingeben');
+    setTimeout(() => setScanError(''), 2000);
+  }, []);
 
   // ═══════════════ SCAN HANDLER — 3 MECHANICS ═══════════════
   const handleScan = useCallback(({ data }: { data: string }) => {
@@ -414,7 +387,7 @@ export default function App() {
           <View style={s.scanOverlay}>
             <View style={{ alignItems: 'center', marginBottom: 20 }}>
               <Text style={{ color: C.primary, fontSize: 13, fontFamily: FF.bold, letterSpacing: 2, marginBottom: 6 }}>
-                {showCityScanner ? 'KARTE ZUWEISEN' : 'QR-KARTE SCANNEN'}}
+                {showCityScanner ? 'KARTE ZUWEISEN' : 'QR-KARTE SCANNEN'}
               </Text>
               <Text style={{ color: '#fff', fontSize: 22, fontFamily: FF.bold }}>{assignName || 'Spieler'}</Text>
             </View>
@@ -484,20 +457,22 @@ export default function App() {
         <Video
           source={require('./assets/intro.mp4')}
           style={{ ...StyleSheet.absoluteFillObject }}
-          resizeMode="cover"
+          resizeMode={ResizeMode.COVER}
           shouldPlay={introPhase === 'video'}
-          repeat={false}
-          onEnd={() => {
-            setIntroPhase('still');
-            setTimeout(() => {
-              setIntroPhase('freeze');
-              setTimeout(() => setScreen('tutorial'), 2500);
-            }, 500);
+          isLooping={false}
+          onPlaybackStatusUpdate={(status: any) => {
+            if (status.didJustFinish) {
+              setIntroPhase('still');
+              setTimeout(() => {
+                setIntroPhase('freeze');
+                setTimeout(() => setScreen('tutorial'), 2500);
+              }, 500);
+            }
           }}
-          onError={(e) => { console.warn('Intro video error', e); setScreen('tutorial'); }}
+          onError={(e: any) => { console.warn('Intro video error', e); setScreen('tutorial'); }}
         />
         {(introPhase === 'still' || introPhase === 'freeze') && (
-          <Image source={require('./assets/intro_last_frame.png')} style={{ ...StyleSheet.absoluteFillObject }} resizeMode="cover" />
+          <Image source={require('./assets/intro_last_frame.png')} style={{ ...StyleSheet.absoluteFillObject }} resizeMode={ResizeMode.COVER} />
         )}
         {introPhase === 'freeze' && (
           <View style={{ ...StyleSheet.absoluteFillObject, justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(38,37,35,0.6)' }}>
@@ -531,7 +506,7 @@ export default function App() {
       setTutorialPage(idx);
       Animated.timing(tutOpacity, { toValue: 1, duration: 300, useNativeDriver: true }).start();
     };
-    const handleTutScroll = (e: any) => {
+    const handleTutScroll = (e: { nativeEvent: { contentOffset: { x: number } } }) => {
       const x = e.nativeEvent.contentOffset.x;
       const newPage = Math.round(x / width);
       // Spacer page reached → go to setup
