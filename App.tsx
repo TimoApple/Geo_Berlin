@@ -682,7 +682,7 @@ export default function App() {
               style={{ flex: 1 }} javaScriptEnabled domStorageEnabled allowsInlineMediaPlayback
               mediaPlaybackRequiresUserAction={false} mixedContentMode="compatibility" scrollEnabled
               onError={() => setSvError(true)}
-              onMessage={(e) => { const msg = e.nativeEvent.data; if (msg === 'loaded') setSvLoaded(true); if (msg.startsWith('error')) setSvError(true); }}
+              onMessage={(e: any) => { const msg = e.nativeEvent.data; if (msg === 'loaded') setSvLoaded(true); if (msg.startsWith('error')) setSvError(true); }}
               userAgent="Mozilla/5.0 (Linux; Android 13) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36" />
             {!svLoaded && !svError && <View style={s.loadingOverlay}><Text style={{ color: 'rgba(241,232,225,0.6)' }}>Ort wird geladen...</Text></View>}
             {svError && <View style={s.errorOverlay}><Text style={{ color: C.error, fontSize: 16, marginBottom: 20 }}>Kein Ort verfügbar</Text><TouchableOpacity style={s.primaryBtn} onPress={nextTurn}><Text style={s.primaryBtnText}>ÜBERSPRINGEN</Text></TouchableOpacity></View>}
