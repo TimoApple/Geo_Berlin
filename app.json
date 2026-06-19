@@ -4,7 +4,7 @@
     "slug": "geo-berlin",
     "version": "1.0.1",
     "orientation": "portrait",
-    "icon": "./assets/icon-de.png",
+    "icon": "./assets/GeoChecker_Aruco_Round_01.png",
     "userInterfaceStyle": "dark",
     "splash": {
       "image": "./assets/splash.png",

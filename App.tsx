@@ -125,7 +125,7 @@ export default function App() {
     { id: 1, name: 'Spieler 1', city: '', cityId: -1, lat: 0, lng: 0, score: 0 },
     { id: 2, name: 'Spieler 2', city: '', cityId: -1, lat: 0, lng: 0, score: 0 },
   ]);
-  const [timerSetting, setTimerSetting] = useState(15);
+  const [timerSetting, setTimerSetting] = useState(10);
   const [roundsSetting, setRoundsSetting] = useState(10);
   const [cameraPermission, requestCameraPermission] = useCameraPermissions();
 
@@ -322,28 +322,55 @@ export default function App() {
     setRound(r => r + 1); startRound();
   };
 
-  // OCR capture
+  // OCR capture – über result.blocks iterieren, nur ersten Treffer nehmen
   const captureAndRecognize = useCallback(async () => {
     if (!cameraRef.current || scanCityForIdx === null) return;
     try {
       const photo = await cameraRef.current.takePictureAsync({ quality: 0.8 });
       if (!photo) return;
       const result = await TextRecognition.recognize(photo.uri);
-      const text = result.text.trim();
-      if (!text) { setScanError('Kein Text erkannt – manuell eingeben'); setTimeout(() => setScanError(''), 2000); return; }
-      const normalized = text.toLowerCase().trim().replace(/ä/g,'ae').replace(/ö/g,'oe').replace(/ü/g,'ue').replace(/ß/g,'ss');
-      const match = panoramaLocations.find(l => l.name.toLowerCase() === normalized);
-      if (match) {
-        const takenBy = players.find(p => p.city.toLowerCase() === match.name.toLowerCase() && players.indexOf(p) !== scanCityForIdx);
-        if (takenBy) { setScanError(`Diese Karte ist bereits vergeben von ${takenBy.name}`); setTimeout(() => setScanError(''), 2500); return; }
-        playClickSound(); Vibration.vibrate(100);
-        setUsedLocations(prev => [...prev, match.id]);
-        setPlayers(prev => prev.map((p, i) => i === scanCityForIdx ? { ...p, city: match.name, cityId: match.id, lat: match.lat, lng: match.lng } : p));
-        setShowCityScanner(false); setScanned(false); setScanCityForIdx(null);
-      } else {
-        setScanError(`"${text}" nicht erkannt – manuell eingeben`);
+      if (!result || !result.blocks || result.blocks.length === 0) {
+        setScanError('Kein Text erkannt – manuell eingeben');
         setTimeout(() => setScanError(''), 2000);
+        return;
       }
+      // Über alle Textblöcke iterieren, ersten passenden Treffer nehmen
+      for (const block of result.blocks) {
+        const text = block.text.trim();
+        if (!text) continue;
+        // 1. Prüfen ob es eine Zahl ist (#042 oder 042)
+        const numMatch = text.match(/#?(\d+)/);
+        if (numMatch) {
+          const id = parseInt(numMatch[1], 10);
+          if (id >= 0 && id < panoramaLocations.length) {
+            const loc = panoramaLocations.find(l => l.id === id);
+            if (loc) {
+              const takenBy = players.find(p => p.city.toLowerCase() === loc.name.toLowerCase() && players.indexOf(p) !== scanCityForIdx);
+              if (takenBy) { setScanError(`Diese Karte ist bereits vergeben von ${takenBy.name}`); setTimeout(() => setScanError(''), 2500); return; }
+              playClickSound(); Vibration.vibrate(100);
+              setUsedLocations(prev => [...prev, loc.id]);
+              setPlayers(prev => prev.map((p, i) => i === scanCityForIdx ? { ...p, city: loc.name, cityId: loc.id, lat: loc.lat, lng: loc.lng } : p));
+              setShowCityScanner(false); setScanned(false); setScanCityForIdx(null);
+              return;
+            }
+          }
+        }
+        // 2. Prüfen ob es ein Ortsname ist
+        const normalized = text.toLowerCase().trim().replace(/ä/g,'ae').replace(/ö/g,'oe').replace(/ü/g,'ue').replace(/ß/g,'ss');
+        const match = panoramaLocations.find(l => l.name.toLowerCase() === normalized);
+        if (match) {
+          const takenBy = players.find(p => p.city.toLowerCase() === match.name.toLowerCase() && players.indexOf(p) !== scanCityForIdx);
+          if (takenBy) { setScanError(`Diese Karte ist bereits vergeben von ${takenBy.name}`); setTimeout(() => setScanError(''), 2500); return; }
+          playClickSound(); Vibration.vibrate(100);
+          setUsedLocations(prev => [...prev, match.id]);
+          setPlayers(prev => prev.map((p, i) => i === scanCityForIdx ? { ...p, city: match.name, cityId: match.id, lat: match.lat, lng: match.lng } : p));
+          setShowCityScanner(false); setScanned(false); setScanCityForIdx(null);
+          return;
+        }
+      }
+      // Nichts gefunden
+      setScanError('Nicht erkannt – manuell eingeben');
+      setTimeout(() => setScanError(''), 2000);
     } catch (e) {
       setScanError('OCR-Fehler – manuell eingeben');
       setTimeout(() => setScanError(''), 2000);
@@ -499,25 +526,40 @@ export default function App() {
 
   // TUTORIAL
   if (screen === 'tutorial') {
-    const page = TUT_PAGES[tutorialPage];
     return (
-      <View style={{ flex: 1, backgroundColor: page.bg }}><StatusBar hidden />
-        <View style={{ flex: 1, justifyContent: 'center', paddingHorizontal: 30 }}>
-          <Text style={{ color: page.titleColor, fontSize: 32, fontFamily: FF.bold, marginBottom: 20, lineHeight: 38 }}>{page.title}</Text>
-          <Text style={{ color: page.bodyColor, fontSize: 18, fontFamily: FF.regular, lineHeight: 26 }}>{page.body}</Text>
-        </View>
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 30, paddingBottom: 60 }}>
-          <View style={{ flexDirection: 'row', gap: 8 }}>
-            {TUT_PAGES.map((_, i) => (<View key={i} style={{ width: 8, height: 8, borderRadius: 4, backgroundColor: i === tutorialPage ? C.primary : C.muted }} />))}
-          </View>
-          <TouchableOpacity onPress={() => {
-            if (tutorialPage < TUT_PAGES.length - 1) { setTutorialPage(p => p + 1); }
-            else { setTutorialPage(0); setScreen('setup'); }
-          }}>
-            <Text style={{ color: C.primary, fontSize: 16, fontFamily: FF.bold }}>
-              {tutorialPage < TUT_PAGES.length - 1 ? 'WEITER' : 'LOS GEHT\'S'}
-            </Text>
-          </TouchableOpacity>
+      <View style={{ flex: 1, backgroundColor: '#262523' }}><StatusBar hidden />
+        <ScrollView
+          ref={tutScrollRef}
+          horizontal
+          pagingEnabled
+          showsHorizontalScrollIndicator={false}
+          scrollEnabled
+          onMomentumScrollEnd={(e) => {
+            const page = Math.round(e.nativeEvent.contentOffset.x / width);
+            setTutorialPage(page);
+          }}
+          style={{ flex: 1 }}>
+          {TUT_PAGES.map((page, i) => (
+            <TouchableOpacity key={i} activeOpacity={1} style={{ width, backgroundColor: page.bg, justifyContent: 'center', paddingHorizontal: 30 }}
+              onPress={() => {
+                if (i < TUT_PAGES.length - 1) {
+                  tutScrollRef.current?.scrollTo({ x: (i + 1) * width, animated: true });
+                  setTutorialPage(i + 1);
+                } else {
+                  setTutorialPage(0);
+                  setScreen('setup');
+                }
+              }}>
+              <Text style={{ color: page.titleColor, fontSize: 32, fontFamily: FF.bold, marginBottom: 20, lineHeight: 38 }}>{page.title}</Text>
+              <Text style={{ color: page.bodyColor, fontSize: 18, fontFamily: FF.regular, lineHeight: 26 }}>{page.body}</Text>
+            </TouchableOpacity>
+          ))}
+        </ScrollView>
+        {/* Dots mittig */}
+        <View style={{ flexDirection: 'row', justifyContent: 'center', gap: 8, paddingBottom: 60 }}>
+          {TUT_PAGES.map((_, i) => (
+            <View key={i} style={{ width: 8, height: 8, borderRadius: 4, backgroundColor: i === tutorialPage ? C.primary : C.muted }} />
+          ))}
         </View>
       </View>
     );
@@ -531,7 +573,7 @@ export default function App() {
           <ScrollView contentContainerStyle={{ paddingBottom: 40 }}>
             {/* Logo */}
             <View style={{ alignItems: 'center', marginTop: 60, marginBottom: 30 }}>
-              <Image source={require('./assets/logo-startscreen.png')} style={{ width: 200, height: 80, resizeMode: 'contain' }} />
+              <Image source={require('./assets/GeoChecker_Aruco_Square_01.png')} style={{ width: 200, height: 80, resizeMode: 'contain' }} />
             </View>
 
             {/* Players */}
@@ -547,7 +589,7 @@ export default function App() {
                     />
                   </View>
                   <TouchableOpacity
-                    style={{ backgroundColor: p.city ? C.primary : C.surfaceHigh, paddingVertical: 12, paddingHorizontal: 16 }}
+                    style={{ backgroundColor: p.city ? C.primary : C.surfaceHigh, paddingVertical: 12, paddingHorizontal: 16, borderWidth: 1, borderColor: p.city ? C.primary : C.outline }}
                     onPress={() => openCityScan(i)}
                   >
                     <Text style={{ color: p.city ? C.onPrimaryContainer : C.muted, fontSize: 13, fontFamily: FF.bold }}>
@@ -864,7 +906,7 @@ const s = StyleSheet.create({
   primaryBtnText: { color: C.onPrimaryContainer, fontSize: 16, fontFamily: FF.bold, letterSpacing: 2 },
   tertiaryBtn: { paddingVertical: 10, paddingHorizontal: 20 },
   tertiaryBtnText: { color: C.muted, fontSize: 14, fontFamily: FF.regular },
-  sectionLabel: { marginBottom: 10, borderBottomWidth: 1, borderBottomColor: C.outline, paddingBottom: 6 },
+  sectionLabel: { marginBottom: 10, paddingBottom: 6 },
   sectionLabelText: { color: C.muted, fontSize: 11, fontFamily: FF.bold, letterSpacing: 2 },
   scanOverlay: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center' },
   scanFrame: { width: 250, height: 250, borderWidth: 2, borderColor: C.primary, justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(0,0,0,0.3)' },
