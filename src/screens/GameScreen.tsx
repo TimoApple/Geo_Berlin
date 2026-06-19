@@ -266,7 +266,7 @@ export default function GameScreen({ route, navigation }: Props) {
             <View style={styles.resultInfo}>
               <View style={styles.resultRow}>
                 <Text style={styles.resultLabel}>📍 Ort</Text>
-                <Text style={styles.resultValue}>{location.city}</Text>
+                <Text style={styles.resultValue}>{location.name}</Text>
               </View>
               <View style={styles.resultRow}>
                 <Text style={styles.resultLabel}>📏 Distanz</Text>
@@ -294,7 +294,7 @@ export default function GameScreen({ route, navigation }: Props) {
 </head><body><div id="map"></div><script>
 var m=L.map('map').setView([${location.lat},${location.lng}],12);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(m);
-L.marker([${location.lat},${location.lng}]).addTo(m).bindPopup('${location.city}').openPopup();
+L.marker([${location.lat},${location.lng}]).addTo(m).bindPopup('${location.name}').openPopup();
 </script></body></html>` }}
                   style={{ flex: 1 }}
                   javaScriptEnabled={true}

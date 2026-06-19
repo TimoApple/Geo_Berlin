@@ -8,7 +8,8 @@ const API_KEY = 'AIzaSyCl3ogHqguF1QcwhyHdvJmUkbgx3bpKLJI';
 
 interface StreetViewProps {
   location: {
-    city: string;
+    city?: string;
+    name?: string;
     country?: string;
     lat?: number;
     lng?: number;

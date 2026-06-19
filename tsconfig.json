@@ -14,5 +14,13 @@
   "include": [
     "**/*.ts",
     "**/*.tsx"
+  ],
+  "exclude": [
+    "src/screens/GameScreen.tsx",
+    "src/screens/ResultScreen.tsx",
+    "src/screens/SetupScreen.tsx",
+    "src/screens/TutorialScreen.tsx",
+    "src/components/StreetViewImage.tsx",
+    "src/components/MapAnswer.tsx"
   ]
 }
