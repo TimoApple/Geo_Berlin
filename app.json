@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "Geo Checker D",
-    "slug": "geo-checker-d",
-    "version": "1.0.0",
+    "name": "Geo Berlin",
+    "slug": "geo-berlin",
+    "version": "1.0.1",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/icon-de.png",
     "userInterfaceStyle": "dark",
     "splash": {
       "image": "./assets/splash.png",
@@ -16,21 +16,16 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.geocheckr.app.de"
+      "bundleIdentifier": "com.timoboese.geoberlin"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/android-icon-foreground.png",
+        "foregroundImage": "./assets/android-icon-foreground_new.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png",
         "backgroundColor": "#262523"
       },
-      "package": "com.geocheckr.app.de",
-      "config": {
-        "googleMaps": {
-          "apiKey": "AIzaSyCl3ogHqguF1QcwhyHdvJmUkbgx3bpKLJI"
-        }
-      },
+      "package": "com.timoboese.geoberlin",
       "permissions": [
         "android.permission.CAMERA",
         "android.permission.RECORD_AUDIO"
@@ -39,9 +34,9 @@
     },
     "web": {
       "favicon": "./assets/favicon.png",
-      "name": "GeoCheckr \u2014 Geografie Party-Spiel",
-      "shortName": "GeoCheckr",
-      "description": "Finde den Ort! Ein Geografie-Party-Spiel f\u00fcr 2-8 Spieler.",
+      "name": "Geo Berlin \u2014 Berlin Street Edition",
+      "shortName": "Geo Berlin",
+      "description": "Finde den Berliner Ort! Ein Geografie-Party-Spiel f\u00fcr 2-8 Spieler.",
       "backgroundColor": "#262523",
       "themeColor": "#e94560",
       "display": "standalone",
