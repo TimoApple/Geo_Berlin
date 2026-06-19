@@ -1,4 +1,4 @@
-// GeoCheckr — Berlin Street Edition v2
+// GeoCheckr — Berlin Street Edition
 // Design System: "The Tactical Cartographer"
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import {
