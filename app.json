@@ -14,8 +14,7 @@
     "assetBundlePatterns": [
       "assets/*.png",
       "assets/*.jpg",
-      "assets/*.svg",
-      "assets/*.mp4"
+      "assets/*.svg"
     ],
     "ios": {
       "supportsTablet": true,
