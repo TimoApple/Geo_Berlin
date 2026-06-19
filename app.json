@@ -12,9 +12,7 @@
       "backgroundColor": "#262523"
     },
     "assetBundlePatterns": [
-      "assets/*.png",
-      "assets/*.jpg",
-      "assets/*.svg"
+      "**/*"
     ],
     "ios": {
       "supportsTablet": true,
@@ -22,7 +20,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/android-icon-foreground_new.png",
+        "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png",
         "backgroundColor": "#262523"
