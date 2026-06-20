@@ -9,6 +9,7 @@ import { CameraView, useCameraPermissions } from 'expo-camera';
 import { useFonts, SpaceGrotesk_400Regular, SpaceGrotesk_700Bold } from '@expo-google-fonts/space-grotesk';
 import { Video, ResizeMode } from 'expo-av';
 import TextRecognition from '@react-native-ml-kit/text-recognition';
+import { useArucoScanner } from './src/hooks/useArucoScanner';
 
 import { calculateDistance, formatDistance } from './src/utils/distance';
 import { playClickSound, playSuccessSound, playErrorSound, playPerfectSound, playTimerWarning, playTimerTick, playAnswerphoneBeep } from './src/utils/sounds';
@@ -163,6 +164,35 @@ export default function App() {
   const tutScrollRef = useRef<ScrollView>(null);
   const cameraRef = useRef<CameraView>(null);
   const [tutOpacity] = useState(new Animated.Value(1));
+
+  // ArUco Scanner
+  const { scanCard, isScanning: arucoScanning, lastResult: arucoResult } = useArucoScanner(
+    cameraRef,
+    {
+      onDetected: (ids) => {
+        if (ids.length > 0) {
+          const id = ids[0];
+          if (id >= 0 && id < panoramaLocations.length) {
+            const loc = panoramaLocations.find(l => l.id === id);
+            if (loc) {
+              if (usedLocations.includes(id) || tableCities.some(tc => tc.city.toLowerCase() === loc.name.toLowerCase())) {
+                setScanError('Diese Stadt liegt bereits auf dem Tisch!');
+                setTimeout(() => setScanError(''), 2500);
+                return;
+              }
+              playClickSound();
+              Vibration.vibrate(100);
+              onQrScanned(loc);
+            }
+          }
+        }
+      },
+      onError: (err) => {
+        setScanError(err);
+        setTimeout(() => setScanError(''), 2500);
+      },
+    }
+  );
 
   const allPlayersScanned = players.length >= 2 && players.every(p => p.city.length > 0);
 
@@ -474,11 +504,15 @@ export default function App() {
                 {showCityScanner ? 'Stadtkarte in den Rahmen halten' : 'ArUco-Marker in den Rahmen halten'}
               </Text>
             </View>
-            {showCityScanner && (
-              <TouchableOpacity style={{ backgroundColor: C.error, width: 72, height: 72, borderRadius: 36, borderWidth: 4, borderColor: '#fff', justifyContent: 'center', alignItems: 'center', marginTop: 20, alignSelf: 'center' }} onPress={captureAndRecognize}>
-                <Text style={{ color: C.bg, fontSize: 26, fontFamily: FF.bold }}>◉</Text>
-              </TouchableOpacity>
-            )}
+            {/* Scan-Button: OCR für City-Scanner, ArUco für QR-Scanner */}
+            <TouchableOpacity 
+              style={{ backgroundColor: C.error, width: 72, height: 72, borderRadius: 36, borderWidth: 4, borderColor: '#fff', justifyContent: 'center', alignItems: 'center', marginTop: 20, alignSelf: 'center' }} 
+              onPress={showCityScanner ? captureAndRecognize : () => { scanCard(); }}
+              disabled={arucoScanning}>
+              <Text style={{ color: C.bg, fontSize: 26, fontFamily: FF.bold }}>
+                {arucoScanning ? '◌' : '◉'}
+              </Text>
+            </TouchableOpacity>
             {showCityScanner && (
               <View style={{ width: '100%', paddingHorizontal: 20, marginTop: 16 }}>
                 <Text style={{ color: 'rgba(241,232,225,0.6)', fontSize: 11, fontFamily: FF.bold, letterSpacing: 2, textAlign: 'center', marginBottom: 10, textTransform: 'uppercase' }}>Oder Code manuell eingeben</Text>
