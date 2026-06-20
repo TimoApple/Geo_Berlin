@@ -50,7 +50,9 @@
           ]
         }
       ],
-      "expo-speech-recognition"
+      "expo-speech-recognition",
+      "expo-video",
+      "expo-audio"
     ],
     "extra": {
       "eas": {
