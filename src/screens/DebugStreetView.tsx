@@ -226,14 +226,14 @@ const styles = StyleSheet.create({
 
   // Loading
   loadingOverlay: {
-    ...StyleSheet.absoluteFillObject, justifyContent: 'center', alignItems: 'center',
+    ...StyleSheet.absoluteFill, justifyContent: 'center', alignItems: 'center',
     backgroundColor: '#000', zIndex: 20,
   },
   loadingText: { color: '#aaa', marginTop: 10, fontSize: 14 },
 
   // Error
   errorOverlay: {
-    ...StyleSheet.absoluteFillObject, justifyContent: 'center', alignItems: 'center',
+    ...StyleSheet.absoluteFill, justifyContent: 'center', alignItems: 'center',
     backgroundColor: '#1a1a2e', zIndex: 20,
   },
   errorEmoji: { fontSize: 60, marginBottom: 15 },

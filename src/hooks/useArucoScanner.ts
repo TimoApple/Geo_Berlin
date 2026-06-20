@@ -62,8 +62,13 @@ export function useArucoScanner(
       });
 
       // 4. JPEG zu Roh-Pixeln decodieren (jpeg-js)
-      const buffer = Buffer.from(base64, 'base64');
-      const decoded = jpeg.decode(buffer, { useTArray: true });
+      // Base64 -> binär via Uint8Array (kein Buffer nötig in RN)
+      const binaryStr = atob(base64);
+      const bytes = new Uint8Array(binaryStr.length);
+      for (let i = 0; i < binaryStr.length; i++) {
+        bytes[i] = binaryStr.charCodeAt(i);
+      }
+      const decoded = jpeg.decode(bytes, { useTArray: true });
 
       // 5. In Graustufen konvertieren (bessere Erkennung)
       const clampedData = new Uint8ClampedArray(

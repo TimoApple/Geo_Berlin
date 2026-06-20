@@ -545,12 +545,12 @@ export default function App() {
   if (screen === 'intro') {
     return (
       <View style={{ flex: 1, backgroundColor: '#262523' }}><StatusBar hidden />
-        <TouchableOpacity activeOpacity={1} style={{ ...StyleSheet.absoluteFillObject, zIndex: 10 }} onPress={() => setScreen('tutorial')}>
+        <TouchableOpacity activeOpacity={1} style={{ ...StyleSheet.absoluteFill, zIndex: 10 }} onPress={() => setScreen('tutorial')}>
           <View style={{ position: 'absolute', top: 50, right: 20, zIndex: 20 }}>
             <Text style={{ color: 'rgba(255,255,255,0.5)', fontSize: 14, fontFamily: FF.regular }}>Überspringen</Text>
           </View>
         </TouchableOpacity>
-        <Video source={require('./assets/intro.mp4')} style={{ ...StyleSheet.absoluteFillObject }}
+        <Video source={require('./assets/intro.mp4')} style={{ ...StyleSheet.absoluteFill }}
           resizeMode={ResizeMode.COVER} shouldPlay={introPhase === 'video'} isLooping={false}
           onPlaybackStatusUpdate={(status: any) => {
             if (status.didJustFinish) { setIntroPhase('still'); setTimeout(() => { setIntroPhase('freeze'); setTimeout(() => setScreen('tutorial'), 2500); }, 500); }
