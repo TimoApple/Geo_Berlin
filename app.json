@@ -29,9 +29,9 @@
     },
     "web": {
       "favicon": "./assets/favicon.png",
-      "name": "Geo Berlin \u2014 Berlin Street Edition",
+      "name": "Geo Berlin — Berlin Street Edition",
       "shortName": "Geo Berlin",
-      "description": "Finde den Berliner Ort! Ein Geografie-Party-Spiel f\u00fcr 2-8 Spieler.",
+      "description": "Finde den Berliner Ort! Ein Geografie-Party-Spiel für 2-8 Spieler.",
       "backgroundColor": "#262523",
       "themeColor": "#e94560",
       "display": "standalone",
@@ -49,7 +49,8 @@
             "./node_modules/@expo-google-fonts/space-grotesk/700Bold/SpaceGrotesk_700Bold.ttf"
           ]
         }
-      ]
+      ],
+      "expo-speech-recognition"
     ],
     "extra": {
       "eas": {
