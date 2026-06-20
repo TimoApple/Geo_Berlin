@@ -172,18 +172,20 @@ export default function App() {
       onDetected: (ids) => {
         if (ids.length > 0) {
           const id = ids[0];
-          if (id >= 0 && id < panoramaLocations.length) {
-            const loc = panoramaLocations.find(l => l.id === id);
-            if (loc) {
-              if (usedLocations.includes(id) || tableCities.some(tc => tc.city.toLowerCase() === loc.name.toLowerCase())) {
-                setScanError('Diese Stadt liegt bereits auf dem Tisch!');
-                setTimeout(() => setScanError(''), 2500);
-                return;
-              }
-              playClickSound();
-              Vibration.vibrate(100);
-              onQrScanned(loc);
+          // ArUco-ID = Location-ID (1:1 Mapping, IDs 1-39)
+          const loc = panoramaLocations.find(l => l.id === id);
+          if (loc) {
+            if (usedLocations.includes(id) || tableCities.some(tc => tc.city.toLowerCase() === loc.name.toLowerCase())) {
+              setScanError('Diese Stadt liegt bereits auf dem Tisch!');
+              setTimeout(() => setScanError(''), 2500);
+              return;
             }
+            playClickSound();
+            Vibration.vibrate(100);
+            onQrScanned(loc);
+          } else {
+            setScanError(`ArUco-ID ${id} nicht gefunden (gültig: 1-39)`);
+            setTimeout(() => setScanError(''), 2500);
           }
         }
       },
