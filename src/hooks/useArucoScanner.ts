@@ -48,10 +48,8 @@ export function useArucoScanner(
 
     try {
       console.log('[ArUco] Foto wird aufgenommen...');
-      // 1. Foto aufnehmen
-      const photo = await cameraRef.current.takePictureAsync({
-        quality: 0.8,
-      });
+      // 1. Foto aufnehmen – OHNE Parameter (quality verursacht native cast error)
+      const photo = await cameraRef.current.takePictureAsync();
 
       console.log('[ArUco] Foto aufgenommen:', photo ? 'OK' : 'NULL', 'uri:', photo?.uri);
 
