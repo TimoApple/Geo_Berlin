@@ -149,6 +149,21 @@ export function useArucoScanner(
     let loopActive = true;
     
     const loop = async () => {
+      // Warte bis Kamera gemountet ist (max 3 Sekunden)
+      let waited = 0;
+      while (!cameraRef.current && waited < 3000) {
+        console.log('[ArUco] Warte auf CameraRef...');
+        await new Promise(resolve => setTimeout(resolve, 200));
+        waited += 200;
+      }
+      
+      if (!cameraRef.current) {
+        console.error('[ArUco] CameraRef nie verfügbar!');
+        return;
+      }
+      
+      console.log('[ArUco] CameraRef verfügbar, starte Loop');
+      
       while (isActiveRef.current && loopActive) {
         console.log('[ArUco] Scan-Loop läuft...');
         try {
