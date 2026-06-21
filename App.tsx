@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import { CameraView, useCameraPermissions } from 'expo-camera';
 import { useFonts, SpaceGrotesk_400Regular, SpaceGrotesk_700Bold } from '@expo-google-fonts/space-grotesk';
-import { Video, ResizeMode } from 'expo-av';
+import { VideoView, useVideoPlayer } from 'expo-video';
 import TextRecognition from '@react-native-ml-kit/text-recognition';
 import { useArucoScanner } from './src/hooks/useArucoScanner';
 
@@ -164,6 +164,12 @@ export default function App() {
   const tutScrollRef = useRef<ScrollView>(null);
   const cameraRef = useRef<CameraView>(null);
   const [tutOpacity] = useState(new Animated.Value(1));
+
+  // Intro video player
+  const introPlayer = useVideoPlayer(require('./assets/intro.mp4'), (player) => {
+    player.loop = false;
+    player.play();
+  });
 
   // ArUco Scanner
   const { scanCard, isScanning: arucoScanning, lastResult: arucoResult } = useArucoScanner(
@@ -550,12 +556,8 @@ export default function App() {
             <Text style={{ color: 'rgba(255,255,255,0.5)', fontSize: 14, fontFamily: FF.regular }}>Überspringen</Text>
           </View>
         </TouchableOpacity>
-        <Video source={require('./assets/intro.mp4')} style={{ ...StyleSheet.absoluteFill }}
-          resizeMode={ResizeMode.COVER} shouldPlay={introPhase === 'video'} isLooping={false}
-          onPlaybackStatusUpdate={(status: any) => {
-            if (status.didJustFinish) { setIntroPhase('still'); setTimeout(() => { setIntroPhase('freeze'); setTimeout(() => setScreen('tutorial'), 2500); }, 500); }
-          }}
-          onError={() => setScreen('tutorial')} />
+        <VideoView player={introPlayer} style={{ ...StyleSheet.absoluteFill }}
+          contentFit="cover" nativeControls={false} />
       </View>
     );
   }
