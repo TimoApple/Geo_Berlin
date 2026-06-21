@@ -171,13 +171,14 @@ export default function App() {
     player.play();
   });
 
-  // Scanner (Marker-Erkennung via Kamera)
-  const { scanCard, isScanning: arucoScanning, lastResult: arucoResult } = useArucoScanner(
+  // Scanner (Marker-Erkennung via Kamera) – Continuous Scanning
+  const { scanCard, isScanning: arucoScanning, lastResult: arucoResult, setIsActive: setArucoActive } = useArucoScanner(
     cameraRef,
     {
       onDetected: (ids) => {
         if (ids.length > 0) {
           const id = ids[0];
+          console.log('[ArUco] Erkannte ID:', id);
           // ID → Location aus der Datenbank (live oder Fallback)
           const loc = findLocationById(id);
           if (loc) {
@@ -188,6 +189,7 @@ export default function App() {
             }
             playClickSound();
             Vibration.vibrate(100);
+            setArucoActive(false); // Pause scanning after detection
             onQrScanned(loc);
           } else {
             setScanError('Dieser Ort wurde nicht gefunden. Bitte scanne eine gültige Karte.');
@@ -196,6 +198,7 @@ export default function App() {
         }
       },
       onError: (err) => {
+        console.log('[ArUco] Fehler:', err);
         setScanError(err);
         setTimeout(() => setScanError(''), 2500);
       },
@@ -250,6 +253,7 @@ export default function App() {
 
   const openCityScan = (idx: number) => {
     setScanCityForIdx(idx); setShowCityScanner(true); setScanned(false); setScanError(''); setManualCode('');
+    setArucoActive(true); // ArUco-Scanning starten
   };
 
   const submitManualCode = useCallback(() => {
@@ -538,7 +542,7 @@ export default function App() {
             )}
             {scanError ? (<View style={{ backgroundColor: 'rgba(255,100,100,0.9)', borderRadius: 12, paddingVertical: 10, paddingHorizontal: 20, marginTop: 16 }}><Text style={{ color: '#fff', fontSize: 15, fontWeight: '600' }}>{scanError}</Text></View>) : null}
             {qrBlockedMsg ? (<View style={{ backgroundColor: 'rgba(255,100,100,0.9)', borderRadius: 12, paddingVertical: 10, paddingHorizontal: 20, marginTop: 16 }}><Text style={{ color: '#fff', fontSize: 15, fontWeight: '600' }}>{qrBlockedMsg}</Text></View>) : null}
-            <TouchableOpacity style={s.scanCloseBtn} onPress={() => { setShowCityScanner(false); setShowQrScanner(false); setScanned(false); setManualCode(''); }}>
+            <TouchableOpacity style={s.scanCloseBtn} onPress={() => { setShowCityScanner(false); setShowQrScanner(false); setScanned(false); setManualCode(''); setArucoActive(false); }}>
               <Text style={s.scanCloseText}>SCHLIESSEN</Text>
             </TouchableOpacity>
           </View>

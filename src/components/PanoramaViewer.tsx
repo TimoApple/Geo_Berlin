@@ -19,8 +19,6 @@ export default function PanoramaViewer({ url, onLoad, onError }: Props) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
   <style>
     html, body, #panorama { width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden; background-color: #000; }
   </style>
@@ -28,18 +26,16 @@ export default function PanoramaViewer({ url, onLoad, onError }: Props) {
 <body>
   <div id="panorama"></div>
   <script>
-    try {
-      pannellum.viewer('panorama', {
-        "type": "equirectangular",
-        "panorama": "${url}",
-        "autoLoad": true,
-        "showControls": false,
-        "hotSpotDebug": false
-      });
-      window.ReactNativeWebView && window.ReactNativeWebView.postMessage('loaded');
-    } catch(e) {
-      window.ReactNativeWebView && window.ReactNativeWebView.postMessage('error:' + e.message);
-    }
+    (function() {
+      var img = new Image();
+      img.onload = function() {
+        window.ReactNativeWebView && window.ReactNativeWebView.postMessage('loaded');
+      };
+      img.onerror = function() {
+        window.ReactNativeWebView && window.ReactNativeWebView.postMessage('error:image_load_failed');
+      };
+      img.src = "${url}";
+    })();
   </script>
 </body>
 </html>`;

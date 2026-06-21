@@ -2,8 +2,9 @@
 // Uses expo-camera + expo-image-manipulator + jpeg-js + js-aruco2
 // Dictionary: DICT_6X6_50 (ARUCO_MIP_36h12) – nativ von js-aruco2 unterstützt
 // No native code, no prebuild needed
+// Continuous scanning: scanCard wird automatisch in Schleife getriggert
 
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useRef, useState, useEffect } from 'react';
 import { CameraView } from 'expo-camera';
 import * as ImageManipulator from 'expo-image-manipulator';
 import * as FileSystem from 'expo-file-system/legacy';
@@ -19,15 +20,18 @@ export function useArucoScanner(
 ) {
   const [isScanning, setIsScanning] = useState(false);
   const [lastResult, setLastResult] = useState<ArucoResult[] | null>(null);
+  const [isActive, setIsActive] = useState(false);
   const internalCameraRef = useRef<CameraView>(null);
   const cameraRef = externalCameraRef ?? internalCameraRef;
+  const isScanningRef = useRef(false);
+  const isActiveRef = useRef(false);
 
   const scanCard = useCallback(async (): Promise<number[]> => {
-    if (!cameraRef.current) {
-      callbacks?.onError?.('Kamera nicht bereit');
+    if (!cameraRef.current || isScanningRef.current) {
       return [];
     }
 
+    isScanningRef.current = true;
     setIsScanning(true);
     setLastResult(null);
 
@@ -38,7 +42,7 @@ export function useArucoScanner(
       });
 
       if (!photo || !photo.uri) {
-        callbacks?.onError?.('Kein Foto erhalten');
+        isScanningRef.current = false;
         setIsScanning(false);
         return [];
       }
@@ -51,7 +55,7 @@ export function useArucoScanner(
       );
 
       if (!resized || !resized.uri) {
-        callbacks?.onError?.('Bildverarbeitung fehlgeschlagen');
+        isScanningRef.current = false;
         setIsScanning(false);
         return [];
       }
@@ -62,7 +66,6 @@ export function useArucoScanner(
       });
 
       // 4. JPEG zu Roh-Pixeln decodieren (jpeg-js)
-      // Base64 -> binär via Uint8Array (kein Buffer nötig in RN)
       const binaryStr = atob(base64);
       const bytes = new Uint8Array(binaryStr.length);
       for (let i = 0; i < binaryStr.length; i++) {
@@ -84,27 +87,55 @@ export function useArucoScanner(
       setLastResult(markers);
 
       if (markers.length === 0) {
-        callbacks?.onError?.('Kein ArUco-Marker erkannt');
+        isScanningRef.current = false;
         setIsScanning(false);
         return [];
       }
 
       const ids = markers.map(m => m.id);
+      console.log('[ArUco] Marker erkannt:', ids);
       callbacks?.onDetected?.(ids);
+      isScanningRef.current = false;
       setIsScanning(false);
       return ids;
     } catch (e) {
       console.error('ArUco scan error:', e);
       callbacks?.onError?.('Scan-Fehler: ' + (e instanceof Error ? e.message : 'Unbekannter Fehler'));
+      isScanningRef.current = false;
       setIsScanning(false);
       return [];
     }
   }, [callbacks]);
+
+  // Continuous scanning loop
+  useEffect(() => {
+    isActiveRef.current = isActive;
+    if (!isActive) return;
+
+    let timeoutId: ReturnType<typeof setTimeout>;
+    
+    const loop = async () => {
+      while (isActiveRef.current) {
+        await scanCard();
+        // Warte 500ms zwischen Scans
+        await new Promise(resolve => { timeoutId = setTimeout(resolve, 500); });
+      }
+    };
+    
+    loop();
+
+    return () => {
+      isActiveRef.current = false;
+      if (timeoutId) clearTimeout(timeoutId);
+    };
+  }, [isActive, scanCard]);
 
   return {
     scanCard,
     isScanning,
     lastResult,
     cameraRef,
+    isActive,
+    setIsActive,
   };
 }
