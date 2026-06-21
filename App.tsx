@@ -608,6 +608,8 @@ export default function App() {
               <Text style={{ color: page.bodyColor, fontSize: 25, fontFamily: FF.regular, lineHeight: 34 }}>{page.body}</Text>
             </TouchableOpacity>
           ))}
+          {/* Unsichtbarer Slide für Swipe-Over → Setup */}
+          <View style={{ width, flex: 1 }} />
         </ScrollView>
         {/* Dots mittig – gleiche bg wie Slide */}
         <View style={{ flexDirection: 'row', justifyContent: 'center', gap: 8, paddingBottom: 60, backgroundColor: currentBg }}>
