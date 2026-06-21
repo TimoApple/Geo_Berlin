@@ -40,8 +40,8 @@ export function useArucoScanner(
   const scanCard = useCallback(async (): Promise<number[]> => {
     console.log('[ArUco] scanCard aufgerufen, cameraRef.current:', !!cameraRef.current, 'isScanningRef.current:', isScanningRef.current);
 
-    if (!cameraRef.current || isScanningRef.current) {
-      console.log('[ArUco] scanCard abgebrochen – kein CameraRef oder bereits scannend');
+    if (!cameraRef.current) {
+      console.log('[ArUco] scanCard abgebrochen – kein CameraRef');
       return [];
     }
 
