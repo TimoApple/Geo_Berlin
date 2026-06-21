@@ -6,7 +6,7 @@
 import { useCallback, useRef, useState } from 'react';
 import { CameraView } from 'expo-camera';
 import * as ImageManipulator from 'expo-image-manipulator';
-import * as FileSystem from 'expo-file-system';
+import * as FileSystem from 'expo-file-system/legacy';
 import jpeg from 'jpeg-js';
 import { detectMarkers, toGrayscale, ArucoResult } from '../utils/arucoDetector';
 

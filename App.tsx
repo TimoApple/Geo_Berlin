@@ -190,7 +190,7 @@ export default function App() {
             Vibration.vibrate(100);
             onQrScanned(loc);
           } else {
-            setScanError(`ArUco-ID ${id} nicht gefunden (gültig: 1-39)`);
+            setScanError('Dieser Ort wurde nicht gefunden. Bitte scanne eine gültige Karte.');
             setTimeout(() => setScanError(''), 2500);
           }
         }
@@ -512,15 +512,6 @@ export default function App() {
                 {showCityScanner ? 'Stadtkarte in den Rahmen halten' : 'ArUco-Marker in den Rahmen halten'}
               </Text>
             </View>
-            {/* Scan-Button: OCR für City-Scanner, ArUco für QR-Scanner */}
-            <TouchableOpacity 
-              style={{ backgroundColor: C.error, width: 72, height: 72, borderRadius: 36, borderWidth: 4, borderColor: '#fff', justifyContent: 'center', alignItems: 'center', marginTop: 20, alignSelf: 'center' }} 
-              onPress={showCityScanner ? captureAndRecognize : () => { scanCard(); }}
-              disabled={arucoScanning}>
-              <Text style={{ color: C.bg, fontSize: 26, fontFamily: FF.bold }}>
-                {arucoScanning ? '◌' : '◉'}
-              </Text>
-            </TouchableOpacity>
             {showCityScanner && (
               <View style={{ width: '100%', paddingHorizontal: 20, marginTop: 16 }}>
                 <Text style={{ color: 'rgba(241,232,225,0.6)', fontSize: 11, fontFamily: FF.bold, letterSpacing: 2, textAlign: 'center', marginBottom: 10, textTransform: 'uppercase' }}>Oder Code manuell eingeben</Text>
@@ -564,8 +555,9 @@ export default function App() {
 
   // TUTORIAL
   if (screen === 'tutorial') {
+    const currentBg = TUT_PAGES[tutorialPage]?.bg || '#262523';
     return (
-      <View style={{ flex: 1, backgroundColor: '#262523' }}><StatusBar hidden />
+      <View style={{ flex: 1, backgroundColor: currentBg }}><StatusBar hidden />
         <ScrollView
           ref={tutScrollRef}
           horizontal
@@ -574,7 +566,12 @@ export default function App() {
           scrollEnabled
           onMomentumScrollEnd={(e) => {
             const page = Math.round(e.nativeEvent.contentOffset.x / width);
-            setTutorialPage(page);
+            if (page >= TUT_PAGES.length) {
+              setTutorialPage(0);
+              setScreen('setup');
+            } else {
+              setTutorialPage(page);
+            }
           }}
           style={{ flex: 1 }}>
           {TUT_PAGES.map((page, i) => (
@@ -588,13 +585,13 @@ export default function App() {
                   setScreen('setup');
                 }
               }}>
-              <Text style={{ color: page.titleColor, fontSize: 32, fontFamily: FF.bold, marginBottom: 20, lineHeight: 38 }}>{page.title}</Text>
-              <Text style={{ color: page.bodyColor, fontSize: 18, fontFamily: FF.regular, lineHeight: 26 }}>{page.body}</Text>
+              <Text style={{ color: page.titleColor, fontSize: 51, fontFamily: FF.bold, marginBottom: 20, lineHeight: 60 }}>{page.title}</Text>
+              <Text style={{ color: page.bodyColor, fontSize: 25, fontFamily: FF.regular, lineHeight: 34 }}>{page.body}</Text>
             </TouchableOpacity>
           ))}
         </ScrollView>
-        {/* Dots mittig */}
-        <View style={{ flexDirection: 'row', justifyContent: 'center', gap: 8, paddingBottom: 60 }}>
+        {/* Dots mittig – gleiche bg wie Slide */}
+        <View style={{ flexDirection: 'row', justifyContent: 'center', gap: 8, paddingBottom: 60, backgroundColor: currentBg }}>
           {TUT_PAGES.map((_, i) => (
             <View key={i} style={{ width: 8, height: 8, borderRadius: 4, backgroundColor: i === tutorialPage ? C.primary : C.muted }} />
           ))}
@@ -619,15 +616,15 @@ export default function App() {
               <View style={s.sectionLabel}><Text style={s.sectionLabelText}>SPIELER</Text></View>
               {players.map((p, i) => (
                 <View key={p.id} style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 12, gap: 8 }}>
-                  <View style={{ flex: 1, backgroundColor: C.surface, borderWidth: 1, borderColor: C.outline }}>
+                  <View style={{ flex: 1, backgroundColor: C.surface, borderWidth: 1, borderColor: C.outline, height: 48, justifyContent: 'center' }}>
                     <TextInput
-                      style={{ color: C.onSurface, fontSize: 16, fontFamily: FF.bold, paddingVertical: 12, paddingHorizontal: 16 }}
+                      style={{ color: C.onSurface, fontSize: 16, fontFamily: FF.bold, paddingVertical: 0, paddingHorizontal: 16 }}
                       value={p.name} onChangeText={(t) => setPlayers(prev => prev.map((pl, j) => j === i ? { ...pl, name: t } : pl))}
                       placeholder={`Spieler ${i + 1}`} placeholderTextColor={C.muted}
                     />
                   </View>
                   <TouchableOpacity
-                    style={{ backgroundColor: p.city ? C.primary : C.surfaceHigh, paddingVertical: 12, paddingHorizontal: 16, borderWidth: 1, borderColor: p.city ? C.primary : C.outline }}
+                    style={{ backgroundColor: p.city ? C.primary : C.surfaceHigh, height: 48, justifyContent: 'center', paddingHorizontal: 16, borderWidth: 1, borderColor: p.city ? C.primary : C.outline }}
                     onPress={() => openCityScan(i)}
                   >
                     <Text style={{ color: p.city ? C.onPrimaryContainer : C.muted, fontSize: 13, fontFamily: FF.bold }}>
