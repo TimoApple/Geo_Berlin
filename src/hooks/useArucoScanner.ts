@@ -27,6 +27,9 @@ export function useArucoScanner(
   const cameraRef = externalCameraRef ?? internalCameraRef;
   const isScanningRef = useRef(false);
   const isActiveRef = useRef(false);
+  
+  // Reset scanning lock on every mount (React Strict Mode remounts)
+  isScanningRef.current = false;
 
   // Debug: setIsActive wird aufgerufen
   const wrappedSetIsActive = useCallback((value: boolean) => {
