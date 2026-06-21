@@ -18,6 +18,8 @@ export function useArucoScanner(
     onError?: (error: string) => void;
   }
 ) {
+  console.log('[ArUco] Hook initialisiert');
+
   const [isScanning, setIsScanning] = useState(false);
   const [lastResult, setLastResult] = useState<ArucoResult[] | null>(null);
   const [isActive, setIsActive] = useState(false);
@@ -26,8 +28,17 @@ export function useArucoScanner(
   const isScanningRef = useRef(false);
   const isActiveRef = useRef(false);
 
+  // Debug: setIsActive wird aufgerufen
+  const wrappedSetIsActive = useCallback((value: boolean) => {
+    console.log('[ArUco] setIsActive aufgerufen mit:', value);
+    setIsActive(value);
+  }, []);
+
   const scanCard = useCallback(async (): Promise<number[]> => {
+    console.log('[ArUco] scanCard aufgerufen, cameraRef.current:', !!cameraRef.current, 'isScanningRef.current:', isScanningRef.current);
+
     if (!cameraRef.current || isScanningRef.current) {
+      console.log('[ArUco] scanCard abgebrochen – kein CameraRef oder bereits scannend');
       return [];
     }
 
@@ -36,44 +47,58 @@ export function useArucoScanner(
     setLastResult(null);
 
     try {
+      console.log('[ArUco] Foto wird aufgenommen...');
       // 1. Foto aufnehmen
       const photo = await cameraRef.current.takePictureAsync({
         quality: 0.8,
       });
 
+      console.log('[ArUco] Foto aufgenommen:', photo ? 'OK' : 'NULL', 'uri:', photo?.uri);
+
       if (!photo || !photo.uri) {
+        console.log('[ArUco] Kein Foto erhalten');
         isScanningRef.current = false;
         setIsScanning(false);
         return [];
       }
 
       // 2. Auf 640px Breite skalieren (JPEG, Performance)
+      console.log('[ArUco] Resize...');
       const resized = await ImageManipulator.manipulateAsync(
         photo.uri,
         [{ resize: { width: 640 } }],
         { format: ImageManipulator.SaveFormat.JPEG, compress: 0.8 }
       );
 
+      console.log('[ArUco] Resized:', resized ? 'OK' : 'NULL');
+
       if (!resized || !resized.uri) {
+        console.log('[ArUco] Resize fehlgeschlagen');
         isScanningRef.current = false;
         setIsScanning(false);
         return [];
       }
 
       // 3. JPEG-Datei als Base64 einlesen
+      console.log('[ArUco] Lese Base64...');
       const base64 = await FileSystem.readAsStringAsync(resized.uri, {
         encoding: FileSystem.EncodingType.Base64,
       });
 
+      console.log('[ArUco] Base64 gelesen, Länge:', base64.length);
+
       // 4. JPEG zu Roh-Pixeln decodieren (jpeg-js)
+      console.log('[ArUco] Decodiere JPEG...');
       const binaryStr = atob(base64);
       const bytes = new Uint8Array(binaryStr.length);
       for (let i = 0; i < binaryStr.length; i++) {
         bytes[i] = binaryStr.charCodeAt(i);
       }
       const decoded = jpeg.decode(bytes, { useTArray: true });
+      console.log('[ArUco] JPEG decodiert:', decoded.width, 'x', decoded.height);
 
       // 5. In Graustufen konvertieren (bessere Erkennung)
+      console.log('[ArUco] Graustufen...');
       const clampedData = new Uint8ClampedArray(
         decoded.data.buffer,
         decoded.data.byteOffset,
@@ -82,24 +107,27 @@ export function useArucoScanner(
       const grayData = toGrayscale(clampedData);
 
       // 6. ArUco-Marker erkennen (DICT_6X6_50)
+      console.log('[ArUco] Detektiere Marker...');
       const markers = detectMarkers(grayData, decoded.width, decoded.height);
+      console.log('[ArUco] Marker gefunden:', markers.length);
 
       setLastResult(markers);
 
       if (markers.length === 0) {
+        console.log('[ArUco] Keine Marker erkannt');
         isScanningRef.current = false;
         setIsScanning(false);
         return [];
       }
 
       const ids = markers.map(m => m.id);
-      console.log('[ArUco] Marker erkannt:', ids);
+      console.log('[ArUco] Marker erkannt – IDs:', ids);
       callbacks?.onDetected?.(ids);
       isScanningRef.current = false;
       setIsScanning(false);
       return ids;
     } catch (e) {
-      console.error('ArUco scan error:', e);
+      console.error('[ArUco] FEHLER in scanCard:', e);
       callbacks?.onError?.('Scan-Fehler: ' + (e instanceof Error ? e.message : 'Unbekannter Fehler'));
       isScanningRef.current = false;
       setIsScanning(false);
@@ -109,22 +137,36 @@ export function useArucoScanner(
 
   // Continuous scanning loop
   useEffect(() => {
+    console.log('[ArUco] useEffect isActive geändert zu:', isActive);
     isActiveRef.current = isActive;
-    if (!isActive) return;
+    if (!isActive) {
+      console.log('[ArUco] isActive=false – Scan-Loop beendet');
+      return;
+    }
 
+    console.log('[ArUco] Starte Continuous Scan-Loop...');
     let timeoutId: ReturnType<typeof setTimeout>;
+    let loopActive = true;
     
     const loop = async () => {
-      while (isActiveRef.current) {
-        await scanCard();
+      while (isActiveRef.current && loopActive) {
+        console.log('[ArUco] Scan-Loop läuft...');
+        try {
+          await scanCard();
+        } catch (e) {
+          console.error('[ArUco] FEHLER in Scan-Loop:', e);
+        }
         // Warte 500ms zwischen Scans
         await new Promise(resolve => { timeoutId = setTimeout(resolve, 500); });
       }
+      console.log('[ArUco] Scan-Loop beendet');
     };
     
     loop();
 
     return () => {
+      console.log('[ArUco] Cleanup – Scan-Loop wird gestoppt');
+      loopActive = false;
       isActiveRef.current = false;
       if (timeoutId) clearTimeout(timeoutId);
     };
@@ -136,6 +178,6 @@ export function useArucoScanner(
     lastResult,
     cameraRef,
     isActive,
-    setIsActive,
+    setIsActive: wrappedSetIsActive,
   };
 }
