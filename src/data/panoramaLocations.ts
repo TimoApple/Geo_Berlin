@@ -63,8 +63,9 @@ export async function fetchLocationsFromDB(): Promise<PanoramaLocation[]> {
     const response = await fetch('https://timoboese.com/pano/berlin/data.json');
     const data = await response.json();
     
-    // data.value ist ein Array von Arrays: [filename, name, district, lat, lng, tags, arucoId]
-    const rows: any[] = data.value || data;
+    // API gibt direkt ein Array von Arrays zurück: [filename, name, district, lat, lng, tags, arucoId]
+    // data.value existiert nicht – die API liefert das Array direkt
+    const rows: any[] = Array.isArray(data) ? data : (data.value || data);
     
     if (!Array.isArray(rows) || rows.length === 0) {
       console.warn('[DB] Keine Daten erhalten, verwende Fallback');

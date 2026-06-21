@@ -13,7 +13,7 @@ import { useArucoScanner } from './src/hooks/useArucoScanner';
 
 import { calculateDistance, formatDistance } from './src/utils/distance';
 import { playClickSound, playSuccessSound, playErrorSound, playPerfectSound, playTimerWarning, playTimerTick, playAnswerphoneBeep } from './src/utils/sounds';
-import { panoramaLocations, PanoramaLocation, getRandomLocation, fetchLocationsFromDB, findLocationById } from './src/data/panoramaLocations';
+import { panoramaLocations, PanoramaLocation, getRandomLocation, fetchLocationsFromDB, findLocationById, getLocations } from './src/data/panoramaLocations';
 import PanoramaViewer from './src/components/PanoramaViewer';
 
 const { width, height } = Dimensions.get('window');
@@ -266,10 +266,12 @@ export default function App() {
     const numMatch = code.match(/#?(\d+)/);
     if (numMatch) {
       const id = parseInt(numMatch[1], 10);
-      if (id >= 0 && id < panoramaLocations.length) { const loc = panoramaLocations.find(l => l.id === id); if (loc) { assign(loc, id); return; } }
+      const loc = findLocationById(id);
+      if (loc) { assign(loc, id); return; }
     }
     const normalized = code.toLowerCase().trim().replace(/ä/g,'ae').replace(/ö/g,'oe').replace(/ü/g,'ue').replace(/ß/g,'ss');
-    const textMatch = panoramaLocations.find(l => l.name.toLowerCase() === normalized);
+    const allLocs = getLocations();
+    const textMatch = allLocs.find(l => l.name.toLowerCase() === normalized);
     if (textMatch) { assign(textMatch, textMatch.id); return; }
     setScanError('Nicht erkannt – Code oder Stadtname prüfen');
     setTimeout(() => setScanError(''), 2000);
@@ -389,22 +391,21 @@ export default function App() {
         const numMatch = text.match(/#?(\d+)/);
         if (numMatch) {
           const id = parseInt(numMatch[1], 10);
-          if (id >= 0 && id < panoramaLocations.length) {
-            const loc = panoramaLocations.find(l => l.id === id);
-            if (loc) {
-              const takenBy = players.find(p => p.city.toLowerCase() === loc.name.toLowerCase() && players.indexOf(p) !== scanCityForIdx);
-              if (takenBy) { setScanError(`Diese Karte ist bereits vergeben von ${takenBy.name}`); setTimeout(() => setScanError(''), 2500); return; }
-              playClickSound(); Vibration.vibrate(100);
-              setUsedLocations(prev => [...prev, loc.id]);
-              setPlayers(prev => prev.map((p, i) => i === scanCityForIdx ? { ...p, city: loc.name, cityId: loc.id, lat: loc.lat, lng: loc.lng } : p));
-              setShowCityScanner(false); setScanned(false); setScanCityForIdx(null);
-              return;
-            }
+          const loc = findLocationById(id);
+          if (loc) {
+            const takenBy = players.find(p => p.city.toLowerCase() === loc.name.toLowerCase() && players.indexOf(p) !== scanCityForIdx);
+            if (takenBy) { setScanError(`Diese Karte ist bereits vergeben von ${takenBy.name}`); setTimeout(() => setScanError(''), 2500); return; }
+            playClickSound(); Vibration.vibrate(100);
+            setUsedLocations(prev => [...prev, loc.id]);
+            setPlayers(prev => prev.map((p, i) => i === scanCityForIdx ? { ...p, city: loc.name, cityId: loc.id, lat: loc.lat, lng: loc.lng } : p));
+            setShowCityScanner(false); setScanned(false); setScanCityForIdx(null);
+            return;
           }
         }
         // 2. Prüfen ob es ein Ortsname ist
         const normalized = text.toLowerCase().trim().replace(/ä/g,'ae').replace(/ö/g,'oe').replace(/ü/g,'ue').replace(/ß/g,'ss');
-        const match = panoramaLocations.find(l => l.name.toLowerCase() === normalized);
+        const allLocs = getLocations();
+        const match = allLocs.find(l => l.name.toLowerCase() === normalized);
         if (match) {
           const takenBy = players.find(p => p.city.toLowerCase() === match.name.toLowerCase() && players.indexOf(p) !== scanCityForIdx);
           if (takenBy) { setScanError(`Diese Karte ist bereits vergeben von ${takenBy.name}`); setTimeout(() => setScanError(''), 2500); return; }
@@ -431,26 +432,22 @@ export default function App() {
       const numMatch = data.match(/#?(\d+)/);
       if (numMatch) {
         const id = parseInt(numMatch[1], 10);
-        if (id >= 0 && id < panoramaLocations.length) {
-          const loc = panoramaLocations.find(l => l.id === id);
-          if (loc) {
-            if (usedLocations.includes(id) || tableCities.some(tc => tc.city.toLowerCase() === loc.name.toLowerCase())) {
-              setScanError('Diese Stadt liegt bereits auf dem Tisch!'); setScanned(true); setTimeout(() => { setScanError(''); setScanned(false); }, 2500); return;
-            }
-            playClickSound(); setScanned(true); Vibration.vibrate(100); onQrScanned(loc); return;
+        const loc = findLocationById(id);
+        if (loc) {
+          if (usedLocations.includes(id) || tableCities.some(tc => tc.city.toLowerCase() === loc.name.toLowerCase())) {
+            setScanError('Diese Stadt liegt bereits auf dem Tisch!'); setScanned(true); setTimeout(() => { setScanError(''); setScanned(false); }, 2500); return;
           }
+          playClickSound(); setScanned(true); Vibration.vibrate(100); onQrScanned(loc); return;
         }
       }
       if (data.startsWith('city:')) {
         const id = parseInt(data.split(':')[1]);
-        if (id >= 0 && id < panoramaLocations.length) {
-          const loc = panoramaLocations.find(l => l.id === id);
-          if (loc) {
-            if (usedLocations.includes(id) || tableCities.some(tc => tc.city.toLowerCase() === loc.name.toLowerCase())) {
-              setScanError('Diese Stadt liegt bereits auf dem Tisch!'); setScanned(true); setTimeout(() => { setScanError(''); setScanned(false); }, 2500); return;
-            }
-            playClickSound(); setScanned(true); Vibration.vibrate(100); onQrScanned(loc); return;
+        const loc = findLocationById(id);
+        if (loc) {
+          if (usedLocations.includes(id) || tableCities.some(tc => tc.city.toLowerCase() === loc.name.toLowerCase())) {
+            setScanError('Diese Stadt liegt bereits auf dem Tisch!'); setScanned(true); setTimeout(() => { setScanError(''); setScanned(false); }, 2500); return;
           }
+          playClickSound(); setScanned(true); Vibration.vibrate(100); onQrScanned(loc); return;
         }
       }
       return;
@@ -467,14 +464,17 @@ export default function App() {
     const numMatch = data.match(/#?(\d+)/);
     if (numMatch) {
       const id = parseInt(numMatch[1], 10);
-      if (id >= 0 && id < panoramaLocations.length) { const loc = panoramaLocations.find(l => l.id === id); if (loc) { assign(loc, id); return; } }
+      const loc = findLocationById(id);
+      if (loc) { assign(loc, id); return; }
     }
     const normalized = data.toLowerCase().trim().replace(/ä/g,'ae').replace(/ö/g,'oe').replace(/ü/g,'ue').replace(/ß/g,'ss');
-    const textMatch = panoramaLocations.find(l => l.name.toLowerCase() === normalized);
+    const allLocs = getLocations();
+    const textMatch = allLocs.find(l => l.name.toLowerCase() === normalized);
     if (textMatch) { assign(textMatch, textMatch.id); return; }
     if (data.startsWith('city:')) {
       const id = parseInt(data.split(':')[1]);
-      if (id >= 0 && id < panoramaLocations.length) { const loc = panoramaLocations.find(l => l.id === id); if (loc) { assign(loc, id); return; } }
+      const loc = findLocationById(id);
+      if (loc) { assign(loc, id); return; }
     }
     setScanError('Karte nicht erkannt – nochmal versuchen');
     setTimeout(() => setScanError(''), 2000);
@@ -584,7 +584,7 @@ export default function App() {
           }}
           style={{ flex: 1 }}>
           {TUT_PAGES.map((page, i) => (
-            <TouchableOpacity key={i} activeOpacity={1} style={{ width, height: '100%', backgroundColor: page.bg, justifyContent: 'center', paddingHorizontal: 30 }}
+            <TouchableOpacity key={i} activeOpacity={1} style={{ width, flex: 1, backgroundColor: page.bg, justifyContent: 'center', paddingHorizontal: 30 }}
               onPress={(e) => {
                 const touchX = e.nativeEvent.locationX;
                 if (touchX > width / 2) {
