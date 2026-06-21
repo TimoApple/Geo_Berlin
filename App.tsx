@@ -13,7 +13,7 @@ import { useArucoScanner } from './src/hooks/useArucoScanner';
 
 import { calculateDistance, formatDistance } from './src/utils/distance';
 import { playClickSound, playSuccessSound, playErrorSound, playPerfectSound, playTimerWarning, playTimerTick, playAnswerphoneBeep } from './src/utils/sounds';
-import { panoramaLocations, PanoramaLocation, getRandomLocation } from './src/data/panoramaLocations';
+import { panoramaLocations, PanoramaLocation, getRandomLocation, fetchLocationsFromDB, findLocationById } from './src/data/panoramaLocations';
 import PanoramaViewer from './src/components/PanoramaViewer';
 
 const { width, height } = Dimensions.get('window');
@@ -171,15 +171,15 @@ export default function App() {
     player.play();
   });
 
-  // ArUco Scanner
+  // Scanner (Marker-Erkennung via Kamera)
   const { scanCard, isScanning: arucoScanning, lastResult: arucoResult } = useArucoScanner(
     cameraRef,
     {
       onDetected: (ids) => {
         if (ids.length > 0) {
           const id = ids[0];
-          // ArUco-ID = Location-ID (1:1 Mapping, IDs 1-39)
-          const loc = panoramaLocations.find(l => l.id === id);
+          // ID → Location aus der Datenbank (live oder Fallback)
+          const loc = findLocationById(id);
           if (loc) {
             if (usedLocations.includes(id) || tableCities.some(tc => tc.city.toLowerCase() === loc.name.toLowerCase())) {
               setScanError('Diese Stadt liegt bereits auf dem Tisch!');
@@ -204,10 +204,14 @@ export default function App() {
 
   const allPlayersScanned = players.length >= 2 && players.every(p => p.city.length > 0);
 
-  // LOADING SCREEN
+  // LOADING SCREEN + DB-FETCH
   useEffect(() => {
     Animated.timing(loadingFade, { toValue: 1, duration: 800, useNativeDriver: true }).start();
     try { require('expo-navigation-bar').then((nb: any) => nb.setBackgroundColorAsync('#262523').catch(() => {})); } catch (_) {}
+    // Datenbank laden (ArUco-ID → Location Mapping)
+    fetchLocationsFromDB().then(locs => {
+      console.log(`[App] ${locs.length} Locations geladen (live von DB)`);
+    });
     const t = setTimeout(() => setScreen('tutorial'), 2500);
     return () => clearTimeout(t);
   }, []);
@@ -366,14 +370,19 @@ export default function App() {
     try {
       const photo = await cameraRef.current.takePictureAsync({ quality: 0.8 });
       if (!photo) return;
+      console.log('[OCR] Foto aufgenommen:', photo.uri);
       const result = await TextRecognition.recognize(photo.uri);
+      console.log('[OCR] Ergebnis:', JSON.stringify(result));
       if (!result || !result.blocks || result.blocks.length === 0) {
+        console.log('[OCR] Kein Text erkannt');
         setScanError('Kein Text erkannt – manuell eingeben');
         setTimeout(() => setScanError(''), 2000);
         return;
       }
+      console.log(`[OCR] ${result.blocks.length} Textblöcke gefunden`);
       // Über alle Textblöcke iterieren, ersten passenden Treffer nehmen
       for (const block of result.blocks) {
+        console.log(`[OCR] Block: "${block.text}"`);
         const text = block.text.trim();
         if (!text) continue;
         // 1. Prüfen ob es eine Zahl ist (#042 oder 042)
@@ -474,7 +483,7 @@ export default function App() {
   // TUTORIAL
   const TUT_PAGES = [
     { bg: '#262523', titleColor: '#D9593C', bodyColor: '#F1E8E1', title: 'Eine Aufgabe. Nur eine.', body: 'Du stehst plötzlich irgendwo in Berlin. Wo bist du nur? Auf dem Tisch liegen Berliner Orte. Deine Aufgabe: Welcher Ort liegt am nächsten zu dem, was du siehst?' },
-    { bg: '#F2A344', titleColor: '#262523', bodyColor: '#262523', title: 'Ziehen. Scannen. Die Zeit läuft.', body: 'Zieh eine Karte vom Stapel. Scanne den ArUco-Marker mit der App. Ein Berliner Ort erscheint – und der Timer startet, ob du bereit bist oder nicht.' },
+    { bg: '#F2A344', titleColor: '#262523', bodyColor: '#262523', title: 'Ziehen. Scannen. Die Zeit läuft.', body: 'Zieh eine Karte vom Stapel. Scanne den Code mit der App. Ein Berliner Ort erscheint – und der Timer startet, ob du bereit bist oder nicht.' },
     { bg: '#262523', titleColor: '#F2A344', bodyColor: '#F1E8E1', title: 'Wo zur Hölle bist du?', body: 'Schau dich um. Erkennst du den Ort?\n\nWähle den Ort vom Tisch, der am nächsten dran liegt. Je näher du liegst, desto mehr Punkte.' },
     { bg: '#D9593C', titleColor: '#262523', bodyColor: '#262523', title: 'Auf die harte Tour?', body: 'Denkst du, jemand lag falsch? Setz einen Token und nenn DEINEN Ort.\n\nRichtig → Bonuspunkte.\nFalsch → Tschüss, Token.\n\n→ Los geht\'s!' },
   ];
@@ -503,13 +512,13 @@ export default function App() {
           <View style={s.scanOverlay}>
             <View style={{ alignItems: 'center', marginBottom: 20 }}>
               <Text style={{ color: C.primary, fontSize: 13, fontFamily: FF.bold, letterSpacing: 2, marginBottom: 6 }}>
-                {showCityScanner ? 'KARTE ZUWEISEN' : 'ARUCO-MARKER SCANNEN'}
+                {showCityScanner ? 'KARTE ZUWEISEN' : 'CODE SCANNEN'}
               </Text>
               <Text style={{ color: '#fff', fontSize: 22, fontFamily: FF.bold }}>{assignName || 'Spieler'}</Text>
             </View>
             <View style={s.scanFrame}>
               <Text style={{ color: C.primary, fontSize: 16, fontWeight: '600', textAlign: 'center' }}>
-                {showCityScanner ? 'Stadtkarte in den Rahmen halten' : 'ArUco-Marker in den Rahmen halten'}
+                {showCityScanner ? 'Stadtkarte in den Rahmen halten' : 'Code in den Rahmen halten'}
               </Text>
             </View>
             {showCityScanner && (
@@ -575,14 +584,24 @@ export default function App() {
           }}
           style={{ flex: 1 }}>
           {TUT_PAGES.map((page, i) => (
-            <TouchableOpacity key={i} activeOpacity={1} style={{ width, backgroundColor: page.bg, justifyContent: 'center', paddingHorizontal: 30 }}
-              onPress={() => {
-                if (i < TUT_PAGES.length - 1) {
-                  tutScrollRef.current?.scrollTo({ x: (i + 1) * width, animated: true });
-                  setTutorialPage(i + 1);
+            <TouchableOpacity key={i} activeOpacity={1} style={{ width, height: '100%', backgroundColor: page.bg, justifyContent: 'center', paddingHorizontal: 30 }}
+              onPress={(e) => {
+                const touchX = e.nativeEvent.locationX;
+                if (touchX > width / 2) {
+                  // Rechte Hälfte → nächster Slide
+                  if (i < TUT_PAGES.length - 1) {
+                    tutScrollRef.current?.scrollTo({ x: (i + 1) * width, animated: true });
+                    setTutorialPage(i + 1);
+                  } else {
+                    setTutorialPage(0);
+                    setScreen('setup');
+                  }
                 } else {
-                  setTutorialPage(0);
-                  setScreen('setup');
+                  // Linke Hälfte → vorheriger Slide
+                  if (i > 0) {
+                    tutScrollRef.current?.scrollTo({ x: (i - 1) * width, animated: true });
+                    setTutorialPage(i - 1);
+                  }
                 }
               }}>
               <Text style={{ color: page.titleColor, fontSize: 51, fontFamily: FF.bold, marginBottom: 20, lineHeight: 60 }}>{page.title}</Text>

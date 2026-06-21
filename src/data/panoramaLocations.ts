@@ -8,7 +8,8 @@ export interface PanoramaLocation {
   qr_data: string;
 }
 
-export const panoramaLocations: PanoramaLocation[] = [
+// Fallback-Daten – werden von der Datenbank überschrieben sobald API verfügbar
+const FALLBACK_LOCATIONS: PanoramaLocation[] = [
   { id: 1,  name: "Brandenburger Tor",          district: "Mitte",         lat: 52.5163, lng: 13.3777, url_avif: "https://timoboese.com/pano/berlin/01.avif", qr_data: '{"id":1,"name":"Brandenburger Tor","pano":"berlin_01"}' },
   { id: 2,  name: "Reichstagsgebäude",           district: "Mitte",         lat: 52.5186, lng: 13.3763, url_avif: "https://timoboese.com/pano/berlin/02.avif", qr_data: '{"id":2,"name":"Reichstagsgebäude","pano":"berlin_02"}' },
   { id: 3,  name: "Fernsehturm",                 district: "Mitte",         lat: 52.5208, lng: 13.4094, url_avif: "https://timoboese.com/pano/berlin/03.avif", qr_data: '{"id":3,"name":"Fernsehturm","pano":"berlin_03"}' },
@@ -50,11 +51,111 @@ export const panoramaLocations: PanoramaLocation[] = [
   { id: 39, name: "Gleisdreieck",                district: "Kreuzberg",     lat: 52.4967, lng: 13.3733, url_avif: "https://timoboese.com/pano/berlin/39.avif", qr_data: '{"id":39,"name":"Gleisdreieck","pano":"berlin_39"}' },
 ];
 
+// Live-Daten aus der Datenbank (wird asynchron geladen)
+let liveLocations: PanoramaLocation[] | null = null;
+
+/**
+ * Lädt die aktuellen ArUco-ID → Location-Zuweisungen von der Datenbank.
+ * Überschreibt die Fallback-Daten mit den echten Werten.
+ */
+export async function fetchLocationsFromDB(): Promise<PanoramaLocation[]> {
+  try {
+    const response = await fetch('https://timoboese.com/pano/berlin/data.json');
+    const data = await response.json();
+    
+    // data.value ist ein Array von Arrays: [filename, name, district, lat, lng, tags, arucoId]
+    const rows: any[] = data.value || data;
+    
+    if (!Array.isArray(rows) || rows.length === 0) {
+      console.warn('[DB] Keine Daten erhalten, verwende Fallback');
+      return getLocations();
+    }
+
+    console.log(`[DB] ${rows.length} Einträge geladen`);
+    
+    // Mapping: ArUco-ID → Location-Daten
+    const dbLocations: PanoramaLocation[] = [];
+    
+    for (const row of rows) {
+      // Format: [filename, name, district, lat, lng, tags, arucoId]
+      const arucoId = row[6];
+      if (arucoId === undefined || arucoId === null) continue;
+      
+      const id = typeof arucoId === 'number' ? arucoId : parseInt(arucoId, 10);
+      if (isNaN(id) || id < 1) continue;
+      
+      const name = row[1] || `Ort ${id}`;
+      const district = row[2] || '';
+      const lat = typeof row[3] === 'number' ? row[3] : parseFloat(row[3]);
+      const lng = typeof row[4] === 'number' ? row[4] : parseFloat(row[4]);
+      
+      // Panorama-URL: filename ohne .avif → ID-Nummer
+      const filename = row[0] || '';
+      // Extrahiere die Nummer aus dem Dateinamen (z.B. "IMG_20260611_110629_00_001" → "01")
+      const fileMatch = filename.match(/_(\d{3})$/);
+      const panoId = fileMatch ? fileMatch[1] : String(id).padStart(2, '0');
+      
+      dbLocations.push({
+        id,
+        name,
+        district,
+        lat,
+        lng,
+        url_avif: `https://timoboese.com/pano/berlin/${panoId}.avif`,
+        qr_data: JSON.stringify({ id, name, pano: `berlin_${panoId}` }),
+      });
+    }
+    
+    if (dbLocations.length > 0) {
+      liveLocations = dbLocations;
+      console.log(`[DB] ${dbLocations.length} Locations geladen (IDs: ${dbLocations.map(l => l.id).join(', ')})`);
+    } else {
+      console.warn('[DB] Keine gültigen Locations in DB, verwende Fallback');
+    }
+    
+    return getLocations();
+  } catch (e) {
+    console.warn('[DB] Fehler beim Laden der Datenbank:', e);
+    return getLocations();
+  }
+}
+
+/**
+ * Gibt die aktuellen Locations zurück (live oder Fallback)
+ */
+export function getLocations(): PanoramaLocation[] {
+  return liveLocations || FALLBACK_LOCATIONS;
+}
+
+/**
+ * Findet eine Location anhand der ArUco-ID
+ */
+export function findLocationById(id: number): PanoramaLocation | undefined {
+  const locations = getLocations();
+  return locations.find(l => l.id === id);
+}
+
+/**
+ * Findet eine Location anhand des Namens
+ */
+export function findLocationByName(name: string): PanoramaLocation | undefined {
+  const normalized = name.toLowerCase().trim()
+    .replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss');
+  const locations = getLocations();
+  return locations.find(l => l.name.toLowerCase() === normalized);
+}
+
+/**
+ * Gibt eine zufällige Location zurück (ohne die bereits verwendeten IDs)
+ */
 export const getRandomLocation = (usedIds: number[] = []): PanoramaLocation => {
-  const available = panoramaLocations.filter(l => !usedIds.includes(l.id));
+  const locations = getLocations();
+  const available = locations.filter(l => !usedIds.includes(l.id));
   if (available.length === 0) {
-    // All used — reset
-    return panoramaLocations[Math.floor(Math.random() * panoramaLocations.length)];
+    return locations[Math.floor(Math.random() * locations.length)];
   }
   return available[Math.floor(Math.random() * available.length)];
 };
+
+// Export für Abwärtskompatibilität
+export const panoramaLocations: PanoramaLocation[] = FALLBACK_LOCATIONS;
