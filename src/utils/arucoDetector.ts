@@ -1,6 +1,7 @@
 ﻿// ArUco Marker Detector – pure JS, no native code
-// Uses js-aruco2 (original js-aruco port) with ARUCO dictionary (7x7 markers, 1024 IDs)
-// 7x7 is the original ArUco format – no custom dictionaries, no patching
+// Uses js-aruco2 (original js-aruco port) with ARUCO_MIP_36h12 dictionary (6x6 markers)
+// 6x6 = Standard ArUco MIP 36h12 (36 IDs, 12-bit hamming code)
+// Das ist das Standard-Dictionary für die gedruckten Karten
 
 import { AR } from 'js-aruco2';
 
@@ -15,9 +16,8 @@ let detector: any = null;
 function getDetector() {
   if (!detector) {
     try {
+      // Default = ARUCO_MIP_36h12 (6x6 Marker, 36 IDs)
       detector = new AR.Detector();
-      // ARUCO = 7x7 markers (5x5 inner bits + 2 border = 7x7), 1024 IDs
-      detector.dictionary = new AR.Dictionary('ARUCO');
     } catch (e) {
       console.error('Failed to initialize ArUco detector:', e);
       return null;
