@@ -3,9 +3,8 @@
 // 6x6 = Standard ArUco MIP 36h12 (36 IDs, 12-bit hamming code)
 // Das ist das Standard-Dictionary für die gedruckten Karten
 
-// js-aruco2 exportiert kein ES-Modul – AR wird als global definiert
-// Daher importieren wir die Datei direkt (Seiteneffekt-Import)
-const AR = require('js-aruco2/src/aruco.js');
+// Lokale Kopie von js-aruco2 mit ES-Modul-Export
+import AR from '../libs/aruco';
 
 export interface ArucoResult {
   id: number;
@@ -19,9 +18,7 @@ function getDetector() {
   if (!detector) {
     try {
       // Default = ARUCO_MIP_36h12 (6x6 Marker, 36 IDs)
-      const DetectorClass = AR?.AR?.Detector ?? AR?.Detector ?? AR?.default?.Detector;
-console.log('[ArUco] AR object keys:', Object.keys(AR || {}));
-detector = new DetectorClass();
+      detector = new AR.Detector();
     } catch (e) {
       console.error('Failed to initialize ArUco detector:', e);
       return null;
