@@ -25,11 +25,7 @@ export function useArucoScanner(
   const [isActive, setIsActive] = useState(false);
   const internalCameraRef = useRef<CameraView>(null);
   const cameraRef = externalCameraRef ?? internalCameraRef;
-  const isScanningRef = useRef(false);
   const isActiveRef = useRef(false);
-  
-  // Reset scanning lock on every mount (React Strict Mode remounts)
-  isScanningRef.current = false;
 
   // Debug: setIsActive wird aufgerufen
   const wrappedSetIsActive = useCallback((value: boolean) => {
@@ -38,14 +34,13 @@ export function useArucoScanner(
   }, []);
 
   const scanCard = useCallback(async (): Promise<number[]> => {
-    console.log('[ArUco] scanCard aufgerufen, cameraRef.current:', !!cameraRef.current, 'isScanningRef.current:', isScanningRef.current);
+    console.log('[ArUco] scanCard aufgerufen, cameraRef.current:', !!cameraRef.current);
 
     if (!cameraRef.current) {
       console.log('[ArUco] scanCard abgebrochen – kein CameraRef');
       return [];
     }
 
-    isScanningRef.current = true;
     setIsScanning(true);
     setLastResult(null);
 
@@ -58,7 +53,6 @@ export function useArucoScanner(
 
       if (!photo || !photo.uri) {
         console.log('[ArUco] Kein Foto erhalten');
-        isScanningRef.current = false;
         setIsScanning(false);
         return [];
       }
@@ -75,7 +69,6 @@ export function useArucoScanner(
 
       if (!resized || !resized.uri) {
         console.log('[ArUco] Resize fehlgeschlagen');
-        isScanningRef.current = false;
         setIsScanning(false);
         return [];
       }
@@ -116,7 +109,6 @@ export function useArucoScanner(
 
       if (markers.length === 0) {
         console.log('[ArUco] Keine Marker erkannt');
-        isScanningRef.current = false;
         setIsScanning(false);
         return [];
       }
@@ -124,13 +116,11 @@ export function useArucoScanner(
       const ids = markers.map(m => m.id);
       console.log('[ArUco] Marker erkannt – IDs:', ids);
       callbacks?.onDetected?.(ids);
-      isScanningRef.current = false;
       setIsScanning(false);
       return ids;
     } catch (e) {
       console.error('[ArUco] FEHLER in scanCard:', e);
       callbacks?.onError?.('Scan-Fehler: ' + (e instanceof Error ? e.message : 'Unbekannter Fehler'));
-      isScanningRef.current = false;
       setIsScanning(false);
       return [];
     }
