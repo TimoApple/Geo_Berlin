@@ -19,7 +19,7 @@ function getDetector() {
     try {
       // ARUCO = 7x7 Marker, 250 IDs (DICT_7X7_250)
       // Wichtig: Nicht ARUCO_MIP_36h12 (6x6) verwenden!
-      detector = new AR.Detector({ dictionaryName: 'ARUCO_7X7_1000' });
+      detector = new AR.Detector({ dictionaryName: 'ARUCO' });
     } catch (e) {
       console.error('[ArUco] Failed to initialize detector:', e);
       return null;
@@ -46,9 +46,10 @@ export function detectMarkers(
   if (!det) return [];
 
   try {
-    // Wichtig: RGBA-Daten direkt übergeben (4 Bytes/Pixel)
-    // CV.grayscale() in detect() erwartet RGBA und konvertiert intern zu 1-Kanal
-    const imgData = { data: imageData, width, height };
+    // JPEG decodiert → Graustufen → Detektiere Marker
+    // js-aruco2 braucht ein Graustufen-Array (1 Byte/Pixel), kein RGBA
+    const grayData = toGrayscale(imageData);
+    const imgData = { data: grayData, width, height };
     const markers = det.detect(imgData);
 
     if (!markers || markers.length === 0) {
@@ -82,12 +83,18 @@ export function detectMarkers(
 }
 
 /**
- * RGBA-Daten unverändert weitergeben – CV.grayscale() in detect() 
- * erwartet 4 Bytes/Pixel und konvertiert selbst zu 1-Kanal Graustufen.
- * Diese Funktion ist nur noch ein Pass-Through für Kompatibilität.
+ * Konvertiert RGBA-Daten (4 Bytes/Pixel) in Graustufen (1 Byte/Pixel).
+ * js-aruco2 erwartet ein Graustufen-Array, kein RGBA.
+ * Verwendet die Standard-Luminanz-Formel: 0.299*R + 0.587*G + 0.114*B
  */
 export function toGrayscale(data: Uint8ClampedArray): Uint8ClampedArray {
-  // Direkt RGBA zurückgeben – detect() ruft CV.grayscale() intern auf
-  return data;
+  const len = data.length;
+  const grayLen = len / 4;
+  const gray = new Uint8ClampedArray(grayLen);
+  for (let i = 0; i < grayLen; i++) {
+    const offset = i * 4;
+    gray[i] = Math.round(0.299 * data[offset] + 0.587 * data[offset + 1] + 0.114 * data[offset + 2]);
+  }
+  return gray;
 }
 
