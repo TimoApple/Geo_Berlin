@@ -29,9 +29,9 @@ References:
   https://github.com/jcmellado/js-aruco
 */
 
+import { CV } from './cv';
+
 var AR = {};
-var CV = this.CV || require('./cv').CV;
-this.AR = AR;
 
 AR.DICTIONARIES = {
   ARUCO: {
