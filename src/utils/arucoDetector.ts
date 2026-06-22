@@ -19,7 +19,7 @@ function getDetector() {
     try {
       // ARUCO = 7x7 Marker, 250 IDs (DICT_7X7_250)
       // Wichtig: Nicht ARUCO_MIP_36h12 (6x6) verwenden!
-      detector = new AR.Detector({ dictionaryName: 'DICT_7X7_1000' });
+      detector = new AR.Detector({ dictionaryName: 'ARUCO_7X7_1000' });
     } catch (e) {
       console.error('[ArUco] Failed to initialize detector:', e);
       return null;
@@ -59,7 +59,7 @@ export function detectMarkers(
     console.log('[ArUco] Marker gefunden:', markers.length);
 
     return markers
-      .filter((m: any) => m && m.id !== undefined && m.id >= 0 && m.id <= 249 && m.corners)
+      .filter((m: any) => m && m.id !== undefined && m.id >= 0 && m.id <= 999 && m.corners)
       .map((m: any) => {
         const corners = m.corners.map((c: any) => ({
           x: typeof c.x === 'number' ? c.x : c[0],
