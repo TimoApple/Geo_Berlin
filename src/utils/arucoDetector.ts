@@ -1,7 +1,7 @@
 ﻿// ArUco Marker Detector – pure JS, no native code
-// Uses js-aruco2 (original js-aruco port) with ARUCO_MIP_36h12 dictionary (6x6 markers)
-// 6x6 = Standard ArUco MIP 36h12 (36 IDs, 12-bit hamming code)
-// Das ist das Standard-Dictionary für die gedruckten Karten
+// Uses js-aruco2 (original js-aruco port) with ARUCO dictionary (7x7 markers, 250 IDs)
+// 7x7 = Standard ArUco DICT_7X7_250 (250 IDs, 5-bit hamming distance)
+// Das ist das korrekte Dictionary für die gedruckten Karten (aruco_001.svg – aruco_100.svg)
 
 // Lokale Kopie von js-aruco2 mit ES-Modul-Export
 import AR from '../libs/aruco';
@@ -17,10 +17,11 @@ let detector: any = null;
 function getDetector() {
   if (!detector) {
     try {
-      // Default = ARUCO_MIP_36h12 (6x6 Marker, 36 IDs)
-      detector = new AR.Detector();
+      // ARUCO = 7x7 Marker, 250 IDs (DICT_7X7_250)
+      // Wichtig: Nicht ARUCO_MIP_36h12 (6x6) verwenden!
+      detector = new AR.Detector({ dictionaryName: 'DICT_7X7_1000' });
     } catch (e) {
-      console.error('Failed to initialize ArUco detector:', e);
+      console.error('[ArUco] Failed to initialize detector:', e);
       return null;
     }
   }
@@ -29,9 +30,9 @@ function getDetector() {
 
 /**
  * Detect ArUco markers from raw image pixel data
- * Uses js-aruco2's AR.Detector with ARUCO dictionary (7x7 markers)
+ * Uses js-aruco2's AR.Detector with ARUCO dictionary (7x7 markers, 250 IDs)
  * 
- * @param imageData - Uint8ClampedArray (RGBA)
+ * @param imageData - Uint8ClampedArray (RGBA, 4 bytes per pixel)
  * @param width - image width in pixels
  * @param height - image height in pixels
  * @returns Array of detected markers with id, corners, center
@@ -45,13 +46,20 @@ export function detectMarkers(
   if (!det) return [];
 
   try {
+    // Wichtig: RGBA-Daten direkt übergeben (4 Bytes/Pixel)
+    // CV.grayscale() in detect() erwartet RGBA und konvertiert intern zu 1-Kanal
     const imgData = { data: imageData, width, height };
     const markers = det.detect(imgData);
 
-    if (!markers || markers.length === 0) return [];
+    if (!markers || markers.length === 0) {
+      console.log('[ArUco] Keine Marker erkannt');
+      return [];
+    }
+
+    console.log('[ArUco] Marker gefunden:', markers.length);
 
     return markers
-      .filter((m: any) => m && m.id !== undefined && m.id >= 0 && m.id <= 1023 && m.corners)
+      .filter((m: any) => m && m.id !== undefined && m.id >= 0 && m.id <= 249 && m.corners)
       .map((m: any) => {
         const corners = m.corners.map((c: any) => ({
           x: typeof c.x === 'number' ? c.x : c[0],
@@ -68,28 +76,18 @@ export function detectMarkers(
         };
       });
   } catch (e) {
-    console.error('ArUco detection error:', e);
+    console.error('[ArUco] Detection error:', e);
     return [];
   }
 }
 
 /**
- * Convert RGBA pixel data to 1-channel grayscale (luminosity method)
- * js-aruco2's CV.grayscale erwartet RGBA Input und gibt 1-Kanal Output
- * Aber detect() ruft CV.grayscale intern auf – wir müssen RGBA liefern
+ * RGBA-Daten unverändert weitergeben – CV.grayscale() in detect() 
+ * erwartet 4 Bytes/Pixel und konvertiert selbst zu 1-Kanal Graustufen.
+ * Diese Funktion ist nur noch ein Pass-Through für Kompatibilität.
  */
 export function toGrayscale(data: Uint8ClampedArray): Uint8ClampedArray {
-  // RGBA Output (4 Kanäle) – CV.grayscale erwartet 4 Bytes/Pixel
-  const gray = new Uint8ClampedArray(data.length);
-  for (let i = 0; i < data.length; i += 4) {
-    const grayVal = Math.round(
-      0.299 * data[i] + 0.587 * data[i + 1] + 0.114 * data[i + 2]
-    );
-    gray[i] = grayVal;
-    gray[i + 1] = grayVal;
-    gray[i + 2] = grayVal;
-    gray[i + 3] = 255;
-  }
-  return gray;
+  // Direkt RGBA zurückgeben – detect() ruft CV.grayscale() intern auf
+  return data;
 }
 
