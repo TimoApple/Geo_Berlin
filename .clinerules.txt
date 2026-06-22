@@ -1,0 +1,4 @@
+- Windows PowerShell: NIEMALS &&, immer Semikolon: git add .; git commit -m "..."; git push
+- Kein Marker/SVG generieren — liegen auf timoboese.com/pano/berlin/codes/
+- DICT_7X7_1000 ist das korrekte ArUco Dictionary
+- Nur geforderte Dateien ändern, kein Refactoring
