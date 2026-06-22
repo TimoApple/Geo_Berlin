@@ -10,6 +10,19 @@ import * as ImageManipulator from 'expo-image-manipulator';
 import * as FileSystem from 'expo-file-system/legacy';
 import jpeg from 'jpeg-js';
 import { detectMarkers, toGrayscale, ArucoResult } from '../utils/arucoDetector';
+import { getLocations } from '../data/panoramaLocations';
+
+// Gültige Marker-IDs aus der Datenbank (einmalig beim Import ermitteln)
+const VALID_MARKER_IDS = new Set<number>();
+try {
+  const locs = getLocations();
+  locs.forEach(l => {
+    if (l.id >= 0) VALID_MARKER_IDS.add(l.id);
+  });
+  console.log('[ArUco] Gültige Marker-IDs in DB:', [...VALID_MARKER_IDS].sort((a, b) => a - b).join(', '));
+} catch (e) {
+  console.warn('[ArUco] Konnte gültige Marker-IDs nicht laden:', e);
+}
 
 export function useArucoScanner(
   externalCameraRef?: React.RefObject<CameraView>,
@@ -26,6 +39,7 @@ export function useArucoScanner(
   const internalCameraRef = useRef<CameraView>(null);
   const cameraRef = externalCameraRef ?? internalCameraRef;
   const isActiveRef = useRef(false);
+  const isScanningRef = useRef(false);
 
   // Debug: setIsActive wird aufgerufen
   const wrappedSetIsActive = useCallback((value: boolean) => {
@@ -115,12 +129,28 @@ export function useArucoScanner(
 
       const ids = markers.map(m => m.id);
       console.log('[ArUco] Marker erkannt – IDs:', ids);
-      callbacks?.onDetected?.(ids);
+
+      // Prüfe ob IDs in der Datenbank existieren
+      const validIds = ids.filter(id => VALID_MARKER_IDS.has(id));
+      if (validIds.length === 0) {
+        console.log('[ArUco] Keine der erkannten IDs in DB:', ids, '– gültige IDs:', [...VALID_MARKER_IDS].sort((a, b) => a - b).join(','));
+        setIsScanning(false);
+        return [];
+      }
+
+      callbacks?.onDetected?.(validIds);
       setIsScanning(false);
-      return ids;
+      return validIds;
     } catch (e) {
       console.error('[ArUco] FEHLER in scanCard:', e);
-      callbacks?.onError?.('Scan-Fehler: ' + (e instanceof Error ? e.message : 'Unbekannter Fehler'));
+      // ExpoCameraView remount error ignorieren (kein Toast)
+      const msg = e instanceof Error ? e.message : '';
+      if (msg.includes('ExpoCameraView') || msg.includes('Unable to find')) {
+        console.log('[ArUco] ExpoCameraView remount error ignoriert');
+        setIsScanning(false);
+        return [];
+      }
+      callbacks?.onError?.('Scan-Fehler: ' + msg);
       setIsScanning(false);
       return [];
     }
