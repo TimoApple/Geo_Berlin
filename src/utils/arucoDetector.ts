@@ -3,7 +3,10 @@
 // 6x6 = Standard ArUco MIP 36h12 (36 IDs, 12-bit hamming code)
 // Das ist das Standard-Dictionary für die gedruckten Karten
 
-import { AR } from 'js-aruco2';
+// js-aruco2 exportiert kein ES-Modul – AR wird als global definiert
+// Daher importieren wir die Datei direkt (Seiteneffekt-Import)
+import 'js-aruco2/src/aruco.js';
+declare const AR: any;
 
 export interface ArucoResult {
   id: number;
