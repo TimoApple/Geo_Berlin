@@ -74,10 +74,12 @@ export function detectMarkers(
 }
 
 /**
- * Convert RGBA pixel data to grayscale (luminosity method)
- * Improves ArUco detection performance
+ * Convert RGBA pixel data to 1-channel grayscale (luminosity method)
+ * js-aruco2's CV.grayscale erwartet RGBA Input und gibt 1-Kanal Output
+ * Aber detect() ruft CV.grayscale intern auf – wir müssen RGBA liefern
  */
 export function toGrayscale(data: Uint8ClampedArray): Uint8ClampedArray {
+  // RGBA Output (4 Kanäle) – CV.grayscale erwartet 4 Bytes/Pixel
   const gray = new Uint8ClampedArray(data.length);
   for (let i = 0; i < data.length; i += 4) {
     const grayVal = Math.round(
