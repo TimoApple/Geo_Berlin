@@ -19,7 +19,7 @@ function getDetector() {
     try {
       // ARUCO = 7x7 Marker, 250 IDs (DICT_7X7_250)
       // Wichtig: Nicht ARUCO_MIP_36h12 (6x6) verwenden!
-      detector = new AR.Detector({ dictionaryName: 'ARUCO' });
+      detector = new AR.Detector({ dictionaryName: 'ARUCO', maxHammingDistance: 6 });
     } catch (e) {
       console.error('[ArUco] Failed to initialize detector:', e);
       return null;
@@ -48,8 +48,7 @@ export function detectMarkers(
   try {
     // JPEG decodiert → Graustufen → Detektiere Marker
     // js-aruco2 braucht ein Graustufen-Array (1 Byte/Pixel), kein RGBA
-    const grayData = toGrayscale(imageData);
-    const imgData = { data: grayData, width, height };
+    const imgData = { data: imageData, width, height };
     const markers = det.detect(imgData);
 
     if (!markers || markers.length === 0) {

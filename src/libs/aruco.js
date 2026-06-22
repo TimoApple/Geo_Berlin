@@ -268,11 +268,11 @@ AR.Detector.prototype.detectMJPEGStream = function (chunk) {
 
 AR.Detector.prototype.detect = function (image) {
   CV.grayscale(image, this.grey);
-  CV.adaptiveThreshold(this.grey, this.thres, 2, 7);
+  CV.adaptiveThreshold(this.grey, this.thres, 2, 21);
 
   this.contours = CV.findContours(this.thres, this.binary);
   //Scale Fix: https://stackoverflow.com/questions/35936397/marker-detection-on-paper-sheet-using-javascript
-  //this.candidates = this.findCandidates(this.contours, image.width * 0.20, 0.05, 10);
+  //this.candidates = this.findCandidates(this.contours, image.width * 0.05, 0.05, 10);
   this.candidates = this.findCandidates(this.contours, image.width * 0.01, 0.05, 10);
   this.candidates = this.clockwiseCorners(this.candidates);
   this.candidates = this.notTooNear(this.candidates, 10);

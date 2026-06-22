@@ -111,18 +111,28 @@ export function useArucoScanner(
       const decoded = jpeg.decode(bytes, { useTArray: true });
       console.log('[ArUco] JPEG decodiert:', decoded.width, 'x', decoded.height);
 
-      // 5. RGBA-Daten direkt an detectMarkers übergeben
-      // CV.grayscale() in detect() erwartet 4 Bytes/Pixel und konvertiert selbst
+      // 5. Orange→weiß, Dunkel→schwarz normalisieren (SVGs haben #f2a444 + #262523)
       console.log('[ArUco] RGBA-Daten vorbereiten...');
-      const clampedData = new Uint8ClampedArray(
+      const rawData = new Uint8ClampedArray(
         decoded.data.buffer,
         decoded.data.byteOffset,
         decoded.data.length
       );
+      const contrastData = new Uint8ClampedArray(rawData.length);
+      for (let i = 0; i < rawData.length; i += 4) {
+        const r = rawData[i], g = rawData[i + 1], b = rawData[i + 2];
+        const isOrange = r > 160 && g > 80 && b < 100;
+        const isDark = r < 80 && g < 80 && b < 80;
+        const val = isOrange ? 255 : isDark ? 0 : 180;
+        contrastData[i] = val;
+        contrastData[i + 1] = val;
+        contrastData[i + 2] = val;
+        contrastData[i + 3] = 255;
+      }
 
       // 6. ArUco-Marker erkennen (DICT_7X7_250)
       console.log('[ArUco] Detektiere Marker...');
-      const markers = detectMarkers(clampedData, decoded.width, decoded.height);
+      const markers = detectMarkers(contrastData, decoded.width, decoded.height);
       console.log('[ArUco] Marker gefunden:', markers.length);
 
       setLastResult(markers);
