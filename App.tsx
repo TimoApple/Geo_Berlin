@@ -254,6 +254,16 @@ export default function App() {
   const openCityScan = (idx: number) => {
     setScanCityForIdx(idx); setShowCityScanner(true); setScanned(false); setScanError(''); setManualCode('');
     setArucoActive(true); // ArUco-Scanning starten
+    // Direkt scanCard aufrufen nachdem Kamera gemountet ist
+    setTimeout(async () => {
+      console.log('[App] openCityScan: starte scanCard...');
+      try {
+        const ids = await scanCard();
+        console.log('[App] scanCard Ergebnis:', ids);
+      } catch (e) {
+        console.error('[App] scanCard Fehler:', e);
+      }
+    }, 2000);
   };
 
   const submitManualCode = useCallback(() => {

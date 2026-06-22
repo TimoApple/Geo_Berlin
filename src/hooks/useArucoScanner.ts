@@ -1,6 +1,6 @@
 // useArucoScanner – ArUco marker detection via photo capture
 // Uses expo-camera + expo-image-manipulator + jpeg-js + js-aruco2
-// Dictionary: DICT_6X6_50 (ARUCO_MIP_36h12) – nativ von js-aruco2 unterstützt
+// Dictionary: DICT_7X7_250 (ARUCO) – nativ von js-aruco2 unterstützt
 // No native code, no prebuild needed
 // Continuous scanning: scanCard wird automatisch in Schleife getriggert
 
@@ -9,7 +9,7 @@ import { CameraView } from 'expo-camera';
 import * as ImageManipulator from 'expo-image-manipulator';
 import * as FileSystem from 'expo-file-system/legacy';
 import jpeg from 'jpeg-js';
-import { detectMarkers, toGrayscale, ArucoResult } from '../utils/arucoDetector';
+import { detectMarkers, ArucoResult } from '../utils/arucoDetector';
 import { getLocations } from '../data/panoramaLocations';
 
 // Gültige Marker-IDs aus der Datenbank (einmalig beim Import ermitteln)
@@ -111,18 +111,18 @@ export function useArucoScanner(
       const decoded = jpeg.decode(bytes, { useTArray: true });
       console.log('[ArUco] JPEG decodiert:', decoded.width, 'x', decoded.height);
 
-      // 5. In Graustufen konvertieren (bessere Erkennung)
-      console.log('[ArUco] Graustufen...');
+      // 5. RGBA-Daten direkt an detectMarkers übergeben
+      // CV.grayscale() in detect() erwartet 4 Bytes/Pixel und konvertiert selbst
+      console.log('[ArUco] RGBA-Daten vorbereiten...');
       const clampedData = new Uint8ClampedArray(
         decoded.data.buffer,
         decoded.data.byteOffset,
         decoded.data.length
       );
-      const grayData = toGrayscale(clampedData);
 
-      // 6. ArUco-Marker erkennen (DICT_6X6_50)
+      // 6. ArUco-Marker erkennen (DICT_7X7_250)
       console.log('[ArUco] Detektiere Marker...');
-      const markers = detectMarkers(grayData, decoded.width, decoded.height);
+      const markers = detectMarkers(clampedData, decoded.width, decoded.height);
       console.log('[ArUco] Marker gefunden:', markers.length);
 
       setLastResult(markers);
