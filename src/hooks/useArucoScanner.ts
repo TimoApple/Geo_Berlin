@@ -46,8 +46,8 @@ export function useArucoScanner(
 
     try {
       console.log('[ArUco] Foto wird aufgenommen...');
-      // 1. Foto aufnehmen – mit skipProcessing für native cast fix
-      const photo = await cameraRef.current.takePictureAsync({ skipProcessing: true });
+      // 1. Foto aufnehmen – ohne Parameter (expo-camera 16.x native cast)
+      const photo = await cameraRef.current.takePictureAsync();
 
       console.log('[ArUco] Foto aufgenommen:', photo ? 'OK' : 'NULL', 'uri:', photo?.uri);
 
