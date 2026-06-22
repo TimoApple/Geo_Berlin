@@ -5,8 +5,7 @@
 
 // js-aruco2 exportiert kein ES-Modul – AR wird als global definiert
 // Daher importieren wir die Datei direkt (Seiteneffekt-Import)
-import 'js-aruco2/src/aruco.js';
-declare const AR: any;
+const AR = require('js-aruco2/src/aruco.js');
 
 export interface ArucoResult {
   id: number;
@@ -20,7 +19,9 @@ function getDetector() {
   if (!detector) {
     try {
       // Default = ARUCO_MIP_36h12 (6x6 Marker, 36 IDs)
-      detector = new AR.Detector();
+      const DetectorClass = AR?.AR?.Detector ?? AR?.Detector ?? AR?.default?.Detector;
+console.log('[ArUco] AR object keys:', Object.keys(AR || {}));
+detector = new DetectorClass();
     } catch (e) {
       console.error('Failed to initialize ArUco detector:', e);
       return null;

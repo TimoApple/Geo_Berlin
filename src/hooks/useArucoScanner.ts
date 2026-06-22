@@ -176,7 +176,7 @@ export function useArucoScanner(
       isActiveRef.current = false;
       if (timeoutId) clearTimeout(timeoutId);
     };
-  }, [isActive, scanCard]);
+  }, [isActive]);
 
   return {
     scanCard,
