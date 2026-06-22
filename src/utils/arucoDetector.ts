@@ -19,7 +19,7 @@ function getDetector() {
     try {
       // ARUCO = 7x7 Marker, 250 IDs (DICT_7X7_250)
       // Wichtig: Nicht ARUCO_MIP_36h12 (6x6) verwenden!
-      detector = new AR.Detector({ dictionaryName: 'ARUCO', maxHammingDistance: 6 });
+      detector = new AR.Detector({ dictionaryName: 'ARUCO', maxHammingDistance: 4 });
     } catch (e) {
       console.error('[ArUco] Failed to initialize detector:', e);
       return null;

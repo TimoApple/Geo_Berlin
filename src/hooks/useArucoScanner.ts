@@ -143,7 +143,7 @@ export function useArucoScanner(
         return [];
       }
 
-      const ids = markers.map(m => m.id);
+      const ids = markers.map(m => m.id + 1);
       console.log('[ArUco] Marker erkannt – IDs:', ids);
 
       // Prüfe ob IDs in der Datenbank existieren
