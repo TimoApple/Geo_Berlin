@@ -60,8 +60,14 @@ export function useArucoScanner(
 
     try {
       console.log('[ArUco] Foto wird aufgenommen...');
-      // 1. Foto aufnehmen – ohne Parameter (expo-camera 16.x native cast)
-      const photo = await cameraRef.current.takePictureAsync();
+      // 1. Foto aufnehmen – mit Timeout (Kamera braucht Warmup)
+      const timeoutPromise = new Promise<never>((_, reject) =>
+        setTimeout(() => reject(new Error('takePicture timeout')), 5000)
+      );
+      const photo = await Promise.race([
+        cameraRef.current.takePictureAsync({ quality: 0.5 }),
+        timeoutPromise,
+      ]);
 
       console.log('[ArUco] Foto aufgenommen:', photo ? 'OK' : 'NULL', 'uri:', photo?.uri);
 
@@ -143,10 +149,10 @@ export function useArucoScanner(
       return validIds;
     } catch (e) {
       console.error('[ArUco] FEHLER in scanCard:', e);
-      // ExpoCameraView remount error ignorieren (kein Toast)
       const msg = e instanceof Error ? e.message : '';
-      if (msg.includes('ExpoCameraView') || msg.includes('Unable to find')) {
-        console.log('[ArUco] ExpoCameraView remount error ignoriert');
+      // Timeout oder Camera-remount Fehler ignorieren (kein Toast)
+      if (msg.includes('timeout') || msg.includes('ExpoCameraView') || msg.includes('Unable to find')) {
+        console.log('[ArUco] Timeout/Camera-Fehler ignoriert');
         setIsScanning(false);
         return [];
       }
