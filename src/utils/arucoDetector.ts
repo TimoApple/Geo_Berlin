@@ -5,8 +5,6 @@
 
 // Lokale Kopie von js-aruco2 mit ES-Modul-Export
 import AR from '../libs/aruco';
-// Zusätzliches 5x5 Dictionary für die neuen Marker (DICT_5X5_1000)
-import '../libs/aruco_5x5_100';
 
 export interface ArucoResult {
   id: number;
@@ -14,24 +12,16 @@ export interface ArucoResult {
   center: { x: number; y: number };
 }
 
-let detector7x7: any = null;
-let detector5x5: any = null;
+let detector: any = null;
 
-function getDetector(dictName: string) {
+function getDetector() {
   try {
-    if (dictName === 'ARUCO_5X5_1000') {
-      if (!detector5x5) {
-        detector5x5 = new AR.Detector({ dictionaryName: 'ARUCO_5X5_1000', maxHammingDistance: 3 });
-      }
-      return detector5x5;
+    if (!detector) {
+      detector = new AR.Detector({ dictionaryName: 'ARUCO', maxHammingDistance: 4 });
     }
-    // Default: ARUCO (7x7)
-    if (!detector7x7) {
-      detector7x7 = new AR.Detector({ dictionaryName: 'ARUCO', maxHammingDistance: 4 });
-    }
-    return detector7x7;
+    return detector;
   } catch (e) {
-    console.error('[ArUco] Failed to initialize detector (' + dictName + '):', e);
+    console.error('[ArUco] Failed to initialize detector:', e);
     return null;
   }
 }
@@ -50,58 +40,53 @@ export function detectMarkers(
   width: number,
   height: number
 ): ArucoResult[] {
-  // 5x5 zuerst (ARUCO_5X5_1000 = neue Marker), dann 7x7 (ARUCO = alte Marker)
-  const dicts = ['ARUCO_5X5_1000', 'ARUCO'];
+  const det = getDetector();
+  if (!det) return [];
 
-  for (const dictName of dicts) {
-    const det = getDetector(dictName);
-    if (!det) continue;
+  try {
+    // js-aruco2 braucht ein Graustufen-Array (1 Byte/Pixel), kein RGBA
+    const imgData = { data: imageData, width, height };
+    const markers = det.detect(imgData);
 
-    try {
-      // js-aruco2 braucht ein Graustufen-Array (1 Byte/Pixel), kein RGBA
-      const imgData = { data: imageData, width, height };
-      const markers = det.detect(imgData);
-
-      if (!markers || markers.length === 0) {
-        console.log('[ArUco] Keine Marker erkannt mit', dictName);
-        continue;
-      }
-
-      console.log('[ArUco] Marker gefunden mit', dictName + ':', markers.length);
-
-      const results = markers
-        .filter((m: any) => m && m.id !== undefined && m.id >= 0 && m.id <= 999 && m.corners)
-        .map((m: any) => {
-          // Debug: rohe ID aus dem Detector ausgeben
-          console.log('[ArUco] raw detector id:', m.id);
-          console.log('[ArUco] dictionary used:', dictName);
-          const mappedId = m.id + 1;
-          console.log('[ArUco] mapped arucoId:', mappedId);
-
-          const corners = m.corners.map((c: any) => ({
-            x: typeof c.x === 'number' ? c.x : c[0],
-            y: typeof c.y === 'number' ? c.y : c[1],
-          }));
-
-          const centerX = corners.reduce((sum: number, c: { x: number }) => sum + c.x, 0) / corners.length;
-          const centerY = corners.reduce((sum: number, c: { y: number }) => sum + c.y, 0) / corners.length;
-
-          return {
-            id: m.id,
-            corners,
-            center: { x: centerX, y: centerY },
-          };
-        });
-
-      if (results.length > 0) {
-        return results;
-      }
-    } catch (e) {
-      console.error('[ArUco] Detection error mit', dictName + ':', e);
+    if (!markers || markers.length === 0) {
+      console.log('[ArUco] Keine Marker erkannt');
+      return [];
     }
+
+    console.log('[ArUco] Marker gefunden:', markers.length);
+
+    const results = markers
+      .filter((m: any) => m && m.id !== undefined && m.id >= 0 && m.id <= 249 && m.corners)
+      .map((m: any) => {
+        // Debug: rohe ID aus dem Detector ausgeben
+        console.log('[ArUco] dictionary used: ARUCO (7x7)');
+        console.log('[ArUco] raw detector id:', m.id);
+        const mappedId = m.id + 1;
+        console.log('[ArUco] mapped arucoId:', mappedId);
+
+        const corners = m.corners.map((c: any) => ({
+          x: typeof c.x === 'number' ? c.x : c[0],
+          y: typeof c.y === 'number' ? c.y : c[1],
+        }));
+
+        const centerX = corners.reduce((sum: number, c: { x: number }) => sum + c.x, 0) / corners.length;
+        const centerY = corners.reduce((sum: number, c: { y: number }) => sum + c.y, 0) / corners.length;
+
+        return {
+          id: m.id,
+          corners,
+          center: { x: centerX, y: centerY },
+        };
+      });
+
+    if (results.length > 0) {
+      return results;
+    }
+  } catch (e) {
+    console.error('[ArUco] Detection error:', e);
   }
 
-  console.log('[ArUco] Keine Marker mit beiden Dictionaries erkannt');
+  console.log('[ArUco] Keine Marker erkannt');
   return [];
 }
 
@@ -120,4 +105,3 @@ export function toGrayscale(data: Uint8ClampedArray): Uint8ClampedArray {
   }
   return gray;
 }
-
