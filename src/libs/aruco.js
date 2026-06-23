@@ -183,7 +183,7 @@ AR.Detector = function (config) {
   this.contours = [];
   this.polys = [];
   this.candidates = [];
-  config.dictionaryName = config.dictionaryName || 'ARUCO_MIP_36h12';
+  config.dictionaryName = config.dictionaryName || 'ARUCO';
   this.dictionary = new AR.Dictionary(config.dictionaryName);
   this.dictionary.tau = config.maxHammingDistance != null ? config.maxHammingDistance : this.dictionary.tau;
 };
