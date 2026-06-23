@@ -40,12 +40,72 @@ export function useArucoScanner(
   const cameraRef = externalCameraRef ?? internalCameraRef;
   const isActiveRef = useRef(false);
   const isScanningRef = useRef(false);
+  const fallbackModeRef = useRef(false);       // true = JPG-Fallback-Modus aktiv
+  const consecutiveErrorsRef = useRef(0);       // Zähler für Fehler in Folge
 
   // Debug: setIsActive wird aufgerufen
   const wrappedSetIsActive = useCallback((value: boolean) => {
     console.log('[ArUco] setIsActive aufgerufen mit:', value);
     setIsActive(value);
   }, []);
+
+  // Gemeinsame Bildverarbeitung: RGBA → Kontrast → Marker erkennen
+  const processImageData = useCallback((width: number, height: number, rawData: Uint8ClampedArray): ArucoResult[] => {
+    // Orange→weiß, Dunkel→schwarz normalisieren (SVGs haben #f2a444 + #262523)
+    const contrastData = new Uint8ClampedArray(rawData.length);
+    for (let i = 0; i < rawData.length; i += 4) {
+      const r = rawData[i], g = rawData[i + 1], b = rawData[i + 2];
+      const isOrange = r > 160 && g > 80 && b < 100;
+      const lum = 0.299 * r + 0.587 * g + 0.114 * b;
+      const val = isOrange ? 255 : lum > 128 ? 255 : 0;
+      contrastData[i] = val;
+      contrastData[i + 1] = val;
+      contrastData[i + 2] = val;
+      contrastData[i + 3] = 255;
+    }
+    return detectMarkers(contrastData, width, height);
+  }, []);
+
+  // JPEG-Base64 dekodieren und Marker erkennen
+  const decodeAndDetect = useCallback((base64: string): { markers: ArucoResult[], width: number, height: number } | null => {
+    try {
+      const binaryStr = atob(base64);
+      const bytes = new Uint8Array(binaryStr.length);
+      for (let i = 0; i < binaryStr.length; i++) {
+        bytes[i] = binaryStr.charCodeAt(i);
+      }
+      const decoded = jpeg.decode(bytes, { useTArray: true });
+      console.log('[ArUco] JPEG decodiert:', decoded.width, 'x', decoded.height);
+      const rawData = new Uint8ClampedArray(
+        decoded.data.buffer,
+        decoded.data.byteOffset,
+        decoded.data.length
+      );
+      const markers = processImageData(decoded.width, decoded.height, rawData);
+      return { markers, width: decoded.width, height: decoded.height };
+    } catch (e) {
+      console.error('[ArUco] decodeAndDetect Fehler:', e);
+      return null;
+    }
+  }, [processImageData]);
+
+  // Marker-IDs validieren und Callback aufrufen
+  const handleDetectedMarkers = useCallback((markers: ArucoResult[]): number[] => {
+    setLastResult(markers);
+    if (markers.length === 0) {
+      console.log('[ArUco] Keine Marker erkannt');
+      return [];
+    }
+    const ids = markers.map(m => m.id + 1);
+    console.log('[ArUco] Marker erkannt – IDs:', ids);
+    const validIds = ids.filter(id => VALID_MARKER_IDS.has(id));
+    if (validIds.length === 0) {
+      console.log('[ArUco] Keine der erkannten IDs in DB:', ids, '– gültige IDs:', [...VALID_MARKER_IDS].sort((a, b) => a - b).join(','));
+      return [];
+    }
+    callbacks?.onDetected?.(validIds);
+    return validIds;
+  }, [callbacks]);
 
   const scanCard = useCallback(async (): Promise<number[]> => {
     // Re-Entry Guard: kein paralleler Scan
@@ -54,7 +114,7 @@ export function useArucoScanner(
       return [];
     }
 
-    console.log('[ArUco] scanCard aufgerufen, cameraRef.current:', !!cameraRef.current);
+    console.log('[ArUco] scanCard aufgerufen, cameraRef.current:', !!cameraRef.current, 'fallbackMode:', fallbackModeRef.current);
 
     if (!cameraRef.current) {
       console.log('[ArUco] scanCard abgebrochen – kein CameraRef');
@@ -66,8 +126,37 @@ export function useArucoScanner(
     setLastResult(null);
 
     try {
-      console.log('[ArUco] Foto wird aufgenommen...');
-      // 1. Foto aufnehmen – mit Timeout (Kamera braucht Warmup)
+      if (fallbackModeRef.current) {
+        // === FALLBACK-MODUS: takePictureAsync mit base64:true ===
+        console.log('[ArUco] Fallback-Modus: Foto mit base64:true');
+        const timeoutPromise = new Promise<never>((_, reject) =>
+          setTimeout(() => reject(new Error('takePicture timeout')), 8000)
+        );
+        const photo = await Promise.race([
+          cameraRef.current.takePictureAsync({ quality: 0.5, base64: true }),
+          timeoutPromise,
+        ]);
+        if (!photo || !photo.base64) {
+          console.log('[ArUco] Fallback: Kein base64-Foto erhalten');
+          isScanningRef.current = false;
+          setIsScanning(false);
+          return [];
+        }
+        console.log('[ArUco] Fallback: base64 erhalten, Länge:', photo.base64.length);
+        const result = decodeAndDetect(photo.base64);
+        if (!result) {
+          isScanningRef.current = false;
+          setIsScanning(false);
+          return [];
+        }
+        handleDetectedMarkers(result.markers);
+        isScanningRef.current = false;
+        setIsScanning(false);
+        return result.markers.map(m => m.id + 1);
+      }
+
+      // === NORMAL-MODUS: takePictureAsync → ImageManipulator → FileSystem → jpeg-js ===
+      console.log('[ArUco] Normal-Modus: Foto wird aufgenommen...');
       const timeoutPromise = new Promise<never>((_, reject) =>
         setTimeout(() => reject(new Error('takePicture timeout')), 8000)
       );
@@ -110,70 +199,31 @@ export function useArucoScanner(
 
       console.log('[ArUco] Base64 gelesen, Länge:', base64.length);
 
-      // 4. JPEG zu Roh-Pixeln decodieren (jpeg-js)
-      console.log('[ArUco] Decodiere JPEG...');
-      const binaryStr = atob(base64);
-      const bytes = new Uint8Array(binaryStr.length);
-      for (let i = 0; i < binaryStr.length; i++) {
-        bytes[i] = binaryStr.charCodeAt(i);
-      }
-      const decoded = jpeg.decode(bytes, { useTArray: true });
-      console.log('[ArUco] JPEG decodiert:', decoded.width, 'x', decoded.height);
-
-      // 5. Orange→weiß, Dunkel→schwarz normalisieren (SVGs haben #f2a444 + #262523)
-      console.log('[ArUco] RGBA-Daten vorbereiten...');
-      const rawData = new Uint8ClampedArray(
-        decoded.data.buffer,
-        decoded.data.byteOffset,
-        decoded.data.length
-      );
-      const contrastData = new Uint8ClampedArray(rawData.length);
-       for (let i = 0; i < rawData.length; i += 4) {
-        const r = rawData[i], g = rawData[i + 1], b = rawData[i + 2];
-        const isOrange = r > 160 && g > 80 && b < 100;
-        const lum = 0.299 * r + 0.587 * g + 0.114 * b;
-        const val = isOrange ? 255 : lum > 128 ? 255 : 0;
-        contrastData[i] = val;
-        contrastData[i + 1] = val;
-        contrastData[i + 2] = val;
-        contrastData[i + 3] = 255;
-      }
-
-      // 6. ArUco-Marker erkennen (DICT_7X7_250)
-      console.log('[ArUco] Detektiere Marker...');
-      const markers = detectMarkers(contrastData, decoded.width, decoded.height);
-      console.log('[ArUco] Marker gefunden:', markers.length);
-
-      setLastResult(markers);
-
-      if (markers.length === 0) {
-        console.log('[ArUco] Keine Marker erkannt');
+      // 4. JPEG decodieren + Marker erkennen
+      const result = decodeAndDetect(base64);
+      if (!result) {
         isScanningRef.current = false;
         setIsScanning(false);
         return [];
       }
-
-      const ids = markers.map(m => m.id + 1);
-      console.log('[ArUco] Marker erkannt – IDs:', ids);
-
-      // Prüfe ob IDs in der Datenbank existieren
-      const validIds = ids.filter(id => VALID_MARKER_IDS.has(id));
-      if (validIds.length === 0) {
-        console.log('[ArUco] Keine der erkannten IDs in DB:', ids, '– gültige IDs:', [...VALID_MARKER_IDS].sort((a, b) => a - b).join(','));
-        isScanningRef.current = false;
-        setIsScanning(false);
-        return [];
-      }
-
-      callbacks?.onDetected?.(validIds);
+      handleDetectedMarkers(result.markers);
       isScanningRef.current = false;
       setIsScanning(false);
-      return validIds;
+      return result.markers.map(m => m.id + 1);
     } catch (e) {
       console.error('[ArUco] FEHLER in scanCard:', e);
       const msg = e instanceof Error ? e.message : '';
+      consecutiveErrorsRef.current++;
+      console.log('[ArUco] Fehlerzähler:', consecutiveErrorsRef.current);
+
+      // Nach 3 Fehlern in Folge → Fallback-Modus aktivieren
+      if (consecutiveErrorsRef.current >= 3 && !fallbackModeRef.current) {
+        console.log('[ArUco] AKTIVIERE FALLBACK-MODUS (JPG base64:true)');
+        fallbackModeRef.current = true;
+      }
+
       // Timeout oder Camera-remount Fehler ignorieren (kein Toast)
-      if (msg.includes('timeout') || msg.includes('ExpoCameraView') || msg.includes('Unable to find')) {
+      if (msg.includes('timeout') || msg.includes('ExpoCameraView') || msg.includes('Unable to find') || msg.includes('ERR_IMAGE_CAPTURE_FAILED') || msg.includes('ERR_VIEW_NOT_FOUND')) {
         console.log('[ArUco] Timeout/Camera-Fehler ignoriert');
         isScanningRef.current = false;
         setIsScanning(false);
@@ -184,7 +234,7 @@ export function useArucoScanner(
       setIsScanning(false);
       return [];
     }
-  }, [callbacks]);
+  }, [callbacks, decodeAndDetect, handleDetectedMarkers]);
 
   // Continuous scanning loop
   useEffect(() => {
