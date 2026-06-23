@@ -3,6 +3,8 @@
 // Format: 5x5 Marker, 1000 IDs, 5-bit Hamming-Distanz
 // Deckt IDs 0-99 ab (Marker aruco_001 bis aruco_100) + Puffer
 
+import AR from './aruco';
+
 AR.DICTIONARIES['ARUCO_5X5_1000'] = {
   nBits: 25,
   tau: 5,
