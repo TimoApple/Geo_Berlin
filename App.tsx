@@ -11,7 +11,6 @@ import {
 import { CameraView, useCameraPermissions } from 'expo-camera';
 import { useFonts, SpaceGrotesk_400Regular, SpaceGrotesk_700Bold } from '@expo-google-fonts/space-grotesk';
 import { VideoView, useVideoPlayer } from 'expo-video';
-import TextRecognition from '@react-native-ml-kit/text-recognition';
 import { useArucoScanner } from './src/hooks/useArucoScanner';
 
 import { calculateDistance, formatDistance } from './src/utils/distance';
@@ -264,58 +263,6 @@ export default function App() {
     setUsedLocations([]);
   }, []);
 
-  // OCR capture
-  const captureAndRecognize = useCallback(async () => {
-    if (!cameraRef.current || scanCityForIdx === null) return;
-    try {
-      const photo = await cameraRef.current.takePictureAsync({ quality: 0.8 });
-      if (!photo) return;
-      const result = await TextRecognition.recognize(photo.uri);
-      if (!result || !result.blocks || result.blocks.length === 0) {
-        setScanError('Kein Text erkannt – manuell eingeben');
-        setTimeout(() => setScanError(''), 2000);
-        return;
-      }
-      for (const block of result.blocks) {
-        const text = block.text.trim();
-        if (!text) continue;
-        const numMatch = text.match(/#?(\d+)/);
-        if (numMatch) {
-          const id = parseInt(numMatch[1], 10);
-          const loc = findLocationById(id);
-          if (loc) {
-            const takenBy = players.find(p => p.city.toLowerCase() === loc.name.toLowerCase() && players.indexOf(p) !== scanCityForIdx);
-            if (takenBy) { setScanError(`Diese Karte ist bereits vergeben von ${takenBy.name}`); setTimeout(() => setScanError(''), 2500); return; }
-            playClickSound(); Vibration.vibrate(100);
-            setUsedLocations(prev => [...prev, loc.id]);
-            setPlayers(prev => prev.map((p, i) => i === scanCityForIdx ? { ...p, city: loc.name, cityId: loc.id, lat: loc.lat, lng: loc.lng } : p));
-            setShowCityScanner(false); setScanned(false); setScanCityForIdx(null);
-            stopCityScan();
-            return;
-          }
-        }
-        const normalized = text.toLowerCase().trim().replace(/ä/g,'ae').replace(/ö/g,'oe').replace(/ü/g,'ue').replace(/ß/g,'ss');
-        const allLocs = getLocations();
-        const match = allLocs.find(l => l.name.toLowerCase() === normalized);
-        if (match) {
-          const takenBy = players.find(p => p.city.toLowerCase() === match.name.toLowerCase() && players.indexOf(p) !== scanCityForIdx);
-          if (takenBy) { setScanError(`Diese Karte ist bereits vergeben von ${takenBy.name}`); setTimeout(() => setScanError(''), 2500); return; }
-          playClickSound(); Vibration.vibrate(100);
-          setUsedLocations(prev => [...prev, match.id]);
-          setPlayers(prev => prev.map((p, i) => i === scanCityForIdx ? { ...p, city: match.name, cityId: match.id, lat: match.lat, lng: match.lng } : p));
-          setShowCityScanner(false); setScanned(false); setScanCityForIdx(null);
-          stopCityScan();
-          return;
-        }
-      }
-      setScanError('Nicht erkannt – manuell eingeben');
-      setTimeout(() => setScanError(''), 2000);
-    } catch (e) {
-      setScanError('OCR-Fehler – manuell eingeben');
-      setTimeout(() => setScanError(''), 2000);
-    }
-  }, [scanCityForIdx, players, stopCityScan]);
-
   const cameraRef = useRef<CameraView>(null) as any;
   const tutScrollRef = useRef<ScrollView>(null);
 
@@ -345,38 +292,37 @@ export default function App() {
     const assignName = scanCityForIdx !== null ? players[scanCityForIdx]?.name : '';
     return (
       <View style={{ flex: 1, backgroundColor: '#000' }}><StatusBar hidden />
-        <CameraView ref={cameraRef} style={{ flex: 1 }} facing="back">
-          <View style={s.scanOverlay}>
-            <View style={{ alignItems: 'center', marginBottom: 20 }}>
-              <Text style={{ color: C.primary, fontSize: 13, fontFamily: FF.bold, letterSpacing: 2, marginBottom: 6 }}>
-                KARTE ZUWEISEN
-              </Text>
-              <Text style={{ color: '#fff', fontSize: 22, fontFamily: FF.bold }}>{assignName || 'Spieler'}</Text>
-            </View>
-            <View style={s.scanFrame}>
-              <Text style={{ color: C.primary, fontSize: 16, fontWeight: '600', textAlign: 'center' }}>
-                Stadtkarte in den Rahmen halten
-              </Text>
-            </View>
-            <View style={{ width: '100%', paddingHorizontal: 20, marginTop: 16 }}>
-              <Text style={{ color: 'rgba(241,232,225,0.6)', fontSize: 11, fontFamily: FF.bold, letterSpacing: 2, textAlign: 'center', marginBottom: 10, textTransform: 'uppercase' }}>Oder Code manuell eingeben</Text>
-              <View style={{ flexDirection: 'row', gap: 8 }}>
-                <View style={{ flex: 1, backgroundColor: 'rgba(25,26,45,0.9)', borderWidth: 1, borderColor: 'rgba(68,73,52,0.4)', borderRadius: 0 }}>
-                  <TextInput style={{ color: '#fff', fontSize: 16, fontFamily: FF.bold, paddingVertical: 12, paddingHorizontal: 16 }}
-                    value={manualCode} onChangeText={setManualCode} placeholder="#042 oder Berlin" placeholderTextColor="rgba(241,232,225,0.3)"
-                    autoCapitalize="none" autoCorrect={false} returnKeyType="go" onSubmitEditing={submitManualCode} />
-                </View>
-                <TouchableOpacity style={{ backgroundColor: C.primary, paddingVertical: 12, paddingHorizontal: 20, justifyContent: 'center' }} onPress={submitManualCode}>
-                  <Text style={{ color: C.onPrimaryContainer, fontSize: 14, fontFamily: FF.bold }}>GO</Text>
-                </TouchableOpacity>
-              </View>
-            </View>
-            {scanError ? (<View style={{ backgroundColor: 'rgba(255,100,100,0.9)', borderRadius: 12, paddingVertical: 10, paddingHorizontal: 20, marginTop: 16 }}><Text style={{ color: '#fff', fontSize: 15, fontWeight: '600' }}>{scanError}</Text></View>) : null}
-            <TouchableOpacity style={s.scanCloseBtn} onPress={() => { setShowCityScanner(false); setScanned(false); setManualCode(''); stopCityScan(); }}>
-              <Text style={s.scanCloseText}>SCHLIESSEN</Text>
-            </TouchableOpacity>
+        <CameraView ref={cameraRef} style={{ flex: 1 }} facing="back" />
+        <View style={s.scanOverlay}>
+          <View style={{ alignItems: 'center', marginBottom: 20 }}>
+            <Text style={{ color: C.primary, fontSize: 13, fontFamily: FF.bold, letterSpacing: 2, marginBottom: 6 }}>
+              KARTE ZUWEISEN
+            </Text>
+            <Text style={{ color: '#fff', fontSize: 22, fontFamily: FF.bold }}>{assignName || 'Spieler'}</Text>
           </View>
-        </CameraView>
+          <View style={s.scanFrame}>
+            <Text style={{ color: C.primary, fontSize: 16, fontWeight: '600', textAlign: 'center' }}>
+              Stadtkarte in den Rahmen halten
+            </Text>
+          </View>
+          <View style={{ width: '100%', paddingHorizontal: 20, marginTop: 16 }}>
+            <Text style={{ color: 'rgba(241,232,225,0.6)', fontSize: 11, fontFamily: FF.bold, letterSpacing: 2, textAlign: 'center', marginBottom: 10, textTransform: 'uppercase' }}>Oder Code manuell eingeben</Text>
+            <View style={{ flexDirection: 'row', gap: 8 }}>
+              <View style={{ flex: 1, backgroundColor: 'rgba(25,26,45,0.9)', borderWidth: 1, borderColor: 'rgba(68,73,52,0.4)', borderRadius: 0 }}>
+                <TextInput style={{ color: '#fff', fontSize: 16, fontFamily: FF.bold, paddingVertical: 12, paddingHorizontal: 16 }}
+                  value={manualCode} onChangeText={setManualCode} placeholder="#042 oder Berlin" placeholderTextColor="rgba(241,232,225,0.3)"
+                  autoCapitalize="none" autoCorrect={false} returnKeyType="go" onSubmitEditing={submitManualCode} />
+              </View>
+              <TouchableOpacity style={{ backgroundColor: C.primary, paddingVertical: 12, paddingHorizontal: 20, justifyContent: 'center' }} onPress={submitManualCode}>
+                <Text style={{ color: C.onPrimaryContainer, fontSize: 14, fontFamily: FF.bold }}>GO</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+          {scanError ? (<View style={{ backgroundColor: 'rgba(255,100,100,0.9)', borderRadius: 12, paddingVertical: 10, paddingHorizontal: 20, marginTop: 16 }}><Text style={{ color: '#fff', fontSize: 15, fontWeight: '600' }}>{scanError}</Text></View>) : null}
+          <TouchableOpacity style={s.scanCloseBtn} onPress={() => { setShowCityScanner(false); setScanned(false); setManualCode(''); stopCityScan(); }}>
+            <Text style={s.scanCloseText}>SCHLIESSEN</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     );
   }
