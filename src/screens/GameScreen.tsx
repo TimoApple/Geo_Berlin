@@ -7,6 +7,7 @@ import MapAnswer from '../components/MapAnswer';
 import { calculateDistance, calculatePoints, formatDistance } from '../utils/distance';
 import { playClickSound, playSuccessSound, playErrorSound, playPerfectSound, playTimerWarning, playTimerTick, playAnswerphoneBeep } from '../utils/sounds';
 import { panoramaLocations, PanoramaLocation } from '../data/panoramaLocations';
+import { useArucoScanner } from '../hooks/useArucoScanner';
 
 interface Player {
   id: number;
@@ -74,6 +75,33 @@ export default function GameScreen({ route, navigation }: Props) {
       setTimeout(() => playAnswerphoneBeep(), 100);
     }
   }, [timer, phase]);
+
+  // ArUco Scanner – automatisch in view-Phase aktiv
+  const { isActive, setIsActive } = useArucoScanner(undefined, {
+    onDetected: (ids) => {
+      console.log('[ArUco] Marker erkannt in GameScreen:', ids);
+      // Location anhand der Marker-ID setzen
+      const loc = panoramaLocations.find(l => ids.includes(l.id));
+      if (loc) {
+        console.log('[ArUco] Location gefunden:', loc.name);
+        setLocation(loc);
+      }
+    },
+    onError: (error) => {
+      console.warn('[ArUco] Scan-Fehler:', error);
+    },
+  });
+
+  // Scanner aktivieren/deaktivieren basierend auf phase
+  useEffect(() => {
+    if (phase === 'view') {
+      console.log('[ArUco] Aktiviere Scanner (phase=view)');
+      setIsActive(true);
+    } else {
+      console.log('[ArUco] Deaktiviere Scanner (phase=' + phase + ')');
+      setIsActive(false);
+    }
+  }, [phase, setIsActive]);
 
   // Random location
   const getRandomLocation = useCallback(() => {
