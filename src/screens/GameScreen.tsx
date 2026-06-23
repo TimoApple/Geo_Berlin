@@ -83,8 +83,16 @@ export default function GameScreen({ route, navigation }: Props) {
       // Location anhand der Marker-ID setzen
       const loc = panoramaLocations.find(l => ids.includes(l.id));
       if (loc) {
-        console.log('[ArUco] Location gefunden:', loc.name);
+        console.log('[ArUco] Panorama-Flow: Location gefunden:', loc.name);
+        // 1. Location setzen (triggert Panorama-Load in StreetViewImage)
         setLocation(loc);
+        // 2. Timer anhalten
+        setTimerPaused(true);
+        // 3. In answer-Phase wechseln (Scanner stoppt automatisch durch phase-Change)
+        setPhase('answer');
+        console.log('[ArUco] Panorama-Flow: setPhase(answer) nach Marker-Match');
+        // 4. Sound
+        playAnswerphoneBeep();
       }
     },
     onError: (error) => {
