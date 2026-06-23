@@ -48,6 +48,12 @@ export function useArucoScanner(
   }, []);
 
   const scanCard = useCallback(async (): Promise<number[]> => {
+    // Re-Entry Guard: kein paralleler Scan
+    if (isScanningRef.current) {
+      console.log('[ArUco] scanCard abgebrochen – Scan läuft bereits');
+      return [];
+    }
+
     console.log('[ArUco] scanCard aufgerufen, cameraRef.current:', !!cameraRef.current);
 
     if (!cameraRef.current) {
@@ -55,6 +61,7 @@ export function useArucoScanner(
       return [];
     }
 
+    isScanningRef.current = true;
     setIsScanning(true);
     setLastResult(null);
 
@@ -62,7 +69,7 @@ export function useArucoScanner(
       console.log('[ArUco] Foto wird aufgenommen...');
       // 1. Foto aufnehmen – mit Timeout (Kamera braucht Warmup)
       const timeoutPromise = new Promise<never>((_, reject) =>
-        setTimeout(() => reject(new Error('takePicture timeout')), 5000)
+        setTimeout(() => reject(new Error('takePicture timeout')), 8000)
       );
       const photo = await Promise.race([
         cameraRef.current.takePictureAsync({ quality: 0.5 }),

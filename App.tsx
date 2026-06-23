@@ -191,8 +191,19 @@ export default function App() {
             }
             playClickSound();
             Vibration.vibrate(100);
-            setArucoActive(false); // Pause scanning after detection
-            onQrScanned(loc);
+            
+            // Vollständiger UI-Übergang nach Marker-Treffer
+            console.log('[ArUco] Game-Flow: Setze Location', loc.name, '– phase=view');
+            setArucoActive(false); // Scanner stoppen
+            setLocation(loc);       // Panorama setzen
+            setUsedLocations(prev => [...prev, loc.id]);
+            setTimer(timerSetting); // Timer starten
+            setTimerPaused(false);
+            setPhase('view');       // In View-Phase wechseln
+            setShowQrScanner(false); // Scanner-UI schließen
+            setSvLoaded(false);
+            setSvError(false);
+            console.log('[ArUco] Game-Flow: UI-Übergang abgeschlossen – phase=view, scanner=aus');
           } else {
             console.log('[ArUco] no match for id:', id);
             setScanError('Dieser Ort wurde nicht gefunden. Bitte scanne eine gültige Karte.');
@@ -239,6 +250,18 @@ export default function App() {
     }
     if (timer === 0 && phase === 'view') { playTimerWarning(); Vibration.vibrate(500); setPhase('pick'); }
   }, [timer, phase]);
+
+  // ArUco-Scanner im Game-Flow aktivieren/deaktivieren
+  useEffect(() => {
+    if (showQrScanner && phase === 'scan-qr') {
+      console.log('[ArUco] Game-Flow: Aktiviere Scanner (showQrScanner=true, phase=scan-qr)');
+      setArucoActive(true);
+    } else if (!showQrScanner && !showCityScanner) {
+      // Nur deaktivieren, wenn auch kein City-Scanner läuft
+      console.log('[ArUco] Game-Flow: Deaktiviere Scanner (kein Scanner-UI aktiv)');
+      setArucoActive(false);
+    }
+  }, [showQrScanner, showCityScanner, phase]);
 
   // SV loading timeout — show LOAD NEW CARD after 5s
   useEffect(() => {
