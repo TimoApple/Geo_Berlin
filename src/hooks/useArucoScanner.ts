@@ -216,7 +216,15 @@ export function useArucoScanner(
       console.log('[ArUco] CameraRef verfügbar, starte Loop');
       
       while (isActiveRef.current && loopActive) {
-        console.log('[ArUco] Scan-Loop läuft...');
+        // Warte bis vorheriger Scan abgeschlossen ist (max 10s)
+        let waitCount = 0;
+        while (isScanningRef.current && waitCount < 50) {
+          await new Promise(resolve => setTimeout(resolve, 200));
+          waitCount++;
+        }
+        if (!isActiveRef.current || !loopActive) break;
+        
+        console.log('[ArUco] Scan-Loop: starte scanCard...');
         try {
           await scanCard();
         } catch (e) {

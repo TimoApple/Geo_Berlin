@@ -253,11 +253,11 @@ export default function App() {
 
   // ArUco-Scanner im Game-Flow aktivieren/deaktivieren
   useEffect(() => {
-    if (showQrScanner && phase === 'scan-qr') {
-      console.log('[ArUco] Game-Flow: Aktiviere Scanner (showQrScanner=true, phase=scan-qr)');
+    const shouldBeActive = (showQrScanner && phase === 'scan-qr') || showCityScanner;
+    if (shouldBeActive) {
+      console.log('[ArUco] Game-Flow: Aktiviere Scanner (showQrScanner=' + showQrScanner + ', showCityScanner=' + showCityScanner + ', phase=' + phase + ')');
       setArucoActive(true);
-    } else if (!showQrScanner && !showCityScanner) {
-      // Nur deaktivieren, wenn auch kein City-Scanner läuft
+    } else {
       console.log('[ArUco] Game-Flow: Deaktiviere Scanner (kein Scanner-UI aktiv)');
       setArucoActive(false);
     }
