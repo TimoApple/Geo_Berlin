@@ -3,6 +3,9 @@
 // Dictionary: DICT_7X7_250 (ARUCO) – nativ von js-aruco2 unterstützt
 // No native code, no prebuild needed
 // Continuous scanning: scanCard wird automatisch in Schleife getriggert
+//
+// API: startScanning() / stopScanning() statt setIsActive
+// Kein externes setIsActive mehr – der Hook kontrolliert seinen eigenen Lifecycle.
 
 import { useCallback, useRef, useState, useEffect } from 'react';
 import { CameraView } from 'expo-camera';
@@ -35,23 +38,17 @@ export function useArucoScanner(
 
   const [isScanning, setIsScanning] = useState(false);
   const [lastResult, setLastResult] = useState<ArucoResult[] | null>(null);
-  const [isActive, setIsActive] = useState(false);
   const internalCameraRef = useRef<CameraView>(null);
   const cameraRef = externalCameraRef ?? internalCameraRef;
   const isActiveRef = useRef(false);
   const isScanningRef = useRef(false);
-  const fallbackModeRef = useRef(false);       // true = JPG-Fallback-Modus aktiv
-  const consecutiveErrorsRef = useRef(0);       // Zähler für Fehler in Folge
-
-  // Debug: setIsActive wird aufgerufen
-  const wrappedSetIsActive = useCallback((value: boolean) => {
-    console.log('[ArUco] setIsActive aufgerufen mit:', value);
-    setIsActive(value);
-  }, []);
+  const fallbackModeRef = useRef(false);
+  const consecutiveErrorsRef = useRef(0);
+  const loopActiveRef = useRef(false);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Gemeinsame Bildverarbeitung: RGBA → Kontrast → Marker erkennen
   const processImageData = useCallback((width: number, height: number, rawData: Uint8ClampedArray): ArucoResult[] => {
-    // Orange→weiß, Dunkel→schwarz normalisieren (SVGs haben #f2a444 + #262523)
     const contrastData = new Uint8ClampedArray(rawData.length);
     for (let i = 0; i < rawData.length; i += 4) {
       const r = rawData[i], g = rawData[i + 1], b = rawData[i + 2];
@@ -75,7 +72,6 @@ export function useArucoScanner(
         bytes[i] = binaryStr.charCodeAt(i);
       }
       const decoded = jpeg.decode(bytes, { useTArray: true });
-      console.log('[ArUco] JPEG decodiert:', decoded.width, 'x', decoded.height);
       const rawData = new Uint8ClampedArray(
         decoded.data.buffer,
         decoded.data.byteOffset,
@@ -93,14 +89,11 @@ export function useArucoScanner(
   const handleDetectedMarkers = useCallback((markers: ArucoResult[]): number[] => {
     setLastResult(markers);
     if (markers.length === 0) {
-      console.log('[ArUco] Keine Marker erkannt');
       return [];
     }
     const ids = markers.map(m => m.id + 1);
-    console.log('[ArUco] Marker erkannt – IDs:', ids);
     const validIds = ids.filter(id => VALID_MARKER_IDS.has(id));
     if (validIds.length === 0) {
-      console.log('[ArUco] Keine der erkannten IDs in DB:', ids, '– gültige IDs:', [...VALID_MARKER_IDS].sort((a, b) => a - b).join(','));
       return [];
     }
     callbacks?.onDetected?.(validIds);
@@ -110,14 +103,10 @@ export function useArucoScanner(
   const scanCard = useCallback(async (): Promise<number[]> => {
     // Re-Entry Guard: kein paralleler Scan
     if (isScanningRef.current) {
-      console.log('[ArUco] scanCard abgebrochen – Scan läuft bereits');
       return [];
     }
 
-    console.log('[ArUco] scanCard aufgerufen, cameraRef.current:', !!cameraRef.current, 'fallbackMode:', fallbackModeRef.current);
-
     if (!cameraRef.current) {
-      console.log('[ArUco] scanCard abgebrochen – kein CameraRef');
       return [];
     }
 
@@ -128,7 +117,6 @@ export function useArucoScanner(
     try {
       if (fallbackModeRef.current) {
         // === FALLBACK-MODUS: takePictureAsync mit base64:true ===
-        console.log('[ArUco] Fallback-Modus: Foto mit base64:true');
         const timeoutPromise = new Promise<never>((_, reject) =>
           setTimeout(() => reject(new Error('takePicture timeout')), 8000)
         );
@@ -137,12 +125,10 @@ export function useArucoScanner(
           timeoutPromise,
         ]);
         if (!photo || !photo.base64) {
-          console.log('[ArUco] Fallback: Kein base64-Foto erhalten');
           isScanningRef.current = false;
           setIsScanning(false);
           return [];
         }
-        console.log('[ArUco] Fallback: base64 erhalten, Länge:', photo.base64.length);
         const result = decodeAndDetect(photo.base64);
         if (!result) {
           isScanningRef.current = false;
@@ -156,7 +142,6 @@ export function useArucoScanner(
       }
 
       // === NORMAL-MODUS: takePictureAsync → ImageManipulator → FileSystem → jpeg-js ===
-      console.log('[ArUco] Normal-Modus: Foto wird aufgenommen...');
       const timeoutPromise = new Promise<never>((_, reject) =>
         setTimeout(() => reject(new Error('takePicture timeout')), 8000)
       );
@@ -165,41 +150,28 @@ export function useArucoScanner(
         timeoutPromise,
       ]);
 
-      console.log('[ArUco] Foto aufgenommen:', photo ? 'OK' : 'NULL', 'uri:', photo?.uri);
-
       if (!photo || !photo.uri) {
-        console.log('[ArUco] Kein Foto erhalten');
         isScanningRef.current = false;
         setIsScanning(false);
         return [];
       }
 
-      // 2. Auf 640px Breite skalieren (JPEG, Performance)
-      console.log('[ArUco] Resize...');
       const resized = await ImageManipulator.manipulateAsync(
         photo.uri,
         [{ resize: { width: 640 } }],
         { format: ImageManipulator.SaveFormat.JPEG, compress: 0.8 }
       );
 
-      console.log('[ArUco] Resized:', resized ? 'OK' : 'NULL');
-
       if (!resized || !resized.uri) {
-        console.log('[ArUco] Resize fehlgeschlagen');
         isScanningRef.current = false;
         setIsScanning(false);
         return [];
       }
 
-      // 3. JPEG-Datei als Base64 einlesen
-      console.log('[ArUco] Lese Base64...');
       const base64 = await FileSystem.readAsStringAsync(resized.uri, {
         encoding: FileSystem.EncodingType.Base64,
       });
 
-      console.log('[ArUco] Base64 gelesen, Länge:', base64.length);
-
-      // 4. JPEG decodieren + Marker erkennen
       const result = decodeAndDetect(base64);
       if (!result) {
         isScanningRef.current = false;
@@ -214,7 +186,6 @@ export function useArucoScanner(
       console.error('[ArUco] FEHLER in scanCard:', e);
       const msg = e instanceof Error ? e.message : '';
       consecutiveErrorsRef.current++;
-      console.log('[ArUco] Fehlerzähler:', consecutiveErrorsRef.current);
 
       // Nach 3 Fehlern in Folge → Fallback-Modus aktivieren
       if (consecutiveErrorsRef.current >= 3 && !fallbackModeRef.current) {
@@ -224,7 +195,6 @@ export function useArucoScanner(
 
       // Timeout oder Camera-remount Fehler ignorieren (kein Toast)
       if (msg.includes('timeout') || msg.includes('ExpoCameraView') || msg.includes('Unable to find') || msg.includes('ERR_IMAGE_CAPTURE_FAILED') || msg.includes('ERR_VIEW_NOT_FOUND')) {
-        console.log('[ArUco] Timeout/Camera-Fehler ignoriert');
         isScanningRef.current = false;
         setIsScanning(false);
         return [];
@@ -236,72 +206,89 @@ export function useArucoScanner(
     }
   }, [callbacks, decodeAndDetect, handleDetectedMarkers]);
 
-  // Continuous scanning loop
-  useEffect(() => {
-    console.log('[ArUco] useEffect isActive geändert zu:', isActive);
-    isActiveRef.current = isActive;
-    if (!isActive) {
-      console.log('[ArUco] isActive=false – Scan-Loop beendet');
+  // Continuous scanning loop (wird von startScanning/stopScanning gesteuert)
+  const scanningLoopRef = useRef<Promise<void> | null>(null);
+
+  const startScanning = useCallback(() => {
+    if (isActiveRef.current) {
+      console.log('[ArUco] startScanning: bereits aktiv, ignoriert');
       return;
     }
+    console.log('[ArUco] startScanning: Aktiviere Scan-Loop');
+    isActiveRef.current = true;
+    loopActiveRef.current = true;
 
-    console.log('[ArUco] Starte Continuous Scan-Loop...');
-    let timeoutId: ReturnType<typeof setTimeout>;
-    let loopActive = true;
-    
     const loop = async () => {
       // Warte bis Kamera gemountet ist (max 3 Sekunden)
       let waited = 0;
       while (!cameraRef.current && waited < 3000) {
-        console.log('[ArUco] Warte auf CameraRef...');
         await new Promise(resolve => setTimeout(resolve, 200));
         waited += 200;
       }
-      
+
       if (!cameraRef.current) {
         console.error('[ArUco] CameraRef nie verfügbar!');
         return;
       }
-      
-      console.log('[ArUco] CameraRef verfügbar, starte Loop');
-      
-      while (isActiveRef.current && loopActive) {
+
+      while (isActiveRef.current && loopActiveRef.current) {
         // Warte bis vorheriger Scan abgeschlossen ist (max 10s)
         let waitCount = 0;
         while (isScanningRef.current && waitCount < 50) {
           await new Promise(resolve => setTimeout(resolve, 200));
           waitCount++;
         }
-        if (!isActiveRef.current || !loopActive) break;
-        
-        console.log('[ArUco] Scan-Loop: starte scanCard...');
+        if (!isActiveRef.current || !loopActiveRef.current) break;
+
         try {
           await scanCard();
         } catch (e) {
           console.error('[ArUco] FEHLER in Scan-Loop:', e);
         }
         // Warte 500ms zwischen Scans
-        await new Promise(resolve => { timeoutId = setTimeout(resolve, 500); });
+        await new Promise(resolve => {
+          timeoutRef.current = setTimeout(resolve, 500);
+        });
       }
       console.log('[ArUco] Scan-Loop beendet');
     };
-    
-    loop();
 
+    scanningLoopRef.current = loop();
+  }, [scanCard]);
+
+  const stopScanning = useCallback(() => {
+    if (!isActiveRef.current) {
+      return;
+    }
+    console.log('[ArUco] stopScanning: Deaktiviere Scan-Loop');
+    isActiveRef.current = false;
+    loopActiveRef.current = false;
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+    setIsScanning(false);
+    isScanningRef.current = false;
+  }, []);
+
+  // Cleanup bei unmount
+  useEffect(() => {
     return () => {
-      console.log('[ArUco] Cleanup – Scan-Loop wird gestoppt');
-      loopActive = false;
+      console.log('[ArUco] Cleanup – Hook wird unmounted');
       isActiveRef.current = false;
-      if (timeoutId) clearTimeout(timeoutId);
+      loopActiveRef.current = false;
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
     };
-  }, [isActive]);
+  }, []);
 
   return {
     scanCard,
     isScanning,
     lastResult,
     cameraRef,
-    isActive,
-    setIsActive: wrappedSetIsActive,
+    startScanning,
+    stopScanning,
   };
 }

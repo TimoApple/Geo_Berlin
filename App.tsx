@@ -1,5 +1,8 @@
 // GeoCheckr — Berlin Street Edition
-// Design System: "The Tactical Cartographer"
+// App.tsx – Nur noch Orchestrierung: Screen-Routing + Setup + Result
+// Game-Flow ist in GameScreen.tsx
+// Scanner-Logik ist in useArucoScanner.ts
+// Panorama-Viewer ist in PanoramaViewer.tsx
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import {
   View, Text, StyleSheet, TouchableOpacity, TextInput, Animated,
@@ -15,6 +18,7 @@ import { calculateDistance, formatDistance } from './src/utils/distance';
 import { playClickSound, playSuccessSound, playErrorSound, playPerfectSound, playTimerWarning, playTimerTick, playAnswerphoneBeep } from './src/utils/sounds';
 import { panoramaLocations, PanoramaLocation, getRandomLocation, fetchLocationsFromDB, findLocationById, getLocations } from './src/data/panoramaLocations';
 import PanoramaViewer from './src/components/PanoramaViewer';
+import GameScreen from './src/screens/GameScreen';
 
 const { width, height } = Dimensions.get('window');
 const FF = { regular: 'SpaceGrotesk_400Regular', bold: 'SpaceGrotesk_700Bold' };
@@ -35,7 +39,7 @@ const C = {
 // TYPES
 interface Player { id: number; name: string; city: string; cityId: number; lat: number; lng: number; score: number; }
 interface TableCity { city: string; lat: number; lng: number; ownerPlayerId: number | null; isPlayerCity: boolean; }
-type Screen = 'intro' | 'loading' | 'tutorial' | 'setup' | 'scan-city' | 'game' | 'result';
+type Screen = 'intro' | 'loading' | 'tutorial' | 'setup' | 'game' | 'result';
 
 // LOADING QUOTES
 const QUOTES = [
@@ -130,94 +134,15 @@ export default function App() {
   const [roundsSetting, setRoundsSetting] = useState(10);
   const [cameraPermission, requestCameraPermission] = useCameraPermissions();
 
-  // City scan
+  // City scan (Setup-Phase)
   const [scanCityForIdx, setScanCityForIdx] = useState<number | null>(null);
   const [showCityScanner, setShowCityScanner] = useState(false);
   const [scanned, setScanned] = useState(false);
   const [scanError, setScanError] = useState('');
   const [manualCode, setManualCode] = useState('');
 
-  // Game
-  const [tableCities, setTableCities] = useState<TableCity[]>([]);
-  const [activePlayerIdx, setActivePlayerIdx] = useState(0);
-  const [round, setRound] = useState(1);
-  const [maxRounds, setMaxRounds] = useState(10);
-  const [location, setLocation] = useState<PanoramaLocation>(panoramaLocations[0]);
-  const [usedLocations, setUsedLocations] = useState<number[]>([]);
-  const [phase, setPhase] = useState<'scan-qr' | 'view' | 'pick' | 'challenge' | 'result'>('scan-qr');
-  const [challengerId, setChallengerId] = useState<number | null>(null);
-  const [activePickIdx, setActivePickIdx] = useState<number | null>(null);
-  const [timer, setTimer] = useState(30);
-  const [timerPaused, setTimerPaused] = useState(false);
-  const [svLoaded, setSvLoaded] = useState(false);
-  const [svError, setSvError] = useState(false);
-  const [svLoadingLong, setSvLoadingLong] = useState(false);
-  const [showQrScanner, setShowQrScanner] = useState(false);
-  const [closestCityIdx, setClosestCityIdx] = useState<number | null>(null);
-  const [distances, setDistances] = useState<number[]>([]);
-  const [winnerId, setWinnerId] = useState<number | null>(null);
-  const [qrBlockedMsg, setQrBlockedMsg] = useState('');
-
-  const timerPulse = useRef(new Animated.Value(1)).current;
-  const resultScale = useRef(new Animated.Value(0)).current;
-  const scrollRef = useRef<ScrollView>(null);
-  const tutScrollRef = useRef<ScrollView>(null);
-  const cameraRef = useRef<CameraView>(null);
-  const [tutOpacity] = useState(new Animated.Value(1));
-
-  // Intro video player
-  const introPlayer = useVideoPlayer(require('./assets/intro.mp4'), (player) => {
-    player.loop = false;
-    player.play();
-  });
-
-  // Scanner (Marker-Erkennung via Kamera) – Continuous Scanning
-  const { scanCard, isScanning: arucoScanning, lastResult: arucoResult, setIsActive: setArucoActive } = useArucoScanner(
-    cameraRef,
-    {
-      onDetected: (ids) => {
-        if (ids.length > 0) {
-          const id = ids[0];
-          console.log('[ArUco] Erkannte ID:', id);
-          // ID → Location aus der Datenbank (live oder Fallback)
-          const loc = findLocationById(id);
-          if (loc) {
-            console.log('[ArUco] match found:', id, loc.name);
-            if (usedLocations.includes(id) || tableCities.some(tc => tc.city.toLowerCase() === loc.name.toLowerCase())) {
-              console.log('[ArUco] match already on table – skipping');
-              setScanError('Diese Stadt liegt bereits auf dem Tisch!');
-              setTimeout(() => setScanError(''), 2500);
-              return;
-            }
-            playClickSound();
-            Vibration.vibrate(100);
-            
-            // Vollständiger UI-Übergang nach Marker-Treffer
-            console.log('[ArUco] Game-Flow: Setze Location', loc.name, '– phase=view');
-            setArucoActive(false); // Scanner stoppen
-            setLocation(loc);       // Panorama setzen
-            setUsedLocations(prev => [...prev, loc.id]);
-            setTimer(timerSetting); // Timer starten
-            setTimerPaused(false);
-            setPhase('view');       // In View-Phase wechseln
-            setShowQrScanner(false); // Scanner-UI schließen
-            setSvLoaded(false);
-            setSvError(false);
-            console.log('[ArUco] Game-Flow: UI-Übergang abgeschlossen – phase=view, scanner=aus');
-          } else {
-            console.log('[ArUco] no match for id:', id);
-            setScanError('Dieser Ort wurde nicht gefunden. Bitte scanne eine gültige Karte.');
-            setTimeout(() => setScanError(''), 2500);
-          }
-        }
-      },
-      onError: (err) => {
-        console.log('[ArUco] Fehler:', err);
-        setScanError(err);
-        setTimeout(() => setScanError(''), 2500);
-      },
-    }
-  );
+  // Game state (für Result-Screen nach Spielende)
+  const [gameResultPlayers, setGameResultPlayers] = useState<Player[]>([]);
 
   const allPlayersScanned = players.length >= 2 && players.every(p => p.city.length > 0);
 
@@ -225,7 +150,6 @@ export default function App() {
   useEffect(() => {
     Animated.timing(loadingFade, { toValue: 1, duration: 800, useNativeDriver: true }).start();
     try { require('expo-navigation-bar').then((nb: any) => nb.setBackgroundColorAsync('#262523').catch(() => {})); } catch (_) {}
-    // Datenbank laden (ArUco-ID → Location Mapping)
     fetchLocationsFromDB().then(locs => {
       console.log(`[App] ${locs.length} Locations geladen (live von DB)`);
     });
@@ -233,44 +157,56 @@ export default function App() {
     return () => clearTimeout(t);
   }, []);
 
-  // TIMER
-  useEffect(() => {
-    if (phase !== 'view' || timerPaused || timer <= 0) return;
-    const interval = setInterval(() => setTimer(t => t - 1), 1000);
-    return () => clearInterval(interval);
-  }, [phase, timerPaused, timer]);
+  // Intro video player
+  const introPlayer = useVideoPlayer(require('./assets/intro.mp4'), (player) => {
+    player.loop = false;
+    player.play();
+  });
 
-  useEffect(() => {
-    if (timer <= 10 && timer > 0 && phase === 'view') {
-      playTimerTick(); Vibration.vibrate(200);
-      Animated.sequence([
-        Animated.timing(timerPulse, { toValue: 1.3, duration: 150, useNativeDriver: true }),
-        Animated.timing(timerPulse, { toValue: 1, duration: 150, useNativeDriver: true }),
-      ]).start();
-    }
-    if (timer === 0 && phase === 'view') { playTimerWarning(); Vibration.vibrate(500); setPhase('pick'); }
-  }, [timer, phase]);
+  // City-Scan: ArUco Scanner für Setup-Phase
+  const { startScanning: startCityScan, stopScanning: stopCityScan } = useArucoScanner(undefined, {
+    onDetected: (ids) => {
+      if (!showCityScanner || scanCityForIdx === null || ids.length === 0) return;
+      const id = ids[0];
+      const loc = findLocationById(id);
+      if (!loc) {
+        setScanError('Dieser Ort wurde nicht gefunden.');
+        setTimeout(() => setScanError(''), 2500);
+        return;
+      }
+      const takenBy = players.find(p => p.city.toLowerCase() === loc.name.toLowerCase() && players.indexOf(p) !== scanCityForIdx);
+      if (takenBy) {
+        setScanError(`Diese Karte ist bereits vergeben von ${takenBy.name}`);
+        setTimeout(() => setScanError(''), 2500);
+        return;
+      }
+      playClickSound();
+      Vibration.vibrate(100);
+      setUsedLocations(prev => [...prev, loc.id]);
+      setPlayers(prev => prev.map((p, i) => i === scanCityForIdx ? { ...p, city: loc.name, cityId: loc.id, lat: loc.lat, lng: loc.lng } : p));
+      setShowCityScanner(false);
+      setScanned(false);
+      setScanCityForIdx(null);
+      setManualCode('');
+      stopCityScan();
+    },
+    onError: (err) => {
+      setScanError(err);
+      setTimeout(() => setScanError(''), 2500);
+    },
+  });
 
-  // ArUco-Scanner im Game-Flow aktivieren/deaktivieren
+  // Scanner für City-Scan aktivieren/deaktivieren
   useEffect(() => {
-    const shouldBeActive = (showQrScanner && phase === 'scan-qr') || showCityScanner;
-    if (shouldBeActive) {
-      console.log('[ArUco] Game-Flow: Aktiviere Scanner (showQrScanner=' + showQrScanner + ', showCityScanner=' + showCityScanner + ', phase=' + phase + ')');
-      setArucoActive(true);
+    if (showCityScanner) {
+      startCityScan();
     } else {
-      console.log('[ArUco] Game-Flow: Deaktiviere Scanner (kein Scanner-UI aktiv)');
-      setArucoActive(false);
+      stopCityScan();
     }
-  }, [showQrScanner, showCityScanner, phase]);
+  }, [showCityScanner, startCityScan, stopCityScan]);
 
-  // SV loading timeout — show LOAD NEW CARD after 5s
-  useEffect(() => {
-    if (phase !== 'view' || svLoaded || svError) { setSvLoadingLong(false); return; }
-    const t = setTimeout(() => setSvLoadingLong(true), 5000);
-    return () => clearTimeout(t);
-  }, [phase, svLoaded, svError, location]);
+  const [usedLocations, setUsedLocations] = useState<number[]>([]);
 
-  // GAME LOGIC
   const addPlayer = () => {
     const count = players.length + 1;
     setPlayers(prev => [...prev, { id: Date.now(), name: `Spieler ${count}`, city: '', cityId: -1, lat: 0, lng: 0, score: 0 }]);
@@ -278,9 +214,11 @@ export default function App() {
   };
 
   const openCityScan = (idx: number) => {
-    setScanCityForIdx(idx); setShowCityScanner(true); setScanned(false); setScanError(''); setManualCode('');
-    setArucoActive(true); // ArUco-Scanning starten – Continuous-Loop übernimmt das Scannen
-    console.log('[App] openCityScan: ArUco Continuous-Loop aktiviert für City-Assign');
+    setScanCityForIdx(idx);
+    setShowCityScanner(true);
+    setScanned(false);
+    setScanError('');
+    setManualCode('');
   };
 
   const submitManualCode = useCallback(() => {
@@ -293,6 +231,7 @@ export default function App() {
       setUsedLocations(prev => [...prev, id]);
       setPlayers(prev => prev.map((p, i) => i === scanCityForIdx ? { ...p, city: loc.name, cityId: id, lat: loc.lat, lng: loc.lng } : p));
       setShowCityScanner(false); setScanned(false); setScanCityForIdx(null); setManualCode('');
+      stopCityScan();
     };
     const numMatch = code.match(/#?(\d+)/);
     if (numMatch) {
@@ -306,124 +245,40 @@ export default function App() {
     if (textMatch) { assign(textMatch, textMatch.id); return; }
     setScanError('Nicht erkannt – Code oder Stadtname prüfen');
     setTimeout(() => setScanError(''), 2000);
-  }, [manualCode, scanCityForIdx, players]);
+  }, [manualCode, scanCityForIdx, players, stopCityScan]);
 
   const startGame = () => {
     if (!allPlayersScanned) return;
     playClickSound();
-    setTableCities(players.map(p => ({ city: p.city, lat: p.lat, lng: p.lng, ownerPlayerId: p.id, isPlayerCity: true })));
-    setRound(1); setMaxRounds(roundsSetting * players.length); setActivePlayerIdx(0); setUsedLocations([]);
-    setPhase('scan-qr'); setScreen('game');
+    setScreen('game');
   };
 
-  const startRound = useCallback(() => {
-    setPhase('scan-qr'); setSvLoaded(false); setSvError(false); setSvLoadingLong(false);
-    setClosestCityIdx(null); setDistances([]); setWinnerId(null);
-    setChallengerId(null); setActivePickIdx(null);
-    setTimer(timerSetting); setTimerPaused(false); resultScale.setValue(0);
-  }, [timerSetting]);
+  const handleGameEnd = useCallback((finalPlayers: Player[]) => {
+    setGameResultPlayers(finalPlayers);
+    setScreen('result');
+  }, []);
 
-  const loadNewCard = useCallback(() => {
-    const newLoc = getRandomLocation(usedLocations);
-    setLocation(newLoc);
-    setUsedLocations(prev => [...prev, newLoc.id]);
-    setSvLoaded(false); setSvError(false); setSvLoadingLong(false);
-    setTimer(timerSetting); setTimerPaused(false);
-  }, [getRandomLocation, timerSetting, usedLocations]);
+  const handleBackToSetup = useCallback(() => {
+    setScreen('setup');
+    setPlayers(prev => prev.map(p => ({ ...p, score: 0, city: '', cityId: -1, lat: 0, lng: 0 })));
+    setUsedLocations([]);
+  }, []);
 
-  const onQrScanned = useCallback((loc: PanoramaLocation) => {
-    const playerCity = players.find(p => p.city.toLowerCase() === loc.name.toLowerCase());
-    if (playerCity) {
-      setQrBlockedMsg('Diese Stadt ist bereits auf dem Tisch!');
-      Vibration.vibrate(300);
-      setTimeout(() => setQrBlockedMsg(''), 2000);
-      return;
-    }
-    console.log('[App] onQrScanned: UI-Übergang für', loc.name);
-    setArucoActive(false); // ArUco-Scanner stoppen
-    setLocation(loc);
-    setUsedLocations(prev => [...prev, loc.id]);
-    setTimer(timerSetting);
-    setTimerPaused(false);
-    setPhase('view');
-    setShowQrScanner(false);
-    setScanned(false);
-    setSvLoaded(false);
-    setSvError(false);
-    Vibration.vibrate(100);
-    console.log('[App] onQrScanned: phase=view, scanner=aus');
-  }, [timerSetting, players]);
-
-  const pickCity = useCallback((idx: number) => {
-    playClickSound(); setTimerPaused(true);
-    const dists = tableCities.map(tc => calculateDistance(location.lat, location.lng, tc.lat, tc.lng));
-    setDistances(dists);
-    let minIdx = 0; for (let i = 1; i < dists.length; i++) if (dists[i] < dists[minIdx]) minIdx = i;
-    setClosestCityIdx(minIdx);
-    setActivePickIdx(idx);
-    setPhase('challenge');
-    setChallengerId(null);
-  }, [tableCities, location]);
-
-  const resolveRound = useCallback(() => {
-    const minIdx = closestCityIdx;
-    const pickedIdx = activePickIdx;
-    if (minIdx === null || pickedIdx === null) return;
-    const originalCorrect = pickedIdx === minIdx;
-    if (challengerId !== null) {
-      if (originalCorrect) {
-        playPerfectSound(); Vibration.vibrate([100, 50, 100]);
-        setPlayers(prev => prev.map(p => p.id === players[activePlayerIdx].id ? { ...p, score: p.score + 1 } : p));
-        setWinnerId(players[activePlayerIdx].id);
-      } else {
-        playPerfectSound(); Vibration.vibrate([100, 50, 100]);
-        setPlayers(prev => prev.map(p => p.id === challengerId ? { ...p, score: p.score + 1 } : p));
-        setWinnerId(challengerId);
-      }
-    } else {
-      if (originalCorrect) {
-        playPerfectSound(); Vibration.vibrate([100, 50, 100]);
-        setPlayers(prev => prev.map(p => p.id === players[activePlayerIdx].id ? { ...p, score: p.score + 1 } : p));
-        setWinnerId(players[activePlayerIdx].id);
-      } else {
-        playErrorSound(); Vibration.vibrate(500);
-        setWinnerId(null);
-      }
-    }
-    setTableCities(prev => [...prev, { city: location.name, lat: location.lat, lng: location.lng, ownerPlayerId: null, isPlayerCity: false }]);
-    Animated.spring(resultScale, { toValue: 1, friction: 6, useNativeDriver: true }).start();
-    setPhase('result');
-  }, [closestCityIdx, activePickIdx, challengerId, tableCities, location, activePlayerIdx]);
-
-  const nextTurn = () => {
-    playClickSound();
-    if (round >= maxRounds) { setScreen('result'); return; }
-    setActivePlayerIdx(prev => (prev + 1) % players.length);
-    setRound(r => r + 1); startRound();
-  };
-
-  // OCR capture – über result.blocks iterieren, nur ersten Treffer nehmen
+  // OCR capture
   const captureAndRecognize = useCallback(async () => {
     if (!cameraRef.current || scanCityForIdx === null) return;
     try {
       const photo = await cameraRef.current.takePictureAsync({ quality: 0.8 });
       if (!photo) return;
-      console.log('[OCR] Foto aufgenommen:', photo.uri);
       const result = await TextRecognition.recognize(photo.uri);
-      console.log('[OCR] Ergebnis:', JSON.stringify(result));
       if (!result || !result.blocks || result.blocks.length === 0) {
-        console.log('[OCR] Kein Text erkannt');
         setScanError('Kein Text erkannt – manuell eingeben');
         setTimeout(() => setScanError(''), 2000);
         return;
       }
-      console.log(`[OCR] ${result.blocks.length} Textblöcke gefunden`);
-      // Über alle Textblöcke iterieren, ersten passenden Treffer nehmen
       for (const block of result.blocks) {
-        console.log(`[OCR] Block: "${block.text}"`);
         const text = block.text.trim();
         if (!text) continue;
-        // 1. Prüfen ob es eine Zahl ist (#042 oder 042)
         const numMatch = text.match(/#?(\d+)/);
         if (numMatch) {
           const id = parseInt(numMatch[1], 10);
@@ -435,10 +290,10 @@ export default function App() {
             setUsedLocations(prev => [...prev, loc.id]);
             setPlayers(prev => prev.map((p, i) => i === scanCityForIdx ? { ...p, city: loc.name, cityId: loc.id, lat: loc.lat, lng: loc.lng } : p));
             setShowCityScanner(false); setScanned(false); setScanCityForIdx(null);
+            stopCityScan();
             return;
           }
         }
-        // 2. Prüfen ob es ein Ortsname ist
         const normalized = text.toLowerCase().trim().replace(/ä/g,'ae').replace(/ö/g,'oe').replace(/ü/g,'ue').replace(/ß/g,'ss');
         const allLocs = getLocations();
         const match = allLocs.find(l => l.name.toLowerCase() === normalized);
@@ -449,72 +304,20 @@ export default function App() {
           setUsedLocations(prev => [...prev, match.id]);
           setPlayers(prev => prev.map((p, i) => i === scanCityForIdx ? { ...p, city: match.name, cityId: match.id, lat: match.lat, lng: match.lng } : p));
           setShowCityScanner(false); setScanned(false); setScanCityForIdx(null);
+          stopCityScan();
           return;
         }
       }
-      // Nichts gefunden
       setScanError('Nicht erkannt – manuell eingeben');
       setTimeout(() => setScanError(''), 2000);
     } catch (e) {
       setScanError('OCR-Fehler – manuell eingeben');
       setTimeout(() => setScanError(''), 2000);
     }
-  }, [scanCityForIdx, players]);
+  }, [scanCityForIdx, players, stopCityScan]);
 
-  // SCAN HANDLER
-  const handleScan = useCallback(({ data }: { data: string }) => {
-    if (scanned || !data) return;
-    if (showQrScanner) {
-      const numMatch = data.match(/#?(\d+)/);
-      if (numMatch) {
-        const id = parseInt(numMatch[1], 10);
-        const loc = findLocationById(id);
-        if (loc) {
-          if (usedLocations.includes(id) || tableCities.some(tc => tc.city.toLowerCase() === loc.name.toLowerCase())) {
-            setScanError('Diese Stadt liegt bereits auf dem Tisch!'); setScanned(true); setTimeout(() => { setScanError(''); setScanned(false); }, 2500); return;
-          }
-          playClickSound(); setScanned(true); Vibration.vibrate(100); onQrScanned(loc); return;
-        }
-      }
-      if (data.startsWith('city:')) {
-        const id = parseInt(data.split(':')[1]);
-        const loc = findLocationById(id);
-        if (loc) {
-          if (usedLocations.includes(id) || tableCities.some(tc => tc.city.toLowerCase() === loc.name.toLowerCase())) {
-            setScanError('Diese Stadt liegt bereits auf dem Tisch!'); setScanned(true); setTimeout(() => { setScanError(''); setScanned(false); }, 2500); return;
-          }
-          playClickSound(); setScanned(true); Vibration.vibrate(100); onQrScanned(loc); return;
-        }
-      }
-      return;
-    }
-    if (!showCityScanner || scanCityForIdx === null) return;
-    const assign = (loc: PanoramaLocation, id: number) => {
-      const takenBy = players.find(p => p.city.toLowerCase() === loc.name.toLowerCase() && players.indexOf(p) !== scanCityForIdx);
-      if (takenBy) { setScanError(`Diese Karte ist bereits vergeben von ${takenBy.name}`); setScanned(true); setTimeout(() => { setScanError(''); setScanned(false); }, 2500); return; }
-      playClickSound(); setScanned(true); Vibration.vibrate(100);
-      setUsedLocations(prev => [...prev, id]);
-      setPlayers(prev => prev.map((p, i) => i === scanCityForIdx ? { ...p, city: loc.name, cityId: id, lat: loc.lat, lng: loc.lng } : p));
-      setShowCityScanner(false); setScanned(false); setScanCityForIdx(null);
-    };
-    const numMatch = data.match(/#?(\d+)/);
-    if (numMatch) {
-      const id = parseInt(numMatch[1], 10);
-      const loc = findLocationById(id);
-      if (loc) { assign(loc, id); return; }
-    }
-    const normalized = data.toLowerCase().trim().replace(/ä/g,'ae').replace(/ö/g,'oe').replace(/ü/g,'ue').replace(/ß/g,'ss');
-    const allLocs = getLocations();
-    const textMatch = allLocs.find(l => l.name.toLowerCase() === normalized);
-    if (textMatch) { assign(textMatch, textMatch.id); return; }
-    if (data.startsWith('city:')) {
-      const id = parseInt(data.split(':')[1]);
-      const loc = findLocationById(id);
-      if (loc) { assign(loc, id); return; }
-    }
-    setScanError('Karte nicht erkannt – nochmal versuchen');
-    setTimeout(() => setScanError(''), 2000);
-  }, [scanned, showCityScanner, scanCityForIdx, showQrScanner, onQrScanned, usedLocations, tableCities]);
+  const cameraRef = useRef<CameraView>(null) as any;
+  const tutScrollRef = useRef<ScrollView>(null);
 
   // TUTORIAL
   const TUT_PAGES = [
@@ -526,55 +329,50 @@ export default function App() {
 
   // ═══════════════ SCREEN RENDER ═══════════════
 
-  // SCANNER
-  if (showCityScanner || showQrScanner) {
+  // CITY SCANNER (Setup-Phase)
+  if (showCityScanner) {
     if (!cameraPermission?.granted) {
       return (
         <View style={s.container}><StatusBar hidden />
           <View style={s.centerScreen}>
             <Text style={{ color: C.onSurface, fontSize: 18, marginBottom: 20, textAlign: 'center' }}>Kamera-Berechtigung erforderlich</Text>
             <TouchableOpacity style={s.primaryBtn} onPress={requestCameraPermission}><Text style={s.primaryBtnText}>ERLAUBEN</Text></TouchableOpacity>
-            <TouchableOpacity style={s.tertiaryBtn} onPress={() => { setShowCityScanner(false); setShowQrScanner(false); setScanned(false); }}><Text style={s.tertiaryBtnText}>ABBRECHEN</Text></TouchableOpacity>
+            <TouchableOpacity style={s.tertiaryBtn} onPress={() => { setShowCityScanner(false); setScanned(false); stopCityScan(); }}><Text style={s.tertiaryBtnText}>ABBRECHEN</Text></TouchableOpacity>
           </View>
         </View>
       );
     }
-    const assignName = showCityScanner && scanCityForIdx !== null ? players[scanCityForIdx]?.name : '';
+    const assignName = scanCityForIdx !== null ? players[scanCityForIdx]?.name : '';
     return (
       <View style={{ flex: 1, backgroundColor: '#000' }}><StatusBar hidden />
-        <CameraView ref={cameraRef} style={{ flex: 1 }} facing="back"
-          onBarcodeScanned={scanned ? undefined : handleScan}
-          barcodeScannerSettings={{ barcodeTypes: ['qr', 'code128', 'code39', 'ean13', 'ean8'] }}>
+        <CameraView ref={cameraRef} style={{ flex: 1 }} facing="back">
           <View style={s.scanOverlay}>
             <View style={{ alignItems: 'center', marginBottom: 20 }}>
               <Text style={{ color: C.primary, fontSize: 13, fontFamily: FF.bold, letterSpacing: 2, marginBottom: 6 }}>
-                {showCityScanner ? 'KARTE ZUWEISEN' : 'CODE SCANNEN'}
+                KARTE ZUWEISEN
               </Text>
               <Text style={{ color: '#fff', fontSize: 22, fontFamily: FF.bold }}>{assignName || 'Spieler'}</Text>
             </View>
             <View style={s.scanFrame}>
               <Text style={{ color: C.primary, fontSize: 16, fontWeight: '600', textAlign: 'center' }}>
-                {showCityScanner ? 'Stadtkarte in den Rahmen halten' : 'Code in den Rahmen halten'}
+                Stadtkarte in den Rahmen halten
               </Text>
             </View>
-            {showCityScanner && (
-              <View style={{ width: '100%', paddingHorizontal: 20, marginTop: 16 }}>
-                <Text style={{ color: 'rgba(241,232,225,0.6)', fontSize: 11, fontFamily: FF.bold, letterSpacing: 2, textAlign: 'center', marginBottom: 10, textTransform: 'uppercase' }}>Oder Code manuell eingeben</Text>
-                <View style={{ flexDirection: 'row', gap: 8 }}>
-                  <View style={{ flex: 1, backgroundColor: 'rgba(25,26,45,0.9)', borderWidth: 1, borderColor: 'rgba(68,73,52,0.4)', borderRadius: 0 }}>
-                    <TextInput style={{ color: '#fff', fontSize: 16, fontFamily: FF.bold, paddingVertical: 12, paddingHorizontal: 16 }}
-                      value={manualCode} onChangeText={setManualCode} placeholder="#042 oder Berlin" placeholderTextColor="rgba(241,232,225,0.3)"
-                      autoCapitalize="none" autoCorrect={false} returnKeyType="go" onSubmitEditing={submitManualCode} />
-                  </View>
-                  <TouchableOpacity style={{ backgroundColor: C.primary, paddingVertical: 12, paddingHorizontal: 20, justifyContent: 'center' }} onPress={submitManualCode}>
-                    <Text style={{ color: C.onPrimaryContainer, fontSize: 14, fontFamily: FF.bold }}>GO</Text>
-                  </TouchableOpacity>
+            <View style={{ width: '100%', paddingHorizontal: 20, marginTop: 16 }}>
+              <Text style={{ color: 'rgba(241,232,225,0.6)', fontSize: 11, fontFamily: FF.bold, letterSpacing: 2, textAlign: 'center', marginBottom: 10, textTransform: 'uppercase' }}>Oder Code manuell eingeben</Text>
+              <View style={{ flexDirection: 'row', gap: 8 }}>
+                <View style={{ flex: 1, backgroundColor: 'rgba(25,26,45,0.9)', borderWidth: 1, borderColor: 'rgba(68,73,52,0.4)', borderRadius: 0 }}>
+                  <TextInput style={{ color: '#fff', fontSize: 16, fontFamily: FF.bold, paddingVertical: 12, paddingHorizontal: 16 }}
+                    value={manualCode} onChangeText={setManualCode} placeholder="#042 oder Berlin" placeholderTextColor="rgba(241,232,225,0.3)"
+                    autoCapitalize="none" autoCorrect={false} returnKeyType="go" onSubmitEditing={submitManualCode} />
                 </View>
+                <TouchableOpacity style={{ backgroundColor: C.primary, paddingVertical: 12, paddingHorizontal: 20, justifyContent: 'center' }} onPress={submitManualCode}>
+                  <Text style={{ color: C.onPrimaryContainer, fontSize: 14, fontFamily: FF.bold }}>GO</Text>
+                </TouchableOpacity>
               </View>
-            )}
+            </View>
             {scanError ? (<View style={{ backgroundColor: 'rgba(255,100,100,0.9)', borderRadius: 12, paddingVertical: 10, paddingHorizontal: 20, marginTop: 16 }}><Text style={{ color: '#fff', fontSize: 15, fontWeight: '600' }}>{scanError}</Text></View>) : null}
-            {qrBlockedMsg ? (<View style={{ backgroundColor: 'rgba(255,100,100,0.9)', borderRadius: 12, paddingVertical: 10, paddingHorizontal: 20, marginTop: 16 }}><Text style={{ color: '#fff', fontSize: 15, fontWeight: '600' }}>{qrBlockedMsg}</Text></View>) : null}
-            <TouchableOpacity style={s.scanCloseBtn} onPress={() => { setShowCityScanner(false); setShowQrScanner(false); setScanned(false); setManualCode(''); setArucoActive(false); }}>
+            <TouchableOpacity style={s.scanCloseBtn} onPress={() => { setShowCityScanner(false); setScanned(false); setManualCode(''); stopCityScan(); }}>
               <Text style={s.scanCloseText}>SCHLIESSEN</Text>
             </TouchableOpacity>
           </View>
@@ -624,7 +422,6 @@ export default function App() {
               onPress={(e) => {
                 const touchX = e.nativeEvent.locationX;
                 if (touchX > width / 2) {
-                  // Rechte Hälfte → nächster Slide
                   if (i < TUT_PAGES.length - 1) {
                     tutScrollRef.current?.scrollTo({ x: (i + 1) * width, animated: true });
                     setTutorialPage(i + 1);
@@ -633,7 +430,6 @@ export default function App() {
                     setScreen('setup');
                   }
                 } else {
-                  // Linke Hälfte → vorheriger Slide
                   if (i > 0) {
                     tutScrollRef.current?.scrollTo({ x: (i - 1) * width, animated: true });
                     setTutorialPage(i - 1);
@@ -644,10 +440,8 @@ export default function App() {
               <Text style={{ color: page.bodyColor, fontSize: 25, fontFamily: FF.regular, lineHeight: 34 }}>{page.body}</Text>
             </TouchableOpacity>
           ))}
-          {/* Unsichtbarer Slide für Swipe-Over → Setup */}
           <View style={{ width, flex: 1 }} />
         </ScrollView>
-        {/* Dots mittig – gleiche bg wie Slide */}
         <View style={{ flexDirection: 'row', justifyContent: 'center', gap: 8, paddingBottom: 60, backgroundColor: currentBg }}>
           {TUT_PAGES.map((_, i) => (
             <View key={i} style={{ width: 8, height: 8, borderRadius: 4, backgroundColor: i === tutorialPage ? C.primary : C.muted }} />
@@ -743,207 +537,22 @@ export default function App() {
 
   // ═══════════════ GAME ═══════════════
   if (screen === 'game') {
-    const activePlayer = players[activePlayerIdx];
-    const isLastRound = round >= maxRounds;
-
-    // SCAN QR PHASE
-    if (phase === 'scan-qr') {
-      return (
-        <View style={s.container}><StatusBar hidden />
-          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', paddingHorizontal: 30 }}>
-            <Text style={{ color: C.muted, fontSize: 13, fontFamily: FF.bold, letterSpacing: 2, marginBottom: 8 }}>RUNDE {round}/{maxRounds}</Text>
-            <Text style={{ color: C.onSurface, fontSize: 24, fontFamily: FF.bold, marginBottom: 4 }}>{activePlayer.name}</Text>
-            <Text style={{ color: C.muted, fontSize: 14, fontFamily: FF.regular, marginBottom: 30 }}>Punkte: {activePlayer.score}</Text>
-            <TouchableOpacity style={s.primaryBtn} onPress={() => { setShowQrScanner(true); setScanned(false); }}>
-              <Text style={s.primaryBtnText}>KARTE ZIEHEN & SCANNEN</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={s.tertiaryBtn} onPress={loadNewCard}>
-              <Text style={s.tertiaryBtnText}>NEUE KARTE LADEN</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
-      );
-    }
-
-    // VIEW PHASE — Panorama
-    if (phase === 'view') {
-      return (
-        <View style={s.container}><StatusBar hidden />
-          {/* Timer */}
-          <View style={{ position: 'absolute', top: 50, left: 0, right: 0, zIndex: 10, alignItems: 'center' }}>
-            <Animated.View style={{ backgroundColor: timer <= 10 ? C.error : 'rgba(0,0,0,0.6)', paddingVertical: 6, paddingHorizontal: 20, transform: [{ scale: timerPulse }] }}>
-              <Text style={{ color: '#fff', fontSize: 28, fontFamily: FF.bold }}>{timer}</Text>
-            </Animated.View>
-          </View>
-
-          {/* Panorama */}
-          <PanoramaViewer
-            url={location.url_avif}
-            onLoad={() => setSvLoaded(true)}
-            onError={() => setSvError(true)}
-          />
-
-          {/* Loading overlay */}
-          {!svLoaded && !svError && (
-            <View style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(0,0,0,0.8)' }}>
-              <Text style={{ color: C.primary, fontSize: 16, fontFamily: FF.bold }}>Panorama wird geladen...</Text>
-              {svLoadingLong && (
-                <TouchableOpacity style={{ marginTop: 20, backgroundColor: C.primary, paddingVertical: 12, paddingHorizontal: 24 }} onPress={loadNewCard}>
-                  <Text style={{ color: C.onPrimaryContainer, fontSize: 14, fontFamily: FF.bold }}>NEUE KARTE LADEN</Text>
-                </TouchableOpacity>
-              )}
-            </View>
-          )}
-
-          {/* Error overlay */}
-          {svError && (
-            <View style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(0,0,0,0.8)' }}>
-              <Text style={{ color: C.error, fontSize: 16, fontFamily: FF.bold, marginBottom: 20 }}>Fehler beim Laden</Text>
-              <TouchableOpacity style={s.primaryBtn} onPress={loadNewCard}>
-                <Text style={s.primaryBtnText}>NEUE KARTE LADEN</Text>
-              </TouchableOpacity>
-            </View>
-          )}
-
-          {/* Pick button */}
-          {svLoaded && (
-            <View style={{ position: 'absolute', bottom: 40, left: 20, right: 20 }}>
-              <TouchableOpacity style={s.primaryBtn} onPress={() => setPhase('pick')}>
-                <Text style={s.primaryBtnText}>ORT WÄHLEN</Text>
-              </TouchableOpacity>
-            </View>
-          )}
-        </View>
-      );
-    }
-
-    // PICK PHASE
-    if (phase === 'pick') {
-      return (
-        <View style={s.container}><StatusBar hidden />
-          <View style={{ paddingHorizontal: 20, paddingTop: 60, flex: 1 }}>
-            <Text style={{ color: C.muted, fontSize: 13, fontFamily: FF.bold, letterSpacing: 2, marginBottom: 8 }}>ORT WÄHLEN</Text>
-            <Text style={{ color: C.onSurface, fontSize: 18, fontFamily: FF.bold, marginBottom: 20 }}>{activePlayer.name}, welcher Ort liegt am nächsten?</Text>
-            <ScrollView>
-              {tableCities.map((tc, i) => (
-                <TouchableOpacity key={i}
-                  style={{ backgroundColor: C.surface, borderWidth: 1, borderColor: C.outline, paddingVertical: 16, paddingHorizontal: 20, marginBottom: 8 }}
-                  onPress={() => pickCity(i)}>
-                  <Text style={{ color: C.onSurface, fontSize: 16, fontFamily: FF.bold }}>{tc.city}</Text>
-                  {tc.ownerPlayerId !== null && (
-                    <Text style={{ color: C.muted, fontSize: 12, fontFamily: FF.regular }}>Startort von {players.find(p => p.id === tc.ownerPlayerId)?.name}</Text>
-                  )}
-                </TouchableOpacity>
-              ))}
-            </ScrollView>
-          </View>
-        </View>
-      );
-    }
-
-    // CHALLENGE PHASE
-    if (phase === 'challenge') {
-      const pickedCity = activePickIdx !== null ? tableCities[activePickIdx]?.city : '';
-      const closestCity = closestCityIdx !== null ? tableCities[closestCityIdx]?.city : '';
-      const pickedDist = activePickIdx !== null && distances[activePickIdx] !== undefined ? formatDistance(distances[activePickIdx]) : '';
-      const closestDist = closestCityIdx !== null && distances[closestCityIdx] !== undefined ? formatDistance(distances[closestCityIdx]) : '';
-      const isCorrect = activePickIdx === closestCityIdx;
-
-      return (
-        <View style={s.container}><StatusBar hidden />
-          <View style={{ paddingHorizontal: 20, paddingTop: 60, flex: 1 }}>
-            <Text style={{ color: C.muted, fontSize: 13, fontFamily: FF.bold, letterSpacing: 2, marginBottom: 8 }}>HERAUSFORDERUNG</Text>
-            <Text style={{ color: C.onSurface, fontSize: 18, fontFamily: FF.bold, marginBottom: 20 }}>
-              {activePlayer.name} wählte: {pickedCity} ({pickedDist})
-            </Text>
-            <Text style={{ color: C.muted, fontSize: 14, fontFamily: FF.regular, marginBottom: 20 }}>
-              Nächster Ort: {closestCity} ({closestDist})
-            </Text>
-            {!isCorrect && (
-              <View style={{ marginBottom: 20 }}>
-                <Text style={{ color: C.primary, fontSize: 14, fontFamily: FF.bold, marginBottom: 10 }}>Jemand anderes? (Token einsetzen)</Text>
-                <ScrollView horizontal style={{ marginBottom: 10 }}>
-                  {players.filter(p => p.id !== activePlayer.id).map(p => (
-                    <TouchableOpacity key={p.id}
-                      style={{ backgroundColor: challengerId === p.id ? C.primary : C.surface, borderWidth: 1, borderColor: C.outline, paddingVertical: 12, paddingHorizontal: 20, marginRight: 8 }}
-                      onPress={() => setChallengerId(challengerId === p.id ? null : p.id)}>
-                      <Text style={{ color: challengerId === p.id ? C.onPrimaryContainer : C.onSurface, fontSize: 14, fontFamily: FF.bold }}>{p.name}</Text>
-                    </TouchableOpacity>
-                  ))}
-                </ScrollView>
-              </View>
-            )}
-            <TouchableOpacity style={s.primaryBtn} onPress={resolveRound}>
-              <Text style={s.primaryBtnText}>AUFLÖSEN</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
-      );
-    }
-
-    // RESULT PHASE
-    if (phase === 'result') {
-      const isCorrect = activePickIdx === closestCityIdx;
-      const isTie = players.filter(p => p.score === Math.max(...players.map(pl => pl.score))).length > 1;
-      return (
-        <View style={s.container}><StatusBar hidden />
-          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', paddingHorizontal: 30 }}>
-            <Animated.View style={{ transform: [{ scale: resultScale }], alignItems: 'center' }}>
-              {winnerId !== null ? (
-                <>
-                  <Text style={{ color: C.primary, fontSize: 48, fontFamily: FF.bold, marginBottom: 10 }}>✓</Text>
-                  <Text style={{ color: C.onSurface, fontSize: 22, fontFamily: FF.bold, marginBottom: 4 }}>
-                    {players.find(p => p.id === winnerId)?.name} punktet!
-                  </Text>
-                </>
-              ) : (
-                <>
-                  <Text style={{ color: C.error, fontSize: 48, fontFamily: FF.bold, marginBottom: 10 }}>✗</Text>
-                  <Text style={{ color: C.onSurface, fontSize: 22, fontFamily: FF.bold, marginBottom: 4 }}>Leider daneben!</Text>
-                </>
-              )}
-              <Text style={{ color: C.muted, fontSize: 14, fontFamily: FF.regular, marginBottom: 30 }}>
-                {location.name} ({location.district})
-              </Text>
-              <View style={{ flexDirection: 'row', gap: 20, marginBottom: 30 }}>
-                {players.map(p => (
-                  <View key={p.id} style={{ alignItems: 'center' }}>
-                    <Text style={{ color: p.id === winnerId ? C.primary : C.muted, fontSize: 14, fontFamily: FF.bold }}>{p.name}</Text>
-                    <Text style={{ color: p.id === winnerId ? C.primary : C.muted, fontSize: 24, fontFamily: FF.bold }}>{p.score}</Text>
-                  </View>
-                ))}
-              </View>
-              {isLastRound && isTie ? (
-                <TouchableOpacity style={s.primaryBtn} onPress={() => {
-                  // Tie-Breaker: extra round for tied players
-                  const tiePlayers = players.filter(p => p.score === Math.max(...players.map(pl => pl.score)));
-                  setRound(r => r + 1);
-                  setMaxRounds(maxRounds + tiePlayers.length);
-                  setPhase('scan-qr');
-                  setActivePlayerIdx(0);
-                  startRound();
-                }}>
-                  <Text style={s.primaryBtnText}>TIE BREAKER — PLAY ON!</Text>
-                </TouchableOpacity>
-              ) : (
-                <TouchableOpacity style={s.primaryBtn} onPress={nextTurn}>
-                  <Text style={s.primaryBtnText}>{isLastRound ? 'ERGEBNIS ANZEIGEN' : 'NÄCHSTE RUNDE'}</Text>
-                </TouchableOpacity>
-              )}
-            </Animated.View>
-          </View>
-        </View>
-      );
-    }
-
-    return null;
+    return (
+      <GameScreen
+        players={players}
+        timerSetting={timerSetting}
+        roundsSetting={roundsSetting}
+        onGameEnd={handleGameEnd}
+        onBackToSetup={handleBackToSetup}
+      />
+    );
   }
 
   // ═══════════════ RESULT SCREEN ═══════════════
   if (screen === 'result') {
-    const sorted = [...players].sort((a, b) => b.score - a.score);
+    const sorted = [...gameResultPlayers].sort((a, b) => b.score - a.score);
     const winner = sorted[0];
-    const isTie = players.filter(p => p.score === winner.score).length > 1;
+    const isTie = gameResultPlayers.filter(p => p.score === winner.score).length > 1;
     return (
       <View style={s.container}><StatusBar hidden />
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', paddingHorizontal: 30 }}>
@@ -967,18 +576,14 @@ export default function App() {
           <TouchableOpacity style={s.primaryBtn} onPress={() => {
             setScreen('setup');
             setPlayers(prev => prev.map(p => ({ ...p, score: 0, city: '', cityId: -1, lat: 0, lng: 0 })));
-            setTableCities([]);
             setUsedLocations([]);
-            setRound(1);
           }}>
             <Text style={s.primaryBtnText}>NOCH EIN SPIEL</Text>
           </TouchableOpacity>
           <TouchableOpacity style={{ marginTop: 12 }} onPress={() => {
             setScreen('intro');
             setPlayers(prev => prev.map(p => ({ ...p, score: 0, city: '', cityId: -1, lat: 0, lng: 0 })));
-            setTableCities([]);
             setUsedLocations([]);
-            setRound(1);
           }}>
             <Text style={{ color: C.muted, fontSize: 14, fontFamily: FF.regular }}>Zum Startbildschirm</Text>
           </TouchableOpacity>
