@@ -80,6 +80,7 @@ export function useArucoScanner(
 
       if (!photo || !photo.uri) {
         console.log('[ArUco] Kein Foto erhalten');
+        isScanningRef.current = false;
         setIsScanning(false);
         return [];
       }
@@ -96,6 +97,7 @@ export function useArucoScanner(
 
       if (!resized || !resized.uri) {
         console.log('[ArUco] Resize fehlgeschlagen');
+        isScanningRef.current = false;
         setIsScanning(false);
         return [];
       }
@@ -146,6 +148,7 @@ export function useArucoScanner(
 
       if (markers.length === 0) {
         console.log('[ArUco] Keine Marker erkannt');
+        isScanningRef.current = false;
         setIsScanning(false);
         return [];
       }
@@ -157,11 +160,13 @@ export function useArucoScanner(
       const validIds = ids.filter(id => VALID_MARKER_IDS.has(id));
       if (validIds.length === 0) {
         console.log('[ArUco] Keine der erkannten IDs in DB:', ids, '– gültige IDs:', [...VALID_MARKER_IDS].sort((a, b) => a - b).join(','));
+        isScanningRef.current = false;
         setIsScanning(false);
         return [];
       }
 
       callbacks?.onDetected?.(validIds);
+      isScanningRef.current = false;
       setIsScanning(false);
       return validIds;
     } catch (e) {
@@ -170,10 +175,12 @@ export function useArucoScanner(
       // Timeout oder Camera-remount Fehler ignorieren (kein Toast)
       if (msg.includes('timeout') || msg.includes('ExpoCameraView') || msg.includes('Unable to find')) {
         console.log('[ArUco] Timeout/Camera-Fehler ignoriert');
+        isScanningRef.current = false;
         setIsScanning(false);
         return [];
       }
       callbacks?.onError?.('Scan-Fehler: ' + msg);
+      isScanningRef.current = false;
       setIsScanning(false);
       return [];
     }

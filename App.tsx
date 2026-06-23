@@ -279,17 +279,8 @@ export default function App() {
 
   const openCityScan = (idx: number) => {
     setScanCityForIdx(idx); setShowCityScanner(true); setScanned(false); setScanError(''); setManualCode('');
-    setArucoActive(true); // ArUco-Scanning starten
-    // Direkt scanCard aufrufen nachdem Kamera gemountet ist
-    setTimeout(async () => {
-      console.log('[App] openCityScan: starte scanCard...');
-      try {
-        const ids = await scanCard();
-        console.log('[App] scanCard Ergebnis:', ids);
-      } catch (e) {
-        console.error('[App] scanCard Fehler:', e);
-      }
-    }, 2000);
+    setArucoActive(true); // ArUco-Scanning starten – Continuous-Loop übernimmt das Scannen
+    console.log('[App] openCityScan: ArUco Continuous-Loop aktiviert für City-Assign');
   };
 
   const submitManualCode = useCallback(() => {
@@ -348,6 +339,8 @@ export default function App() {
       setTimeout(() => setQrBlockedMsg(''), 2000);
       return;
     }
+    console.log('[App] onQrScanned: UI-Übergang für', loc.name);
+    setArucoActive(false); // ArUco-Scanner stoppen
     setLocation(loc);
     setUsedLocations(prev => [...prev, loc.id]);
     setTimer(timerSetting);
@@ -355,7 +348,10 @@ export default function App() {
     setPhase('view');
     setShowQrScanner(false);
     setScanned(false);
+    setSvLoaded(false);
+    setSvError(false);
     Vibration.vibrate(100);
+    console.log('[App] onQrScanned: phase=view, scanner=aus');
   }, [timerSetting, players]);
 
   const pickCity = useCallback((idx: number) => {
