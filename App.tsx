@@ -182,7 +182,9 @@ export default function App() {
           // ID → Location aus der Datenbank (live oder Fallback)
           const loc = findLocationById(id);
           if (loc) {
+            console.log('[ArUco] match found:', id, loc.name);
             if (usedLocations.includes(id) || tableCities.some(tc => tc.city.toLowerCase() === loc.name.toLowerCase())) {
+              console.log('[ArUco] match already on table – skipping');
               setScanError('Diese Stadt liegt bereits auf dem Tisch!');
               setTimeout(() => setScanError(''), 2500);
               return;
@@ -192,6 +194,7 @@ export default function App() {
             setArucoActive(false); // Pause scanning after detection
             onQrScanned(loc);
           } else {
+            console.log('[ArUco] no match for id:', id);
             setScanError('Dieser Ort wurde nicht gefunden. Bitte scanne eine gültige Karte.');
             setTimeout(() => setScanError(''), 2500);
           }

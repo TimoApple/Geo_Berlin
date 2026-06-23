@@ -1,22 +1,7 @@
-# Bugfixes 22.06.2026 – ArUco Scanner Dictionary + Datenfluss
+# Task Progress – ArUco Bugfixes
 
-## Erledigt
-
-### 1. Dictionary-Fix in `arucoDetector.ts`
-- **Problem**: Detector nutzte Default `ARUCO_MIP_36h12` (6×6, 50 IDs) statt `ARUCO` (7×7, 250 IDs)
-- **Fix**: `new AR.Detector({ dictionaryName: 'ARUCO' })` — explizit das 7×7 Dictionary setzen
-- **ID-Filter korrigiert**: von `m.id <= 1023` auf `m.id <= 249` (ARUCO hat 250 Codes)
-
-### 2. Grayscale-Datenfluss korrigiert
-- **Problem**: `toGrayscale()` produzierte 4-Kanal RGBA-Graustufen, aber `CV.grayscale()` in `detect()` erwartet RGBA-Input und konvertiert selbst zu 1-Kanal
-- **Fix**: `toGrayscale()` gibt jetzt RGBA unverändert zurück (Pass-Through)
-- **`useArucoScanner.ts`**: Entfernt den `toGrayscale`-Import und -Aufruf, übergibt RGBA direkt
-
-### 3. Kommentare/Doku aktualisiert
-- `arucoDetector.ts`: "ARUCO_MIP_36h12 (6x6)" → "ARUCO (7x7, 250 IDs)"
-- `useArucoScanner.ts`: "DICT_6X6_50" → "DICT_7X7_250"
-
-## Nächste Schritte (nach Build)
-1. APK bauen und installieren
-2. logcat checken: `adb logcat | findstr /i "aruco"`
-3. ArUco-Marker scannen und [ArUco]-Logs prüfen
+- [ ] 1. `ARUCO_5X5_1000` Dictionary in `src/libs/aruco.js` einfügen (Array-of-Arrays aus node_modules)
+- [ ] 2. `src/utils/arucoDetector.ts` auf `'ARUCO_5X5_1000'` umstellen
+- [ ] 3. `src/hooks/useArucoScanner.ts`: Temporären Log für raw detector id einbauen
+- [ ] 4. `src/hooks/useArucoScanner.ts`: `m.id + 1` beibehalten (wird nach Test bestätigt/korrigiert)
+- [ ] 5. Build testen: `npx tsc --noEmit`

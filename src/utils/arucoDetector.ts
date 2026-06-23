@@ -5,6 +5,8 @@
 
 // Lokale Kopie von js-aruco2 mit ES-Modul-Export
 import AR from '../libs/aruco';
+// Zusätzliches 5x5 Dictionary für die neuen Marker (DICT_5X5_1000)
+import '../libs/aruco_5x5_100';
 
 export interface ArucoResult {
   id: number;
@@ -12,20 +14,26 @@ export interface ArucoResult {
   center: { x: number; y: number };
 }
 
-let detector: any = null;
+let detector7x7: any = null;
+let detector5x5: any = null;
 
-function getDetector() {
-  if (!detector) {
-    try {
-      // ARUCO = 7x7 Marker, 250 IDs (DICT_7X7_250)
-      // Wichtig: Nicht ARUCO_MIP_36h12 (6x6) verwenden!
-      detector = new AR.Detector({ dictionaryName: 'ARUCO', maxHammingDistance: 4 });
-    } catch (e) {
-      console.error('[ArUco] Failed to initialize detector:', e);
-      return null;
+function getDetector(dictName: string) {
+  try {
+    if (dictName === 'ARUCO_5X5_1000') {
+      if (!detector5x5) {
+        detector5x5 = new AR.Detector({ dictionaryName: 'ARUCO_5X5_1000', maxHammingDistance: 3 });
+      }
+      return detector5x5;
     }
+    // Default: ARUCO (7x7)
+    if (!detector7x7) {
+      detector7x7 = new AR.Detector({ dictionaryName: 'ARUCO', maxHammingDistance: 4 });
+    }
+    return detector7x7;
+  } catch (e) {
+    console.error('[ArUco] Failed to initialize detector (' + dictName + '):', e);
+    return null;
   }
-  return detector;
 }
 
 /**
@@ -42,43 +50,59 @@ export function detectMarkers(
   width: number,
   height: number
 ): ArucoResult[] {
-  const det = getDetector();
-  if (!det) return [];
+  // 5x5 zuerst (ARUCO_5X5_1000 = neue Marker), dann 7x7 (ARUCO = alte Marker)
+  const dicts = ['ARUCO_5X5_1000', 'ARUCO'];
 
-  try {
-    // JPEG decodiert → Graustufen → Detektiere Marker
-    // js-aruco2 braucht ein Graustufen-Array (1 Byte/Pixel), kein RGBA
-    const imgData = { data: imageData, width, height };
-    const markers = det.detect(imgData);
+  for (const dictName of dicts) {
+    const det = getDetector(dictName);
+    if (!det) continue;
 
-    if (!markers || markers.length === 0) {
-      console.log('[ArUco] Keine Marker erkannt');
-      return [];
+    try {
+      // js-aruco2 braucht ein Graustufen-Array (1 Byte/Pixel), kein RGBA
+      const imgData = { data: imageData, width, height };
+      const markers = det.detect(imgData);
+
+      if (!markers || markers.length === 0) {
+        console.log('[ArUco] Keine Marker erkannt mit', dictName);
+        continue;
+      }
+
+      console.log('[ArUco] Marker gefunden mit', dictName + ':', markers.length);
+
+      const results = markers
+        .filter((m: any) => m && m.id !== undefined && m.id >= 0 && m.id <= 999 && m.corners)
+        .map((m: any) => {
+          // Debug: rohe ID aus dem Detector ausgeben
+          console.log('[ArUco] raw detector id:', m.id);
+          console.log('[ArUco] dictionary used:', dictName);
+          const mappedId = m.id + 1;
+          console.log('[ArUco] mapped arucoId:', mappedId);
+
+          const corners = m.corners.map((c: any) => ({
+            x: typeof c.x === 'number' ? c.x : c[0],
+            y: typeof c.y === 'number' ? c.y : c[1],
+          }));
+
+          const centerX = corners.reduce((sum: number, c: { x: number }) => sum + c.x, 0) / corners.length;
+          const centerY = corners.reduce((sum: number, c: { y: number }) => sum + c.y, 0) / corners.length;
+
+          return {
+            id: m.id,
+            corners,
+            center: { x: centerX, y: centerY },
+          };
+        });
+
+      if (results.length > 0) {
+        return results;
+      }
+    } catch (e) {
+      console.error('[ArUco] Detection error mit', dictName + ':', e);
     }
-
-    console.log('[ArUco] Marker gefunden:', markers.length);
-
-    return markers
-      .filter((m: any) => m && m.id !== undefined && m.id >= 0 && m.id <= 999 && m.corners)
-      .map((m: any) => {
-        const corners = m.corners.map((c: any) => ({
-          x: typeof c.x === 'number' ? c.x : c[0],
-          y: typeof c.y === 'number' ? c.y : c[1],
-        }));
-
-        const centerX = corners.reduce((sum: number, c: { x: number }) => sum + c.x, 0) / corners.length;
-        const centerY = corners.reduce((sum: number, c: { y: number }) => sum + c.y, 0) / corners.length;
-
-        return {
-          id: m.id,
-          corners,
-          center: { x: centerX, y: centerY },
-        };
-      });
-  } catch (e) {
-    console.error('[ArUco] Detection error:', e);
-    return [];
   }
+
+  console.log('[ArUco] Keine Marker mit beiden Dictionaries erkannt');
+  return [];
 }
 
 /**

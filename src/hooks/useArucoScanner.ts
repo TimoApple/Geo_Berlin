@@ -119,11 +119,11 @@ export function useArucoScanner(
         decoded.data.length
       );
       const contrastData = new Uint8ClampedArray(rawData.length);
-      for (let i = 0; i < rawData.length; i += 4) {
+       for (let i = 0; i < rawData.length; i += 4) {
         const r = rawData[i], g = rawData[i + 1], b = rawData[i + 2];
         const isOrange = r > 160 && g > 80 && b < 100;
-        const isDark = r < 80 && g < 80 && b < 80;
-        const val = isOrange ? 255 : isDark ? 0 : 180;
+        const lum = 0.299 * r + 0.587 * g + 0.114 * b;
+        const val = isOrange ? 255 : lum > 128 ? 255 : 0;
         contrastData[i] = val;
         contrastData[i + 1] = val;
         contrastData[i + 2] = val;
