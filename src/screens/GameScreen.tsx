@@ -66,37 +66,53 @@ export default function GameScreen({ players: initialPlayers, timerSetting, roun
   const resultScale = useRef(new Animated.Value(0)).current;
   const cameraRef = useRef<CameraView>(null) as any;
 
-  // ArUco Scanner – nur für QR-Scan-Phase
-  const { startScanning, stopScanning } = useArucoScanner(cameraRef as any, {
-    onDetected: (ids) => {
-      if (ids.length === 0 || phase !== 'scan-qr') return;
-      const id = ids[0];
-      const loc = findLocationById(id);
-      if (!loc) {
-        setScanError('Dieser Ort wurde nicht gefunden.');
-        setTimeout(() => setScanError(''), 2500);
-        return;
-      }
-      if (usedLocations.includes(id) || tableCities.some(tc => tc.city.toLowerCase() === loc.name.toLowerCase())) {
+  // Stabile onDetected-Callback (memoized)
+  const onDetected = useCallback((ids: number[]) => {
+    if (ids.length === 0) return;
+    const id = ids[0];
+    const loc = findLocationById(id);
+    if (!loc) {
+      setScanError('Dieser Ort wurde nicht gefunden.');
+      setTimeout(() => setScanError(''), 2500);
+      return;
+    }
+    // Prüfe ob diese Stadt bereits auf dem Tisch liegt
+    setUsedLocations(prev => {
+      if (prev.includes(id)) {
         setScanError('Diese Stadt liegt bereits auf dem Tisch!');
         setTimeout(() => setScanError(''), 2500);
-        return;
+        return prev;
       }
-      playClickSound();
-      Vibration.vibrate(100);
-      stopScanning();
-      setLocation(loc);
-      setUsedLocations(prev => [...prev, loc.id]);
-      setTimer(timerSetting);
-      setTimerPaused(false);
-      setPhase('view');
-      setSvLoaded(false);
-      setSvError(false);
-    },
-    onError: (err) => {
-      setScanError(err);
-      setTimeout(() => setScanError(''), 2500);
-    },
+      return prev;
+    });
+    setTableCities(prev => {
+      if (prev.some(tc => tc.city.toLowerCase() === loc.name.toLowerCase())) {
+        setScanError('Diese Stadt liegt bereits auf dem Tisch!');
+        setTimeout(() => setScanError(''), 2500);
+        return prev;
+      }
+      return prev;
+    });
+    playClickSound();
+    Vibration.vibrate(100);
+    setLocation(loc);
+    setTimer(timerSetting);
+    setTimerPaused(false);
+    setSvLoaded(false);
+    setSvError(false);
+    setPhase('view');
+  }, [timerSetting]);
+
+  // Stabile onError-Callback (memoized)
+  const onError = useCallback((err: string) => {
+    setScanError(err);
+    setTimeout(() => setScanError(''), 2500);
+  }, []);
+
+  // ArUco Scanner – nur für QR-Scan-Phase
+  const { startScanning, stopScanning } = useArucoScanner(cameraRef as any, {
+    onDetected,
+    onError,
   });
 
   // Scanner aktivieren/deaktivieren basierend auf phase

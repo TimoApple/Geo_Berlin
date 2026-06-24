@@ -2,10 +2,9 @@
 // Uses expo-camera + expo-image-manipulator + jpeg-js + js-aruco2
 // Dictionary: DICT_7X7_250 (ARUCO) – nativ von js-aruco2 unterstützt
 // No native code, no prebuild needed
-// Continuous scanning: scanCard wird automatisch in Schleife getriggert
+// Single scan: startScanning takes one photo, processes it, then stops
 //
-// API: startScanning() / stopScanning() statt setIsActive
-// Kein externes setIsActive mehr – der Hook kontrolliert seinen eigenen Lifecycle.
+// API: startScanning() / stopScanning()
 
 import { useCallback, useRef, useState, useEffect } from 'react';
 import { CameraView } from 'expo-camera';
@@ -44,8 +43,6 @@ export function useArucoScanner(
   const isScanningRef = useRef(false);
   const fallbackModeRef = useRef(false);
   const consecutiveErrorsRef = useRef(0);
-  const loopActiveRef = useRef(false);
-  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Gemeinsame Bildverarbeitung: RGBA → Kontrast → Marker erkennen
   const processImageData = useCallback((width: number, height: number, rawData: Uint8ClampedArray): ArucoResult[] => {
@@ -206,67 +203,42 @@ export function useArucoScanner(
     }
   }, [callbacks, decodeAndDetect, handleDetectedMarkers]);
 
-  // Continuous scanning loop (wird von startScanning/stopScanning gesteuert)
-  const scanningLoopRef = useRef<Promise<void> | null>(null);
-
-  const startScanning = useCallback(() => {
+  const startScanning = useCallback(async () => {
     if (isActiveRef.current) {
       console.log('[ArUco] startScanning: bereits aktiv, ignoriert');
       return;
     }
-    console.log('[ArUco] startScanning: Aktiviere Scan-Loop');
+    console.log('[ArUco] startScanning: Einmal-Scan');
     isActiveRef.current = true;
-    loopActiveRef.current = true;
 
-    const loop = async () => {
-      // Warte bis Kamera gemountet ist (max 3 Sekunden)
-      let waited = 0;
-      while (!cameraRef.current && waited < 3000) {
-        await new Promise(resolve => setTimeout(resolve, 200));
-        waited += 200;
-      }
+    // Warte bis Kamera gemountet ist (max 3 Sekunden)
+    let waited = 0;
+    while (!cameraRef.current && waited < 3000) {
+      await new Promise(resolve => setTimeout(resolve, 200));
+      waited += 200;
+    }
 
-      if (!cameraRef.current) {
-        console.error('[ArUco] CameraRef nie verfügbar!');
-        return;
-      }
+    if (!cameraRef.current) {
+      console.error('[ArUco] CameraRef nie verfügbar!');
+      isActiveRef.current = false;
+      return;
+    }
 
-      while (isActiveRef.current && loopActiveRef.current) {
-        // Warte bis vorheriger Scan abgeschlossen ist (max 10s)
-        let waitCount = 0;
-        while (isScanningRef.current && waitCount < 50) {
-          await new Promise(resolve => setTimeout(resolve, 200));
-          waitCount++;
-        }
-        if (!isActiveRef.current || !loopActiveRef.current) break;
+    try {
+      await scanCard();
+    } catch (e) {
+      console.error('[ArUco] FEHLER in startScanning:', e);
+    }
 
-        try {
-          await scanCard();
-        } catch (e) {
-          console.error('[ArUco] FEHLER in Scan-Loop:', e);
-        }
-        // Warte 500ms zwischen Scans
-        await new Promise(resolve => {
-          timeoutRef.current = setTimeout(resolve, 500);
-        });
-      }
-      console.log('[ArUco] Scan-Loop beendet');
-    };
-
-    scanningLoopRef.current = loop();
+    isActiveRef.current = false;
   }, [scanCard]);
 
   const stopScanning = useCallback(() => {
     if (!isActiveRef.current) {
       return;
     }
-    console.log('[ArUco] stopScanning: Deaktiviere Scan-Loop');
+    console.log('[ArUco] stopScanning');
     isActiveRef.current = false;
-    loopActiveRef.current = false;
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-      timeoutRef.current = null;
-    }
     setIsScanning(false);
     isScanningRef.current = false;
   }, []);
@@ -276,10 +248,7 @@ export function useArucoScanner(
     return () => {
       console.log('[ArUco] Cleanup – Hook wird unmounted');
       isActiveRef.current = false;
-      loopActiveRef.current = false;
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
+      isScanningRef.current = false;
     };
   }, []);
 

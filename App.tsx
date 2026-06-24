@@ -291,36 +291,30 @@ export default function App() {
     }
     const assignName = scanCityForIdx !== null ? players[scanCityForIdx]?.name : '';
     return (
-      <View style={{ flex: 1, backgroundColor: '#000' }}><StatusBar hidden />
-        <CameraView ref={cameraRef} style={{ flex: 1 }} facing="back" />
-        <View style={s.scanOverlay}>
-          <View style={{ alignItems: 'center', marginBottom: 20 }}>
+      <View style={s.container}><StatusBar hidden />
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', paddingHorizontal: 30 }}>
+          <View style={{ alignItems: 'center', marginBottom: 24 }}>
             <Text style={{ color: C.primary, fontSize: 13, fontFamily: FF.bold, letterSpacing: 2, marginBottom: 6 }}>
               KARTE ZUWEISEN
             </Text>
-            <Text style={{ color: '#fff', fontSize: 22, fontFamily: FF.bold }}>{assignName || 'Spieler'}</Text>
+            <Text style={{ color: C.onSurface, fontSize: 22, fontFamily: FF.bold }}>{assignName || 'Spieler'}</Text>
           </View>
-          <View style={s.scanFrame}>
-            <Text style={{ color: C.primary, fontSize: 16, fontWeight: '600', textAlign: 'center' }}>
-              Stadtkarte in den Rahmen halten
-            </Text>
-          </View>
-          <View style={{ width: '100%', paddingHorizontal: 20, marginTop: 16 }}>
-            <Text style={{ color: 'rgba(241,232,225,0.6)', fontSize: 11, fontFamily: FF.bold, letterSpacing: 2, textAlign: 'center', marginBottom: 10, textTransform: 'uppercase' }}>Oder Code manuell eingeben</Text>
-            <View style={{ flexDirection: 'row', gap: 8 }}>
-              <View style={{ flex: 1, backgroundColor: 'rgba(25,26,45,0.9)', borderWidth: 1, borderColor: 'rgba(68,73,52,0.4)', borderRadius: 0 }}>
-                <TextInput style={{ color: '#fff', fontSize: 16, fontFamily: FF.bold, paddingVertical: 12, paddingHorizontal: 16 }}
-                  value={manualCode} onChangeText={setManualCode} placeholder="#042 oder Berlin" placeholderTextColor="rgba(241,232,225,0.3)"
-                  autoCapitalize="none" autoCorrect={false} returnKeyType="go" onSubmitEditing={submitManualCode} />
-              </View>
-              <TouchableOpacity style={{ backgroundColor: C.primary, paddingVertical: 12, paddingHorizontal: 20, justifyContent: 'center' }} onPress={submitManualCode}>
-                <Text style={{ color: C.onPrimaryContainer, fontSize: 14, fontFamily: FF.bold }}>GO</Text>
-              </TouchableOpacity>
+          <Text style={{ color: C.muted, fontSize: 11, fontFamily: FF.bold, letterSpacing: 2, textAlign: 'center', marginBottom: 10, textTransform: 'uppercase' }}>
+            Code oder Stadt eingeben
+          </Text>
+          <View style={{ flexDirection: 'row', gap: 8, width: '100%' }}>
+            <View style={{ flex: 1, backgroundColor: C.surface, borderWidth: 1, borderColor: C.outline }}>
+              <TextInput style={{ color: C.onSurface, fontSize: 16, fontFamily: FF.bold, paddingVertical: 12, paddingHorizontal: 16 }}
+                value={manualCode} onChangeText={setManualCode} placeholder="#042 oder Berlin" placeholderTextColor={C.muted}
+                autoCapitalize="none" autoCorrect={false} returnKeyType="go" onSubmitEditing={submitManualCode} />
             </View>
+            <TouchableOpacity style={{ backgroundColor: C.primary, paddingVertical: 12, paddingHorizontal: 20, justifyContent: 'center' }} onPress={submitManualCode}>
+              <Text style={{ color: C.onPrimaryContainer, fontSize: 14, fontFamily: FF.bold }}>GO</Text>
+            </TouchableOpacity>
           </View>
           {scanError ? (<View style={{ backgroundColor: 'rgba(255,100,100,0.9)', borderRadius: 12, paddingVertical: 10, paddingHorizontal: 20, marginTop: 16 }}><Text style={{ color: '#fff', fontSize: 15, fontWeight: '600' }}>{scanError}</Text></View>) : null}
-          <TouchableOpacity style={s.scanCloseBtn} onPress={() => { setShowCityScanner(false); setScanned(false); setManualCode(''); stopCityScan(); }}>
-            <Text style={s.scanCloseText}>SCHLIESSEN</Text>
+          <TouchableOpacity style={{ marginTop: 24, paddingVertical: 10, paddingHorizontal: 20 }} onPress={() => { setShowCityScanner(false); setScanned(false); setManualCode(''); stopCityScan(); }}>
+            <Text style={{ color: C.muted, fontSize: 14, fontFamily: FF.regular }}>SCHLIESSEN</Text>
           </TouchableOpacity>
         </View>
       </View>
