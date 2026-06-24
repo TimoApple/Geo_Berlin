@@ -1,6 +1,3 @@
-// PanoramaViewer – Stabiler 360°-Bild-Viewer (WebView-basiert)
-// Lädt ein .avif-Panorama-Bild und zeigt es als interaktiven 360°-Viewer an.
-// Touch-Drag zum horizontalen Rotieren, Pinch-Zoom, Gyroskop-Unterstützung.
 import React, { useRef, useState, useCallback, useEffect } from 'react';
 import { View, StyleSheet, ActivityIndicator, Text } from 'react-native';
 import { WebView } from 'react-native-webview';
@@ -17,13 +14,10 @@ export default function PanoramaViewer({ url, onLoad, onError }: Props) {
   const webViewRef = useRef<any>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-  const [loadAttempted, setLoadAttempted] = useState(false);
 
-  // Reset bei URL-Änderung
   useEffect(() => {
     setLoading(true);
     setError(false);
-    setLoadAttempted(false);
   }, [url]);
 
   const handleMessage = useCallback((e: any) => {
@@ -54,10 +48,10 @@ export default function PanoramaViewer({ url, onLoad, onError }: Props) {
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html, body { width: 100%; height: 100%; overflow: hidden; background: #000; }
     #container { width: 100%; height: 100%; position: relative; overflow: hidden; }
-    #pano-img { 
-      position: absolute; 
-      height: 100%; 
-      min-width: 100%; 
+    #pano-img {
+      position: absolute;
+      height: 100%;
+      min-width: 100%;
       object-fit: cover;
       cursor: grab;
       user-select: none;
@@ -65,13 +59,20 @@ export default function PanoramaViewer({ url, onLoad, onError }: Props) {
       touch-action: none;
     }
     #loading {
-      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-      display: flex; align-items: center; justify-content: center;
-      background: #000; color: #F2A344; font-family: sans-serif; font-size: 14px;
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #000;
+      color: #F2A344;
+      font-family: sans-serif;
+      font-size: 14px;
       z-index: 10;
     }
     #loading .spinner {
-      width: 32px; height: 32px;
+      width: 32px;
+      height: 32px;
       border: 3px solid #3a3836;
       border-top-color: #F2A344;
       border-radius: 50%;
@@ -80,9 +81,15 @@ export default function PanoramaViewer({ url, onLoad, onError }: Props) {
     }
     @keyframes spin { to { transform: rotate(360deg); } }
     #error {
-      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-      display: none; align-items: center; justify-content: center;
-      background: #000; color: #D9593C; font-family: sans-serif; font-size: 16px;
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: #000;
+      color: #D9593C;
+      font-family: sans-serif;
+      font-size: 16px;
       z-index: 10;
     }
   </style>
@@ -91,9 +98,9 @@ export default function PanoramaViewer({ url, onLoad, onError }: Props) {
   <div id="loading"><div><div class="spinner"></div>Panorama wird geladen...</div></div>
   <div id="error">Fehler beim Laden des Panoramas</div>
   <div id="container">
-    <img id="pano-img" src="${url}" draggable="false" 
-      onload="document.getElementById('loading').style.display='none'; window.ReactNativeWebView && window.ReactNativeWebView.postMessage('loaded');"
-      onerror="document.getElementById('loading').style.display='none'; document.getElementById('error').style.display='flex'; window.ReactNativeWebView && window.ReactNativeWebView.postMessage('error');" />
+    <img id="pano-img" src="${url}" draggable="false"
+      onload="setTransform(); document.getElementById('loading').style.display='none'; window.ReactNativeWebView && window.ReactNativeWebView.postMessage('loaded');"
+      onerror="document.getElementById('loading').style.display='none'; document.getElementById('error').style.display='flex'; window.ReactNativeWebView && window.ReactNativeWebView.postMessage('error:loadfailed');" />
   </div>
   <script>
     (function() {
@@ -102,17 +109,13 @@ export default function PanoramaViewer({ url, onLoad, onError }: Props) {
       var startX = 0;
       var currentTranslate = 0;
       var prevTranslate = 0;
-      var startY = 0;
       var currentScale = 1;
       var lastPinchDist = 0;
-
-      function getTranslateX() {
-        return currentTranslate;
-      }
 
       function setTransform() {
         var w = img.naturalWidth || img.width;
         var h = img.naturalHeight || img.height;
+        if (!w || !h) return;
         var containerH = window.innerHeight;
         var scale = containerH / h;
         var displayW = w * scale * currentScale;
@@ -121,7 +124,6 @@ export default function PanoramaViewer({ url, onLoad, onError }: Props) {
         img.style.transform = 'translateX(' + currentTranslate + 'px)';
       }
 
-      // Touch-Drag für horizontale Rotation
       img.addEventListener('touchstart', function(e) {
         if (e.touches.length === 1) {
           isDragging = true;
@@ -156,13 +158,12 @@ export default function PanoramaViewer({ url, onLoad, onError }: Props) {
         }
       }, { passive: false });
 
-      img.addEventListener('touchend', function(e) {
+      img.addEventListener('touchend', function() {
         isDragging = false;
         img.style.cursor = 'grab';
         lastPinchDist = 0;
       });
 
-      // Maus-Unterstützung für Web/Desktop
       img.addEventListener('mousedown', function(e) {
         isDragging = true;
         startX = e.clientX;
@@ -182,12 +183,6 @@ export default function PanoramaViewer({ url, onLoad, onError }: Props) {
         img.style.cursor = 'grab';
       });
 
-      // Initiale Position
-      img.onload = function() {
-        setTransform();
-      };
-
-      // Bei Fenster-Änderung neu berechnen
       window.addEventListener('resize', setTransform);
     })();
   </script>
