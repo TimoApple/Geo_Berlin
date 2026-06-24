@@ -24,8 +24,6 @@ export function useArucoScanner(
     onError?: (error: string) => void;
   }
 ) {
-  console.log('[ArUco] Hook initialisiert');
-
   const [isScanning, setIsScanning] = useState(false);
   const [cameraReady, setCameraReady] = useState(false);
   const [lastResult, setLastResult] = useState<ArucoResult[] | null>(null);
@@ -35,6 +33,10 @@ export function useArucoScanner(
   const fallbackModeRef = useRef(false);
   const consecutiveErrorsRef = useRef(0);
   const cooldownUntilRef = useRef(0);
+
+  useEffect(() => {
+    console.log('[ArUco] Hook mounted');
+  }, []);
 
   const processImageData = useCallback((width: number, height: number, rawData: Uint8ClampedArray): ArucoResult[] => {
     const contrastData = new Uint8ClampedArray(rawData.length);
@@ -120,6 +122,11 @@ export function useArucoScanner(
         if (!result) return [];
 
         const ids = handleDetectedMarkers(result.markers);
+        if (ids.length > 0) {
+          isScanningRef.current = false;
+          setIsScanning(false);
+          return ids;
+        }
         return ids;
       }
 
@@ -149,6 +156,11 @@ export function useArucoScanner(
       if (!result) return [];
 
       const ids = handleDetectedMarkers(result.markers);
+      if (ids.length > 0) {
+        isScanningRef.current = false;
+        setIsScanning(false);
+        return ids;
+      }
       return ids;
     } catch (e) {
       console.error('[ArUco] FEHLER in triggerScan:', e);

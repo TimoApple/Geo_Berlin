@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import {
   View, Text, StyleSheet, TouchableOpacity, Animated,
   Vibration, ScrollView, Dimensions
@@ -120,7 +120,8 @@ export default function GameScreen({ players: initialPlayers, timerSetting, roun
     setTimeout(() => setScanError(''), 2500);
   }, []);
 
-  const { triggerScan, isScanning, cameraReady, onCameraReady } = useArucoScanner(cameraRef as any, { onDetected, onError });
+  const scannerOptions = useMemo(() => ({ onDetected, onError }), [onDetected, onError]);
+  const { triggerScan, isScanning, cameraReady, onCameraReady } = useArucoScanner(cameraRef as any, scannerOptions);
 
   const handleScan = useCallback(() => {
     if (!cameraReady) {
