@@ -162,8 +162,8 @@ export default function App() {
     player.play();
   });
 
-  // City-Scan: ArUco Scanner für Setup-Phase
-  const { startScanning: startCityScan, stopScanning: stopCityScan } = useArucoScanner(undefined, {
+  // City-Scan: ArUco Scanner für Setup-Phase (per Button-Druck)
+  const { triggerScan: triggerCityScan } = useArucoScanner(undefined, {
     onDetected: (ids) => {
       if (!showCityScanner || scanCityForIdx === null || ids.length === 0) return;
       const id = ids[0];
@@ -187,22 +187,12 @@ export default function App() {
       setScanned(false);
       setScanCityForIdx(null);
       setManualCode('');
-      stopCityScan();
     },
     onError: (err) => {
       setScanError(err);
       setTimeout(() => setScanError(''), 2500);
     },
   });
-
-  // Scanner für City-Scan aktivieren/deaktivieren
-  useEffect(() => {
-    if (showCityScanner) {
-      startCityScan();
-    } else {
-      stopCityScan();
-    }
-  }, [showCityScanner, startCityScan, stopCityScan]);
 
   const [usedLocations, setUsedLocations] = useState<number[]>([]);
 
@@ -230,7 +220,6 @@ export default function App() {
       setUsedLocations(prev => [...prev, id]);
       setPlayers(prev => prev.map((p, i) => i === scanCityForIdx ? { ...p, city: loc.name, cityId: id, lat: loc.lat, lng: loc.lng } : p));
       setShowCityScanner(false); setScanned(false); setScanCityForIdx(null); setManualCode('');
-      stopCityScan();
     };
     const numMatch = code.match(/#?(\d+)/);
     if (numMatch) {
@@ -244,7 +233,7 @@ export default function App() {
     if (textMatch) { assign(textMatch, textMatch.id); return; }
     setScanError('Nicht erkannt – Code oder Stadtname prüfen');
     setTimeout(() => setScanError(''), 2000);
-  }, [manualCode, scanCityForIdx, players, stopCityScan]);
+  }, [manualCode, scanCityForIdx, players]);
 
   const startGame = () => {
     if (!allPlayersScanned) return;
@@ -284,7 +273,7 @@ export default function App() {
           <View style={s.centerScreen}>
             <Text style={{ color: C.onSurface, fontSize: 18, marginBottom: 20, textAlign: 'center' }}>Kamera-Berechtigung erforderlich</Text>
             <TouchableOpacity style={s.primaryBtn} onPress={requestCameraPermission}><Text style={s.primaryBtnText}>ERLAUBEN</Text></TouchableOpacity>
-            <TouchableOpacity style={s.tertiaryBtn} onPress={() => { setShowCityScanner(false); setScanned(false); stopCityScan(); }}><Text style={s.tertiaryBtnText}>ABBRECHEN</Text></TouchableOpacity>
+            <TouchableOpacity style={s.tertiaryBtn} onPress={() => { setShowCityScanner(false); setScanned(false); }}><Text style={s.tertiaryBtnText}>ABBRECHEN</Text></TouchableOpacity>
           </View>
         </View>
       );
@@ -313,7 +302,7 @@ export default function App() {
             </TouchableOpacity>
           </View>
           {scanError ? (<View style={{ backgroundColor: 'rgba(255,100,100,0.9)', borderRadius: 12, paddingVertical: 10, paddingHorizontal: 20, marginTop: 16 }}><Text style={{ color: '#fff', fontSize: 15, fontWeight: '600' }}>{scanError}</Text></View>) : null}
-          <TouchableOpacity style={{ marginTop: 24, paddingVertical: 10, paddingHorizontal: 20 }} onPress={() => { setShowCityScanner(false); setScanned(false); setManualCode(''); stopCityScan(); }}>
+          <TouchableOpacity style={{ marginTop: 24, paddingVertical: 10, paddingHorizontal: 20 }} onPress={() => { setShowCityScanner(false); setScanned(false); setManualCode(''); }}>
             <Text style={{ color: C.muted, fontSize: 14, fontFamily: FF.regular }}>SCHLIESSEN</Text>
           </TouchableOpacity>
         </View>

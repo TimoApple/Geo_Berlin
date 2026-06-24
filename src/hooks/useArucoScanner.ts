@@ -27,10 +27,10 @@ export function useArucoScanner(
   console.log('[ArUco] Hook initialisiert');
 
   const [isScanning, setIsScanning] = useState(false);
+  const [cameraReady, setCameraReady] = useState(false);
   const [lastResult, setLastResult] = useState<ArucoResult[] | null>(null);
   const internalCameraRef = useRef<CameraView>(null);
   const cameraRef = externalCameraRef ?? internalCameraRef;
-  const isActiveRef = useRef(false);
   const isScanningRef = useRef(false);
   const fallbackModeRef = useRef(false);
   const consecutiveErrorsRef = useRef(0);
@@ -84,10 +84,21 @@ export function useArucoScanner(
     return validIds;
   }, [callbacks]);
 
-  const scanCard = useCallback(async (): Promise<number[]> => {
-    if (isScanningRef.current) return [];
-    if (Date.now() < cooldownUntilRef.current) return [];
-    if (!cameraRef.current) return [];
+  // Wird per Button-Druck ausgelöst
+  const triggerScan = useCallback(async (): Promise<number[]> => {
+    if (isScanningRef.current) {
+      console.log('[ArUco] Scan läuft bereits, ignoriert');
+      return [];
+    }
+    if (Date.now() < cooldownUntilRef.current) {
+      console.log('[ArUco] Cooldown aktiv, ignoriert');
+      return [];
+    }
+    if (!cameraRef.current) {
+      console.error('[ArUco] CameraRef nicht verfügbar');
+      callbacks?.onError?.('Kamera nicht bereit');
+      return [];
+    }
 
     isScanningRef.current = true;
     setIsScanning(true);
@@ -140,7 +151,7 @@ export function useArucoScanner(
       const ids = handleDetectedMarkers(result.markers);
       return ids;
     } catch (e) {
-      console.error('[ArUco] FEHLER in scanCard:', e);
+      console.error('[ArUco] FEHLER in triggerScan:', e);
       const msg = e instanceof Error ? e.message : '';
       consecutiveErrorsRef.current++;
 
@@ -164,43 +175,17 @@ export function useArucoScanner(
     } finally {
       isScanningRef.current = false;
       setIsScanning(false);
-      cooldownUntilRef.current = Date.now() + 1500;
+      cooldownUntilRef.current = Date.now() + 1000;
     }
   }, [callbacks, cameraRef, decodeAndDetect, handleDetectedMarkers]);
 
-  const startScanning = useCallback(async () => {
-    if (isActiveRef.current) {
-      console.log('[ArUco] startScanning: bereits aktiv, ignoriert');
-      return;
-    }
-
-    console.log('[ArUco] startScanning: Einmal-Scan');
-    isActiveRef.current = true;
-
-    let waited = 0;
-    while (!cameraRef.current && waited < 3000) {
-      await new Promise(resolve => setTimeout(resolve, 200));
-      waited += 200;
-    }
-
-    if (!cameraRef.current) {
-      console.error('[ArUco] CameraRef nie verfügbar!');
-      isActiveRef.current = false;
-      return;
-    }
-
-    try {
-      await scanCard();
-    } catch (e) {
-      console.error('[ArUco] FEHLER in startScanning:', e);
-    }
-
-    isActiveRef.current = false;
-  }, [cameraRef, scanCard]);
+  const onCameraReadyHandler = useCallback(() => {
+    console.log('[ArUco] Kamera bereit');
+    setCameraReady(true);
+  }, []);
 
   const stopScanning = useCallback(() => {
     console.log('[ArUco] stopScanning');
-    isActiveRef.current = false;
     isScanningRef.current = false;
     setIsScanning(false);
   }, []);
@@ -208,17 +193,17 @@ export function useArucoScanner(
   useEffect(() => {
     return () => {
       console.log('[ArUco] Cleanup – Hook wird unmounted');
-      isActiveRef.current = false;
       isScanningRef.current = false;
     };
   }, []);
 
   return {
-    scanCard,
+    triggerScan,
     isScanning,
+    cameraReady,
     lastResult,
     cameraRef,
-    startScanning,
+    onCameraReady: onCameraReadyHandler,
     stopScanning,
   };
 }

@@ -120,12 +120,17 @@ export default function GameScreen({ players: initialPlayers, timerSetting, roun
     setTimeout(() => setScanError(''), 2500);
   }, []);
 
-  const { startScanning, stopScanning } = useArucoScanner(cameraRef as any, { onDetected, onError });
+  const { triggerScan, isScanning, cameraReady, onCameraReady } = useArucoScanner(cameraRef as any, { onDetected, onError });
 
-  useEffect(() => {
-    if (phase === 'scan-qr') startScanning();
-    else stopScanning();
-  }, [phase, startScanning, stopScanning]);
+  const handleScan = useCallback(() => {
+    if (!cameraReady) {
+      setScanError('Kamera noch nicht bereit');
+      setTimeout(() => setScanError(''), 1500);
+      return;
+    }
+    setScanError('');
+    triggerScan();
+  }, [cameraReady, triggerScan]);
 
   useEffect(() => {
     if (phase !== 'view' || timerPaused || timer <= 0) return;
@@ -255,7 +260,7 @@ export default function GameScreen({ players: initialPlayers, timerSetting, roun
   if (phase === 'scan-qr') {
     return (
       <View style={s.container}>
-        <CameraView ref={cameraRef} style={{ flex: 1 }} facing="back" />
+        <CameraView ref={cameraRef} style={{ flex: 1 }} facing="back" onCameraReady={onCameraReady} />
         <View style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, justifyContent: 'space-between', paddingHorizontal: 30, paddingTop: 60, paddingBottom: 40 }}>
           <View>
             <Text style={{ color: C.muted, fontSize: 13, fontFamily: FF.bold, letterSpacing: 2, marginBottom: 8 }}>RUNDE {round}/{maxRounds}</Text>
@@ -264,7 +269,9 @@ export default function GameScreen({ players: initialPlayers, timerSetting, roun
           </View>
           <View style={{ alignItems: 'center' }}>
             <View style={{ width: 240, height: 240, borderWidth: 2, borderColor: C.primary, justifyContent: 'center', alignItems: 'center' }}>
-              <Text style={{ color: C.primary, fontSize: 13, fontFamily: FF.regular, textAlign: 'center' }}>Scanne eine Karte mit der Kamera</Text>
+              <Text style={{ color: C.primary, fontSize: 13, fontFamily: FF.regular, textAlign: 'center' }}>
+                {cameraReady ? 'Karte in den Rahmen halten' : 'Kamera wird geladen...'}
+              </Text>
             </View>
             {scanError ? (
               <View style={{ backgroundColor: 'rgba(255,100,100,0.9)', borderRadius: 12, paddingVertical: 10, paddingHorizontal: 20, marginTop: 16 }}>
@@ -272,8 +279,12 @@ export default function GameScreen({ players: initialPlayers, timerSetting, roun
               </View>
             ) : null}
           </View>
-          <TouchableOpacity style={s.primaryBtn} onPress={loadNewCard}>
-            <Text style={s.primaryBtnText}>NEUE KARTE LADEN</Text>
+          <TouchableOpacity
+            style={[s.primaryBtn, { opacity: cameraReady && !isScanning ? 1 : 0.5 }]}
+            onPress={handleScan}
+            disabled={!cameraReady || isScanning}
+          >
+            <Text style={s.primaryBtnText}>{isScanning ? 'SCANNT...' : 'SCANNEN'}</Text>
           </TouchableOpacity>
         </View>
       </View>
