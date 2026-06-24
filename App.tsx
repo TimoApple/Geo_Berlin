@@ -173,7 +173,7 @@ export default function App() {
         setTimeout(() => setScanError(''), 2500);
         return;
       }
-      const takenBy = players.find(p => p.city.toLowerCase() === loc.name.toLowerCase() && players.indexOf(p) !== scanCityForIdx);
+      const takenBy = players.find(p => loc.name && p.city && p.city.toLowerCase() === loc.name.toLowerCase() && players.indexOf(p) !== scanCityForIdx);
       if (takenBy) {
         setScanError(`Diese Karte ist bereits vergeben von ${takenBy.name}`);
         setTimeout(() => setScanError(''), 2500);
@@ -214,7 +214,7 @@ export default function App() {
     if (!manualCode.trim() || scanCityForIdx === null) return;
     const code = manualCode.trim();
     const assign = (loc: PanoramaLocation, id: number) => {
-      const takenBy = players.find(p => p.city.toLowerCase() === loc.name.toLowerCase() && players.indexOf(p) !== scanCityForIdx);
+      const takenBy = players.find(p => loc.name && p.city && p.city.toLowerCase() === loc.name.toLowerCase() && players.indexOf(p) !== scanCityForIdx);
       if (takenBy) { setScanError(`Diese Karte ist bereits vergeben von ${takenBy.name}`); setTimeout(() => setScanError(''), 2500); return; }
       playClickSound(); Vibration.vibrate(100);
       setUsedLocations(prev => [...prev, id]);

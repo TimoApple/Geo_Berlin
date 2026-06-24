@@ -42,9 +42,13 @@ export function useArucoScanner(
     const contrastData = new Uint8ClampedArray(rawData.length);
     for (let i = 0; i < rawData.length; i += 4) {
       const r = rawData[i], g = rawData[i + 1], b = rawData[i + 2];
-      const isOrange = r > 160 && g > 80 && b < 100;
+      
+      // Gewichtete Helligkeit (Luminanz) berechnen
       const lum = 0.299 * r + 0.587 * g + 0.114 * b;
-      const val = isOrange ? 255 : lum > 128 ? 255 : 0;
+      
+      // Niedrigerer Schwellenwert für das farbige Orange auf dunklem Grund
+      const val = lum > 90 ? 255 : 0;
+      
       contrastData[i] = val;
       contrastData[i + 1] = val;
       contrastData[i + 2] = val;
