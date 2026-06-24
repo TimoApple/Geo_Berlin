@@ -229,29 +229,36 @@ export default function GameScreen({ players: initialPlayers, timerSetting, roun
 
   // ===== RENDER PHASES =====
 
-  // SCAN QR PHASE
-  if (phase === 'scan-qr') {
-    return (
-      <View style={s.container}>
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', paddingHorizontal: 30 }}>
+// SCAN QR PHASE
+if (phase === 'scan-qr') {
+  return (
+    <View style={s.container}>
+      <CameraView ref={cameraRef} style={{ flex: 1 }} facing="back" />
+      <View style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, justifyContent: 'space-between', paddingHorizontal: 30, paddingTop: 60, paddingBottom: 40 }}>
+        <View>
           <Text style={{ color: C.muted, fontSize: 13, fontFamily: FF.bold, letterSpacing: 2, marginBottom: 8 }}>RUNDE {round}/{maxRounds}</Text>
           <Text style={{ color: C.onSurface, fontSize: 24, fontFamily: FF.bold, marginBottom: 4 }}>{activePlayer.name}</Text>
-          <Text style={{ color: C.muted, fontSize: 14, fontFamily: FF.regular, marginBottom: 30 }}>Punkte: {activePlayer.score}</Text>
-          <Text style={{ color: C.primary, fontSize: 14, fontFamily: FF.regular, marginBottom: 20, textAlign: 'center' }}>
-            Scanne eine Karte mit der Kamera
-          </Text>
+          <Text style={{ color: C.muted, fontSize: 14, fontFamily: FF.regular }}>Punkte: {activePlayer.score}</Text>
+        </View>
+        <View style={{ alignItems: 'center' }}>
+          <View style={{ width: 240, height: 240, borderWidth: 2, borderColor: C.primary, justifyContent: 'center', alignItems: 'center' }}>
+            <Text style={{ color: C.primary, fontSize: 13, fontFamily: FF.regular, textAlign: 'center' }}>
+              Scanne eine Karte mit der Kamera
+            </Text>
+          </View>
           {scanError ? (
-            <View style={{ backgroundColor: 'rgba(255,100,100,0.9)', borderRadius: 12, paddingVertical: 10, paddingHorizontal: 20, marginBottom: 16 }}>
+            <View style={{ backgroundColor: 'rgba(255,100,100,0.9)', borderRadius: 12, paddingVertical: 10, paddingHorizontal: 20, marginTop: 16 }}>
               <Text style={{ color: '#fff', fontSize: 15, fontWeight: '600' }}>{scanError}</Text>
             </View>
           ) : null}
-          <TouchableOpacity style={s.primaryBtn} onPress={loadNewCard}>
-            <Text style={s.primaryBtnText}>NEUE KARTE LADEN</Text>
-          </TouchableOpacity>
         </View>
+        <TouchableOpacity style={s.primaryBtn} onPress={loadNewCard}>
+          <Text style={s.primaryBtnText}>NEUE KARTE LADEN</Text>
+        </TouchableOpacity>
       </View>
-    );
-  }
+    </View>
+  );
+}
 
   // VIEW PHASE — Panorama
   if (phase === 'view' && location) {
